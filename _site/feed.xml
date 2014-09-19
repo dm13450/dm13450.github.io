@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Your awesome title</title>
+    <title>Dean Markwick</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 </description>
-    <link>http://yourdomain.com/</link>
-    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 19 Sep 2014 14:28:10 +0100</pubDate>
-    <lastBuildDate>Fri, 19 Sep 2014 14:28:10 +0100</lastBuildDate>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Fri, 19 Sep 2014 22:19:08 +0100</pubDate>
+    <lastBuildDate>Fri, 19 Sep 2014 22:19:08 +0100</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>That First Blog Post</title>
+        <description>&lt;p&gt;After finally finding some spare time I’ve got round to creating my own website/blog. Let it be a place for rambling about anything I encounter and my learning process on this web design front.&lt;/p&gt;
+
+&lt;p&gt;My main acomplishment today was managing to create my own LinkedIn sprite and link to compliment the github one down below. It involved tinkering with the SVG file and clawering at the basic HTML knowledge receeding in my brain from year 7. But I’ve managed to implement it, maybe in the future once I’m a bit more confident I’ll try and get it incorprated into the basic theme, possibly my first open source contribution. &lt;/p&gt;
+
+&lt;p&gt;Tomorrow’s priority is to get see if you can get a spellchecker in vim, overcome my Achille’s heel of abysmal spelling. But for now, lets hit commit and make sure it works once uploaded.  &lt;/p&gt;
+</description>
+        <pubDate>Fri, 19 Sep 2014 22:08:00 +0100</pubDate>
+        <link>/2014/09/19/The-First-Blog-Post.html</link>
+        <guid isPermaLink="true">/2014/09/19/The-First-Blog-Post.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Welcome to Jekyll!</title>
@@ -28,8 +43,8 @@
 
 </description>
         <pubDate>Fri, 19 Sep 2014 15:27:52 +0100</pubDate>
-        <link>http://yourdomain.com/jekyll/update/2014/09/19/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2014/09/19/welcome-to-jekyll.html</guid>
+        <link>/jekyll/update/2014/09/19/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">/jekyll/update/2014/09/19/welcome-to-jekyll.html</guid>
         
         
         <category>jekyll</category>

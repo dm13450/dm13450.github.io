@@ -42,6 +42,23 @@
             </a>
           </li>
           {% endif %}
+
+	{% if site.linkedin_url %}
+	
+	<li>
+		<a href="https://www.linkedin.com/in/{{site.linkedin_url}}">
+		<span class="icon icon--linkein">
+		<img src = "/assets/linkedin.svg" height = "16" width = "16">
+		</span>
+
+		<span class="username">{{site.title}}</span>
+		</a>
+	</li>
+	
+
+	
+	{% endif %}
+
         </ul>
       </div>
 
