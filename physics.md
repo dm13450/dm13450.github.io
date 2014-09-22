@@ -9,4 +9,4 @@ I am a 4th year MPhys student at the University of Manchester finishing my under
 
 Noteable works include:
 
-* [Pulsars]({{site.url}}/assets/2013_Crab_Pulsar.pdf) 
+* [Pulsars]({{site.url}}/assets/CrabPulsar.pdf) 

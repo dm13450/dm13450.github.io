@@ -11,4 +11,4 @@ Tomorrow's priority is to get see if you can get a spell checker in Vim, overcom
 
 21/09/14 Update. 
 
-Turned on the spell checker and corrected the entire post. Way to many mistakes to be proud of, still, another learning point. 
+Turned on the spell checker and corrected the entire post. Way to many mistakes to be proud of; stil another learning point. 
