@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Dean Markwick</title>
+    <title>Playing About with ggplot</title>
     <meta name="description" content="">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/">
+    <link rel="canonical" href="/2014/09/28/Playing-About-With-ggplot.html">
 </head>
 
 
@@ -61,18 +61,44 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <header class="post-header">
- <h1 class = "post-title"> Welcome </h1>
-</header>
+        <div class="post">
 
-<article class = "post-content"> 
+  <header class="post-header">
+    <h1 class="post-title">Playing About with ggplot</h1>
+    <p class="post-meta">Sep 28, 2014</p>
+  </header>
 
-<p>Welcome, I am Dean Markwick and this website is a place where I blog, store files and generally practise some stuff.</p> 
+  <article class="post-content">
+    <p>I’ve turned the spellchecker on right away for this post. </p>
 
-<p>It's currently under construction, let me know if anything doesn't work using one of the channels below.</p>
+<p>After spending the last few hours playing around with some data in R, I’ve managed to produce my first pretty looking graphic using ggplot2.</p>
+
+<p>The main complication in producing this was fiddling around with the dataframe, getting it in the correct format, so that the different colours of the line came out automatically. </p>
+
+<p>Initially, it started off as: </p>
+
+<pre><code>Timestep | Zero | One | Two  
+</code></pre>
+
+<p>However, this gave some complications when ggplot was grouping the data, I had to refactor the data to:</p>
+
+<pre><code>Timestep | Population | Mutation 
+</code></pre>
+
+<p>This meant that I didn’t have to start manually setting colours, instead it was all decided for me. 
+I like to follow the LaTeX school of thought by letting the software decide on the aesthetics that work best, rather that leaving it up to the user. </p>
+
+<p>Overall, it resulted in the following plot: </p>
+
+<p><img src="/assets/InitialDemoGraph280914.png" alt="First with ggplot" /></p>
+
+<p>The data came from a basic and rough implementation of the Gillespie Algorithm.
+More comments on the physics behind it to follow.  </p>
 
 
-</article>
+  </article>
+
+</div>
 
       </div>
     </div>

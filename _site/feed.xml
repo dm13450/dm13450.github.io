@@ -5,9 +5,45 @@
     <description></description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 23 Sep 2014 21:02:53 +0100</pubDate>
-    <lastBuildDate>Tue, 23 Sep 2014 21:02:53 +0100</lastBuildDate>
+    <pubDate>Sun, 28 Sep 2014 23:55:49 +0100</pubDate>
+    <lastBuildDate>Sun, 28 Sep 2014 23:55:49 +0100</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>Playing About with ggplot</title>
+        <description>&lt;p&gt;I’ve turned the spellchecker on right away for this post. &lt;/p&gt;
+
+&lt;p&gt;After spending the last few hours playing around with some data in R, I’ve managed to produce my first pretty looking graphic using ggplot2.&lt;/p&gt;
+
+&lt;p&gt;The main complication in producing this was fiddling around with the dataframe, getting it in the correct format, so that the different colours of the line came out automatically. &lt;/p&gt;
+
+&lt;p&gt;Initially, it started off as: &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Timestep | Zero | One | Two  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;However, this gave some complications when ggplot was grouping the data, I had to refactor the data to:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Timestep | Population | Mutation 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This meant that I didn’t have to start manually setting colours, instead it was all decided for me. 
+I like to follow the LaTeX school of thought by letting the software decide on the aesthetics that work best, rather that leaving it up to the user. &lt;/p&gt;
+
+&lt;p&gt;Overall, it resulted in the following plot: &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/InitialDemoGraph280914.png&quot; alt=&quot;First with ggplot&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The data came from a basic and rough implementation of the Gillespie Algorithm.
+More comments on the physics behind it to follow.  &lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 28 Sep 2014 23:46:00 +0100</pubDate>
+        <link>/2014/09/28/Playing-About-With-ggplot.html</link>
+        <guid isPermaLink="true">/2014/09/28/Playing-About-With-ggplot.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>That First Blog Post</title>
