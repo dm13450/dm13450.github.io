@@ -8,13 +8,13 @@ I've turned the spellchecker on right away for this post.
 
 After spending the last few hours playing around with some data in R, I've managed to produce my first pretty looking graphic using ggplot2.
 
-The main complication in producing this was fiddling around with the dataframe, getting it in the correct format, so that the different colours of the line came out automatically. 
+The main complication in producing this was fiddling around with the dataframe, getting it in the correct format so that the different colours of the line came out automatically. 
 
 Initially, it started off as: 
 
 	Timestep | Zero | One | Two  
 
-However, this gave some complications when ggplot was grouping the data, I had to refactor the data to:
+However this gave some complications; when ggplot was grouping the data, I had to refactor the data to:
 
 	Timestep | Population | Mutation 
 
