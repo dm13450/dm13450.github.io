@@ -23,7 +23,8 @@ I like to follow the LaTeX school of thought by letting the software decide on t
 
 Overall, it resulted in the following plot: 
 
-![First with ggplot](/assets/InitialDemoGraph280914.png)
+![First with ggplot](/assets/InitialDemoGraph280914.png )
+
 
 The data came from a basic and rough implementation of the Gillespie Algorithm.
 More comments on the physics behind it to follow.  
