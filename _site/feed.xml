@@ -5,9 +5,37 @@
     <description>All rights reserved.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 10 Oct 2014 23:13:26 +0100</pubDate>
-    <lastBuildDate>Fri, 10 Oct 2014 23:13:26 +0100</lastBuildDate>
+    <pubDate>Thu, 06 Nov 2014 20:18:55 +0000</pubDate>
+    <lastBuildDate>Thu, 06 Nov 2014 20:18:55 +0000</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>Playing About with Shiny</title>
+        <description>&lt;p&gt;As an update to my MPhys project, I am currently building a webapp using the R package shiny to display the data from the simulations that have been run. &lt;/p&gt;
+
+&lt;p&gt;It has been almost too easy to use, basically just a few user interface lessons and playing around with how the app looks.&lt;/p&gt;
+
+&lt;p&gt;The app flow is as follows: &lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;The app grep’s in the directory for the unique ID of the data file that has been chosen. &lt;/li&gt;
+  &lt;li&gt;It then plots the displacement, velocity and variance graph using ggplot with a custom theme. This is basically the black and white theme (theme_bw()) with removal of y label markings.&lt;/li&gt;
+  &lt;li&gt;For a given user inputed time stamp, the app outputs the distribution of the populations. A red marker point is displayed on the previous graphs to indicate where that time occurs. &lt;/li&gt;
+  &lt;li&gt;The fitness and mutation landscapes are drawn below the population graph to easily show whether the cloud is in a trap etc. &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;What I am most pleased about this app is the interactivity and ability to view the populations at a given interval. While not exactly the most “physicsy” bit of the project, it will help communicate the results of the data. &lt;/p&gt;
+
+&lt;p&gt;Further work can be done to generally improve the aesthetic look of the app. &lt;/p&gt;
+
+&lt;p&gt;A link will be added to the app once it is fully fit for public consumption! &lt;/p&gt;
+</description>
+        <pubDate>Thu, 06 Nov 2014 20:00:00 +0000</pubDate>
+        <link>/2014/11/06/Playing-About-With-shiny.html</link>
+        <guid isPermaLink="true">/2014/11/06/Playing-About-With-shiny.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Playing About with ggplot</title>

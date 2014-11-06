@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>About Me</title>
+    <title>Playing About with Shiny</title>
     <meta name="description" content="All rights reserved.">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/about/">
+    <link rel="canonical" href="/2014/11/06/Playing-About-With-shiny.html">
 </head>
 
 
@@ -64,17 +64,29 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">About Me</h1>
+    <h1 class="post-title">Playing About with Shiny</h1>
+    <p class="post-meta">Nov 6, 2014</p>
   </header>
 
   <article class="post-content">
-    <p>I am a 4th year Theoretical Physics student at the University of Manchester finishing my final year of my MPhys degree. </p>
+    <p>As an update to my MPhys project, I am currently building a webapp using the R package shiny to display the data from the simulations that have been run. </p>
 
-<p>My interests include stochastic process and how they apply in the real world, general financial market interaction and machine learning. </p>
+<p>It has been almost too easy to use, basically just a few user interface lessons and playing around with how the app looks.</p>
 
-<p>I have worked for an investment bank, pricing equity derivatives using C# and Excel. I have also worked for the NHS implementing a mobile working device, which involved educating the end users. </p>
+<p>The app flow is as follows: </p>
 
-<p>The majority of the content has been edited and corrected by <a href="https://www.twitter.com/star_girlsophie">Sophie Pedder</a>.</p>
+<ol>
+  <li>The app grep’s in the directory for the unique ID of the data file that has been chosen. </li>
+  <li>It then plots the displacement, velocity and variance graph using ggplot with a custom theme. This is basically the black and white theme (theme_bw()) with removal of y label markings.</li>
+  <li>For a given user inputed time stamp, the app outputs the distribution of the populations. A red marker point is displayed on the previous graphs to indicate where that time occurs. </li>
+  <li>The fitness and mutation landscapes are drawn below the population graph to easily show whether the cloud is in a trap etc. </li>
+</ol>
+
+<p>What I am most pleased about this app is the interactivity and ability to view the populations at a given interval. While not exactly the most “physicsy” bit of the project, it will help communicate the results of the data. </p>
+
+<p>Further work can be done to generally improve the aesthetic look of the app. </p>
+
+<p>A link will be added to the app once it is fully fit for public consumption! </p>
 
   </article>
 
