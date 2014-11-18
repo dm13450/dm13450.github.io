@@ -10,4 +10,5 @@ My interests include stochastic process and how they apply in the real world, ge
 
 I have worked for an investment bank, pricing equity derivatives using C# and Excel. I have also worked for the NHS implementing a mobile working device, which involved educating the end users. 
 
+
 The majority of the content has been edited and corrected by [Sophie Pedder](https://www.twitter.com/star_girlsophie).

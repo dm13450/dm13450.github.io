@@ -5,8 +5,8 @@
     <description>All rights reserved.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 06 Nov 2014 20:18:55 +0000</pubDate>
-    <lastBuildDate>Thu, 06 Nov 2014 20:18:55 +0000</lastBuildDate>
+    <pubDate>Tue, 18 Nov 2014 11:52:07 +0000</pubDate>
+    <lastBuildDate>Tue, 18 Nov 2014 11:52:07 +0000</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -29,6 +29,14 @@
 &lt;p&gt;Further work can be done to generally improve the aesthetic look of the app. &lt;/p&gt;
 
 &lt;p&gt;A link will be added to the app once it is fully fit for public consumption! &lt;/p&gt;
+
+&lt;p&gt;UPDATE: &lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://deanmarkwick.shinyapps.io/CancerStatsVis&quot;&gt;Statistic Visulisation App&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://deanmarkwick.shinyapps.io/CancerAnimator&quot;&gt;Animator App&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Feedback appreciated!&lt;/p&gt;
 </description>
         <pubDate>Thu, 06 Nov 2014 20:00:00 +0000</pubDate>
         <link>/2014/11/06/Playing-About-With-shiny.html</link>

@@ -20,3 +20,11 @@ What I am most pleased about this app is the interactivity and ability to view t
 Further work can be done to generally improve the aesthetic look of the app. 
 
 A link will be added to the app once it is fully fit for public consumption! 
+
+UPDATE: 
+
+[Statistic Visulisation App](http://deanmarkwick.shinyapps.io/CancerStatsVis)
+
+[Animator App](http://deanmarkwick.shinyapps.io/CancerAnimator)
+
+Feedback appreciated!
