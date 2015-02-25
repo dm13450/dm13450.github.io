@@ -1,31 +1,24 @@
 ---
 layout: default
 ---
-<head>
-<style>
+<div class="post">
 
-#yearcontainer  li {
-display: inline;
-list-style-type: none;
-padding-right: 20px;
-font-size: 40px;
-}
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+  </header>
 
-#yearcontainer ul {
-text-align: center; 
-}
+  <article class="post-content">
+    {{ content }}
+  </article>
 
-</style>
-</head>
+ <table>
+  <tr>
+     <td> Maths 1 </td>
+     <td> Quantum Physics and Relativity </td>
+     <td> Dynamics </td> 
+     <td> Intro to Astronomy </td>
+     <td> Random Processes in Physics </td>
+  </tr>
+</table>
 
-<div id="yearcontainer">
- <ul id="yearlist" >
-  <li> Year 1 </li>
-  <li> Year 2 </li>
-  <li> Year 3 </li>
-  <li> Year 4 </li>
- </ul>
 </div>
-
-
-
