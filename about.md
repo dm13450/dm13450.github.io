@@ -4,11 +4,8 @@ title: About Me
 permalink: /about/
 ---
 
-I am a 4th year Theoretical Physics student at the University of Manchester finishing my final year of my MPhys degree. 
+I am a newly started graduate student at University College London and a member of the Financial Computing Training Programme. This means that I am currently studying for an Masters in Research (MRes) in Computer Science and will be starting a PhD programme in statistics in 2016. Previously, I completed an MPhys in Theoretical Physics at the University of Manchester. 
 
-My interests include stochastic process and how they apply in the real world, general financial market interaction and machine learning. 
-
-I have worked for an investment bank, pricing equity derivatives using C# and Excel. I have also worked for the NHS implementing a mobile working device, which involved educating the end users. 
+I have worked in the finance industry at large investment bank as part of an equity derivatives team that engineered software to price a large range of  securites. I have also worked at a smaller firm as a intern trading emerging market products in both european and american markets.  
 
 
-The majority of the content has been edited and corrected by [Sophie Pedder](https://www.twitter.com/star_girlsophie).

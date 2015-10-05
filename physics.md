@@ -4,10 +4,9 @@ title: Physics
 permalink: /physics/
 ---
 
+I graduated from the University of Manchester in 2015 with a first class MPhys degree in Physics with Theoretical Physics. I undertook a wide variety of different courses from gauge theories looking at the underlying of symettry of nature to non-linear physics looking at how animals obtain their stripes. 
 
-I am a 4th year MPhys student at the University of Manchester finishing my undergraduate study in Physics with Theoretical Physics.
-
-Currently, I am working on my Master's project titled *Stochastic Dynamics of the Evolution of Cancer*. It combines various aspects of biology and non-linear physics. 
+My Master's project was  titled *Stochastic Dynamics of the Evolution of Cancer*. It combines various aspects of biology and non-linear physics. Please get in contact if you wish to see a copy.  
 
 Noteable works from my earlier years include:
 
