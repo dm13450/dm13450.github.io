@@ -5,9 +5,27 @@
     <description>All rights reserved.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 05 Oct 2015 21:54:11 +0100</pubDate>
-    <lastBuildDate>Mon, 05 Oct 2015 21:54:11 +0100</lastBuildDate>
+    <pubDate>Wed, 07 Oct 2015 22:48:18 +0100</pubDate>
+    <lastBuildDate>Wed, 07 Oct 2015 22:48:18 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>The First Workshop</title>
+        <description>&lt;p&gt;On Friday the 25th of September I took myself along to King’s College to attend the London-Paris Bachelier Workshop on Mathematical Finance . It was a two day event designed to highlight the collaboration between London and Parisian universities in the maths and finance field. As a new graduate student of the finance field I thought it was a good opportunity to attend. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/londonparis.jpg&quot; alt=&quot;My badge&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Whilst there were many interesting topics, the stand out talk for me was John Armstrong on stochastic filtering. By projecting a stochastic equation onto a manifold and choosing an appropriate metric an approximate solution can be found. The exact details are a bit beyond my grasp and I hope that I haven’t misinterpreted the overall aim of the talk. I hope that in the future I can look back on this and re-write it with a better understanding! &lt;/p&gt;
+
+&lt;p&gt;Overall, the workshop was an excellent introduction to what to expect as a grad student and I look forward to attending more. &lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 07 Oct 2015 00:00:00 +0100</pubDate>
+        <link>/2015/10/07/The-First-Workshop.html</link>
+        <guid isPermaLink="true">/2015/10/07/The-First-Workshop.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Prop Shop Interviews</title>
