@@ -5,19 +5,54 @@
     <description>All rights reserved.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 07 Oct 2015 22:48:18 +0100</pubDate>
-    <lastBuildDate>Wed, 07 Oct 2015 22:48:18 +0100</lastBuildDate>
-    <generator>Jekyll v2.5.3</generator>
+    <pubDate>Mon, 25 Jan 2016 18:06:35 +0000</pubDate>
+    <lastBuildDate>Mon, 25 Jan 2016 18:06:35 +0000</lastBuildDate>
+    <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Films I&#39;ve Watched In January 2016</title>
+        <description>&lt;p&gt;Ordered as per my memory!&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;V for Vendetta&lt;/li&gt;
+  &lt;li&gt;Cartel Land&lt;/li&gt;
+  &lt;li&gt;Howl&lt;/li&gt;
+  &lt;li&gt;Silence of The Lambs&lt;/li&gt;
+  &lt;li&gt;Sicario&lt;/li&gt;
+  &lt;li&gt;Star Wars 7&lt;/li&gt;
+  &lt;li&gt;Legend&lt;/li&gt;
+  &lt;li&gt;Mad Max: Fury Road&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Silence of the Lambs easily comes out top and I’ll be the millionth person to say that the acting and story is captivating. If you’ve not seen it, put it high on your list of things to watch.&lt;/p&gt;
+
+&lt;p&gt;Mad Max is the most over rated. Despite the various internet list raving about it the non-stop action and lack of real character development just didn’t click with me. The fact that they ended up turning around on the road just to go back again felt like a bit of a cop out.&lt;/p&gt;
+
+&lt;p&gt;Legend was another underwhelming occurrence. I felt like it was trying to appeal to the separate male and female audiences in tandem and not really connecting with either. Whilst the technical effect of having Tom Hardy play both roles was interesting, it wasn’t enough to salvage the story. In the end it was the worst of both a love story and a gangster film.&lt;/p&gt;
+
+&lt;p&gt;Similarly, Sicario started off as a cop/military film before throwing that all out the window to become a revenge film. The first half is intense and lets you develop a real distrust of the authority figures, but this eventually fizzles out as the film moves onto the revenge part before ending with either questions for the audience to think about themselves but they actually feel like plot holes. Still, it peaked my interest in the Mexican Cartel story, hence I gave Cartel Land a watch. It’s an alright documentary, but less about the Cartels and more about the resistance against them.&lt;/p&gt;
+
+&lt;p&gt;My only trip to the cinema in January was to beat the crowds and finally see the behemoth that is the new Star Wars. It does everything right but it doesn’t push any boundaries. The more I think of it, the more I realise that it is basically a HD remake of A New Hope. But still, I look forward to number 8 and see whether that is a bit more adventurous.&lt;/p&gt;
+
+&lt;p&gt;Finally, Howl, your classic lower budget horror film. It ticks the boxes and provides enough core and creature shots to leave you feeling satisfied. Watch it as an appetiser to Dog Soldiers.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 25 Jan 2016 00:00:00 +0000</pubDate>
+        <link>/2016/01/25/January-Films.html</link>
+        <guid isPermaLink="true">/2016/01/25/January-Films.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>The First Workshop</title>
-        <description>&lt;p&gt;On Friday the 25th of September I took myself along to King’s College to attend the London-Paris Bachelier Workshop on Mathematical Finance . It was a two day event designed to highlight the collaboration between London and Parisian universities in the maths and finance field. As a new graduate student of the finance field I thought it was a good opportunity to attend. &lt;/p&gt;
+        <description>&lt;p&gt;On Friday the 25th of September I took myself along to King’s College to attend the London-Paris Bachelier Workshop on Mathematical Finance. It was a two day event designed to highlight the collaboration between London and Parisian universities in the maths and finance field. As a new graduate student of this field I thought it was a good opportunity to attend.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/londonparis.jpg&quot; alt=&quot;My badge&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Whilst there were many interesting topics, the stand out talk for me was John Armstrong on stochastic filtering. By projecting a stochastic equation onto a manifold and choosing an appropriate metric an approximate solution can be found. The exact details are a bit beyond my grasp and I hope that I haven’t misinterpreted the overall aim of the talk. I hope that in the future I can look back on this and re-write it with a better understanding! &lt;/p&gt;
+&lt;p&gt;Whilst there were many interesting topics, the stand out talk for me was John Armstrong on stochastic filtering. By projecting a stochastic equation onto a manifold and choosing an appropriate metric, an approximate solution can be found. The exact details are a bit beyond my grasp and I hope that I haven’t misinterpreted the overall aim of the talk. I hope that in the future I can look back on this and re-write it with a better understanding!&lt;/p&gt;
 
-&lt;p&gt;Overall, the workshop was an excellent introduction to what to expect as a grad student and I look forward to attending more. &lt;/p&gt;
+&lt;p&gt;Overall, the workshop was an excellent introduction to what to expect as a grad student and I look forward to attending more.&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 07 Oct 2015 00:00:00 +0100</pubDate>
@@ -29,49 +64,49 @@
     
       <item>
         <title>Prop Shop Interviews</title>
-        <description>&lt;p&gt;I thought I would try my hand at applying to a few proprietary trading firms in London. Having read Scott Pattersons books (Dark Pools and Quants) I felt like I had a decent grasp on the industry and felt that my skills from physics would set me up well for a trading job. &lt;/p&gt;
+        <description>&lt;p&gt;I thought I would try my hand at applying to a few proprietary trading firms in London. Having read Scott Pattersons books (Dark Pools and Quants) I felt like I had a decent grasp on the industry and felt that my skills from physics would set me up well for a trading job.&lt;/p&gt;
 
-&lt;p&gt;What I didn’t bank on was a minefield of an interview experience that involved calculator like tasks, running through matrix algebra and computer science terms that I had a ‘brief skim over wikipedia’ knowledge of. So here’s a run down of both interviews for each company. &lt;/p&gt;
+&lt;p&gt;What I didn’t bank on was a minefield of an interview experience that involved calculator like tasks, running through matrix algebra and computer science terms that I had a ‘brief skim over wikipedia’ knowledge of. So here’s a run down of both interviews for each company.&lt;/p&gt;
 
-&lt;p&gt;The first one was an hour long, asked a few questions of my experience at UBS before jumping into the maths. &lt;/p&gt;
+&lt;p&gt;The first one was an hour long, asked a few questions of my experience at UBS before jumping into the maths.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Consider a bag with 3 balls; each a different colour. You remove 2 balls, paint them one colour and replace the balls in the bag. What’s the expected amount of moves before all the balls are the same colour?&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;My first instinct was to set up the transition matrix and take it from there. Points for correctly identifying that it was a Markov chain. &lt;/p&gt;
+&lt;p&gt;My first instinct was to set up the transition matrix and take it from there. Points for correctly identifying that it was a Markov chain.&lt;/p&gt;
 
-&lt;p&gt;I believed that the transition matrix would be a 3x3 matrix as there are three possible states that the bag could be in: &lt;/p&gt;
+&lt;p&gt;I believed that the transition matrix would be a 3x3 matrix as there are three possible states that the bag could be in:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;All the balls are different colours.&lt;/li&gt;
-  &lt;li&gt;One ball is a different colour to the other two. &lt;/li&gt;
-  &lt;li&gt;All the balls are the same colour. &lt;/li&gt;
+  &lt;li&gt;One ball is a different colour to the other two.&lt;/li&gt;
+  &lt;li&gt;All the balls are the same colour.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;This is correct, but not the ‘smart’ way to do. As the first move always takes the system from state 1 to state 2 you can simplify the matrix to just a 2x2 but remembering to add one to the average at the end.&lt;/p&gt;
 
-&lt;p&gt;Now to calculate the transition probabilities. If we call state 1 the state in which there are two of one colour and one of the other and state 2 as all balls the same colour. &lt;/p&gt;
+&lt;p&gt;Now to calculate the transition probabilities. If we call state 1 the state in which there are two of one colour and one of the other and state 2 as all balls the same colour.&lt;/p&gt;
 
-&lt;p&gt;From state 1, there are two possibilities when drawing two balls. You pick two balls that are the same colour; this returns you too the same state. You chose two different colour balls, if you paint them the same colour as the remaining one, then the system is in the final state. If you paint them one of the other two colours, then the system stays in the same state. &lt;/p&gt;
+&lt;p&gt;From state 1, there are two possibilities when drawing two balls. You pick two balls that are the same colour; this returns you too the same state. You chose two different colour balls, if you paint them the same colour as the remaining one, then the system is in the final state. If you paint them one of the other two colours, then the system stays in the same state.&lt;/p&gt;
 
 &lt;p&gt;This amounts to the probability of the system becoming fixed after one move:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;P(\text{fixed}) = \frac{1}{3} \cdot \frac{1}{3} + \frac{1}{3} \cdot \frac{1}{3} = \frac{2}{9}&lt;/script&gt;
 
-&lt;p&gt;Therefore the expected number of transitions is the reciprocal of this fixation probability. BUT plus an extra one, due to the first move. &lt;/p&gt;
+&lt;p&gt;Therefore the expected number of transitions is the reciprocal of this fixation probability. BUT plus an extra one, due to the first move.&lt;/p&gt;
 
 &lt;p&gt;Therefore the average number of transitions is:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;N = \frac{9}{2} + 1 = \frac{11}{2} &lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;N = \frac{9}{2} + 1 = \frac{11}{2}&lt;/script&gt;
 
-&lt;p&gt;The second question was to write a function that would reverse a linked list. This was a bit daunting seens as my familiarity with linked lists is next to none. But, in truth, I understand what pointers are, therefore a linked list isn’t something too abstract. &lt;/p&gt;
+&lt;p&gt;The second question was to write a function that would reverse a linked list. This was a bit daunting seens as my familiarity with linked lists is next to none. But, in truth, I understand what pointers are, therefore a linked list isn’t something too abstract.&lt;/p&gt;
 
-&lt;p&gt;My first thought out loud ended up transpiring to reading the node pointers one by one into a new array and then returning the array. This is wrong, as the function then doesn’t return a linked list explicitly, instead just a list of pointers. It then clicked that I was going to have to change what way the pointer was pointing for each element in the list and this would involve a temporary variable. However, my use of temporary variable on reflection was not correct and whilst in the process of writing this post I realise that my solution was very incorrect. &lt;/p&gt;
+&lt;p&gt;My first thought out loud ended up transpiring to reading the node pointers one by one into a new array and then returning the array. This is wrong, as the function then doesn’t return a linked list explicitly, instead just a list of pointers. It then clicked that I was going to have to change what way the pointer was pointing for each element in the list and this would involve a temporary variable. However, my use of temporary variable on reflection was not correct and whilst in the process of writing this post I realise that my solution was very incorrect.&lt;/p&gt;
 
 &lt;p&gt;For the second interview, the questions asked were much less involved and basic maths but where you had to invoke a few tricks. For example, &lt;script type=&quot;math/tex&quot;&gt;41 \times 39&lt;/script&gt; is daunting withouta calculator, or at least it was to me. However, it can be simplified to &lt;script type=&quot;math/tex&quot;&gt;(40+1)(40-1) = 40 ^2 - 1 = 1599&lt;/script&gt;. After four questions were answered, I was then asked to estimate my confidence that I had answered them all correctly. I was 100% confident on 3 of them but less so on 1 other, therefore I believe a 75% confidence level would be sufficient.&lt;/p&gt;
 
-&lt;p&gt;Overall, both interviews have highlighted the skills needed to succeed in these types of interviews. Tautology, but both times I asked catheter the interviewer used any of the topics in their daily work. They said no.  &lt;/p&gt;
+&lt;p&gt;Overall, both interviews have highlighted the skills needed to succeed in these types of interviews. Tautology, but both times I asked catheter the interviewer used any of the topics in their daily work. They said no.&lt;/p&gt;
 
 </description>
         <pubDate>Sun, 30 Nov 2014 00:00:00 +0000</pubDate>
@@ -83,26 +118,26 @@
     
       <item>
         <title>Playing About with Shiny</title>
-        <description>&lt;p&gt;As an update to my MPhys project, I am currently building a webapp using the R package shiny to display the data from the simulations that have been run. &lt;/p&gt;
+        <description>&lt;p&gt;As an update to my MPhys project, I am currently building a webapp using the R package shiny to display the data from the simulations that have been run.&lt;/p&gt;
 
 &lt;p&gt;It has been almost too easy to use, basically just a few user interface lessons and playing around with how the app looks.&lt;/p&gt;
 
-&lt;p&gt;The app flow is as follows: &lt;/p&gt;
+&lt;p&gt;The app flow is as follows:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;The app grep’s in the directory for the unique ID of the data file that has been chosen. &lt;/li&gt;
+  &lt;li&gt;The app grep’s in the directory for the unique ID of the data file that has been chosen.&lt;/li&gt;
   &lt;li&gt;It then plots the displacement, velocity and variance graph using ggplot with a custom theme. This is basically the black and white theme (theme_bw()) with removal of y label markings.&lt;/li&gt;
-  &lt;li&gt;For a given user inputed time stamp, the app outputs the distribution of the populations. A red marker point is displayed on the previous graphs to indicate where that time occurs. &lt;/li&gt;
-  &lt;li&gt;The fitness and mutation landscapes are drawn below the population graph to easily show whether the cloud is in a trap etc. &lt;/li&gt;
+  &lt;li&gt;For a given user inputed time stamp, the app outputs the distribution of the populations. A red marker point is displayed on the previous graphs to indicate where that time occurs.&lt;/li&gt;
+  &lt;li&gt;The fitness and mutation landscapes are drawn below the population graph to easily show whether the cloud is in a trap etc.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;What I am most pleased about this app is the interactivity and ability to view the populations at a given interval. While not exactly the most “physicsy” bit of the project, it will help communicate the results of the data. &lt;/p&gt;
+&lt;p&gt;What I am most pleased about this app is the interactivity and ability to view the populations at a given interval. While not exactly the most “physicsy” bit of the project, it will help communicate the results of the data.&lt;/p&gt;
 
-&lt;p&gt;Further work can be done to generally improve the aesthetic look of the app. &lt;/p&gt;
+&lt;p&gt;Further work can be done to generally improve the aesthetic look of the app.&lt;/p&gt;
 
-&lt;p&gt;A link will be added to the app once it is fully fit for public consumption! &lt;/p&gt;
+&lt;p&gt;A link will be added to the app once it is fully fit for public consumption!&lt;/p&gt;
 
-&lt;p&gt;UPDATE: &lt;/p&gt;
+&lt;p&gt;UPDATE:&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://deanmarkwick.shinyapps.io/CancerStatsVis&quot;&gt;Statistic Visulisation App&lt;/a&gt;&lt;/p&gt;
 
@@ -119,31 +154,33 @@
     
       <item>
         <title>Playing About with ggplot</title>
-        <description>&lt;p&gt;I’ve turned the spellchecker on right away for this post. &lt;/p&gt;
+        <description>&lt;p&gt;I’ve turned the spellchecker on right away for this post.&lt;/p&gt;
 
 &lt;p&gt;After spending the last few hours playing around with some data in R, I’ve managed to produce my first pretty looking graphic using ggplot2.&lt;/p&gt;
 
-&lt;p&gt;The main complication in producing this was fiddling around with the dataframe, getting it in the correct format so that the different colours of the line came out automatically. &lt;/p&gt;
+&lt;p&gt;The main complication in producing this was fiddling around with the dataframe, getting it in the correct format so that the different colours of the line came out automatically.&lt;/p&gt;
 
-&lt;p&gt;Initially, it started off as: &lt;/p&gt;
+&lt;p&gt;Initially, it started off as:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;Timestep | Zero | One | Two  
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Timestep | Zero | One | Two  
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;However this gave some complications; when ggplot was grouping the data, I had to refactor the data to:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;Timestep | Population | Mutation 
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Timestep | Population | Mutation 
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;This meant that I didn’t have to start manually setting colours, instead it was all decided for me. 
-I like to follow the LaTeX school of thought by letting the software decide on the aesthetics that work best, rather that leaving it up to the user. &lt;/p&gt;
+I like to follow the LaTeX school of thought by letting the software decide on the aesthetics that work best, rather that leaving it up to the user.&lt;/p&gt;
 
-&lt;p&gt;Overall, it resulted in the following plot: &lt;/p&gt;
+&lt;p&gt;Overall, it resulted in the following plot:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/InitialDemoGraph280914.png&quot; alt=&quot;First with ggplot&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The data came from a basic and rough implementation of the Gillespie Algorithm.
-More comments on the physics behind it to follow.  &lt;/p&gt;
+More comments on the physics behind it to follow.&lt;/p&gt;
 
 </description>
         <pubDate>Sun, 28 Sep 2014 23:46:00 +0100</pubDate>
@@ -156,13 +193,13 @@ More comments on the physics behind it to follow.  &lt;/p&gt;
       <item>
         <title>That First Blog Post</title>
         <description>&lt;p&gt;After finally finding some spare time I’ve got round to creating my own website/blog. Let it be a place for rambling about anything I encounter and my learning process on this web design front.&lt;br /&gt;
-My main accomplishment today was managing to create my own LinkedIn sprite and link to compliment the github one down below. It involved tinkering with the SVG file and clawing at the basic HTML knowledge receding in my brain from year 7. But I’ve managed to implement it, maybe in the future once I’m a bit more confident I’ll try and get it incorporated into the basic theme, possibly my first open source contribution. &lt;/p&gt;
+My main accomplishment today was managing to create my own LinkedIn sprite and link to compliment the github one down below. It involved tinkering with the SVG file and clawing at the basic HTML knowledge receding in my brain from year 7. But I’ve managed to implement it, maybe in the future once I’m a bit more confident I’ll try and get it incorporated into the basic theme, possibly my first open source contribution.&lt;/p&gt;
 
-&lt;p&gt;Tomorrow’s priority is to see if you can get a spell checker in Vim and overcome my Achilles heel of abysmal spelling. But for now, lets hit commit and make sure it works once uploaded.  &lt;/p&gt;
+&lt;p&gt;Tomorrow’s priority is to see if you can get a spell checker in Vim and overcome my Achilles heel of abysmal spelling. But for now, lets hit commit and make sure it works once uploaded.&lt;/p&gt;
 
-&lt;p&gt;21/09/14 Update. &lt;/p&gt;
+&lt;p&gt;21/09/14 Update.&lt;/p&gt;
 
-&lt;p&gt;Turned on the spell checker and corrected the entire post. Way too many mistakes to be proud of; still another learning point. &lt;/p&gt;
+&lt;p&gt;Turned on the spell checker and corrected the entire post. Way too many mistakes to be proud of; still another learning point.&lt;/p&gt;
 </description>
         <pubDate>Fri, 19 Sep 2014 22:08:00 +0100</pubDate>
         <link>/2014/09/19/The-First-Blog-Post.html</link>

@@ -69,31 +69,33 @@
   </header>
 
   <article class="post-content">
-    <p>I’ve turned the spellchecker on right away for this post. </p>
+    <p>I’ve turned the spellchecker on right away for this post.</p>
 
 <p>After spending the last few hours playing around with some data in R, I’ve managed to produce my first pretty looking graphic using ggplot2.</p>
 
-<p>The main complication in producing this was fiddling around with the dataframe, getting it in the correct format so that the different colours of the line came out automatically. </p>
+<p>The main complication in producing this was fiddling around with the dataframe, getting it in the correct format so that the different colours of the line came out automatically.</p>
 
-<p>Initially, it started off as: </p>
+<p>Initially, it started off as:</p>
 
-<pre><code>Timestep | Zero | One | Two  
+<div class="highlighter-rouge"><pre class="highlight"><code>Timestep | Zero | One | Two  
 </code></pre>
+</div>
 
 <p>However this gave some complications; when ggplot was grouping the data, I had to refactor the data to:</p>
 
-<pre><code>Timestep | Population | Mutation 
+<div class="highlighter-rouge"><pre class="highlight"><code>Timestep | Population | Mutation 
 </code></pre>
+</div>
 
 <p>This meant that I didn’t have to start manually setting colours, instead it was all decided for me. 
-I like to follow the LaTeX school of thought by letting the software decide on the aesthetics that work best, rather that leaving it up to the user. </p>
+I like to follow the LaTeX school of thought by letting the software decide on the aesthetics that work best, rather that leaving it up to the user.</p>
 
-<p>Overall, it resulted in the following plot: </p>
+<p>Overall, it resulted in the following plot:</p>
 
 <p><img src="/assets/InitialDemoGraph280914.png" alt="First with ggplot" /></p>
 
 <p>The data came from a basic and rough implementation of the Gillespie Algorithm.
-More comments on the physics behind it to follow.  </p>
+More comments on the physics behind it to follow.</p>
 
 
   </article>
@@ -107,7 +109,7 @@ More comments on the physics behind it to follow.  </p>
 
   <div class="wrapper">
 
-    <h2 class="footer-heading"> &copy; 2014  Dean Markwick </h2>
+    <h2 class="footer-heading"> &copy; 2016  Dean Markwick </h2>
 
     <div class="footer-col-wrapper">
       <div class="footer-col  footer-col-1">

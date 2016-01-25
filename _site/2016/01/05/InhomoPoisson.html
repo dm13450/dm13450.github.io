@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>That First Blog Post</title>
+    <title>Inhomogenous Poisson Process</title>
     <meta name="description" content="All rights reserved.">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/2014/09/19/The-First-Blog-Post.html">
+    <link rel="canonical" href="/2016/01/05/InhomoPoisson.html">
 </head>
 
 
@@ -64,19 +64,21 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">That First Blog Post</h1>
-    <p class="post-meta">Sep 19, 2014</p>
+    <h1 class="post-title">Inhomogenous Poisson Process</h1>
+    <p class="post-meta">Jan 5, 2016</p>
   </header>
 
   <article class="post-content">
-    <p>After finally finding some spare time I’ve got round to creating my own website/blog. Let it be a place for rambling about anything I encounter and my learning process on this web design front.<br />
-My main accomplishment today was managing to create my own LinkedIn sprite and link to compliment the github one down below. It involved tinkering with the SVG file and clawing at the basic HTML knowledge receding in my brain from year 7. But I’ve managed to implement it, maybe in the future once I’m a bit more confident I’ll try and get it incorporated into the basic theme, possibly my first open source contribution.</p>
+    <p>My first forray into statistics and finance begins with the simulation, fitting and checking of the inhomogenous poisson process.
+THe inhomogenous poisson process is easily defined, instead of constant rate $\lambda$ as per the usual Poisson process, the rate can now varry in time.</p>
 
-<p>Tomorrow’s priority is to see if you can get a spell checker in Vim and overcome my Achilles heel of abysmal spelling. But for now, lets hit commit and make sure it works once uploaded.</p>
+<p>Simulating this is done using a method called thinning; a Poisson process is simulated with rate greater than the inhomogenous rate, with points being rejected, or “thinned” out to give the final inhomogenous process.</p>
 
-<p>21/09/14 Update.</p>
+<p>Therefore the algorithm runs as follows: 
+1. Generate a Poisson varaible with rate $\lambda ^<em>$ such that $\lambda ^</em> &gt; \lambda (t) \forall t$. Increment time by this variable. 
+2. Calculate the ratio $\lambda (t) / \lambda ^*$ and compare this to a unifromally distributed variable. If the ratio is greater then accept the time else reject the time and continue with step one again. 
+3. The accepted times are the correct times of the inhomogenous process.</p>
 
-<p>Turned on the spell checker and corrected the entire post. Way too many mistakes to be proud of; still another learning point.</p>
 
   </article>
 
@@ -89,7 +91,7 @@ My main accomplishment today was managing to create my own LinkedIn sprite and l
 
   <div class="wrapper">
 
-    <h2 class="footer-heading"> &copy; 2016  Dean Markwick </h2>
+    <h2 class="footer-heading"> &copy; 2015  Dean Markwick </h2>
 
     <div class="footer-col-wrapper">
       <div class="footer-col  footer-col-1">
