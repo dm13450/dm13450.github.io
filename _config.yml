@@ -10,3 +10,7 @@ linkedin_url: deanmarkwick13450
 
 # Build settings
 markdown: kramdown
+
+kramdown:
+    input: GFM
+    syntax_highlighter: rouge

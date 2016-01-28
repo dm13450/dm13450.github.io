@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Blog</title>
+    <title>Bulk Downloading from Turnitin using Python.</title>
     <meta name="description" content="All rights reserved.">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/blog/">
+    <link rel="canonical" href="/2016/01/28/Python-Url.html">
 </head>
 
 
@@ -64,127 +64,31 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Blog</h1>
+    <h1 class="post-title">Bulk Downloading from Turnitin using Python.</h1>
+    <p class="post-meta">Jan 28, 2016</p>
   </header>
 
   <article class="post-content">
-      <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Jan 28, 2016</span>
+    <p>As a teaching assistant, occasionally I get assigned to marks a series of papers. This involves tediously searching for the students paper on the Turnitin app inside moodle before clicking a download button. When you’ve got 36 papers to download, this is far to much clicking and mouse movement. So I wrote a Python script to automate it.</p>
 
-        <h2>
-          <a class="post-link" href="/2016/01/28/LondonParis.html">Londonparis</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 28, 2016</span>
+<p>Firstly, I had to consider how the file was pulled from the server. Thankfully, it was a simple POST request with the paper id as one of the parameters. Using the FireFox addon Tamper, I was able to easily view and submit a custom post request. All it required was a session id and paper id.</p>
 
-        <h2>
-          <a class="post-link" href="/2016/01/28/InhomoPoisson.html">Inhomogenous Poisson Process</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 28, 2016</span>
+<p>Moving onto Python, I used the urllib2 package to open the custom POST url. Then it was a case of writing the response to a pdf file. Extending this to 36 urls is as simple as looping through each line in a file.</p>
 
-        <h2>
-          <a class="post-link" href="/2016/01/28/Python-Url.html">Bulk Downloading from Turnitin using Python.</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 26, 2016</span>
+<p>In Python-esque pseudo-code, this looks like:</p>
 
-        <h2>
-          <a class="post-link" href="/2016/01/26/pythonurl.html">Bulk Downloading from Turnitin using Python.</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 25, 2016</span>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">id_list</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">base_url</span> <span class="o">+</span> <span class="n">sessionid</span> <span class="o">+</span> <span class="n">paperid</span><span class="p">)</span>
+    <span class="n">pdf_file</span> <span class="o">=</span> <span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+    <span class="n">pdf_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre>
+</div>
 
-        <h2>
-          <a class="post-link" href="/2016/01/25/January-Films.html">Films I've Watched In January 2016</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 25, 2016</span>
+<p>The simplicity of the urllib2 is what makes this short script so easy to construct and use.</p>
 
-        <h2>
-          <a class="post-link" href="/2016/01/25/Films2016.html">Films I've Watched In January 2016</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 4, 2016</span>
+<p>Future work would be to get the session id automatically rather than manually copying and pasting it in.</p>
 
-        <h2>
-          <a class="post-link" href="/2016/01/04/Bayes.html">Introduction To Bayseian Inference</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 15, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/2015/10/15/LearningToLearn.html">Learning How To Learn</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 7, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/2015/10/07/The-First-Workshop.html">The First Workshop</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 30, 2014</span>
-
-        <h2>
-          <a class="post-link" href="/2014/11/30/Trading-Interviews.html">Prop Shop Interviews</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 6, 2014</span>
-
-        <h2>
-          <a class="post-link" href="/2014/11/06/Playing-About-With-shiny.html">Playing About with Shiny</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 28, 2014</span>
-
-        <h2>
-          <a class="post-link" href="/2014/09/28/Playing-About-With-ggplot.html">Playing About with ggplot</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 19, 2014</span>
-
-        <h2>
-          <a class="post-link" href="/2014/09/19/The-First-Blog-Post.html">That First Blog Post</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Feb 4, 2014</span>
-
-        <h2>
-          <a class="post-link" href="/2014/02/04/PDEs.html">Things I've learnt about PDE's</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+<p>On an unrelated note, looks like I need to fix the code formatting above. I’ll save that for another day.</p>
 
   </article>
 
