@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Introduction To Bayseian Inference</title>
+    <title>Dissertation Construction Learnings</title>
     <meta name="description" content="All rights reserved.">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/2016/01/04/Bayes.html">
+    <link rel="canonical" href="/2016/08/17/DissertationLearnings.html">
 </head>
 
 
@@ -68,69 +68,24 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Introduction To Bayseian Inference</h1>
-    <p class="post-meta">Jan 4, 2016</p>
+    <h1 class="post-title">Dissertation Construction Learnings</h1>
+    <p class="post-meta">Aug 17, 2016</p>
   </header>
 
   <article class="post-content">
-    <p>As you move into more complicated Bayesian problems things get more computationally inclined. For most cases, the posterior you arrive at cannot be calculated analytically. Therefore, once you have an expression for your posterior distribution, you need to sample from it to gain an understanding of how it looks.</p>
+    <p>With my dissertation handed in it is time to reflect on what I’ve learnt in terms from constructing the 20,000 word file.</p>
 
-<p>In this post we will look at the most simple of cases: using Bayesian methods to estimate the mean and variance of data that has been obtained from a normal distribution.</p>
+<p>Firstly, the importance of having an established workflow. If I was to calculate how my time was divided in writing my dissertation an unfortunate amount of time would have been dedicated to collating the many graphs that my work produced. I didn’t have dedicated functions outputting graphs ready to be saved into hard copies at later dates. Instead, I had a variety of functions that produced the results, but using different methods, different representations and different formats. Therefore, for my future work, every time I produce new results which leads to new graphs I need to have functions that can easily output the appropriate data when needed.</p>
 
-<h2 id="the-likelihood">The Likelihood</h2>
+<p>Secondly, my interweaving of Tikz and LaTeX lead to a few troubles. Mainly due to the size of the graphs and lack of available memory for Latex when compiling. My previous method of importing the raw .tex files of the graphs will need to be changed such that all the .tex files are compiled into pdf’s before being imported into Latex. This will also lead to quicker compile times for my Latex document. At some points I was seeing compile times of &gt;5 minutes!</p>
 
-<p>In this simple example we know that the data is normally distributed <script type="math/tex">x_i \sim \mathcal{N} ( \mu , \sigma ^2)</script>. We can define the unknown parameters as a vector <script type="math/tex">\boldsymbol{\theta} = (\mu, \sigma ^2)</script>. The likelihood is obtained by multiplying the distribution together for each data point</p>
+<p>The use of tables and summarising the final results also lead to some troubles. Copying and pasting the results from the R output to the latex document was not the most efficient use and led to frequent updating each time the results were updated. The solution to this is slightly trickier. Perhaps an interwoven use of RMarkdown and Latex could solve this problem. But at the minute it remains unsolved.</p>
 
-<script type="math/tex; mode=display">\mathcal{L} = \prod _i \frac{1}{\sqrt{2 \pi \sigma ^2}} \exp \left( - \frac{(x_i - \mu)^2}{2 \sigma^2} \right),</script>
+<p>In an attempt to develop a better workflow I’ve taken to use RMarkdown to construct my research in a more verbose way. This allows me to write around code and output the results straight away without having to translate between R and latex. So far it seems to be working nicely but I’ve yet to try and output to latex.</p>
 
-<script type="math/tex; mode=display">\propto \frac{1}{\sigma ^n} \exp \left(- \frac{1}{2\sigma^2} \sum _i (x_i - \mu )^2 \right).</script>
+<p>Overall, the process of writing my dissertation has shown the importance in establishing good techniques in outputting the results you find and not just focusing on getting the results. With these learnings I’ll be in good preparation for my next dissertation-like project.</p>
 
-<p>This can be simplified using the sample variance and sample mean, but this unnessacry detail in this simple case.</p>
-
-<h2 id="the-prior">The Prior</h2>
-
-<p>As there are two unknown parameters, our prior distribution is a joint distribution</p>
-
-<script type="math/tex; mode=display">p(\mu, \sigma ^2) = p(\mu) p (\sigma )</script>
-
-<p>(To be completed)</p>
-
-<h2 id="the-posterior-and-metropolis-sampling">The Posterior and Metropolis Sampling</h2>
-
-<p>Now we multiply the likelihood and the prior together to arrive at the psoterior</p>
-
-<script type="math/tex; mode=display">p(\mu , \sigma ^2 | \underline{x} ) \propto \frac{1}{\sigma _{n+1}} \exp \left( - \frac{1}{2 \sigma ^2} \sum _i (x_i - \mu )^2 \right).</script>
-
-<p>Now to make this a proper probability distribution it would need a normalaisation constant, in this simple case, the constant is trivial. Butwe will not be calculating to illustrate the case when you the constant is not trivial.</p>
-
-<p>Now, how do we understand what the posterior looks like if we haven’t got an exact expression for it? We sample from it, in such a way that the normalising constant isn’t needed. There are a number of alogrithms that can do this, but first we weill start off with Metropolis sampling.</p>
-
-<p>This algorithm works by taking as follows:</p>
-
-<ol>
-  <li>Initialise <script type="math/tex">\theta</script></li>
-  <li>Propose candidate parameter, <script type="math/tex">\theta _{\text{cand}}</script></li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>Calculate the ratio of posteriors $$r = \frac{p(\theta _{\text{cand}}</td>
-          <td>\bfseries{x})}{p(\theta_{old}</td>
-          <td>\bfseries{x})}$$.</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>Calculate $$\alpha = \min \left[ 1, r \right].</li>
-  <li>We accept $$\theta _{\text{cand}}$ with probability $\alpha$ and add it to the list of sampled points.</li>
-</ol>
-
-<p>The list of <script type="math/tex">\theta</script> is the sample from the posterior.</p>
-
-<h2 id="example">Example</h2>
-
-<p>To see this algorithm in practise it is easy enough to write the functions in R and generate some test data. For this we generate 100 normally distributed points with</p>
-
+<p>RMarkdown: <a href="http://rmarkdown.rstudio.com/ ">http://rmarkdown.rstudio.com/ </a></p>
 
   </article>
 
