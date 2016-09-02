@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Blog</title>
+    <title>Dissertation Construction Learnings</title>
     <meta name="description" content="All rights reserved.">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/blog/">
+    <link rel="canonical" href="/2016/08/17/Dissertation-Learnings.html">
 </head>
 
 
@@ -68,95 +68,24 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Blog</h1>
+    <h1 class="post-title">Dissertation Construction Learnings</h1>
+    <p class="post-meta">Aug 17, 2016</p>
   </header>
 
   <article class="post-content">
-      <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Sep 2, 2016</span>
+    <p>With my dissertation handed in it is time to reflect on what I’ve learnt in terms from constructing the 20,000 word file.</p>
 
-        <h2>
-          <a class="post-link" href="/2016/09/02/Kelly-Betting-Part-One.html">Kelly Betting - Part One</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Aug 17, 2016</span>
+<p>Firstly, the importance of having an established workflow. If I was to calculate how my time was divided in writing my dissertation an unfortunate amount of time would have been dedicated to collating the many graphs that my work produced. I didn’t have dedicated functions outputting graphs ready to be saved into hard copies at later dates. Instead, I had a variety of functions that produced the results, but using different methods, different representations and different formats. Therefore, for my future work, every time I produce new results which leads to new graphs I need to have functions that can easily output the appropriate data when needed.</p>
 
-        <h2>
-          <a class="post-link" href="/2016/08/17/Dissertation-Learnings.html">Dissertation Construction Learnings</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">May 20, 2016</span>
+<p>Secondly, my interweaving of Tikz and LaTeX lead to a few troubles. Mainly due to the size of the graphs and lack of available memory for Latex when compiling. My previous method of importing the raw .tex files of the graphs will need to be changed such that all the .tex files are compiled into pdf’s before being imported into Latex. This will also lead to quicker compile times for my Latex document. At some points I was seeing compile times of &gt;5 minutes!</p>
 
-        <h2>
-          <a class="post-link" href="/2016/05/20/Posterior-pvalues.html">Posterior p-values</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 28, 2016</span>
+<p>The use of tables and summarising the final results also lead to some troubles. Copying and pasting the results from the R output to the latex document was not the most efficient use and led to frequent updating each time the results were updated. The solution to this is slightly trickier. Perhaps an interwoven use of RMarkdown and Latex could solve this problem. But at the minute it remains unsolved.</p>
 
-        <h2>
-          <a class="post-link" href="/2016/01/28/Python-Url.html">Bulk Downloading from Turnitin using Python.</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 25, 2016</span>
+<p>In an attempt to develop a better workflow I’ve taken to use RMarkdown to construct my research in a more verbose way. This allows me to write around code and output the results straight away without having to translate between R and latex. So far it seems to be working nicely but I’ve yet to try and output to latex.</p>
 
-        <h2>
-          <a class="post-link" href="/2016/01/25/January-Films.html">Films I've Watched In January 2016</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 7, 2015</span>
+<p>Overall, the process of writing my dissertation has shown the importance in establishing good techniques in outputting the results you find and not just focusing on getting the results. With these learnings I’ll be in good preparation for my next dissertation-like project.</p>
 
-        <h2>
-          <a class="post-link" href="/2015/10/07/The-First-Workshop.html">The First Workshop</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 30, 2014</span>
-
-        <h2>
-          <a class="post-link" href="/2014/11/30/Trading-Interviews.html">Prop Shop Interviews</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 6, 2014</span>
-
-        <h2>
-          <a class="post-link" href="/2014/11/06/Playing-About-With-shiny.html">Playing About with Shiny</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 28, 2014</span>
-
-        <h2>
-          <a class="post-link" href="/2014/09/28/Playing-About-With-ggplot.html">Playing About with ggplot</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 19, 2014</span>
-
-        <h2>
-          <a class="post-link" href="/2014/09/19/The-First-Blog-Post.html">That First Blog Post</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+<p>RMarkdown: <a href="http://rmarkdown.rstudio.com/ ">http://rmarkdown.rstudio.com/ </a></p>
 
   </article>
 

@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Blog</title>
+    <title>Kelly Betting - Part One</title>
     <meta name="description" content="All rights reserved.">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/blog/">
+    <link rel="canonical" href="/2016/09/02/Kelly-Betting-Part-One.html">
 </head>
 
 
@@ -68,95 +68,47 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Blog</h1>
+    <h1 class="post-title">Kelly Betting - Part One</h1>
+    <p class="post-meta">Sep 2, 2016</p>
   </header>
 
   <article class="post-content">
-      <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Sep 2, 2016</span>
+    <p>In my current experiments I have been using the Kelly criterion to place theoretical bets on certain events. In the process, I found myself wanting to use the Kelly criterion for multiple simultaneous and independent events but come across a number of problems.</p>
 
-        <h2>
-          <a class="post-link" href="/2016/09/02/Kelly-Betting-Part-One.html">Kelly Betting - Part One</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Aug 17, 2016</span>
+<ul>
+  <li>Generally, most of the easily accessible Kelly tutorials only cover betting on one event.</li>
+  <li>Simultaneous Kelly bets are either behind a pay-wall or just a calculator is offered which doesn’t derive any of the results and show how they are obtained.</li>
+</ul>
 
-        <h2>
-          <a class="post-link" href="/2016/08/17/Dissertation-Learnings.html">Dissertation Construction Learnings</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">May 20, 2016</span>
+<p>So like any good scientist I’ve decided to give writing my own guide to Kelly betting. This will be the first part and go through the basic mathematics of the Kelly criterion. The second part will contain the simultaneous Kelly bet methodology.</p>
 
-        <h2>
-          <a class="post-link" href="/2016/05/20/Posterior-pvalues.html">Posterior p-values</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 28, 2016</span>
+<h3 id="why-kelly-bet">Why Kelly Bet?</h3>
 
-        <h2>
-          <a class="post-link" href="/2016/01/28/Python-Url.html">Bulk Downloading from Turnitin using Python.</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 25, 2016</span>
+<p>Imagine you have a model that predicts the outcome of the event with a probability <script type="math/tex">p</script>. You wish to place a bet on this outcome occurring and find that the bookmakers offer (decimal) odds <script type="math/tex">b</script>. Do you bet the whole house, or are you more conservative? What is the optimal bet size? This was answered by Kelly in 1956.</p>
 
-        <h2>
-          <a class="post-link" href="/2016/01/25/January-Films.html">Films I've Watched In January 2016</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 7, 2015</span>
+<p>To derive the result, we wish to maximise the expected log value of the event. The expected value is</p>
 
-        <h2>
-          <a class="post-link" href="/2015/10/07/The-First-Workshop.html">The First Workshop</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 30, 2014</span>
+<script type="math/tex; mode=display">\mathbb{E} \left[ \log X \right] = p \log (1+ (b-1) x) + (1-p) \log (1- x),</script>
 
-        <h2>
-          <a class="post-link" href="/2014/11/30/Trading-Interviews.html">Prop Shop Interviews</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 6, 2014</span>
+<p>where <script type="math/tex">x</script> is the amount that is bet. So to find the value of <script type="math/tex">x</script> that maximises the expected bank roll we need to do some differentiation</p>
 
-        <h2>
-          <a class="post-link" href="/2014/11/06/Playing-About-With-shiny.html">Playing About with Shiny</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 28, 2014</span>
+<script type="math/tex; mode=display">\frac{\partial}{\partial x} \mathbb{E} \left[ \log X \right] = \frac{p(b-1)}{1 + (b-1)x} - \frac{1-p}{1-x}=0,</script>
 
-        <h2>
-          <a class="post-link" href="/2014/09/28/Playing-About-With-ggplot.html">Playing About with ggplot</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 19, 2014</span>
+<script type="math/tex; mode=display">\frac{p(b-1)}{1 + (b-1)x} = \frac{1-p}{1-x},</script>
 
-        <h2>
-          <a class="post-link" href="/2014/09/19/The-First-Blog-Post.html">That First Blog Post</a>
-        </h2>
-      </li>
-    
-  </ul>
+<script type="math/tex; mode=display">x = \frac{pb-1}{b-1}</script>
 
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+<p>Now if we check the Wikipedia article on Kelly betting we find that this is the same result if we convert from decimal odds to fractional odds. Therefore, for whatever probability your model spits out and whatever the odds the bookmaker offers you, you can place a bet that has a positive expected value and thus probably a good idea.</p>
+
+<p>If the result from the Kelly formula is negative, this means that you wish to take the other side of the bet. With some betting exchanges, this is possible (“laying odds”). But due to the spread between the back and lay odds, you will not be able to immediately lay at the same odds you can back. Therefore you will need to consider the appropriate Kelly bet for laying an odd.</p>
+
+<p>In the next part I will be looking at multiple bets occurring at the same time and how you can correctly split your bankroll whilst reaming in positive expected value territory.</p>
+
+<h3 id="references">References</h3>
+
+<p><a href="https://en.wikipedia.org/wiki/Kelly_criterion">https://en.wikipedia.org/wiki/Kelly_criterion</a></p>
+
+<p><a href="http://www.sportsbookreview.com/picks/tools/kelly-calculator/">http://www.sportsbookreview.com/picks/tools/kelly-calculator/</a></p>
 
   </article>
 
