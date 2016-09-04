@@ -33,7 +33,7 @@ Now if we check the Wikipedia article on Kelly betting we find that this is the 
 
 If the result from the Kelly formula is negative, this means that you wish to take the other side of the bet. With some betting exchanges, this is possible ("laying odds"). But due to the spread between the back and lay odds, you will not be able to immediately lay at the same odds you can back. Therefore you will need to consider the appropriate Kelly bet for laying an odd. 
  
-In the next part I will be looking at multiple bets occurring at the same time and how you can correctly split your bankroll whilst reaming in positive expected value territory. 
+In the next part I will be looking at multiple bets occurring at the same time and how you can correctly split your bankroll whilst remaining in positive expected value territory. 
 
 
 ### References
