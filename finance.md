@@ -4,11 +4,11 @@ title: Research
 permalink: /Research/
 ---
 
-My reserach intrests include the following: 
+My research interests include the following: 
 
-- Predicting extreme values in equities. 
+- Predicting extreme values in markets and financial products. 
 - Non-parametric Bayesian methods. 
-- Point-processe inference.
+- Point-processes inference.
 
 I've also got a keen but more of a side interest in sports modelling, looking at how we can predict the outcomes of various sports based on available data.
 

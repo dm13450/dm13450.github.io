@@ -18,5 +18,5 @@ Then by specifying a weighting function we are changing our posterior to be clos
 
 Overall, the fact that weight cannot be thought of as Bayesian is cool little thought experiment and goes to show the divergence between frequentist and Bayesian approaches. 
 
-The man himself, Andrew Gelman, discusses the issue of weighted regression and Bayesian thinking here: <https://groups.google.com/forum/#!msg/stan-dev/5pJdH72hoM8/GLW_mTeaObAJ>. 
+The man himself, Andrew Gelman, discusses the issue of weighted regression and Bayesian thinking [here](https://groups.google.com/forum/#!msg/stan-dev/5pJdH72hoM8/GLW_mTeaObAJ). 
  
