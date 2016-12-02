@@ -5,9 +5,32 @@
     <description>All rights reserved.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 31 Oct 2016 18:25:02 +0000</pubDate>
-    <lastBuildDate>Mon, 31 Oct 2016 18:25:02 +0000</lastBuildDate>
+    <pubDate>Fri, 02 Dec 2016 14:12:44 +0000</pubDate>
+    <lastBuildDate>Fri, 02 Dec 2016 14:12:44 +0000</lastBuildDate>
     <generator>Jekyll v3.1.0</generator>
+    
+      <item>
+        <title>Notes from a Quantcast Talk</title>
+        <description>&lt;p&gt;As I sit on the train to London waiting for my model to finish fitting I realised that it had been a while since I had written a blog post.&lt;/p&gt;
+
+&lt;p&gt;My PhD school holds a bimonthly seminar and this weeks guest speaker was Dr. Peter Day who is a director of engineering at &lt;a href=&quot;https://www.quantcast.com&quot;&gt;Quantcast&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now Quantcast is a 21st century advertising agency offering real time advertisement strategy and analytic tools. The lecture was based around their use of data and how statistics and infrastructure has helped make advertising more relevant and serve better adds.&lt;/p&gt;
+
+&lt;p&gt;My first &lt;code class=&quot;highlighter-rouge&quot;&gt;did you know&lt;/code&gt; was that the adverts you see on websites are sold in real time as you load the page. So in the time it takes from clicking a link on Goole to the page appearing in your browser, the add space has been bought microseconds earlier and now serving a specific add designed for you. A remarkable engineering achievement, that in the short time it takes from clicking a link to seeing a page that an auction takes place, a winner is found and the add is served. But this is not the main product of Quantcast.&lt;/p&gt;
+
+&lt;p&gt;Instead, Quantcast is more about finding out more about population behaviours and how effective that advert will be. They crunch the necessary data from the variety of cookies they collect and come up with a pricing strategy based on who might see the add. Where as one company might try to show the add to as many people as possible (the fire-hose strategy) Quantcast might drill down on certain factors and change their bidding price based on these factors.&lt;/p&gt;
+
+&lt;p&gt;This problem is the standard &lt;code class=&quot;highlighter-rouge&quot;&gt;big data&lt;/code&gt; problem. The amount of data you can collect from cookies; visited websites, location, device etc. can lead to many other inferences which gives a large amount of variables for a large amount of people. Computing this information lead to Quantcast developing their own database and data tools as the current market leaders (Hadoop and derivatives) where not performing well enough. Although they did hint that they was looking at moving to AWS to solve some of their infrastructure problems.&lt;/p&gt;
+
+&lt;p&gt;Overall, it was an interesting talk about a field that I hadn’t really paid that much attention too previously and I definitely learnt something new. It also made me thankful of my add blocker and slightly more paranoid. So thank to Quantcast for coming down and delivering an enjoyable seminar!&lt;/p&gt;
+</description>
+        <pubDate>Fri, 02 Dec 2016 00:00:00 +0000</pubDate>
+        <link>/2016/12/02/Quantcast.html</link>
+        <guid isPermaLink="true">/2016/12/02/Quantcast.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Thoughts on Weights in Bayesian Regression</title>
@@ -351,42 +374,6 @@ optim(c(0.5, 0.5), function(x) (-1)*expectedBankRoll(x, p, b))
         <pubDate>Sun, 30 Nov 2014 00:00:00 +0000</pubDate>
         <link>/2014/11/30/Trading-Interviews.html</link>
         <guid isPermaLink="true">/2014/11/30/Trading-Interviews.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Playing About with Shiny</title>
-        <description>&lt;p&gt;As an update to my MPhys project, I am currently building a webapp using the R package shiny to display the data from the simulations that have been run.&lt;/p&gt;
-
-&lt;p&gt;It has been almost too easy to use, basically just a few user interface lessons and playing around with how the app looks.&lt;/p&gt;
-
-&lt;p&gt;The app flow is as follows:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;The app grep’s in the directory for the unique ID of the data file that has been chosen.&lt;/li&gt;
-  &lt;li&gt;It then plots the displacement, velocity and variance graph using ggplot with a custom theme. This is basically the black and white theme (theme_bw()) with removal of y label markings.&lt;/li&gt;
-  &lt;li&gt;For a given user inputed time stamp, the app outputs the distribution of the populations. A red marker point is displayed on the previous graphs to indicate where that time occurs.&lt;/li&gt;
-  &lt;li&gt;The fitness and mutation landscapes are drawn below the population graph to easily show whether the cloud is in a trap etc.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;What I am most pleased about this app is the interactivity and ability to view the populations at a given interval. While not exactly the most “physicsy” bit of the project, it will help communicate the results of the data.&lt;/p&gt;
-
-&lt;p&gt;Further work can be done to generally improve the aesthetic look of the app.&lt;/p&gt;
-
-&lt;p&gt;A link will be added to the app once it is fully fit for public consumption!&lt;/p&gt;
-
-&lt;p&gt;UPDATE:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://deanmarkwick.shinyapps.io/CancerStatsVis&quot;&gt;Statistic Visulisation App&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://deanmarkwick.shinyapps.io/CancerAnimator&quot;&gt;Animator App&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Feedback appreciated!&lt;/p&gt;
-</description>
-        <pubDate>Thu, 06 Nov 2014 20:00:00 +0000</pubDate>
-        <link>/2014/11/06/Playing-About-With-shiny.html</link>
-        <guid isPermaLink="true">/2014/11/06/Playing-About-With-shiny.html</guid>
         
         
       </item>
