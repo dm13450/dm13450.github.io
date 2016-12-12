@@ -5,9 +5,30 @@
     <description>All rights reserved.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 02 Dec 2016 14:12:44 +0000</pubDate>
-    <lastBuildDate>Fri, 02 Dec 2016 14:12:44 +0000</lastBuildDate>
+    <pubDate>Mon, 12 Dec 2016 18:15:34 +0000</pubDate>
+    <lastBuildDate>Mon, 12 Dec 2016 18:15:34 +0000</lastBuildDate>
     <generator>Jekyll v3.1.0</generator>
+    
+      <item>
+        <title>The Data Dialogue - At War with Data</title>
+        <description>&lt;p&gt;On Wednesday I took a stroll down to King’s College across the river for a seminar on data and warfare. A bit of a broad subject for a conference. The seminar speakers came from a variety of fields where the innovative usage of data is less obvious and more unique.&lt;/p&gt;
+
+&lt;p&gt;The first talk was by &lt;a href=&quot;http://www.kcl.ac.uk/hr/diversity/meettheprofessors/artshums/croueche.aspx&quot;&gt;Charlotte Rouche&lt;/a&gt; of the Kings college archaeological department. She highlighted how maps, both ancient and current, play an important role in her archaeological research. Understanding how the land is divided and even the names of places in various languages gives an important insight into how civilisation has evolved throughout the ages. Mapping data is now ubiquitous with the likes of Google Maps and Google Earth and this can be useful in observing how areas have developed over time. The aerial photographs of sites of archaeological interest can be periodically monitored for change and help with preservation - fighting the war against decay. However, when cataloguing such data Prof. Rouche raised the importance question of accessibility . Should the public be allowed to see aerial photographs and accurate co-ordinates of culturally and theologically significant monuments? In times of war, this could potentially be a shopping list for attacks. This shows how perhaps a fully open data source is not always the correct answer.&lt;/p&gt;
+
+&lt;p&gt;The second talk was by &lt;a href=&quot;https://www.ucl.ac.uk/spacetimelab/people/kate-bowers&quot;&gt;Kate Bowers&lt;/a&gt; of the Crime Science department at UCL. Her talk was on the usage of police data, which has similar disclosure properties to the Rouche’s map data. Prof. Bowers showed how the GPS data collected from police cars can provide maps of frequent patrol paths of the Metropolitan police. Combining this with 999 call monitoring she was able to give an indication of where there was deficiency in policing were arising. This can lead to policy implementation and a more efficient patrol path for police officers. In this case the war on crime was being fought with this new data.&lt;/p&gt;
+
+&lt;p&gt;The third talk was by &lt;a href=&quot;https://kclpure.kcl.ac.uk/portal/robert.stewart.html&quot;&gt;Robert Stewart&lt;/a&gt;. He is a mental health doctor from the NHS and Professor at King’s. Interestingly, his trust has developed a searchable, anonymous database for mental health researchers. This allowed them to query various parameters across patient groups. A very interesting research tool that required individual patient consent but once granted provides researchers with large amounts of real world clinical data. Its success shows that it is possible to use the health data of patients anonymously without infringing on privacy issues. Currently it is being used to help study drug safety and other questions that required long term monitoring.  Now I have previously worked for a NHS trust in the IT department and have an understanding of different software systems available for the NHS and the various data sharing regulations in place. Therefore this talk was a good insight into how other trusts can conquer some of the data sharing rules and how researchers can get access to such data. As Prof. Stewart is a mental health doctor his work can be framed as the war against mental afflictions.&lt;/p&gt;
+
+&lt;p&gt;The final talk was based on finding adversaries on the internet and looking at how such actors can make themselves known unwillingly. This talk was given by &lt;a href=&quot;http://www.kcl.ac.uk/sspp/departments/warstudies/people/professors/rid.aspx&quot;&gt;Thomas Rid&lt;/a&gt; from the War Studies department at King’s. He offered the example of the Poseta email &lt;a href=&quot;https://en.wikipedia.org/wiki/Podesta_emails&quot;&gt;leak&lt;/a&gt;. By using the classic “reset you password here” phishing scam, Podesta clicked on a bitly link that populated a fake web page with his gmail information and required him to submit his password to change it. Instead, the changing the password button just forwarded his password to the adversary. We know that this was the vector chosen by the attackers due to the public nature of the bitly account. Whoever set the account up forgot to set the profile to private. This led to the account being traced back  to some actor. Who it actually was is up to speculation at the time of writing.&lt;/p&gt;
+
+&lt;p&gt;Overall, it was an enjoyable conference. I learnt about some new domains and in a more focused and “apply-side” way. It was less about algorithm run times and more about what the algorithms actually do and how they can be used.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 07 Dec 2016 00:00:00 +0000</pubDate>
+        <link>/2016/12/07/DataDialogue.html</link>
+        <guid isPermaLink="true">/2016/12/07/DataDialogue.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Notes from a Quantcast Talk</title>
@@ -320,60 +341,6 @@ optim(c(0.5, 0.5), function(x) (-1)*expectedBankRoll(x, p, b))
         <pubDate>Wed, 07 Oct 2015 00:00:00 +0100</pubDate>
         <link>/2015/10/07/The-First-Workshop.html</link>
         <guid isPermaLink="true">/2015/10/07/The-First-Workshop.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Prop Shop Interviews</title>
-        <description>&lt;p&gt;I thought I would try my hand at applying to a few proprietary trading firms in London. Having read Scott Pattersons books (Dark Pools and Quants) I felt like I had a decent grasp on the industry and felt that my skills from physics would set me up well for a trading job.&lt;/p&gt;
-
-&lt;p&gt;What I didn’t bank on was a minefield of an interview experience that involved calculator like tasks, running through matrix algebra and computer science terms that I had a ‘brief skim over wikipedia’ knowledge of. So here’s a run down of both interviews for each company.&lt;/p&gt;
-
-&lt;p&gt;The first one was an hour long, asked a few questions of my experience at UBS before jumping into the maths.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Consider a bag with 3 balls; each a different colour. You remove 2 balls, paint them one colour and replace the balls in the bag. What’s the expected amount of moves before all the balls are the same colour?&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;My first instinct was to set up the transition matrix and take it from there. Points for correctly identifying that it was a Markov chain.&lt;/p&gt;
-
-&lt;p&gt;I believed that the transition matrix would be a 3x3 matrix as there are three possible states that the bag could be in:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;All the balls are different colours.&lt;/li&gt;
-  &lt;li&gt;One ball is a different colour to the other two.&lt;/li&gt;
-  &lt;li&gt;All the balls are the same colour.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This is correct, but not the ‘smart’ way to do. As the first move always takes the system from state 1 to state 2 you can simplify the matrix to just a 2x2 but remembering to add one to the average at the end.&lt;/p&gt;
-
-&lt;p&gt;Now to calculate the transition probabilities. If we call state 1 the state in which there are two of one colour and one of the other and state 2 as all balls the same colour.&lt;/p&gt;
-
-&lt;p&gt;From state 1, there are two possibilities when drawing two balls. You pick two balls that are the same colour; this returns you too the same state. You chose two different colour balls, if you paint them the same colour as the remaining one, then the system is in the final state. If you paint them one of the other two colours, then the system stays in the same state.&lt;/p&gt;
-
-&lt;p&gt;This amounts to the probability of the system becoming fixed after one move:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(\text{fixed}) = \frac{1}{3} \cdot \frac{1}{3} + \frac{1}{3} \cdot \frac{1}{3} = \frac{2}{9}&lt;/script&gt;
-
-&lt;p&gt;Therefore the expected number of transitions is the reciprocal of this fixation probability. BUT plus an extra one, due to the first move.&lt;/p&gt;
-
-&lt;p&gt;Therefore the average number of transitions is:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;N = \frac{9}{2} + 1 = \frac{11}{2}&lt;/script&gt;
-
-&lt;p&gt;The second question was to write a function that would reverse a linked list. This was a bit daunting seens as my familiarity with linked lists is next to none. But, in truth, I understand what pointers are, therefore a linked list isn’t something too abstract.&lt;/p&gt;
-
-&lt;p&gt;My first thought out loud ended up transpiring to reading the node pointers one by one into a new array and then returning the array. This is wrong, as the function then doesn’t return a linked list explicitly, instead just a list of pointers. It then clicked that I was going to have to change what way the pointer was pointing for each element in the list and this would involve a temporary variable. However, my use of temporary variable on reflection was not correct and whilst in the process of writing this post I realise that my solution was very incorrect.&lt;/p&gt;
-
-&lt;p&gt;For the second interview, the questions asked were much less involved and basic maths but where you had to invoke a few tricks. For example, &lt;script type=&quot;math/tex&quot;&gt;41 \times 39&lt;/script&gt; is daunting withouta calculator, or at least it was to me. However, it can be simplified to &lt;script type=&quot;math/tex&quot;&gt;(40+1)(40-1) = 40 ^2 - 1 = 1599&lt;/script&gt;. After four questions were answered, I was then asked to estimate my confidence that I had answered them all correctly. I was 100% confident on 3 of them but less so on 1 other, therefore I believe a 75% confidence level would be sufficient.&lt;/p&gt;
-
-&lt;p&gt;Overall, both interviews have highlighted the skills needed to succeed in these types of interviews. Tautology, but both times I asked catheter the interviewer used any of the topics in their daily work. They said no.&lt;/p&gt;
-
-</description>
-        <pubDate>Sun, 30 Nov 2014 00:00:00 +0000</pubDate>
-        <link>/2014/11/30/Trading-Interviews.html</link>
-        <guid isPermaLink="true">/2014/11/30/Trading-Interviews.html</guid>
         
         
       </item>
