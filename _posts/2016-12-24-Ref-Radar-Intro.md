@@ -12,7 +12,7 @@ For each referee we can calculate the average amount of fouls, yellow and red ca
 
 Using the [ggradar](https://github.com/ricardo-bion/ggradar) package  and tweaking some of the graphical parameters we are able to come up with the following plot. 
 
-![RefereeRadar](/assets/refereeRadar.png){:. center-image}
+![RefereeRadar](/assets/RefereeRadar.png){:. center-image}
 
 Here we are comparing four referees (at random) and how there metrics personally match against the population of all referees. Here we can see Andy D'Urso is particular for sending an away player off. Simon Hooper is quite a stickler for a foul. Nigel Miller is laid back, not giving many fouls and not giving out the yellow cards either. Chris Kavanagh is very middle of the pack, consistent across home and away for both fouls and cautions. 
 
