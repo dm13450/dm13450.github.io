@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Blog</title>
+    <title>Inhomogenous Poisson Process</title>
     <meta name="description" content="All rights reserved.">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/blog/">
+    <link rel="canonical" href="/2016/12/24/InhomoPoisson.html">
 </head>
 
 
@@ -70,183 +70,21 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Blog</h1>
+    <h1 class="post-title">Inhomogenous Poisson Process</h1>
+    <p class="post-meta">Dec 24, 2016</p>
   </header>
 
   <article class="post-content">
-      <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Dec 24, 2016</span>
+    <p>My first forray into statistics and finance begins with the simulation, fitting and checking of the inhomogenous poisson process.
+THe inhomogenous poisson process is easily defined, instead of constant rate $\lambda$ as per the usual Poisson process, the rate can now varry in time.</p>
 
-        <h2>
-          <a class="post-link" href="/2016/12/24/InhomoPoisson.html">Inhomogenous Poisson Process</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Dec 24, 2016</span>
+<p>Simulating this is done using a method called thinning; a Poisson process is simulated with rate greater than the inhomogenous rate, with points being rejected, or “thinned” out to give the final inhomogenous process.</p>
 
-        <h2>
-          <a class="post-link" href="/2016/12/24/FebFilms.html">Febfilms</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Dec 24, 2016</span>
+<p>Therefore the algorithm runs as follows: 
+1. Generate a Poisson varaible with rate $\lambda ^<em>$ such that $\lambda ^</em> &gt; \lambda (t) \forall t$. Increment time by this variable. 
+2. Calculate the ratio $\lambda (t) / \lambda ^*$ and compare this to a unifromally distributed variable. If the ratio is greater then accept the time else reject the time and continue with step one again. 
+3. The accepted times are the correct times of the inhomogenous process.</p>
 
-        <h2>
-          <a class="post-link" href="/2016/12/24/RefRadar.html">Introducing the Referee Radar</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Dec 7, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/12/07/DataDialogue.html">The Data Dialogue - At War with Data</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Dec 2, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/12/02/Quantcast.html">Notes from a Quantcast Talk</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Dec 2, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/12/02/QuantCast.html">Notes from a Quantcast Talk</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 27, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/10/27/Weighted-Bayes.html">Thoughts on Weights in Bayesian Regression</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 29, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/09/29/Kelly-Betting-Part-Two.html">Kelly Betting - Part Two</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 2, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/09/02/Kelly-Betting-Part-One.html">Kelly Betting - Part One</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Aug 17, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/08/17/Dissertation-Learnings.html">Dissertation Construction Learnings</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">May 20, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/05/20/Posterior-pvalues.html">Posterior p-values</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 28, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/01/28/Python-Url.html">Bulk Downloading from Turnitin using Python.</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 25, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/01/25/January-Films.html">Films I've Watched In January 2016</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 4, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/01/04/Bayes.html">Introduction To Bayseian Inference</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 15, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/2015/10/15/LearningToLearn.html">Learning How To Learn</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 7, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/2015/10/07/The-First-Workshop.html">The First Workshop</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 30, 2014</span>
-
-        <h2>
-          <a class="post-link" href="/2014/11/30/Trading-Interviews.html">Prop Shop Interviews</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 6, 2014</span>
-
-        <h2>
-          <a class="post-link" href="/2014/11/06/Playing-About-With-shiny.html">Playing About with Shiny</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 28, 2014</span>
-
-        <h2>
-          <a class="post-link" href="/2014/09/28/Playing-About-With-ggplot.html">Playing About with ggplot</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 19, 2014</span>
-
-        <h2>
-          <a class="post-link" href="/2014/09/19/The-First-Blog-Post.html">That First Blog Post</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Feb 4, 2014</span>
-
-        <h2>
-          <a class="post-link" href="/2014/02/04/PDEs.html">Things I've learnt about PDE's</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
 
   </article>
 

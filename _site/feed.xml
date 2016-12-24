@@ -5,9 +5,108 @@
     <description>All rights reserved.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 12 Dec 2016 18:15:34 +0000</pubDate>
-    <lastBuildDate>Mon, 12 Dec 2016 18:15:34 +0000</lastBuildDate>
+    <pubDate>Sat, 24 Dec 2016 17:48:49 +0000</pubDate>
+    <lastBuildDate>Sat, 24 Dec 2016 17:48:49 +0000</lastBuildDate>
     <generator>Jekyll v3.1.0</generator>
+    
+      <item>
+        <title>Inhomogenous Poisson Process</title>
+        <description>&lt;p&gt;My first forray into statistics and finance begins with the simulation, fitting and checking of the inhomogenous poisson process.
+THe inhomogenous poisson process is easily defined, instead of constant rate $\lambda$ as per the usual Poisson process, the rate can now varry in time.&lt;/p&gt;
+
+&lt;p&gt;Simulating this is done using a method called thinning; a Poisson process is simulated with rate greater than the inhomogenous rate, with points being rejected, or “thinned” out to give the final inhomogenous process.&lt;/p&gt;
+
+&lt;p&gt;Therefore the algorithm runs as follows: 
+1. Generate a Poisson varaible with rate $\lambda ^&lt;em&gt;$ such that $\lambda ^&lt;/em&gt; &amp;gt; \lambda (t) \forall t$. Increment time by this variable. 
+2. Calculate the ratio $\lambda (t) / \lambda ^*$ and compare this to a unifromally distributed variable. If the ratio is greater then accept the time else reject the time and continue with step one again. 
+3. The accepted times are the correct times of the inhomogenous process.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 24 Dec 2016 17:48:49 +0000</pubDate>
+        <link>/2016/12/24/InhomoPoisson.html</link>
+        <guid isPermaLink="true">/2016/12/24/InhomoPoisson.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Febfilms</title>
+        <description>&lt;hr /&gt;
+&lt;p&gt;layout: post
+title: Films and Books of February
+date: 2016-02-03
+***&lt;/p&gt;
+
+&lt;p&gt;Carrying from last months post and an in an attempt to make a habit out of writing I am going to have a look at the films and books consumed in February. 
+This time I’ve ordered them roughly on how good they are.&lt;/p&gt;
+
+&lt;p&gt;** Films&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Spotlight&lt;/li&gt;
+  &lt;li&gt;The Big Short&lt;/li&gt;
+  &lt;li&gt;What We Do In The Shadows&lt;/li&gt;
+  &lt;li&gt;Edge of Tomorrow&lt;/li&gt;
+  &lt;li&gt;Alien and Aliens&lt;/li&gt;
+  &lt;li&gt;Bridge of Spies&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Spotlight and The Big Short are going to find themselves tough to beat in 2016. Both stellar films highlighting the state of corruption in our society albeit with different tones.&lt;/p&gt;
+
+&lt;p&gt;Moving onto the more lighthearted films, What We Do In The Shadows (WWDITS) is an original, low budgety comedy that will make you laugh. It takes on the mockumentary approach adds a supernatural spin. It takes all the good parts from The Inbetweeners, The Office and vampire lore and package them into a film. This is what WWDITS essentially is. I look forward to a sequal and more from the director. 
+Speaking again of originallity, Edge of Tomorrow will take any viewer back to there childhood. It’s got robots, aliens, high tech weaponary and a respawning mechanic. If you want a film to watch on a saturday night after the X-Factor has finished you’d be hard pressed to find something as enjoyable as Edge of Tomorrow.&lt;/p&gt;
+
+&lt;p&gt;Bridge of Spies fell a bit to me. Like last months Legend viewing, Bridge of Spies couldn’t deciede whether it wanted to be a courtroom drama or more focused on the negotiation aspect between East Germany and Russia. As a result you got two unsatisfactory parts of the film. It also had the usual Spielberg quirks: a moment of two people talking over each other, the main character going from being hated to being loved as if public opinion is that black and white. By all means it is a good film, but nothing more. Watch it once and continue with your life.&lt;/p&gt;
+
+&lt;p&gt;Finally, inspired by a play-through of Alien: Isolation on the PS4 I decieded to eduacte myself in the actual films. Alien had the very ‘classical’ sci-fi feel to it, with the beeping terminals, robots so realistic they pass of as humans and finally actual people in rubber suits opposed to CGI. Watching it takes you into that world and makes you nostalgic for the alternate timeline where computers fill rooms and sleeping pods. The influence it has on cinema is easily digested and thankfully doesn’t move into the ‘Seinfield is unfunny’ trope. Similarly, Aliens takes the same angle, although much less delicate. There are even paralels to Edge of Tomorrow and Aliens.&lt;/p&gt;
+
+&lt;p&gt;** Books&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Flash Boys&lt;/li&gt;
+  &lt;li&gt;Chris Hadfield’s Autobiography&lt;/li&gt;
+  &lt;li&gt;The Art of Deception&lt;/li&gt;
+  &lt;li&gt;Crytopnomicon&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Throughout January I was a slave to the behomoth that is Cryprtonomicon and I’m ashamed to say that I still haven’t finished it. I’m 600 pages in and still feel like the proper story is yet to start. Everynow and then one of the characters goes on an arc that has me turning pages, but that usually finishes at the end of the chapter and then the book loses momentum and I find myself looking at the back trying to work out how many pages I need to read a day to finish before the next leap year. For this reason I think I’m going to have to relegate Crytonomicon to the unfinished pile.&lt;/p&gt;
+
+&lt;p&gt;Moving onto the non-fiction books it has been a mixture of finance, space and security. 
+With the debate of IEX continually appearing on my Twitter timeline and my Phd work touching it’s toes in microstructure, Flash Boys has been on my to-read list for a while. I’m still strugling to form an opinion on the morality of HFT even after reading it. I feel like the majority of what is described in Flash Boys can be categorised as market impact. If you place a large order, other traders are going to adjust there prices. The finite nature of passing messages back and forth from exchanges means that there will be information asymetry and thus arbitrage oppurunities.&lt;/p&gt;
+
+&lt;p&gt;From low latency to high latency, Chris Hadfield’s book is a simple and consice account of his time training and actual time in space on various missions. I enjoyed it for the insight into the organisation of NASA and how as a Canadian there is a slightly different path to becoming a spaceman. I imagine it’s similar to the UK and becoming part of the ESA crew. 
+Whilst the book is an easy read, I found it a bit light on the details and prehaps a bit of negativity to give it a bit of balance. It felt much like a good PR read for NASA and many of it’s weaknesses were actually it’s strenghts. I.e. the flat organisational structure that means that returning astronaughts are placed bottom of the pile. Much like Alex Fergusan said, no player bigger than the club - no astronaught bigger than NASA.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 24 Dec 2016 17:48:49 +0000</pubDate>
+        <link>/2016/12/24/FebFilms.html</link>
+        <guid isPermaLink="true">/2016/12/24/FebFilms.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Introducing the Referee Radar</title>
+        <description>&lt;p&gt;The radar plot is a good way to analyse different metrics across a group. The football player radar made popular by &lt;a href=&quot;http://statsbomb.com/2016/04/understand-football-radars-for-mugs-and-muggles/&quot;&gt;Ted Knutson&lt;/a&gt; is good at comparing players and seeing how their stats stack up against one another. Here I will be taking a similar concept and using the radar plot to analyse the referee’s in the professional game in England.&lt;/p&gt;
+
+&lt;p&gt;First, we need to chose some metrics. Using the data from &lt;a href=&quot;http://www.football-data.co.uk/&quot;&gt;Football-Data&lt;/a&gt; we can download all the league matches from the last three seasons. In this data we are privy to the number of fouls, yellow cards and red cards for both the home and away team. That gives us 6 variables for each match and each referee, the perfect amount for a radar plot.&lt;/p&gt;
+
+&lt;p&gt;For each referee we can calculate the average amount of fouls, yellow and red cards the gave to both the home and away team. This will allow us to detect whether a referee is particularly card happy or even has a home or away bias. In terms of practicality, we have to set a threshold for minimum number of games officiated. We remove any ref that has refereed less than 20 games over the three seasons.&lt;/p&gt;
+
+&lt;p&gt;Using the &lt;a href=&quot;https://github.com/ricardo-bion/ggradar&quot;&gt;ggradar&lt;/a&gt; package  and tweaking some of the graphical parameters we are able to come up with the following plot.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/refereeRadar.png&quot; alt=&quot;RefereeRadar&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here we are comparing four referees (at random) and how there metrics personally match against the population of all referees. Here we can see Andy D’Urso is particular for sending an away player off. Simon Hooper is quite a stickler for a foul. Nigel Miller is laid back, not giving many fouls and not giving out the yellow cards either. Chris Kavanagh is very middle of the pack, consistent across home and away for both fouls and cautions.&lt;/p&gt;
+
+&lt;p&gt;The package &lt;code class=&quot;highlighter-rouge&quot;&gt;ggradar&lt;/code&gt; requires all the variables to have a consistent range. For this I used the &lt;code class=&quot;highlighter-rouge&quot;&gt;rescale&lt;/code&gt; function of R to remap the averages to &lt;script type=&quot;math/tex&quot;&gt;[0,1]&lt;/script&gt;. Therefore the actual values of the metrics are lost in the radar plot. This is something I’ll work on to include in future versions. I’ll also be creating an app, either in shiny or JavaScript that will allow users to compare different referees as they see fit.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 24 Dec 2016 00:00:00 +0000</pubDate>
+        <link>/2016/12/24/RefRadar.html</link>
+        <guid isPermaLink="true">/2016/12/24/RefRadar.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>The Data Dialogue - At War with Data</title>
@@ -49,6 +148,29 @@
         <pubDate>Fri, 02 Dec 2016 00:00:00 +0000</pubDate>
         <link>/2016/12/02/Quantcast.html</link>
         <guid isPermaLink="true">/2016/12/02/Quantcast.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Notes from a Quantcast Talk</title>
+        <description>&lt;p&gt;As I sit on the train to London waiting for my model to finish fitting I realised that it had been a while since I had written a blog post.&lt;/p&gt;
+
+&lt;p&gt;My PhD school holds a bimonthly seminar and this weeks guest speaker was Dr. Peter Day who is a director of engineering at &lt;a href=&quot;www.quantcast.com&quot;&gt;Quantcast&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now Quantcast is a 21st century advertising agency offering real time advertisement strategy and analytic tools. The lecture was based around their use of data and how statistics and infrastructure has helped make advertising more relevant and serve better adds.&lt;/p&gt;
+
+&lt;p&gt;My first &lt;code class=&quot;highlighter-rouge&quot;&gt;did you know&lt;/code&gt; was that the adverts you see on websites are sold in real time as you load the page. So in the time it takes from clicking a link on Goole to the page appearing in your browser, the add space has been bought microseconds earlier and now serving a specific add designed for you. A remarkable engineering achievement, that in the short time it takes from clicking a link to seeing a page that an auction takes place, a winner is found and the add is served. But this is not the main product of Quantcast.&lt;/p&gt;
+
+&lt;p&gt;Instead, Quantcast is more about finding out more about population behaviours and how effective that advert will be. They crunch the necessary data from the variety of cookies they collect and come up with a pricing strategy based on who might see the add. Where as one company might try to show the add to as many people as possible (the fire-hose strategy) Quantcast might drill down on certain factors and change their bidding price based on these factors.&lt;/p&gt;
+
+&lt;p&gt;This problem is the standard &lt;code class=&quot;highlighter-rouge&quot;&gt;big data&lt;/code&gt; problem. The amount of data you can collect from cookies; visited websites, location, device etc. can lead to many other inferences which gives a large amount of variables for a large amount of people. Computing this information lead to Quantcast developing their own database and data tools as the current market leaders (Hadoop and derivatives) where not performing well enough. Although they did hint that they was looking at moving to AWS to solve some of their infrastructure problems.&lt;/p&gt;
+
+&lt;p&gt;Overall, it was an interesting talk about a field that I hadn’t really paid that much attention too previously and I definitely learnt something new. It also made me thankful of my add blocker and slightly more paranoid. So thank to Quantcast for coming down and delivering an enjoyable seminar!&lt;/p&gt;
+</description>
+        <pubDate>Fri, 02 Dec 2016 00:00:00 +0000</pubDate>
+        <link>/2016/12/02/QuantCast.html</link>
+        <guid isPermaLink="true">/2016/12/02/QuantCast.html</guid>
         
         
       </item>
@@ -204,143 +326,6 @@ optim(c(0.5, 0.5), function(x) (-1)*expectedBankRoll(x, p, b))
         <pubDate>Wed, 17 Aug 2016 00:00:00 +0100</pubDate>
         <link>/2016/08/17/Dissertation-Learnings.html</link>
         <guid isPermaLink="true">/2016/08/17/Dissertation-Learnings.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Posterior p-values</title>
-        <description>&lt;p&gt;I am now at the point in my work where I need to check my models and whether they correctly describe the data. To do this, lets introduce posterior p-values for a Bayesian model.&lt;/p&gt;
-
-&lt;p&gt;Say we have data &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; that we fit using a model &lt;script type=&quot;math/tex&quot;&gt;F&lt;/script&gt; with parameters &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;. As we would have used MCMC to fit the model we have chain of parameter values &lt;script type=&quot;math/tex&quot;&gt;\{\theta ^{(0)} ... \theta ^{(n)}\}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;For each parameter value we can obtain simulated data &lt;script type=&quot;math/tex&quot;&gt;\hat{y} _i = F( \theta ^{(i)})&lt;/script&gt; such that we now have &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; simulated data sets.&lt;/p&gt;
-
-&lt;p&gt;We now chose a test statistic, &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt; and calculate it for each simulated data set. We can now how &lt;script type=&quot;math/tex&quot;&gt;T_{\text{real}}&lt;/script&gt; compares to the &lt;script type=&quot;math/tex&quot;&gt;T_{\text{sim}}&lt;/script&gt;. If &lt;script type=&quot;math/tex&quot;&gt;T_{\text{real}}&lt;/script&gt; is drastically different from the simulated &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt;’s then there is a problem with our model, it is not correctly picking up something intrinsic to the real data.&lt;/p&gt;
-
-&lt;p&gt;Like all good introductions, lets add some real data to try and explain the concepts better.&lt;/p&gt;
-
-&lt;p&gt;Our real data will be simulated from the Generalised Pareto distribution (gpd) and we will fit both an exponential model and a gpd model.&lt;/p&gt;
-
-&lt;p&gt;So now we have three data sets, &lt;script type=&quot;math/tex&quot;&gt;y_{\text{real}}, \hat{y}_{\text{gpd}}, \hat{y}_{\text{exp}}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/realandsimdata.png&quot; alt=&quot;Real and Simulated Data&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;We can see straight away that the gpd model has nicely replicated the general shape of the real data, where as the exponential model has produced a poor fit.&lt;/p&gt;
-
-&lt;p&gt;Now we chose a test statistic, &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt;. For simplicity we shall use the maximum value of the data set, &lt;script type=&quot;math/tex&quot;&gt;T(x) = \max x_i&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;So we now calculate the maximum value for all our simulated datatsets of both models and see how the maximum of the real data compares.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/maxvaldist.png&quot; alt=&quot;Maximum Value Distributions&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The solid black line in the maximum value of the real data set and just by inspection we can reasonably assume that the data is best modelled using a gpd model. Even more so as the x-axis is on a log scale!.&lt;/p&gt;
-
-&lt;p&gt;So this test statistic appears to be suitable of discerning if the data comes from a gpd.&lt;/p&gt;
-
-&lt;p&gt;Now by doing some maths you can calculate the usual power and size of the test statistic, but I’ll save that for a another blog post. This also shows how this method can seem analogous to frequentist p-values.&lt;/p&gt;
-
-&lt;p&gt;Now, lets try using the same method but this time the real data is going to come from an exponential distribution.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/maxvalexp.png&quot; alt=&quot;Maximum Value Distributions Exp&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Here our test statistic has failed. This is no obvious difference between the two distributions of the maximum value for the models. Therefore we can not conclude anything. A better test statistic is required!&lt;/p&gt;
-
-&lt;p&gt;So overall, we have shown how to utilise basic test statistics and simulated datasets to analyse the suitability of a model.&lt;/p&gt;
-
-&lt;p&gt;References:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.stat.columbia.edu/~gelman/research/published/A6n41.pdf&quot;&gt;http://www.stat.columbia.edu/~gelman/research/published/A6n41.pdf&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The Big Red Book of Bayesian Data Analytics (Bayesian Data Analytics by Gelman et al.)&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 20 May 2016 00:00:00 +0100</pubDate>
-        <link>/2016/05/20/Posterior-pvalues.html</link>
-        <guid isPermaLink="true">/2016/05/20/Posterior-pvalues.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Bulk Downloading from Turnitin using Python.</title>
-        <description>&lt;p&gt;As a teaching assistant, occasionally I get assigned to marks a series of papers. This involves tediously searching for the students paper on the Turnitin app inside moodle before clicking a download button. When you’ve got 36 papers to download, this is far to much clicking and mouse movement. So I wrote a Python script to automate it.&lt;/p&gt;
-
-&lt;p&gt;Firstly, I had to consider how the file was pulled from the server. Thankfully, it was a simple POST request with the paper id as one of the parameters. Using the FireFox addon Tamper, I was able to easily view and submit a custom post request. All it required was a session id and paper id.&lt;/p&gt;
-
-&lt;p&gt;Moving onto Python, I used the urllib2 package to open the custom POST url. Then it was a case of writing the response to a pdf file. Extending this to 36 urls is as simple as looping through each line in a file.&lt;/p&gt;
-
-&lt;p&gt;In Python-esque pseudo-code, this looks like:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;urllib2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;urlopen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;base_url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sessionid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;paperid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;pdf_file&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;pdf_file&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The simplicity of the urllib2 is what makes this short script so easy to construct and use.&lt;/p&gt;
-
-&lt;p&gt;Future work would be to get the session id automatically rather than manually copying and pasting it in.&lt;/p&gt;
-
-&lt;p&gt;On an unrelated note, looks like I need to fix the code formatting above. I’ll save that for another day.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 28 Jan 2016 00:00:00 +0000</pubDate>
-        <link>/2016/01/28/Python-Url.html</link>
-        <guid isPermaLink="true">/2016/01/28/Python-Url.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Films I&#39;ve Watched In January 2016</title>
-        <description>&lt;p&gt;Ordered as per my memory!&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;V for Vendetta&lt;/li&gt;
-  &lt;li&gt;Cartel Land&lt;/li&gt;
-  &lt;li&gt;Howl&lt;/li&gt;
-  &lt;li&gt;Silence of The Lambs&lt;/li&gt;
-  &lt;li&gt;Sicario&lt;/li&gt;
-  &lt;li&gt;Star Wars 7&lt;/li&gt;
-  &lt;li&gt;Legend&lt;/li&gt;
-  &lt;li&gt;Mad Max: Fury Road&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Silence of the Lambs easily comes out top and I’ll be the millionth person to say that the acting and story is captivating. If you’ve not seen it, put it high on your list of things to watch.&lt;/p&gt;
-
-&lt;p&gt;Mad Max is the most over rated. Despite the various internet list raving about it the non-stop action and lack of real character development just didn’t click with me. The fact that they ended up turning around on the road just to go back again felt like a bit of a cop out.&lt;/p&gt;
-
-&lt;p&gt;Legend was another underwhelming occurrence. I felt like it was trying to appeal to the separate male and female audiences in tandem and not really connecting with either. Whilst the technical effect of having Tom Hardy play both roles was interesting, it wasn’t enough to salvage the story. In the end it was the worst of both a love story and a gangster film.&lt;/p&gt;
-
-&lt;p&gt;Similarly, Sicario started off as a cop/military film before throwing that all out the window to become a revenge film. The first half is intense and lets you develop a real distrust of the authority figures, but this eventually fizzles out as the film moves onto the revenge part before ending with either questions for the audience to think about themselves but they actually feel like plot holes. Still, it peaked my interest in the Mexican Cartel story, hence I gave Cartel Land a watch. It’s an alright documentary, but less about the Cartels and more about the resistance against them.&lt;/p&gt;
-
-&lt;p&gt;My only trip to the cinema in January was to beat the crowds and finally see the behemoth that is the new Star Wars. It does everything right but it doesn’t push any boundaries. The more I think of it, the more I realise that it is basically a HD remake of A New Hope. But still, I look forward to number 8 and see whether that is a bit more adventurous.&lt;/p&gt;
-
-&lt;p&gt;Finally, Howl, your classic lower budget horror film. It ticks the boxes and provides enough core and creature shots to leave you feeling satisfied. Watch it as an appetiser to Dog Soldiers.&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 25 Jan 2016 00:00:00 +0000</pubDate>
-        <link>/2016/01/25/January-Films.html</link>
-        <guid isPermaLink="true">/2016/01/25/January-Films.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>The First Workshop</title>
-        <description>&lt;p&gt;On Friday the 25th of September I took myself along to King’s College to attend the London-Paris Bachelier Workshop on Mathematical Finance. It was a two day event designed to highlight the collaboration between London and Parisian universities in the maths and finance field. As a new graduate student of this field I thought it was a good opportunity to attend.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/londonparis.jpg&quot; alt=&quot;My badge&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Whilst there were many interesting topics, the stand out talk for me was John Armstrong on stochastic filtering. By projecting a stochastic equation onto a manifold and choosing an appropriate metric, an approximate solution can be found. The exact details are a bit beyond my grasp and I hope that I haven’t misinterpreted the overall aim of the talk. I hope that in the future I can look back on this and re-write it with a better understanding!&lt;/p&gt;
-
-&lt;p&gt;Overall, the workshop was an excellent introduction to what to expect as a grad student and I look forward to attending more.&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 07 Oct 2015 00:00:00 +0100</pubDate>
-        <link>/2015/10/07/The-First-Workshop.html</link>
-        <guid isPermaLink="true">/2015/10/07/The-First-Workshop.html</guid>
         
         
       </item>
