@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Blog</title>
+    <title>Introducing the Referee Radar</title>
     <meta name="description" content="All rights reserved.">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/blog/">
+    <link rel="canonical" href="/2016/12/24/Ref-Radar-Intro.html">
 </head>
 
 
@@ -70,191 +70,24 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Blog</h1>
+    <h1 class="post-title">Introducing the Referee Radar</h1>
+    <p class="post-meta">Dec 24, 2016</p>
   </header>
 
   <article class="post-content">
-      <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Jan 7, 2017</span>
+    <p>The radar plot is a good way to analyse different metrics across a group. The football player radar made popular by <a href="http://statsbomb.com/2016/04/understand-football-radars-for-mugs-and-muggles/">Ted Knutson</a> is good at comparing players and seeing how their stats stack up against one another. Here I will be taking a similar concept and using the radar plot to analyse the referee’s in the professional game in England.</p>
 
-        <h2>
-          <a class="post-link" href="/2017/01/07/InhomoPoisson.html">Inhomogenous Poisson Process</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 7, 2017</span>
+<p>First, we need to chose some metrics. Using the data from <a href="http://www.football-data.co.uk/">Football-Data</a> we can download all the league matches from the last three seasons. In this data we are privy to the number of fouls, yellow cards and red cards for both the home and away team. That gives us 6 variables for each match and each referee, the perfect amount for a radar plot.</p>
 
-        <h2>
-          <a class="post-link" href="/2017/01/07/FebFilms.html">Febfilms</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 7, 2017</span>
+<p>For each referee we can calculate the average amount of fouls, yellow and red cards the gave to both the home and away team. This will allow us to detect whether a referee is particularly card happy or even has a home or away bias. In terms of practicality, we have to set a threshold for minimum number of games officiated. We remove any ref that has refereed less than 20 games over the three seasons.</p>
 
-        <h2>
-          <a class="post-link" href="/2017/01/07/MikeDeanRefRadar.html">Mike Dean and the Ref Radar</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Dec 24, 2016</span>
+<p>Using the <a href="https://github.com/ricardo-bion/ggradar">ggradar</a> package  and tweaking some of the graphical parameters we are able to come up with the following plot.</p>
 
-        <h2>
-          <a class="post-link" href="/2016/12/24/Ref-Radar-Intro.html">Introducing the Referee Radar</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Dec 7, 2016</span>
+<p><img src="/assets/RefereeRadar.png" alt="RefereeRadar" /></p>
 
-        <h2>
-          <a class="post-link" href="/2016/12/07/DataDialogue.html">The Data Dialogue - At War with Data</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Dec 2, 2016</span>
+<p>Here we are comparing four referees (at random) and how their metrics personally match against the population of all referees. Here we can see Andy D’Urso is particular for sending an away player off. Simon Hooper is quite a stickler for a foul. Nigel Miller is laid back, not giving many fouls and not giving out the yellow cards either. Chris Kavanagh is very middle of the pack, consistent across home and away for both fouls and cautions.</p>
 
-        <h2>
-          <a class="post-link" href="/2016/12/02/Quantcast.html">Notes from a Quantcast Talk</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Dec 2, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/12/02/QuantCast.html">Notes from a Quantcast Talk</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 27, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/10/27/Weighted-Bayes.html">Thoughts on Weights in Bayesian Regression</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 29, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/09/29/Kelly-Betting-Part-Two.html">Kelly Betting - Part Two</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 2, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/09/02/Kelly-Betting-Part-One.html">Kelly Betting - Part One</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Aug 17, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/08/17/Dissertation-Learnings.html">Dissertation Construction Learnings</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">May 20, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/05/20/Posterior-pvalues.html">Posterior p-values</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 28, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/01/28/Python-Url.html">Bulk Downloading from Turnitin using Python.</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 25, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/01/25/January-Films.html">Films I've Watched In January 2016</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 4, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/01/04/Bayes.html">Introduction To Bayseian Inference</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 15, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/2015/10/15/LearningToLearn.html">Learning How To Learn</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 7, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/2015/10/07/The-First-Workshop.html">The First Workshop</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 30, 2014</span>
-
-        <h2>
-          <a class="post-link" href="/2014/11/30/Trading-Interviews.html">Prop Shop Interviews</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 6, 2014</span>
-
-        <h2>
-          <a class="post-link" href="/2014/11/06/Playing-About-With-shiny.html">Playing About with Shiny</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 28, 2014</span>
-
-        <h2>
-          <a class="post-link" href="/2014/09/28/Playing-About-With-ggplot.html">Playing About with ggplot</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 19, 2014</span>
-
-        <h2>
-          <a class="post-link" href="/2014/09/19/The-First-Blog-Post.html">That First Blog Post</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Feb 4, 2014</span>
-
-        <h2>
-          <a class="post-link" href="/2014/02/04/PDEs.html">Things I've learnt about PDE's</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+<p>The package <code class="highlighter-rouge">ggradar</code> requires all the variables to have a consistent range. For this I used the <code class="highlighter-rouge">rescale</code> function of R to remap the averages to <script type="math/tex">[0,1]</script>. Therefore the actual values of the metrics are lost in the radar plot. This is something I’ll work on to include in future versions. I’ll also be creating an app, either in shiny or JavaScript that will allow users to compare different referees as they see fit.</p>
 
   </article>
 

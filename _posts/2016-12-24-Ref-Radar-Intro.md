@@ -14,6 +14,6 @@ Using the [ggradar](https://github.com/ricardo-bion/ggradar) package  and tweaki
 
 ![RefereeRadar](/assets/RefereeRadar.png){:. center-image}
 
-Here we are comparing four referees (at random) and how there metrics personally match against the population of all referees. Here we can see Andy D'Urso is particular for sending an away player off. Simon Hooper is quite a stickler for a foul. Nigel Miller is laid back, not giving many fouls and not giving out the yellow cards either. Chris Kavanagh is very middle of the pack, consistent across home and away for both fouls and cautions. 
+Here we are comparing four referees (at random) and how their metrics personally match against the population of all referees. Here we can see Andy D'Urso is particular for sending an away player off. Simon Hooper is quite a stickler for a foul. Nigel Miller is laid back, not giving many fouls and not giving out the yellow cards either. Chris Kavanagh is very middle of the pack, consistent across home and away for both fouls and cautions. 
 
 The package `ggradar` requires all the variables to have a consistent range. For this I used the `rescale` function of R to remap the averages to $$[0,1]$$. Therefore the actual values of the metrics are lost in the radar plot. This is something I'll work on to include in future versions. I'll also be creating an app, either in shiny or JavaScript that will allow users to compare different referees as they see fit. 

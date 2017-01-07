@@ -5,8 +5,8 @@
     <description>All rights reserved.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 24 Dec 2016 17:48:49 +0000</pubDate>
-    <lastBuildDate>Sat, 24 Dec 2016 17:48:49 +0000</lastBuildDate>
+    <pubDate>Sat, 07 Jan 2017 19:09:45 +0000</pubDate>
+    <lastBuildDate>Sat, 07 Jan 2017 19:09:45 +0000</lastBuildDate>
     <generator>Jekyll v3.1.0</generator>
     
       <item>
@@ -22,9 +22,9 @@ THe inhomogenous poisson process is easily defined, instead of constant rate $\l
 3. The accepted times are the correct times of the inhomogenous process.&lt;/p&gt;
 
 </description>
-        <pubDate>Sat, 24 Dec 2016 17:48:49 +0000</pubDate>
-        <link>/2016/12/24/InhomoPoisson.html</link>
-        <guid isPermaLink="true">/2016/12/24/InhomoPoisson.html</guid>
+        <pubDate>Sat, 07 Jan 2017 19:09:45 +0000</pubDate>
+        <link>/2017/01/07/InhomoPoisson.html</link>
+        <guid isPermaLink="true">/2017/01/07/InhomoPoisson.html</guid>
         
         
       </item>
@@ -78,9 +78,37 @@ With the debate of IEX continually appearing on my Twitter timeline and my Phd w
 Whilst the book is an easy read, I found it a bit light on the details and prehaps a bit of negativity to give it a bit of balance. It felt much like a good PR read for NASA and many of it’s weaknesses were actually it’s strenghts. I.e. the flat organisational structure that means that returning astronaughts are placed bottom of the pile. Much like Alex Fergusan said, no player bigger than the club - no astronaught bigger than NASA.&lt;/p&gt;
 
 </description>
-        <pubDate>Sat, 24 Dec 2016 17:48:49 +0000</pubDate>
-        <link>/2016/12/24/FebFilms.html</link>
-        <guid isPermaLink="true">/2016/12/24/FebFilms.html</guid>
+        <pubDate>Sat, 07 Jan 2017 19:09:45 +0000</pubDate>
+        <link>/2017/01/07/FebFilms.html</link>
+        <guid isPermaLink="true">/2017/01/07/FebFilms.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Mike Dean and the Ref Radar</title>
+        <description>&lt;p&gt;It was a tough day at the office last week for Mike Dean. The match was Manchester United vs West Ham and after 15 minutes he dismissed Feghouli for a foul tackle. The tempo of the game changed. West Ham wereon the back foot and eventually conceeded two goals to Man Utd. Undeniably the red card had a big effecton the outcome of the game. It has since been rescinded, showing that the FA agree with fans that perhaps it should not have been a red card.&lt;/p&gt;
+
+&lt;p&gt;There has also been a tweet circulating that Mike Dean in his last 7 Tottenham games has sent of three opposition players. On first reading this raises some eyebrows. Is this just a statistical oddidty or is there something deeper in the numbers? A prime opportunity to explore our RefRadar of Mike Dean and see how he compares to the other Premier League referees.&lt;/p&gt;
+
+&lt;p&gt;Lets look at the season so far (2016/17) in isolation.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/MikeDeanRefRadar.png&quot; alt=&quot;Mike Dean Ref Radar&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So as we can see here, Mike Dean does like penalising the away team more than the home team for both fouls and yellow cards. Obviously these two stats are going to be correlated. But it is still interesting to see how he is fairly close to the average amount for penalising the home team, but for the away team he is frequently giving fouls and yellow cards out.&lt;/p&gt;
+
+&lt;p&gt;Mike Dean has officiated the 5th most amount of games in the league. So lets look at the 3 other referees who have had more games.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/MikeDeanRefRadarComp.png&quot; alt=&quot;Mike Dean Ref Radar Comp&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Most notably, three out of four of the most active referees this season are the ones giving the most yellow cards to the away teams whereas they are middle of the pack for the home yellow cards. A similar trend is seen for the away fouls, but like previous, these two variables are going to be highly correlated.
+The stand out statistic though is Mike Deans average away red cards. He is a clearly the most likeley to send off a player of the away team out of this selection of referees. In fact the three other referees haven’t sent anyone off from the away team yet this season! But something to keep in mind is that this is a really small sample size. The season is about half way through so there is still plenty of time for the other referees to catch up on the red cards.&lt;/p&gt;
+
+&lt;p&gt;So in conclusion, whatever match Mike Dean is appointed to next, the away team should keep in my mind a red card is never far away. But perhaps the FA are going to have a word with Mike Dean and he will have an easy couple of games to bring his average down. The RefRadar here has been usefull to look at how active the officials have been compared to their peers. Lets see what the next round of football brings!&lt;/p&gt;
+</description>
+        <pubDate>Sat, 07 Jan 2017 00:00:00 +0000</pubDate>
+        <link>/2017/01/07/MikeDeanRefRadar.html</link>
+        <guid isPermaLink="true">/2017/01/07/MikeDeanRefRadar.html</guid>
         
         
       </item>
@@ -95,15 +123,15 @@ Whilst the book is an easy read, I found it a bit light on the details and preha
 
 &lt;p&gt;Using the &lt;a href=&quot;https://github.com/ricardo-bion/ggradar&quot;&gt;ggradar&lt;/a&gt; package  and tweaking some of the graphical parameters we are able to come up with the following plot.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/refereeRadar.png&quot; alt=&quot;RefereeRadar&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/RefereeRadar.png&quot; alt=&quot;RefereeRadar&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Here we are comparing four referees (at random) and how there metrics personally match against the population of all referees. Here we can see Andy D’Urso is particular for sending an away player off. Simon Hooper is quite a stickler for a foul. Nigel Miller is laid back, not giving many fouls and not giving out the yellow cards either. Chris Kavanagh is very middle of the pack, consistent across home and away for both fouls and cautions.&lt;/p&gt;
+&lt;p&gt;Here we are comparing four referees (at random) and how their metrics personally match against the population of all referees. Here we can see Andy D’Urso is particular for sending an away player off. Simon Hooper is quite a stickler for a foul. Nigel Miller is laid back, not giving many fouls and not giving out the yellow cards either. Chris Kavanagh is very middle of the pack, consistent across home and away for both fouls and cautions.&lt;/p&gt;
 
 &lt;p&gt;The package &lt;code class=&quot;highlighter-rouge&quot;&gt;ggradar&lt;/code&gt; requires all the variables to have a consistent range. For this I used the &lt;code class=&quot;highlighter-rouge&quot;&gt;rescale&lt;/code&gt; function of R to remap the averages to &lt;script type=&quot;math/tex&quot;&gt;[0,1]&lt;/script&gt;. Therefore the actual values of the metrics are lost in the radar plot. This is something I’ll work on to include in future versions. I’ll also be creating an app, either in shiny or JavaScript that will allow users to compare different referees as they see fit.&lt;/p&gt;
 </description>
         <pubDate>Sat, 24 Dec 2016 00:00:00 +0000</pubDate>
-        <link>/2016/12/24/RefRadar.html</link>
-        <guid isPermaLink="true">/2016/12/24/RefRadar.html</guid>
+        <link>/2016/12/24/Ref-Radar-Intro.html</link>
+        <guid isPermaLink="true">/2016/12/24/Ref-Radar-Intro.html</guid>
         
         
       </item>
@@ -303,29 +331,6 @@ optim(c(0.5, 0.5), function(x) (-1)*expectedBankRoll(x, p, b))
         <pubDate>Fri, 02 Sep 2016 00:00:00 +0100</pubDate>
         <link>/2016/09/02/Kelly-Betting-Part-One.html</link>
         <guid isPermaLink="true">/2016/09/02/Kelly-Betting-Part-One.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Dissertation Construction Learnings</title>
-        <description>&lt;p&gt;With my dissertation handed in it is time to reflect on what I’ve learnt in terms from constructing the 20,000 word file.&lt;/p&gt;
-
-&lt;p&gt;Firstly, the importance of having an established workflow. If I was to calculate how my time was divided in writing my dissertation an unfortunate amount of time would have been dedicated to collating the many graphs that my work produced. I didn’t have dedicated functions outputting graphs ready to be saved into hard copies at later dates. Instead, I had a variety of functions that produced the results, but using different methods, different representations and different formats. Therefore, for my future work, every time I produce new results which leads to new graphs I need to have functions that can easily output the appropriate data when needed.&lt;/p&gt;
-
-&lt;p&gt;Secondly, my interweaving of Tikz and LaTeX lead to a few troubles. Mainly due to the size of the graphs and lack of available memory for Latex when compiling. My previous method of importing the raw .tex files of the graphs will need to be changed such that all the .tex files are compiled into pdf’s before being imported into Latex. This will also lead to quicker compile times for my Latex document. At some points I was seeing compile times of &amp;gt;5 minutes!&lt;/p&gt;
-
-&lt;p&gt;The use of tables and summarising the final results also lead to some troubles. Copying and pasting the results from the R output to the latex document was not the most efficient use and led to frequent updating each time the results were updated. The solution to this is slightly trickier. Perhaps an interwoven use of RMarkdown and Latex could solve this problem. But at the minute it remains unsolved.&lt;/p&gt;
-
-&lt;p&gt;In an attempt to develop a better workflow I’ve taken to use RMarkdown to construct my research in a more verbose way. This allows me to write around code and output the results straight away without having to translate between R and latex. So far it seems to be working nicely but I’ve yet to try and output to latex.&lt;/p&gt;
-
-&lt;p&gt;Overall, the process of writing my dissertation has shown the importance in establishing good techniques in outputting the results you find and not just focusing on getting the results. With these learnings I’ll be in good preparation for my next dissertation-like project.&lt;/p&gt;
-
-&lt;p&gt;RMarkdown: &lt;a href=&quot;http://rmarkdown.rstudio.com/ &quot;&gt;http://rmarkdown.rstudio.com/ &lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 17 Aug 2016 00:00:00 +0100</pubDate>
-        <link>/2016/08/17/Dissertation-Learnings.html</link>
-        <guid isPermaLink="true">/2016/08/17/Dissertation-Learnings.html</guid>
         
         
       </item>
