@@ -1,6 +1,6 @@
 ---
-title: About Me
-layout: post
+title: Home
+layout: default
 ---
 I am a newly started graduate student at University College London (UCL)  and a member of the Financial Computing CDT. I have just completed my MRes in Computer Science and now started my PhD in the Statistical Science department.  Previously, I completed an MPhys in Theoretical Physics at the University of Manchester. 
 
@@ -19,5 +19,4 @@ Outside of academia, I enjoy a good film and a bit of a foodie. Here I am enjoyi
       {{ post.excerpt }}
   {% endfor %}
 </ul>
-
 
