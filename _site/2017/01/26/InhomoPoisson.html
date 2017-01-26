@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Things I've learnt about PDE's</title>
+    <title>Inhomogenous Poisson Process</title>
     <meta name="description" content="All rights reserved.">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/2014/02/04/PDEs.html">
+    <link rel="canonical" href="/2017/01/26/InhomoPoisson.html">
 </head>
 
 
@@ -70,14 +70,20 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Things I've learnt about PDE's</h1>
-    <p class="post-meta">Feb 4, 2014</p>
+    <h1 class="post-title">Inhomogenous Poisson Process</h1>
+    <p class="post-meta">Jan 26, 2017</p>
   </header>
 
   <article class="post-content">
-    <p>For my Masters project, I have a PDE that I need to solve to gain some insight on the dynamics of cancer cells in a fixed population. Having only used the simpleset of partial differential equations previously, i.e. heat equation, wave equation and the Black Schole’s, my knowledge on solving a ‘general’ PDE was limited.</p>
+    <p>My first forray into statistics and finance begins with the simulation, fitting and checking of the inhomogenous poisson process.
+THe inhomogenous poisson process is easily defined, instead of constant rate $\lambda$ as per the usual Poisson process, the rate can now varry in time.</p>
 
-<p>Firstly, PDE’s can be classified depending on their coefficients.</p>
+<p>Simulating this is done using a method called thinning; a Poisson process is simulated with rate greater than the inhomogenous rate, with points being rejected, or “thinned” out to give the final inhomogenous process.</p>
+
+<p>Therefore the algorithm runs as follows: 
+1. Generate a Poisson varaible with rate $\lambda ^<em>$ such that $\lambda ^</em> &gt; \lambda (t) \forall t$. Increment time by this variable. 
+2. Calculate the ratio $\lambda (t) / \lambda ^*$ and compare this to a unifromally distributed variable. If the ratio is greater then accept the time else reject the time and continue with step one again. 
+3. The accepted times are the correct times of the inhomogenous process.</p>
 
 
   </article>
