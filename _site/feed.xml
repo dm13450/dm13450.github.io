@@ -5,82 +5,29 @@
     <description>All rights reserved.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 26 Jan 2017 09:16:14 +0000</pubDate>
-    <lastBuildDate>Thu, 26 Jan 2017 09:16:14 +0000</lastBuildDate>
+    <pubDate>Thu, 16 Feb 2017 16:50:58 +0000</pubDate>
+    <lastBuildDate>Thu, 16 Feb 2017 16:50:58 +0000</lastBuildDate>
     <generator>Jekyll v3.1.0</generator>
     
       <item>
-        <title>Inhomogenous Poisson Process</title>
-        <description>&lt;p&gt;My first forray into statistics and finance begins with the simulation, fitting and checking of the inhomogenous poisson process.
-THe inhomogenous poisson process is easily defined, instead of constant rate $\lambda$ as per the usual Poisson process, the rate can now varry in time.&lt;/p&gt;
+        <title>Mark Clattenberg</title>
+        <description>&lt;p&gt;The news has just broken that Premier League referee &lt;a href=&quot;https://www.premierleague.com/news/334134&quot;&gt;Mark Clattenberg is moving to Saudi Arabia&lt;/a&gt;. Having refereed the FA Cup final, Champions League Final and Euro final last year alone he can quite comfortably say he has done it all. As they say, you are only as good as the last game you refereed, so perhaps moving somewhere less visible is a good end to an exemplary career.&lt;/p&gt;
 
-&lt;p&gt;Simulating this is done using a method called thinning; a Poisson process is simulated with rate greater than the inhomogenous rate, with points being rejected, or “thinned” out to give the final inhomogenous process.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/markclattenberg.png&quot; alt=&quot;Mark Clattenberg&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Therefore the algorithm runs as follows: 
-1. Generate a Poisson varaible with rate $\lambda ^&lt;em&gt;$ such that $\lambda ^&lt;/em&gt; &amp;gt; \lambda (t) \forall t$. Increment time by this variable. 
-2. Calculate the ratio $\lambda (t) / \lambda ^*$ and compare this to a unifromally distributed variable. If the ratio is greater then accept the time else reject the time and continue with step one again. 
-3. The accepted times are the correct times of the inhomogenous process.&lt;/p&gt;
+&lt;p&gt;Across both seasons (or season and a half) he has been consistent in the number of red cards for both home and away. The same with his foul counts. Quite a large difference in the in the amount of yellow cards though, the only thing that different between the two seasons.&lt;/p&gt;
 
+&lt;p&gt;A good comparison can be made between Clattenberg and Howard Webb in their ‘peak’ years. Howard Webb refereed the World Cup Final and Champions League final in the 2009/10 season (missing out on the FA Cup final to Chris Foy).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/mchwradar.png&quot; alt=&quot;Clattenberg and Webb Radar&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Webb was average for fouls throughout that season but more active with the yellow cards and under active with the red cards. Overall it is quite the rounded radar, nothing really striking out. Whereas Clattenberg’s with the high amount of away yellow cards is a bit more jagged. The difference in shapes between the two referees gives an indication of the different styles and personalities of the referees.&lt;/p&gt;
+
+&lt;p&gt;Overall, the Premier League will be missing out on a good referee, but it is probably a sensible decision for Mark to take, he’s reached the top, time to take some of the rewards.&lt;/p&gt;
 </description>
-        <pubDate>Thu, 26 Jan 2017 09:16:14 +0000</pubDate>
-        <link>/2017/01/26/InhomoPoisson.html</link>
-        <guid isPermaLink="true">/2017/01/26/InhomoPoisson.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Febfilms</title>
-        <description>&lt;hr /&gt;
-&lt;p&gt;layout: post
-title: Films and Books of February
-date: 2016-02-03
-***&lt;/p&gt;
-
-&lt;p&gt;Carrying from last months post and an in an attempt to make a habit out of writing I am going to have a look at the films and books consumed in February. 
-This time I’ve ordered them roughly on how good they are.&lt;/p&gt;
-
-&lt;p&gt;** Films&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Spotlight&lt;/li&gt;
-  &lt;li&gt;The Big Short&lt;/li&gt;
-  &lt;li&gt;What We Do In The Shadows&lt;/li&gt;
-  &lt;li&gt;Edge of Tomorrow&lt;/li&gt;
-  &lt;li&gt;Alien and Aliens&lt;/li&gt;
-  &lt;li&gt;Bridge of Spies&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Spotlight and The Big Short are going to find themselves tough to beat in 2016. Both stellar films highlighting the state of corruption in our society albeit with different tones.&lt;/p&gt;
-
-&lt;p&gt;Moving onto the more lighthearted films, What We Do In The Shadows (WWDITS) is an original, low budgety comedy that will make you laugh. It takes on the mockumentary approach adds a supernatural spin. It takes all the good parts from The Inbetweeners, The Office and vampire lore and package them into a film. This is what WWDITS essentially is. I look forward to a sequal and more from the director. 
-Speaking again of originallity, Edge of Tomorrow will take any viewer back to there childhood. It’s got robots, aliens, high tech weaponary and a respawning mechanic. If you want a film to watch on a saturday night after the X-Factor has finished you’d be hard pressed to find something as enjoyable as Edge of Tomorrow.&lt;/p&gt;
-
-&lt;p&gt;Bridge of Spies fell a bit to me. Like last months Legend viewing, Bridge of Spies couldn’t deciede whether it wanted to be a courtroom drama or more focused on the negotiation aspect between East Germany and Russia. As a result you got two unsatisfactory parts of the film. It also had the usual Spielberg quirks: a moment of two people talking over each other, the main character going from being hated to being loved as if public opinion is that black and white. By all means it is a good film, but nothing more. Watch it once and continue with your life.&lt;/p&gt;
-
-&lt;p&gt;Finally, inspired by a play-through of Alien: Isolation on the PS4 I decieded to eduacte myself in the actual films. Alien had the very ‘classical’ sci-fi feel to it, with the beeping terminals, robots so realistic they pass of as humans and finally actual people in rubber suits opposed to CGI. Watching it takes you into that world and makes you nostalgic for the alternate timeline where computers fill rooms and sleeping pods. The influence it has on cinema is easily digested and thankfully doesn’t move into the ‘Seinfield is unfunny’ trope. Similarly, Aliens takes the same angle, although much less delicate. There are even paralels to Edge of Tomorrow and Aliens.&lt;/p&gt;
-
-&lt;p&gt;** Books&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Flash Boys&lt;/li&gt;
-  &lt;li&gt;Chris Hadfield’s Autobiography&lt;/li&gt;
-  &lt;li&gt;The Art of Deception&lt;/li&gt;
-  &lt;li&gt;Crytopnomicon&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Throughout January I was a slave to the behomoth that is Cryprtonomicon and I’m ashamed to say that I still haven’t finished it. I’m 600 pages in and still feel like the proper story is yet to start. Everynow and then one of the characters goes on an arc that has me turning pages, but that usually finishes at the end of the chapter and then the book loses momentum and I find myself looking at the back trying to work out how many pages I need to read a day to finish before the next leap year. For this reason I think I’m going to have to relegate Crytonomicon to the unfinished pile.&lt;/p&gt;
-
-&lt;p&gt;Moving onto the non-fiction books it has been a mixture of finance, space and security. 
-With the debate of IEX continually appearing on my Twitter timeline and my Phd work touching it’s toes in microstructure, Flash Boys has been on my to-read list for a while. I’m still strugling to form an opinion on the morality of HFT even after reading it. I feel like the majority of what is described in Flash Boys can be categorised as market impact. If you place a large order, other traders are going to adjust there prices. The finite nature of passing messages back and forth from exchanges means that there will be information asymetry and thus arbitrage oppurunities.&lt;/p&gt;
-
-&lt;p&gt;From low latency to high latency, Chris Hadfield’s book is a simple and consice account of his time training and actual time in space on various missions. I enjoyed it for the insight into the organisation of NASA and how as a Canadian there is a slightly different path to becoming a spaceman. I imagine it’s similar to the UK and becoming part of the ESA crew. 
-Whilst the book is an easy read, I found it a bit light on the details and prehaps a bit of negativity to give it a bit of balance. It felt much like a good PR read for NASA and many of it’s weaknesses were actually it’s strenghts. I.e. the flat organisational structure that means that returning astronaughts are placed bottom of the pile. Much like Alex Fergusan said, no player bigger than the club - no astronaught bigger than NASA.&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 26 Jan 2017 09:16:14 +0000</pubDate>
-        <link>/2017/01/26/FebFilms.html</link>
-        <guid isPermaLink="true">/2017/01/26/FebFilms.html</guid>
+        <pubDate>Thu, 16 Feb 2017 00:00:00 +0000</pubDate>
+        <link>/2017/02/16/Mark-Clattenberg.html</link>
+        <guid isPermaLink="true">/2017/02/16/Mark-Clattenberg.html</guid>
         
         
       </item>
@@ -117,8 +64,8 @@ mean(dist) == exp(1 + 4^2/2)
 
 </description>
         <pubDate>Thu, 26 Jan 2017 00:00:00 +0000</pubDate>
-        <link>/2017/01/26/JuliaDistributions.html</link>
-        <guid isPermaLink="true">/2017/01/26/JuliaDistributions.html</guid>
+        <link>/2017/01/26/Julia-Distributions.html</link>
+        <guid isPermaLink="true">/2017/01/26/Julia-Distributions.html</guid>
         
         
       </item>
@@ -219,29 +166,6 @@ The stand out statistic though is Mike Deans average away red cards. He is a cle
       </item>
     
       <item>
-        <title>Notes from a Quantcast Talk</title>
-        <description>&lt;p&gt;As I sit on the train to London waiting for my model to finish fitting I realised that it had been a while since I had written a blog post.&lt;/p&gt;
-
-&lt;p&gt;My PhD school holds a bimonthly seminar and this weeks guest speaker was Dr. Peter Day who is a director of engineering at &lt;a href=&quot;www.quantcast.com&quot;&gt;Quantcast&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Now Quantcast is a 21st century advertising agency offering real time advertisement strategy and analytic tools. The lecture was based around their use of data and how statistics and infrastructure has helped make advertising more relevant and serve better adds.&lt;/p&gt;
-
-&lt;p&gt;My first &lt;code class=&quot;highlighter-rouge&quot;&gt;did you know&lt;/code&gt; was that the adverts you see on websites are sold in real time as you load the page. So in the time it takes from clicking a link on Goole to the page appearing in your browser, the add space has been bought microseconds earlier and now serving a specific add designed for you. A remarkable engineering achievement, that in the short time it takes from clicking a link to seeing a page that an auction takes place, a winner is found and the add is served. But this is not the main product of Quantcast.&lt;/p&gt;
-
-&lt;p&gt;Instead, Quantcast is more about finding out more about population behaviours and how effective that advert will be. They crunch the necessary data from the variety of cookies they collect and come up with a pricing strategy based on who might see the add. Where as one company might try to show the add to as many people as possible (the fire-hose strategy) Quantcast might drill down on certain factors and change their bidding price based on these factors.&lt;/p&gt;
-
-&lt;p&gt;This problem is the standard &lt;code class=&quot;highlighter-rouge&quot;&gt;big data&lt;/code&gt; problem. The amount of data you can collect from cookies; visited websites, location, device etc. can lead to many other inferences which gives a large amount of variables for a large amount of people. Computing this information lead to Quantcast developing their own database and data tools as the current market leaders (Hadoop and derivatives) where not performing well enough. Although they did hint that they was looking at moving to AWS to solve some of their infrastructure problems.&lt;/p&gt;
-
-&lt;p&gt;Overall, it was an interesting talk about a field that I hadn’t really paid that much attention too previously and I definitely learnt something new. It also made me thankful of my add blocker and slightly more paranoid. So thank to Quantcast for coming down and delivering an enjoyable seminar!&lt;/p&gt;
-</description>
-        <pubDate>Fri, 02 Dec 2016 00:00:00 +0000</pubDate>
-        <link>/2016/12/02/QuantCast.html</link>
-        <guid isPermaLink="true">/2016/12/02/QuantCast.html</guid>
-        
-        
-      </item>
-    
-      <item>
         <title>Thoughts on Weights in Bayesian Regression</title>
         <description>&lt;p&gt;Weighted regression is common in frequentist approaches to regression. Typically, the weights are known and can be interpreted as the amount each data point is allowed to influence the link between the variables in question. This can be written as
 &lt;script type=&quot;math/tex&quot;&gt;\mathbf{y} = \sum _i w_i \beta _i x_i&lt;/script&gt; 
@@ -323,6 +247,75 @@ optim(c(0.5, 0.5), function(x) (-1)*expectedBankRoll(x, p, b))
         <pubDate>Thu, 29 Sep 2016 00:00:00 +0100</pubDate>
         <link>/2016/09/29/Kelly-Betting-Part-Two.html</link>
         <guid isPermaLink="true">/2016/09/29/Kelly-Betting-Part-Two.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Kelly Betting - Part One</title>
+        <description>&lt;p&gt;In my current experiments I have been using the Kelly criterion to place theoretical bets on certain events. In the process, I found myself wanting to use the Kelly criterion for multiple simultaneous and independent events but come across a number of problems.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Generally, most of the easily accessible Kelly tutorials only cover betting on one event.&lt;/li&gt;
+  &lt;li&gt;Simultaneous Kelly bets are either behind a pay-wall or just a calculator is offered which doesn’t derive any of the results and show how they are obtained.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So like any good scientist I’ve decided to give writing my own guide to Kelly betting. This will be the first part and go through the basic mathematics of the Kelly criterion. The second part will contain the simultaneous Kelly bet methodology.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-kelly-bet&quot;&gt;Why Kelly Bet?&lt;/h3&gt;
+
+&lt;p&gt;Imagine you have a model that predicts the outcome of the event with a probability &lt;script type=&quot;math/tex&quot;&gt;p&lt;/script&gt;. You wish to place a bet on this outcome occurring and find that the bookmakers offer (decimal) odds &lt;script type=&quot;math/tex&quot;&gt;b&lt;/script&gt;. Do you bet the whole house, or are you more conservative? What is the optimal bet size? This was answered by Kelly in 1956.&lt;/p&gt;
+
+&lt;p&gt;To derive the result, we wish to maximise the expected log value of the event. The expected value is&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbb{E} \left[ \log X \right] = p \log (1+ (b-1) x) + (1-p) \log (1- x),&lt;/script&gt;
+
+&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is the amount that is bet. So to find the value of &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; that maximises the expected bank roll we need to do some differentiation&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\partial}{\partial x} \mathbb{E} \left[ \log X \right] = \frac{p(b-1)}{1 + (b-1)x} - \frac{1-p}{1-x}=0,&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{p(b-1)}{1 + (b-1)x} = \frac{1-p}{1-x},&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;x = \frac{pb-1}{b-1}&lt;/script&gt;
+
+&lt;p&gt;Now if we check the Wikipedia article on Kelly betting we find that this is the same result if we convert from decimal odds to fractional odds. Therefore, for whatever probability your model spits out and whatever the odds the bookmaker offers you, you can place a bet that has a positive expected value and thus probably a good idea.&lt;/p&gt;
+
+&lt;p&gt;If the result from the Kelly formula is negative, this means that you wish to take the other side of the bet. With some betting exchanges, this is possible (“laying odds”). But due to the spread between the back and lay odds, you will not be able to immediately lay at the same odds you can back. Therefore you will need to consider the appropriate Kelly bet for laying an odd.&lt;/p&gt;
+
+&lt;p&gt;In the next part I will be looking at multiple bets occurring at the same time and how you can correctly split your bankroll whilst remaining in positive expected value territory.&lt;/p&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Kelly_criterion&quot;&gt;https://en.wikipedia.org/wiki/Kelly_criterion&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.sportsbookreview.com/picks/tools/kelly-calculator/&quot;&gt;http://www.sportsbookreview.com/picks/tools/kelly-calculator/&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 02 Sep 2016 00:00:00 +0100</pubDate>
+        <link>/2016/09/02/Kelly-Betting-Part-One.html</link>
+        <guid isPermaLink="true">/2016/09/02/Kelly-Betting-Part-One.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Dissertation Construction Learnings</title>
+        <description>&lt;p&gt;With my dissertation handed in it is time to reflect on what I’ve learnt in terms from constructing the 20,000 word file.&lt;/p&gt;
+
+&lt;p&gt;Firstly, the importance of having an established workflow. If I was to calculate how my time was divided in writing my dissertation an unfortunate amount of time would have been dedicated to collating the many graphs that my work produced. I didn’t have dedicated functions outputting graphs ready to be saved into hard copies at later dates. Instead, I had a variety of functions that produced the results, but using different methods, different representations and different formats. Therefore, for my future work, every time I produce new results which leads to new graphs I need to have functions that can easily output the appropriate data when needed.&lt;/p&gt;
+
+&lt;p&gt;Secondly, my interweaving of Tikz and LaTeX lead to a few troubles. Mainly due to the size of the graphs and lack of available memory for Latex when compiling. My previous method of importing the raw .tex files of the graphs will need to be changed such that all the .tex files are compiled into pdf’s before being imported into Latex. This will also lead to quicker compile times for my Latex document. At some points I was seeing compile times of &amp;gt;5 minutes!&lt;/p&gt;
+
+&lt;p&gt;The use of tables and summarising the final results also lead to some troubles. Copying and pasting the results from the R output to the latex document was not the most efficient use and led to frequent updating each time the results were updated. The solution to this is slightly trickier. Perhaps an interwoven use of RMarkdown and Latex could solve this problem. But at the minute it remains unsolved.&lt;/p&gt;
+
+&lt;p&gt;In an attempt to develop a better workflow I’ve taken to use RMarkdown to construct my research in a more verbose way. This allows me to write around code and output the results straight away without having to translate between R and latex. So far it seems to be working nicely but I’ve yet to try and output to latex.&lt;/p&gt;
+
+&lt;p&gt;Overall, the process of writing my dissertation has shown the importance in establishing good techniques in outputting the results you find and not just focusing on getting the results. With these learnings I’ll be in good preparation for my next dissertation-like project.&lt;/p&gt;
+
+&lt;p&gt;RMarkdown: &lt;a href=&quot;http://rmarkdown.rstudio.com/ &quot;&gt;http://rmarkdown.rstudio.com/ &lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 17 Aug 2016 00:00:00 +0100</pubDate>
+        <link>/2016/08/17/Dissertation-Learnings.html</link>
+        <guid isPermaLink="true">/2016/08/17/Dissertation-Learnings.html</guid>
         
         
       </item>

@@ -1,0 +1,10 @@
+---
+layout: post
+title: Gaussian Processes In Julia
+---
+
+Gaussian processes are a way of modelling. 
+
+In a very simple example, lets generate some data from a 2D Gaussian with zero mean and unit variance. 
+
+

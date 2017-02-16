@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Home</title>
+    <title>Gaussian Processes In Julia</title>
     <meta name="description" content="All rights reserved.">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/">
+    <link rel="canonical" href="/2017/02/16/gaussianprocess.html">
 </head>
 
 
@@ -67,26 +67,35 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <p>I am a newly started graduate student at University College London (UCL)  and a member of the Financial Computing CDT. I have just completed my MRes in Computer Science and now started my PhD in the Statistical Science department.  Previously, I completed an MPhys in Theoretical Physics at the University of Manchester.</p>
+        <div class="post">
 
-<p>I have worked in the finance industry at large investment bank as part of an equity derivatives team that engineered software to price a large range of securities. I have also worked at a smaller firm as a intern trading emerging market products in both European and American markets.</p>
+  <header class="post-header">
+    <h1 class="post-title">Gaussian Processes In Julia</h1>
+    <p class="post-meta">Feb 16, 2017</p>
+  </header>
 
-<p>I also have a keen interest in sports modelling and how statistics can be used in professional sports and gambling.</p>
+  <article class="post-content">
+    <p>Gaussian processes are a way of modelling.</p>
 
-<p>Outside of academia, I enjoy a good film and a bit of a foodie. Here I am enjoying some delicious Korean BBQ.</p>
+<p>In a very simple example, lets generate some data from a 2D Gaussian with zero mean and unit variance. 
+If we plot this with both dimmensions on either axis we get the familiar scatter plot.</p>
 
-<p><img src="/assets/kbbq.JPG" alt="Delicous BBQ" class="center-image" /></p>
+<p><img src="/assets/gp2d_simple.svg" alt="2D Normal Distribtuion" /></p>
 
-<h3>Recent Post:</h3>
-<ul>
-  
-      <a href="/2017/02/16/Mark-Clattenberg.html">Mark Clattenberg</a>
-      <p>The news has just broken that Premier League referee <a href="https://www.premierleague.com/news/334134">Mark Clattenberg is moving to Saudi Arabia</a>. Having refereed the FA Cup final, Champions League Final and Euro final last year alone he can quite comfortably say he has done it all. As they say, you are only as good as the last game you refereed, so perhaps moving somewhere less visible is a good end to an exemplary career.</p>
+<p>But if rethink the dimmensions as categories on the x-axis, we flip the point to two sperate groups.</p>
+
+<p><img src="/assets/gp2d_split.svg" alt="2D Split" /></p>
+
+<p>Each point is connected by its corrosponding point in the next dimmension. We build up a connection between the two dimmensions based on the correlation between each dimmension. We know that the coupling between the two dimmensions in two dimmensional Gaussian is controlled by the off diagonal elements in the variance matrix, which in the above example are zero. What happens if we include some correlation?</p>
+
+<p><img src="/assets/gp2d_split_cor.svg" alt="2D Split Correlation" /></p>
+
+<p>Here the variance matrix has -0.8 on the off diagonals and 1 on the diagnoals. So each point in the first direction is negativly correlated with the second dimmesnsion. This is easily observed in this graph, the higher points in the first dimmension lead to the lower points in the next dimmension and vice-versa.</p>
 
 
-  
-</ul>
+  </article>
 
+</div>
 
       </div>
     </div>
