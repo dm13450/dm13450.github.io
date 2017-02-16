@@ -8,7 +8,7 @@ The news has just broken that Premier League referee [Mark Clattenburg is moving
 
 ![Mark Clattenburg](/assets/markclattenburg.png){:. center-image}
 
-Across both seasons (or season and a half) he has been consistent in the number of red cards for both home and away. The same with his foul counts. Quite a large difference in the in the amount of yellow cards though, the only thing that different between the two seasons. 
+Across both seasons (or season and a half) he has been consistent in the number of red cards for both home and away. The same with his foul counts. Quite a large difference in the amount of yellow cards though, the only thing that is different between the two seasons. 
 
 A good comparison can be made between Clattenburg and Howard Webb in their 'peak' years. Howard Webb refereed the World Cup Final and Champions League final in the 2009/10 season (missing out on the FA Cup final to Chris Foy).
 
