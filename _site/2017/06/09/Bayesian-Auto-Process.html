@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Home</title>
+    <title>Bayesian Autoregressive Processes</title>
     <meta name="description" content="All rights reserved.">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/">
+    <link rel="canonical" href="/2017/06/09/Bayesian-Auto-Process.html">
 </head>
 
 
@@ -67,26 +67,56 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <p>I am a newly started graduate student at University College London (UCL)  and a member of the Financial Computing CDT. I have just completed my MRes in Computer Science and now started my PhD in the Statistical Science department.  Previously, I completed an MPhys in Theoretical Physics at the University of Manchester.</p>
+        <div class="post">
 
-<p>I have worked in the finance industry at large investment bank as part of an equity derivatives team that engineered software to price a large range of securities. I have also worked at a smaller firm as a intern trading emerging market products in both European and American markets.</p>
+  <header class="post-header">
+    <h1 class="post-title">Bayesian Autoregressive Processes</h1>
+    <p class="post-meta">Jun 9, 2017</p>
+  </header>
 
-<p>I also have a keen interest in sports modelling and how statistics can be used in professional sports and gambling.</p>
+  <article class="post-content">
+    <p>An autoregressive process can be described by the equation</p>
 
-<p>Outside of academia, I enjoy a good film and a bit of a foodie. Here I am enjoying some delicious Korean BBQ.</p>
+<script type="math/tex; mode=display">y_t = c + \phi y_{t-1} + \epsilon.</script>
 
-<p><img src="/assets/kbbq.JPG" alt="Delicous BBQ" class="center-image" /></p>
+<p>The parameter <script type="math/tex">c</script> is some baseline, <script type="math/tex">\phi</script> if between -1 and 1, and <script type="math/tex">\epsilon</script> is some white noise process. If we consult the Wikipedia article on such process we find that there it is fairly trivial to calculate the unknown parameter <script type="math/tex">\phi</script> in a frequentist setting. Googling about for a Bayesian introduction didn’t turn up anything particularly helpful, so here I try to plug that gap.</p>
 
-<h3>Recent Post:</h3>
-<ul>
-  
-      <a href="/2017/06/12/gaussianprocess.html">Gaussian Processes In Julia</a>
-      <p>Gaussian processes are a way of modelling.</p>
+<p>For any Bayesian method we need to decompose our problem into three parts; likelihood, prior and posterior distribution. For simplicity we will be setting <script type="math/tex">c=0</script>.</p>
 
+<p>For the likelihood we can see that each observation <script type="math/tex">y_i</script> is normally distributed around <script type="math/tex">\phi y_{i-1}</script> with variance equal to that of the white noise process <script type="math/tex">\epsilon</script></p>
 
-  
-</ul>
+<script type="math/tex; mode=display">p(y_i | y_1, \ldots , y_n , \sigma _\epsilon ^2) \propto \frac{1}{\sigma _\epsilon} \exp \left( \frac{-(y_i - \phi y_{i-1})^2}{2 \sigma _\epsilon ^2} \right),</script>
 
+<p>now the likelihood is just this density multiplied across all the data.</p>
+
+<p>Now for the prior. Like any Gaussian inference problem it is a smart choice to use a Gaussian prior on <script type="math/tex">\phi</script> so that we get a conjugate prior. But there is a hard limit on the values of the parameter in question <script type="math/tex">% <![CDATA[
+-1 < \phi  < 1 %]]></script>, therefore we must use the truncated normal distribution.</p>
+
+<script type="math/tex; mode=display">(\phi | \mu _0 , \sigma _0 ^2) = \frac{\exp \left( - \frac{ (\phi - \mu_0) ^2}{2 \sigma _0 ^2} \right)}{\sqrt{2 \pi} \sigma_0 \left(\Phi \left( \frac{b-\mu_0}{\sigma _0} \right) - \Phi \left( \frac{a-\mu_0}{\sigma _0} \right) \right) }</script>
+
+<p>the values of <script type="math/tex">a , b</script> set the limits of the truncation, so in our case they will be <script type="math/tex">-1, 1</script> respectively.</p>
+
+<p>So lets combine both the likelihood and the prior to get our posterior distribution for <script type="math/tex">\phi</script>. Due to the conjugacy of the prior, we know that the posterior is also going to be a truncated normal distribution.</p>
+
+<script type="math/tex; mode=display">p( \phi | y_1 , \ldots , y_n, \mu _0  , \sigma _0 ^2, \sigma _{\epsilon} ^2 ) = \text{Truncated-Normal} ( \mu  \sigma ^{2 } , \sigma ^2  )</script>
+
+<script type="math/tex; mode=display">\mu  = \frac{\sum _i y_i y_{i-1}}{\sigma _\epsilon ^2} + \frac{\mu _0}{ \sigma _0 ^2}</script>
+
+<script type="math/tex; mode=display">\sigma ^{2 } = \left( \frac{\sum_i y_i ^2}{\sigma _\epsilon ^2} + \frac{1}{\sigma _0^2} \right)^{-1}</script>
+
+<p>Now these are simple enough to implement in a few lines of R and with such a simple model I’ll leave that as an exercise to the reader.</p>
+
+<h4 id="references">References</h4>
+
+<p><a href="https://arxiv.org/ftp/arxiv/papers/1611/1611.08747.pdf">https://arxiv.org/ftp/arxiv/papers/1611/1611.08747.pdf</a></p>
+
+<p><a href="https://en.wikipedia.org/wiki/Truncated_normal_distribution">https://en.wikipedia.org/wiki/Truncated_normal_distribution</a></p>
+
+<p><a href="https://en.wikipedia.org/wiki/Autoregressive_model">https://en.wikipedia.org/wiki/Autoregressive_model</a></p>
+
+  </article>
+
+</div>
 
       </div>
     </div>

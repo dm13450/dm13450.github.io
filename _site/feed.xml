@@ -5,8 +5,8 @@
     <description>All rights reserved.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 09 Jun 2017 17:55:25 +0100</pubDate>
-    <lastBuildDate>Fri, 09 Jun 2017 17:55:25 +0100</lastBuildDate>
+    <pubDate>Mon, 12 Jun 2017 19:33:14 +0100</pubDate>
+    <lastBuildDate>Mon, 12 Jun 2017 19:33:14 +0100</lastBuildDate>
     <generator>Jekyll v3.1.0</generator>
     
       <item>
@@ -29,9 +29,9 @@ If we plot this with both dimmensions on either axis we get the familiar scatter
 &lt;p&gt;Here the variance matrix has -0.8 on the off diagonals and 1 on the diagnoals. So each point in the first direction is negativly correlated with the second dimmesnsion. This is easily observed in this graph, the higher points in the first dimmension lead to the lower points in the next dimmension and vice-versa.&lt;/p&gt;
 
 </description>
-        <pubDate>Fri, 09 Jun 2017 17:55:25 +0100</pubDate>
-        <link>/2017/06/09/gaussianprocess.html</link>
-        <guid isPermaLink="true">/2017/06/09/gaussianprocess.html</guid>
+        <pubDate>Mon, 12 Jun 2017 19:33:14 +0100</pubDate>
+        <link>/2017/06/12/gaussianprocess.html</link>
+        <guid isPermaLink="true">/2017/06/12/gaussianprocess.html</guid>
         
         
       </item>
@@ -49,9 +49,9 @@ THe inhomogenous poisson process is easily defined, instead of constant rate $\l
 3. The accepted times are the correct times of the inhomogenous process.&lt;/p&gt;
 
 </description>
-        <pubDate>Fri, 09 Jun 2017 17:55:25 +0100</pubDate>
-        <link>/2017/06/09/InhomoPoisson.html</link>
-        <guid isPermaLink="true">/2017/06/09/InhomoPoisson.html</guid>
+        <pubDate>Mon, 12 Jun 2017 19:33:14 +0100</pubDate>
+        <link>/2017/06/12/InhomoPoisson.html</link>
+        <guid isPermaLink="true">/2017/06/12/InhomoPoisson.html</guid>
         
         
       </item>
@@ -105,9 +105,63 @@ With the debate of IEX continually appearing on my Twitter timeline and my Phd w
 Whilst the book is an easy read, I found it a bit light on the details and prehaps a bit of negativity to give it a bit of balance. It felt much like a good PR read for NASA and many of it’s weaknesses were actually it’s strenghts. I.e. the flat organisational structure that means that returning astronaughts are placed bottom of the pile. Much like Alex Fergusan said, no player bigger than the club - no astronaught bigger than NASA.&lt;/p&gt;
 
 </description>
-        <pubDate>Fri, 09 Jun 2017 17:55:25 +0100</pubDate>
-        <link>/2017/06/09/FebFilms.html</link>
-        <guid isPermaLink="true">/2017/06/09/FebFilms.html</guid>
+        <pubDate>Mon, 12 Jun 2017 19:33:14 +0100</pubDate>
+        <link>/2017/06/12/FebFilms.html</link>
+        <guid isPermaLink="true">/2017/06/12/FebFilms.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Julia Code for Sampling an AR(1) model</title>
+        <description>&lt;p&gt;In my previous blog post I outlined the basic AR(1) model and the nesscecary maths needed to infer the uknown parameter &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt;. In this post I will outline some basic Julia code to build a MCMC sampler for such a model to infer the unknown parameter &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Firstly, we need to simulate some data. From the previous post we know that the data &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; comes simply from the previous value, plus some fixed noise. In Julia this is simply writing a for loop and using the Distributions package to samplesome white noise.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-julia&quot; data-lang=&quot;julia&quot;&gt;function simulate_ar(phi, n)
+
+	 dist = Normal()
+
+	 y = [0.0 for i = 1:n]
+
+	 noise = rand(dist, n)
+
+	 for i in 1:(n-1)
+
+	     y[i+1] = phi*y[i] + noise[i] 
+	 end
+
+	 return y
+end&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;For 1000 data points with &lt;script type=&quot;math/tex&quot;&gt;\phi=0.5&lt;/script&gt; such a process looks like:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/y_plot.svg&quot; alt=&quot;AR1 Process Plot&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Pretty much looks like a random walk around 0 as expected.&lt;/p&gt;
+
+&lt;p&gt;Now to compute the statistics for the posterior distribtuion we need the sum of squares and the lagged sum of squares (link to previous post). Then using the Distributions package again we can sample from a truncated normal distribution. We have used a prior distribution of a truncated normal distribution with 0 mean and a standard deviation of 5.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-julia&quot; data-lang=&quot;julia&quot;&gt;function posterior_ar(n, y)
+	 n = length(y)
+	 ss = sum(y .* y) + 1/25 
+	 ss_lagged = sum(y .* vcat(y[2:n],0))
+	 
+	 dist = Truncated(Normal(ss_lagged/ss, sqrt(1/ss)), -1, 1)
+	 smps = rand(dist, n)
+
+	 return smps
+end&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/phi_density.svg&quot; alt=&quot;Phi Density Plot&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So we can see that the posterior distribtuion for &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt; is close to the true value of 0.5, so it looks like our algorithm is working.&lt;/p&gt;
+
+&lt;p&gt;Although its just a toy model in these posts I have shown how to calculate the posterior for an autoregressive process and how to draw from such a distribution using Julia. Next stop, include more parameters and see how flexible autoregressive models can be.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 12 Jun 2017 00:00:00 +0100</pubDate>
+        <link>/2017/06/12/autoregression_post.html</link>
+        <guid isPermaLink="true">/2017/06/12/autoregression_post.html</guid>
         
         
       </item>
@@ -118,7 +172,7 @@ Whilst the book is an easy read, I found it a bit light on the details and preha
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;y_t = c + \phi y_{t-1} + \epsilon.&lt;/script&gt;
 
-&lt;p&gt;The parameter &lt;script type=&quot;math/tex&quot;&gt;c&lt;/script&gt; is some baseline, &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt; if between -1 and 1, and &lt;script type=&quot;math/tex&quot;&gt;\epsilon&lt;/script&gt; is some white noise process. If we consult the Wikipedia artivle on such process we find that there it is fairly trivial to calculate the unknown parameter &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt; in a frequentist setting. Googling about for a Bayesian introduction didn’t turn up anything particulary helpful, so here I try to plug that gap.&lt;/p&gt;
+&lt;p&gt;The parameter &lt;script type=&quot;math/tex&quot;&gt;c&lt;/script&gt; is some baseline, &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt; if between -1 and 1, and &lt;script type=&quot;math/tex&quot;&gt;\epsilon&lt;/script&gt; is some white noise process. If we consult the Wikipedia article on such process we find that there it is fairly trivial to calculate the unknown parameter &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt; in a frequentist setting. Googling about for a Bayesian introduction didn’t turn up anything particularly helpful, so here I try to plug that gap.&lt;/p&gt;
 
 &lt;p&gt;For any Bayesian method we need to decompose our problem into three parts; likelihood, prior and posterior distribution. For simplicity we will be setting &lt;script type=&quot;math/tex&quot;&gt;c=0&lt;/script&gt;.&lt;/p&gt;
 
@@ -131,9 +185,57 @@ Whilst the book is an easy read, I found it a bit light on the details and preha
 &lt;p&gt;Now for the prior. Like any Gaussian inference problem it is a smart choice to use a Gaussian prior on &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt; so that we get a conjugate prior. But there is a hard limit on the values of the parameter in question &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
 -1 &lt; \phi  &lt; 1 %]]&gt;&lt;/script&gt;, therefore we must use the truncated normal distribution.&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;p(\phi | \mu _0 , \sigma _0 ^2) = \frac{\exp \left( - \frac{ (\phi - \mu_0) ^2}{2 \sigma _0 ^2} \right)}{\sqrt{2 \pi} \sigma_0 \left(\Phi \left( \frac{b-\mu_0}{\sigma _0} \right) - \Phi \left( \frac{a-\mu_0}{\sigma _0} \right) \right) }&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;(\phi | \mu _0 , \sigma _0 ^2) = \frac{\exp \left( - \frac{ (\phi - \mu_0) ^2}{2 \sigma _0 ^2} \right)}{\sqrt{2 \pi} \sigma_0 \left(\Phi \left( \frac{b-\mu_0}{\sigma _0} \right) - \Phi \left( \frac{a-\mu_0}{\sigma _0} \right) \right) }&lt;/script&gt;
 
-&lt;p&gt;the values of &lt;script type=&quot;math/tex&quot;&gt;a , b&lt;/script&gt; set the limits of the truncation, so in our case they will be &lt;script type=&quot;math/tex&quot;&gt;-1, 1&lt;/script&gt; respectivley.&lt;/p&gt;
+&lt;p&gt;the values of &lt;script type=&quot;math/tex&quot;&gt;a , b&lt;/script&gt; set the limits of the truncation, so in our case they will be &lt;script type=&quot;math/tex&quot;&gt;-1, 1&lt;/script&gt; respectively.&lt;/p&gt;
+
+&lt;p&gt;So lets combine both the likelihood and the prior to get our posterior distribution for &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt;. Due to the conjugacy of the prior, we know that the posterior is also going to be a truncated normal distribution.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;p( \phi | y_1 , \ldots , y_n, \mu _0  , \sigma _0 ^2, \sigma _{\epsilon} ^2 ) = \text{Truncated-Normal} ( \mu  \sigma ^{2 } , \sigma ^2  )&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mu  = \frac{\sum _i y_i y_{i-1}}{\sigma _\epsilon ^2} + \frac{\mu _0}{ \sigma _0 ^2}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\sigma ^{2 } = \left( \frac{\sum_i y_i ^2}{\sigma _\epsilon ^2} + \frac{1}{\sigma _0^2} \right)^{-1}&lt;/script&gt;
+
+&lt;p&gt;Now these are simple enough to implement in a few lines of R and with such a simple model I’ll leave that as an exercise to the reader.&lt;/p&gt;
+
+&lt;h4 id=&quot;references&quot;&gt;References&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://arxiv.org/ftp/arxiv/papers/1611/1611.08747.pdf&quot;&gt;https://arxiv.org/ftp/arxiv/papers/1611/1611.08747.pdf&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Truncated_normal_distribution&quot;&gt;https://en.wikipedia.org/wiki/Truncated_normal_distribution&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Autoregressive_model&quot;&gt;https://en.wikipedia.org/wiki/Autoregressive_model&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 09 Jun 2017 00:00:00 +0100</pubDate>
+        <link>/2017/06/09/Bayesian-Auto-Process.html</link>
+        <guid isPermaLink="true">/2017/06/09/Bayesian-Auto-Process.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Bayesian Autoregressive Processes</title>
+        <description>&lt;p&gt;An autoregressive process can be described by the equation&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;y_t = c + \phi y_{t-1} + \epsilon.&lt;/script&gt;
+
+&lt;p&gt;The parameter &lt;script type=&quot;math/tex&quot;&gt;c&lt;/script&gt; is some baseline, &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt; if between -1 and 1, and &lt;script type=&quot;math/tex&quot;&gt;\epsilon&lt;/script&gt; is some white noise process. If we consult the Wikipedia article on such process we find that there it is fairly trivial to calculate the unknown parameter &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt; in a frequentist setting. Googling about for a Bayesian introduction didn’t turn up anything particularly helpful, so here I try to plug that gap.&lt;/p&gt;
+
+&lt;p&gt;For any Bayesian method we need to decompose our problem into three parts; likelihood, prior and posterior distribution. For simplicity we will be setting &lt;script type=&quot;math/tex&quot;&gt;c=0&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;For the likelihood we can see that each observation &lt;script type=&quot;math/tex&quot;&gt;y_i&lt;/script&gt; is normally distributed around &lt;script type=&quot;math/tex&quot;&gt;\phi y_{i-1}&lt;/script&gt; with variance equal to that of the white noise process &lt;script type=&quot;math/tex&quot;&gt;\epsilon&lt;/script&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;p(y_i | y_1, \ldots , y_n , \sigma _\epsilon ^2) \propto \frac{1}{\sigma _\epsilon} \exp \left( \frac{-(y_i - \phi y_{i-1})^2}{2 \sigma _\epsilon ^2} \right),&lt;/script&gt;
+
+&lt;p&gt;now the likelihood is just this density multiplied across all the data.&lt;/p&gt;
+
+&lt;p&gt;Now for the prior. Like any Gaussian inference problem it is a smart choice to use a Gaussian prior on &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt; so that we get a conjugate prior. But there is a hard limit on the values of the parameter in question &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+-1 &lt; \phi  &lt; 1 %]]&gt;&lt;/script&gt;, therefore we must use the truncated normal distribution.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;(\phi | \mu _0 , \sigma _0 ^2) = \frac{\exp \left( - \frac{ (\phi - \mu_0) ^2}{2 \sigma _0 ^2} \right)}{\sqrt{2 \pi} \sigma_0 \left(\Phi \left( \frac{b-\mu_0}{\sigma _0} \right) - \Phi \left( \frac{a-\mu_0}{\sigma _0} \right) \right) }&lt;/script&gt;
+
+&lt;p&gt;the values of &lt;script type=&quot;math/tex&quot;&gt;a , b&lt;/script&gt; set the limits of the truncation, so in our case they will be &lt;script type=&quot;math/tex&quot;&gt;-1, 1&lt;/script&gt; respectively.&lt;/p&gt;
 
 &lt;p&gt;So lets combine both the likelihood and the prior to get our posterior distribution for &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt;. Due to the conjugacy of the prior, we know that the posterior is also going to be a truncated normal distribution.&lt;/p&gt;
 
@@ -268,50 +370,6 @@ The stand out statistic though is Mike Deans average away red cards. He is a cle
         <pubDate>Sat, 24 Dec 2016 00:00:00 +0000</pubDate>
         <link>/2016/12/24/Ref-Radar-Intro.html</link>
         <guid isPermaLink="true">/2016/12/24/Ref-Radar-Intro.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>The Data Dialogue - At War with Data</title>
-        <description>&lt;p&gt;On Wednesday I took a stroll down to King’s College across the river for a seminar on data and warfare. A bit of a broad subject for a conference. The seminar speakers came from a variety of fields where the innovative usage of data is less obvious and more unique.&lt;/p&gt;
-
-&lt;p&gt;The first talk was by &lt;a href=&quot;http://www.kcl.ac.uk/hr/diversity/meettheprofessors/artshums/croueche.aspx&quot;&gt;Charlotte Rouche&lt;/a&gt; of the Kings college archaeological department. She highlighted how maps, both ancient and current, play an important role in her archaeological research. Understanding how the land is divided and even the names of places in various languages gives an important insight into how civilisation has evolved throughout the ages. Mapping data is now ubiquitous with the likes of Google Maps and Google Earth and this can be useful in observing how areas have developed over time. The aerial photographs of sites of archaeological interest can be periodically monitored for change and help with preservation - fighting the war against decay. However, when cataloguing such data Prof. Rouche raised the importance question of accessibility . Should the public be allowed to see aerial photographs and accurate co-ordinates of culturally and theologically significant monuments? In times of war, this could potentially be a shopping list for attacks. This shows how perhaps a fully open data source is not always the correct answer.&lt;/p&gt;
-
-&lt;p&gt;The second talk was by &lt;a href=&quot;https://www.ucl.ac.uk/spacetimelab/people/kate-bowers&quot;&gt;Kate Bowers&lt;/a&gt; of the Crime Science department at UCL. Her talk was on the usage of police data, which has similar disclosure properties to the Rouche’s map data. Prof. Bowers showed how the GPS data collected from police cars can provide maps of frequent patrol paths of the Metropolitan police. Combining this with 999 call monitoring she was able to give an indication of where there was deficiency in policing were arising. This can lead to policy implementation and a more efficient patrol path for police officers. In this case the war on crime was being fought with this new data.&lt;/p&gt;
-
-&lt;p&gt;The third talk was by &lt;a href=&quot;https://kclpure.kcl.ac.uk/portal/robert.stewart.html&quot;&gt;Robert Stewart&lt;/a&gt;. He is a mental health doctor from the NHS and Professor at King’s. Interestingly, his trust has developed a searchable, anonymous database for mental health researchers. This allowed them to query various parameters across patient groups. A very interesting research tool that required individual patient consent but once granted provides researchers with large amounts of real world clinical data. Its success shows that it is possible to use the health data of patients anonymously without infringing on privacy issues. Currently it is being used to help study drug safety and other questions that required long term monitoring.  Now I have previously worked for a NHS trust in the IT department and have an understanding of different software systems available for the NHS and the various data sharing regulations in place. Therefore this talk was a good insight into how other trusts can conquer some of the data sharing rules and how researchers can get access to such data. As Prof. Stewart is a mental health doctor his work can be framed as the war against mental afflictions.&lt;/p&gt;
-
-&lt;p&gt;The final talk was based on finding adversaries on the internet and looking at how such actors can make themselves known unwillingly. This talk was given by &lt;a href=&quot;http://www.kcl.ac.uk/sspp/departments/warstudies/people/professors/rid.aspx&quot;&gt;Thomas Rid&lt;/a&gt; from the War Studies department at King’s. He offered the example of the Poseta email &lt;a href=&quot;https://en.wikipedia.org/wiki/Podesta_emails&quot;&gt;leak&lt;/a&gt;. By using the classic “reset you password here” phishing scam, Podesta clicked on a bitly link that populated a fake web page with his gmail information and required him to submit his password to change it. Instead, the changing the password button just forwarded his password to the adversary. We know that this was the vector chosen by the attackers due to the public nature of the bitly account. Whoever set the account up forgot to set the profile to private. This led to the account being traced back  to some actor. Who it actually was is up to speculation at the time of writing.&lt;/p&gt;
-
-&lt;p&gt;Overall, it was an enjoyable conference. I learnt about some new domains and in a more focused and “apply-side” way. It was less about algorithm run times and more about what the algorithms actually do and how they can be used.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 07 Dec 2016 00:00:00 +0000</pubDate>
-        <link>/2016/12/07/DataDialogue.html</link>
-        <guid isPermaLink="true">/2016/12/07/DataDialogue.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Notes from a Quantcast Talk</title>
-        <description>&lt;p&gt;As I sit on the train to London waiting for my model to finish fitting I realised that it had been a while since I had written a blog post.&lt;/p&gt;
-
-&lt;p&gt;My PhD school holds a bimonthly seminar and this weeks guest speaker was Dr. Peter Day who is a director of engineering at &lt;a href=&quot;https://www.quantcast.com&quot;&gt;Quantcast&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Now Quantcast is a 21st century advertising agency offering real time advertisement strategy and analytic tools. The lecture was based around their use of data and how statistics and infrastructure has helped make advertising more relevant and serve better adds.&lt;/p&gt;
-
-&lt;p&gt;My first &lt;code class=&quot;highlighter-rouge&quot;&gt;did you know&lt;/code&gt; was that the adverts you see on websites are sold in real time as you load the page. So in the time it takes from clicking a link on Goole to the page appearing in your browser, the add space has been bought microseconds earlier and now serving a specific add designed for you. A remarkable engineering achievement, that in the short time it takes from clicking a link to seeing a page that an auction takes place, a winner is found and the add is served. But this is not the main product of Quantcast.&lt;/p&gt;
-
-&lt;p&gt;Instead, Quantcast is more about finding out more about population behaviours and how effective that advert will be. They crunch the necessary data from the variety of cookies they collect and come up with a pricing strategy based on who might see the add. Where as one company might try to show the add to as many people as possible (the fire-hose strategy) Quantcast might drill down on certain factors and change their bidding price based on these factors.&lt;/p&gt;
-
-&lt;p&gt;This problem is the standard &lt;code class=&quot;highlighter-rouge&quot;&gt;big data&lt;/code&gt; problem. The amount of data you can collect from cookies; visited websites, location, device etc. can lead to many other inferences which gives a large amount of variables for a large amount of people. Computing this information lead to Quantcast developing their own database and data tools as the current market leaders (Hadoop and derivatives) where not performing well enough. Although they did hint that they was looking at moving to AWS to solve some of their infrastructure problems.&lt;/p&gt;
-
-&lt;p&gt;Overall, it was an interesting talk about a field that I hadn’t really paid that much attention too previously and I definitely learnt something new. It also made me thankful of my add blocker and slightly more paranoid. So thank to Quantcast for coming down and delivering an enjoyable seminar!&lt;/p&gt;
-</description>
-        <pubDate>Fri, 02 Dec 2016 00:00:00 +0000</pubDate>
-        <link>/2016/12/02/Quantcast.html</link>
-        <guid isPermaLink="true">/2016/12/02/Quantcast.html</guid>
         
         
       </item>

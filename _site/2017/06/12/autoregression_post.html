@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Home</title>
+    <title>Julia Code for Sampling an AR(1) model</title>
     <meta name="description" content="All rights reserved.">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/">
+    <link rel="canonical" href="/2017/06/12/autoregression_post.html">
 </head>
 
 
@@ -67,26 +67,62 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <p>I am a newly started graduate student at University College London (UCL)  and a member of the Financial Computing CDT. I have just completed my MRes in Computer Science and now started my PhD in the Statistical Science department.  Previously, I completed an MPhys in Theoretical Physics at the University of Manchester.</p>
+        <div class="post">
 
-<p>I have worked in the finance industry at large investment bank as part of an equity derivatives team that engineered software to price a large range of securities. I have also worked at a smaller firm as a intern trading emerging market products in both European and American markets.</p>
+  <header class="post-header">
+    <h1 class="post-title">Julia Code for Sampling an AR(1) model</h1>
+    <p class="post-meta">Jun 12, 2017</p>
+  </header>
 
-<p>I also have a keen interest in sports modelling and how statistics can be used in professional sports and gambling.</p>
+  <article class="post-content">
+    <p>In my previous blog post I outlined the basic AR(1) model and the nesscecary maths needed to infer the uknown parameter <script type="math/tex">\phi</script>. In this post I will outline some basic Julia code to build a MCMC sampler for such a model to infer the unknown parameter <script type="math/tex">\phi</script>.</p>
 
-<p>Outside of academia, I enjoy a good film and a bit of a foodie. Here I am enjoying some delicious Korean BBQ.</p>
+<p>Firstly, we need to simulate some data. From the previous post we know that the data <script type="math/tex">y</script> comes simply from the previous value, plus some fixed noise. In Julia this is simply writing a for loop and using the Distributions package to samplesome white noise.</p>
 
-<p><img src="/assets/kbbq.JPG" alt="Delicous BBQ" class="center-image" /></p>
+<figure class="highlight"><pre><code class="language-julia" data-lang="julia">function simulate_ar(phi, n)
 
-<h3>Recent Post:</h3>
-<ul>
-  
-      <a href="/2017/06/12/gaussianprocess.html">Gaussian Processes In Julia</a>
-      <p>Gaussian processes are a way of modelling.</p>
+	 dist = Normal()
 
+	 y = [0.0 for i = 1:n]
 
-  
-</ul>
+	 noise = rand(dist, n)
 
+	 for i in 1:(n-1)
+
+	     y[i+1] = phi*y[i] + noise[i] 
+	 end
+
+	 return y
+end</code></pre></figure>
+
+<p>For 1000 data points with <script type="math/tex">\phi=0.5</script> such a process looks like:</p>
+
+<p><img src="/assets/y_plot.svg" alt="AR1 Process Plot" class="center-image" /></p>
+
+<p>Pretty much looks like a random walk around 0 as expected.</p>
+
+<p>Now to compute the statistics for the posterior distribtuion we need the sum of squares and the lagged sum of squares (link to previous post). Then using the Distributions package again we can sample from a truncated normal distribution. We have used a prior distribution of a truncated normal distribution with 0 mean and a standard deviation of 5.</p>
+
+<figure class="highlight"><pre><code class="language-julia" data-lang="julia">function posterior_ar(n, y)
+	 n = length(y)
+	 ss = sum(y .* y) + 1/25 
+	 ss_lagged = sum(y .* vcat(y[2:n],0))
+	 
+	 dist = Truncated(Normal(ss_lagged/ss, sqrt(1/ss)), -1, 1)
+	 smps = rand(dist, n)
+
+	 return smps
+end</code></pre></figure>
+
+<p><img src="/assets/phi_density.svg" alt="Phi Density Plot" class="center-image" /></p>
+
+<p>So we can see that the posterior distribtuion for <script type="math/tex">\phi</script> is close to the true value of 0.5, so it looks like our algorithm is working.</p>
+
+<p>Although its just a toy model in these posts I have shown how to calculate the posterior for an autoregressive process and how to draw from such a distribution using Julia. Next stop, include more parameters and see how flexible autoregressive models can be.</p>
+
+  </article>
+
+</div>
 
       </div>
     </div>

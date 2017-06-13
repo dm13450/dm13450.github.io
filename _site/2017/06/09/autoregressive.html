@@ -79,7 +79,7 @@
 
 <script type="math/tex; mode=display">y_t = c + \phi y_{t-1} + \epsilon.</script>
 
-<p>The parameter <script type="math/tex">c</script> is some baseline, <script type="math/tex">\phi</script> if between -1 and 1, and <script type="math/tex">\epsilon</script> is some white noise process. If we consult the Wikipedia artivle on such process we find that there it is fairly trivial to calculate the unknown parameter <script type="math/tex">\phi</script> in a frequentist setting. Googling about for a Bayesian introduction didn’t turn up anything particulary helpful, so here I try to plug that gap.</p>
+<p>The parameter <script type="math/tex">c</script> is some baseline, <script type="math/tex">\phi</script> if between -1 and 1, and <script type="math/tex">\epsilon</script> is some white noise process. If we consult the Wikipedia article on such process we find that there it is fairly trivial to calculate the unknown parameter <script type="math/tex">\phi</script> in a frequentist setting. Googling about for a Bayesian introduction didn’t turn up anything particularly helpful, so here I try to plug that gap.</p>
 
 <p>For any Bayesian method we need to decompose our problem into three parts; likelihood, prior and posterior distribution. For simplicity we will be setting <script type="math/tex">c=0</script>.</p>
 
@@ -92,9 +92,9 @@
 <p>Now for the prior. Like any Gaussian inference problem it is a smart choice to use a Gaussian prior on <script type="math/tex">\phi</script> so that we get a conjugate prior. But there is a hard limit on the values of the parameter in question <script type="math/tex">% <![CDATA[
 -1 < \phi  < 1 %]]></script>, therefore we must use the truncated normal distribution.</p>
 
-<script type="math/tex; mode=display">p(\phi | \mu _0 , \sigma _0 ^2) = \frac{\exp \left( - \frac{ (\phi - \mu_0) ^2}{2 \sigma _0 ^2} \right)}{\sqrt{2 \pi} \sigma_0 \left(\Phi \left( \frac{b-\mu_0}{\sigma _0} \right) - \Phi \left( \frac{a-\mu_0}{\sigma _0} \right) \right) }</script>
+<script type="math/tex; mode=display">(\phi | \mu _0 , \sigma _0 ^2) = \frac{\exp \left( - \frac{ (\phi - \mu_0) ^2}{2 \sigma _0 ^2} \right)}{\sqrt{2 \pi} \sigma_0 \left(\Phi \left( \frac{b-\mu_0}{\sigma _0} \right) - \Phi \left( \frac{a-\mu_0}{\sigma _0} \right) \right) }</script>
 
-<p>the values of <script type="math/tex">a , b</script> set the limits of the truncation, so in our case they will be <script type="math/tex">-1, 1</script> respectivley.</p>
+<p>the values of <script type="math/tex">a , b</script> set the limits of the truncation, so in our case they will be <script type="math/tex">-1, 1</script> respectively.</p>
 
 <p>So lets combine both the likelihood and the prior to get our posterior distribution for <script type="math/tex">\phi</script>. Due to the conjugacy of the prior, we know that the posterior is also going to be a truncated normal distribution.</p>
 

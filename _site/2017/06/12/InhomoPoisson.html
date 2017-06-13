@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Home</title>
+    <title>Inhomogenous Poisson Process</title>
     <meta name="description" content="All rights reserved.">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/">
+    <link rel="canonical" href="/2017/06/12/InhomoPoisson.html">
 </head>
 
 
@@ -67,26 +67,28 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <p>I am a newly started graduate student at University College London (UCL)  and a member of the Financial Computing CDT. I have just completed my MRes in Computer Science and now started my PhD in the Statistical Science department.  Previously, I completed an MPhys in Theoretical Physics at the University of Manchester.</p>
+        <div class="post">
 
-<p>I have worked in the finance industry at large investment bank as part of an equity derivatives team that engineered software to price a large range of securities. I have also worked at a smaller firm as a intern trading emerging market products in both European and American markets.</p>
+  <header class="post-header">
+    <h1 class="post-title">Inhomogenous Poisson Process</h1>
+    <p class="post-meta">Jun 12, 2017</p>
+  </header>
 
-<p>I also have a keen interest in sports modelling and how statistics can be used in professional sports and gambling.</p>
+  <article class="post-content">
+    <p>My first forray into statistics and finance begins with the simulation, fitting and checking of the inhomogenous poisson process.
+THe inhomogenous poisson process is easily defined, instead of constant rate $\lambda$ as per the usual Poisson process, the rate can now varry in time.</p>
 
-<p>Outside of academia, I enjoy a good film and a bit of a foodie. Here I am enjoying some delicious Korean BBQ.</p>
+<p>Simulating this is done using a method called thinning; a Poisson process is simulated with rate greater than the inhomogenous rate, with points being rejected, or “thinned” out to give the final inhomogenous process.</p>
 
-<p><img src="/assets/kbbq.JPG" alt="Delicous BBQ" class="center-image" /></p>
-
-<h3>Recent Post:</h3>
-<ul>
-  
-      <a href="/2017/06/12/gaussianprocess.html">Gaussian Processes In Julia</a>
-      <p>Gaussian processes are a way of modelling.</p>
+<p>Therefore the algorithm runs as follows: 
+1. Generate a Poisson varaible with rate $\lambda ^<em>$ such that $\lambda ^</em> &gt; \lambda (t) \forall t$. Increment time by this variable. 
+2. Calculate the ratio $\lambda (t) / \lambda ^*$ and compare this to a unifromally distributed variable. If the ratio is greater then accept the time else reject the time and continue with step one again. 
+3. The accepted times are the correct times of the inhomogenous process.</p>
 
 
-  
-</ul>
+  </article>
 
+</div>
 
       </div>
     </div>
