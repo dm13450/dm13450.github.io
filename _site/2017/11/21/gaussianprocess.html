@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Blog</title>
+    <title>Gaussian Processes In Julia</title>
     <meta name="description" content="All rights reserved.">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/blog/">
+    <link rel="canonical" href="/2017/11/21/gaussianprocess.html">
 </head>
 
 
@@ -70,183 +70,28 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Blog</h1>
+    <h1 class="post-title">Gaussian Processes In Julia</h1>
+    <p class="post-meta">Nov 21, 2017</p>
   </header>
 
   <article class="post-content">
-      <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Nov 21, 2017</span>
+    <p>Gaussian processes are a way of modelling.</p>
 
-        <h2>
-          <a class="post-link" href="/2017/11/21/Referee-Tracking.html">Referee Tracking Data and Machine Learning</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jun 12, 2017</span>
+<p>In a very simple example, lets generate some data from a 2D Gaussian with zero mean and unit variance. 
+If we plot this with both dimmensions on either axis we get the familiar scatter plot.</p>
 
-        <h2>
-          <a class="post-link" href="/2017/06/12/Auto-Julia.html">Julia Code for Sampling an AR(1) model</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jun 9, 2017</span>
+<p><img src="/assets/gp2d_simple.svg" alt="2D Normal Distribtuion" /></p>
 
-        <h2>
-          <a class="post-link" href="/2017/06/09/Bayesian-Auto-Process.html">Bayesian Autoregressive Processes</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Feb 16, 2017</span>
+<p>But if rethink the dimmensions as categories on the x-axis, we flip the point to two sperate groups.</p>
 
-        <h2>
-          <a class="post-link" href="/2017/02/16/Mark-Clattenburg.html">Mark Clattenburg</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 26, 2017</span>
+<p><img src="/assets/gp2d_split.svg" alt="2D Split" /></p>
 
-        <h2>
-          <a class="post-link" href="/2017/01/26/Julia-Distributions.html">An Introduction to Julia and Distributions</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 7, 2017</span>
+<p>Each point is connected by its corrosponding point in the next dimmension. We build up a connection between the two dimmensions based on the correlation between each dimmension. We know that the coupling between the two dimmensions in two dimmensional Gaussian is controlled by the off diagonal elements in the variance matrix, which in the above example are zero. What happens if we include some correlation?</p>
 
-        <h2>
-          <a class="post-link" href="/2017/01/07/Mike-Dean-Ref-Radar.html">Mike Dean and the Ref Radar</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Dec 24, 2016</span>
+<p><img src="/assets/gp2d_split_cor.svg" alt="2D Split Correlation" /></p>
 
-        <h2>
-          <a class="post-link" href="/2016/12/24/Ref-Radar-Intro.html">Introducing the Referee Radar</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Dec 7, 2016</span>
+<p>Here the variance matrix has -0.8 on the off diagonals and 1 on the diagnoals. So each point in the first direction is negativly correlated with the second dimmesnsion. This is easily observed in this graph, the higher points in the first dimmension lead to the lower points in the next dimmension and vice-versa.</p>
 
-        <h2>
-          <a class="post-link" href="/2016/12/07/DataDialogue.html">The Data Dialogue - At War with Data</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Dec 2, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/12/02/Quantcast.html">Notes from a Quantcast Talk</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 27, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/10/27/Weighted-Bayes.html">Thoughts on Weights in Bayesian Regression</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 29, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/09/29/Kelly-Betting-Part-Two.html">Kelly Betting - Part Two</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 2, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/09/02/Kelly-Betting-Part-One.html">Kelly Betting - Part One</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Aug 17, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/08/17/Dissertation-Learnings.html">Dissertation Construction Learnings</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">May 20, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/05/20/Posterior-pvalues.html">Posterior p-values</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 28, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/01/28/Python-Url.html">Bulk Downloading from Turnitin using Python.</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 25, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/01/25/January-Films.html">Films I've Watched In January 2016</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 7, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/2015/10/07/The-First-Workshop.html">The First Workshop</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 30, 2014</span>
-
-        <h2>
-          <a class="post-link" href="/2014/11/30/Trading-Interviews.html">Prop Shop Interviews</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 6, 2014</span>
-
-        <h2>
-          <a class="post-link" href="/2014/11/06/Playing-About-With-shiny.html">Playing About with Shiny</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 28, 2014</span>
-
-        <h2>
-          <a class="post-link" href="/2014/09/28/Playing-About-With-ggplot.html">Playing About with ggplot</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 19, 2014</span>
-
-        <h2>
-          <a class="post-link" href="/2014/09/19/The-First-Blog-Post.html">That First Blog Post</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
 
   </article>
 

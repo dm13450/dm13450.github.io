@@ -75,9 +75,9 @@
   </header>
 
   <article class="post-content">
-    <p>In my previous blog post I outlined the basic AR(1) model and the nesscecary maths needed to infer the uknown parameter <script type="math/tex">\phi</script>. In this post I will outline some basic Julia code to build a MCMC sampler for such a model to infer the unknown parameter <script type="math/tex">\phi</script>.</p>
+    <p>In my previous blog post I outlined the basic AR(1) model and the necessary maths needed to infer the unknown parameter <script type="math/tex">\phi</script>. In this post I will outline some basic Julia code to build a MCMC sampler for such a model to infer the unknown parameter <script type="math/tex">\phi</script>.</p>
 
-<p>Firstly, we need to simulate some data. From the previous post we know that the data <script type="math/tex">y</script> comes simply from the previous value, plus some fixed noise. In Julia this is simply writing a for loop and using the Distributions package to samplesome white noise.</p>
+<p>Firstly, we need to simulate some data. From the previous post we know that the data <script type="math/tex">y</script> comes simply from the previous value, plus some fixed noise. In Julia this is simply writing a for loop and using the Distributions package to sample some white noise.</p>
 
 <figure class="highlight"><pre><code class="language-julia" data-lang="julia">function simulate_ar(phi, n)
 
@@ -101,7 +101,7 @@ end</code></pre></figure>
 
 <p>Pretty much looks like a random walk around 0 as expected.</p>
 
-<p>Now to compute the statistics for the posterior distribtuion we need the sum of squares and the lagged sum of squares (link to previous post). Then using the Distributions package again we can sample from a truncated normal distribution. We have used a prior distribution of a truncated normal distribution with 0 mean and a standard deviation of 5.</p>
+<p>Now to compute the statistics for the posterior distribution we need the sum of squares and the lagged sum of squares (link to previous post). Then using the Distributions package again we can sample from a truncated normal distribution. We have used a prior distribution of a truncated normal distribution with 0 mean and a standard deviation of 5.</p>
 
 <figure class="highlight"><pre><code class="language-julia" data-lang="julia">function posterior_ar(n, y)
 	 n = length(y)
@@ -116,7 +116,7 @@ end</code></pre></figure>
 
 <p><img src="/assets/phi_density.svg" alt="Phi Density Plot" class="center-image" /></p>
 
-<p>So we can see that the posterior distribtuion for <script type="math/tex">\phi</script> is close to the true value of 0.5, so it looks like our algorithm is working.</p>
+<p>So we can see that the posterior distribution for <script type="math/tex">\phi</script> is close to the true value of 0.5, so it looks like our algorithm is working.</p>
 
 <p>Although its just a toy model in these posts I have shown how to calculate the posterior for an autoregressive process and how to draw from such a distribution using Julia. Next stop, include more parameters and see how flexible autoregressive models can be.</p>
 

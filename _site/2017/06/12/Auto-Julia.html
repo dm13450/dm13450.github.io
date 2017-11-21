@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Blog</title>
+    <title>Julia Code for Sampling an AR(1) model</title>
     <meta name="description" content="All rights reserved.">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/blog/">
+    <link rel="canonical" href="/2017/06/12/Auto-Julia.html">
 </head>
 
 
@@ -70,183 +70,55 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Blog</h1>
+    <h1 class="post-title">Julia Code for Sampling an AR(1) model</h1>
+    <p class="post-meta">Jun 12, 2017</p>
   </header>
 
   <article class="post-content">
-      <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Nov 21, 2017</span>
+    <p>In my previous blog post I outlined the basic AR(1) model and the necessary maths needed to infer the unknown parameter <script type="math/tex">\phi</script>. In this post I will outline some basic Julia code to build a MCMC sampler for such a model to infer the unknown parameter <script type="math/tex">\phi</script>.</p>
 
-        <h2>
-          <a class="post-link" href="/2017/11/21/Referee-Tracking.html">Referee Tracking Data and Machine Learning</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jun 12, 2017</span>
+<p>Firstly, we need to simulate some data. From the previous post we know that the data <script type="math/tex">y</script> comes simply from the previous value, plus some fixed noise. In Julia this is simply writing a for loop and using the Distributions package to sample some white noise.</p>
 
-        <h2>
-          <a class="post-link" href="/2017/06/12/Auto-Julia.html">Julia Code for Sampling an AR(1) model</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jun 9, 2017</span>
+<figure class="highlight"><pre><code class="language-julia" data-lang="julia">function simulate_ar(phi, n)
 
-        <h2>
-          <a class="post-link" href="/2017/06/09/Bayesian-Auto-Process.html">Bayesian Autoregressive Processes</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Feb 16, 2017</span>
+	 dist = Normal()
 
-        <h2>
-          <a class="post-link" href="/2017/02/16/Mark-Clattenburg.html">Mark Clattenburg</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 26, 2017</span>
+	 y = [0.0 for i = 1:n]
 
-        <h2>
-          <a class="post-link" href="/2017/01/26/Julia-Distributions.html">An Introduction to Julia and Distributions</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 7, 2017</span>
+	 noise = rand(dist, n)
 
-        <h2>
-          <a class="post-link" href="/2017/01/07/Mike-Dean-Ref-Radar.html">Mike Dean and the Ref Radar</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Dec 24, 2016</span>
+	 for i in 1:(n-1)
 
-        <h2>
-          <a class="post-link" href="/2016/12/24/Ref-Radar-Intro.html">Introducing the Referee Radar</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Dec 7, 2016</span>
+	     y[i+1] = phi*y[i] + noise[i] 
+	 end
 
-        <h2>
-          <a class="post-link" href="/2016/12/07/DataDialogue.html">The Data Dialogue - At War with Data</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Dec 2, 2016</span>
+	 return y
+end</code></pre></figure>
 
-        <h2>
-          <a class="post-link" href="/2016/12/02/Quantcast.html">Notes from a Quantcast Talk</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 27, 2016</span>
+<p>For 1000 data points with <script type="math/tex">\phi=0.5</script> such a process looks like:</p>
 
-        <h2>
-          <a class="post-link" href="/2016/10/27/Weighted-Bayes.html">Thoughts on Weights in Bayesian Regression</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 29, 2016</span>
+<p><img src="/assets/y_plot.svg" alt="AR1 Process Plot" class="center-image" /></p>
 
-        <h2>
-          <a class="post-link" href="/2016/09/29/Kelly-Betting-Part-Two.html">Kelly Betting - Part Two</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 2, 2016</span>
+<p>Pretty much looks like a random walk around 0 as expected.</p>
 
-        <h2>
-          <a class="post-link" href="/2016/09/02/Kelly-Betting-Part-One.html">Kelly Betting - Part One</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Aug 17, 2016</span>
+<p>Now to compute the statistics for the posterior distribution we need the sum of squares and the lagged sum of squares (link to previous post). Then using the Distributions package again we can sample from a truncated normal distribution. We have used a prior distribution of a truncated normal distribution with 0 mean and a standard deviation of 5.</p>
 
-        <h2>
-          <a class="post-link" href="/2016/08/17/Dissertation-Learnings.html">Dissertation Construction Learnings</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">May 20, 2016</span>
+<figure class="highlight"><pre><code class="language-julia" data-lang="julia">function posterior_ar(n, y)
+	 n = length(y)
+	 ss = sum(y .* y) + 1/25 
+	 ss_lagged = sum(y .* vcat(y[2:n],0))
+	 
+	 dist = Truncated(Normal(ss_lagged/ss, sqrt(1/ss)), -1, 1)
+	 smps = rand(dist, n)
 
-        <h2>
-          <a class="post-link" href="/2016/05/20/Posterior-pvalues.html">Posterior p-values</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 28, 2016</span>
+	 return smps
+end</code></pre></figure>
 
-        <h2>
-          <a class="post-link" href="/2016/01/28/Python-Url.html">Bulk Downloading from Turnitin using Python.</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 25, 2016</span>
+<p><img src="/assets/phi_density.svg" alt="Phi Density Plot" class="center-image" /></p>
 
-        <h2>
-          <a class="post-link" href="/2016/01/25/January-Films.html">Films I've Watched In January 2016</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 7, 2015</span>
+<p>So we can see that the posterior distribution for <script type="math/tex">\phi</script> is close to the true value of 0.5, so it looks like our algorithm is working.</p>
 
-        <h2>
-          <a class="post-link" href="/2015/10/07/The-First-Workshop.html">The First Workshop</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 30, 2014</span>
-
-        <h2>
-          <a class="post-link" href="/2014/11/30/Trading-Interviews.html">Prop Shop Interviews</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 6, 2014</span>
-
-        <h2>
-          <a class="post-link" href="/2014/11/06/Playing-About-With-shiny.html">Playing About with Shiny</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 28, 2014</span>
-
-        <h2>
-          <a class="post-link" href="/2014/09/28/Playing-About-With-ggplot.html">Playing About with ggplot</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 19, 2014</span>
-
-        <h2>
-          <a class="post-link" href="/2014/09/19/The-First-Blog-Post.html">That First Blog Post</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+<p>Although its just a toy model in these posts I have shown how to calculate the posterior for an autoregressive process and how to draw from such a distribution using Julia. Next stop, include more parameters and see how flexible autoregressive models can be.</p>
 
   </article>
 
