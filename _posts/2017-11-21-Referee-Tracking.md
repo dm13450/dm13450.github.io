@@ -4,12 +4,11 @@ title: Referee Tracking Data and Machine Learning
 date: 2017-11-21
 ---
 
-Tracking data is the alleged holy grail in football analysis. But what about if we have 
+Tracking data is the alleged holy grail in football analysis. But what about if we have a referee's position throughout a match? What can we do with this kind of data? 
 
-In this post I'll be exploring my positioning using data I've collected in a match. Ill go through the process of loading, cleaning and using a few machine learning techniques to make sense of where I was on the pitch. 
+In this post I'll be exploring my positioning using data I've collected in a match. I will go through the process of loading, cleaning and using a few machine learning techniques to make sense of where I was on the pitch. I'll be using a python notebook and various packages to do the work.
 
 Firstly, lets load the necessary packages for our analysis. 
-
 
 {% highlight python %}
 %matplotlib notebook
@@ -20,7 +19,7 @@ from sklearn.decomposition import PCA
 from sklearn.neighbors import KernelDensity
 {% endhighlight %}
 
-We then read the data in and take a look at the first few rows. 
+We then read the data in and produce our first exploratory scatter plot.  
 
 {% highlight python %}
 game = pd.read_csv("Amargh_vs_Bangor.csv")
@@ -31,7 +30,7 @@ game.plot(kind='scatter', x='Lon', y='Lat')
 
 We can see that it is a very dense collection of points. With 6042 rows over approximately 90 minutes we can see that my position was updated roughly once a second. 
 
-We now need to transform the data. We want to centre and scale it and then apply PCA so that we can compare it to future matches. 
+We now need to transform the data. We want to centre and scale it and then apply Principle Component Analysis (PCA)  so that we can compare it to future matches and all the other data that I have.  
 
 
 {% highlight python %}
@@ -39,14 +38,15 @@ lon_train = (game.Lon - np.mean(game.Lon)) /np.sqrt(np.var(game.Lon))
 lat_train = (game.Lat - np.mean(game.Lat)) /np.sqrt(np.var(game.Lat))
 {% endhighlight %}
 
-Now need to do the PCA to rotate is along the axis. 
-
+Performing a PCA is extremely simple in Python. 
 
 {% highlight python %}
 X = np.vstack([lon_train, lat_train])
 pca = PCA(n_components=2)
 X_r = pca.fit(X.T).transform(X.T)
 {% endhighlight %}
+
+We can now plot the results of our transforms. 
 
 {% highlight python %}
 fig, axs = plt.subplots()
@@ -66,16 +66,16 @@ print np.subtract(*np.percentile(X_r[:,1], [97, 3]))
 
 By looking at the quantiles of the data, I'm hazarding a guess that the x-axis is the length of the pitch. Football pitches are longer than wider, therefore the axis with wider quantiles will be along the length of the pitch. 
 
-Whenever we are performing such inferences it is always usually a good idea to rescale your data to zero mean and unit standard deviation. In our case, this isn't going to change the fundamental structure in our data, instead it just moves the centre to (0,0). As for applying the PCA transform, we want to be able to be able to compare the tracking data of all our games, if we didn't rotate the data, we would have to correct for the different orientations of the pitch. By applying the PCA transform, we are making sure that all the variation is along both axis.
+Whenever we are performing such inferences it is always usually a good idea to rescale your data to zero mean and unit standard deviation. In our case, this isn't going to change the fundamental structure in our data, instead it just moves the centre to (0,0). As for applying the PCA transform, we want to be able to be able to compare the tracking data of all our games, if we didn't rotate the data, we would have to correct for the different orientations of the pitch. By applying the PCA transform, we are making sure that all the variation is along both axis regardless of where the pitch is in relation to the longitude and latitude. 
 
-Now we perform our kernel density estimation using the appropriate functions from scikitlearn. We chose a bandwidth arbitrarily. It is possible to learn the optimal bandwidth for the data, but I shall save that for another blog post. 
+Now we perform our kernel density estimation using the appropriate functions from sklearn.  We chose a bandwidth arbitrarily. It is possible to learn the optimal bandwidth for the data, but I shall save that for another blog post. 
 
 {% highlight python %}
 kde = KernelDensity(kernel="gaussian", bandwidth=0.5)
 kde.fit(X_r)
 {% endhighlight %}
 
-To plot our kde we must create a grid spanning the pitch area and calculate the kernel density at each of these points. A contour plot then shows the regions of high density and therefore the areas of the pitch that my movement was concentrated. 
+To plot our estimation we must create a grid spanning the pitch area and calculate the kernel density at each of these points. A contour plot then shows the regions of high density and therefore the areas of the pitch that my movement was concentrated. 
 
 {% highlight python %}
 x_plot = np.linspace(-3.5, 3.5, 500)
