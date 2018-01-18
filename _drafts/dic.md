@@ -1,0 +1,154 @@
+---
+layout: post
+title: Deviance Information Criteria
+date: 2018-01-18
+---
+
+Deviation information criteria (DIC) is a metric used to compare
+Bayesian models. It is closely related to the Akaike
+information criteria (AIC) which is defined as $$2k - 2 \ln
+\hat{\mathcal{L}}$$, where *k* is the number of parameters in a model
+and $$\hat{\mathcal{L}}$$ is the maximised log-likelihood. The DIC
+makes some changes to this formula. Firstly by replacing a maximised
+log-likelihood with the log-likelihood evaluated at the Bayes estimate
+$$\hat{\theta}$$ and by replacing $$k$$ with an alternative correction
+
+$$\begin{aligned}
+\text{DIC} & = \log p(y \mid \hat{\theta}) - p _{\text{DIC}} ,\\
+p_{\text{DIC}} & = 2 \left( \log p(y \mid \hat{\theta}) - \mathbb{E}
+_{\text{post}} \log p(y \mid \theta) \right).
+\end{aligned}$$
+
+These changes make it more suitable for a Bayesian model, but beware,
+it isn't a fully Bayesian metric in the philosophical sense. You are
+reducing probability distributions down to point estimates, so it
+looses some of the Bayesian credibility. 
+
+### Example
+
+To demonstrate how we can calculate DIC, I simulate some data and
+draw from its posterior distribution. For simplicity, I use the
+Poisson distribution with a conjugate gamma distribution. This lets me
+easily draw from the posterior distribution.
+
+{% highlight r %}
+y <- rpois(100, 10)
+
+postDraws <- rgamma(1000, 0.01 + sum(y), 0.01 + length(y))
+
+thetaBayes <- mean(postDraws)
+
+logLikelihood <- function(theta) sum(dpois(y, theta, log=T))
+
+pDIC <- 2*(logLikelihood(thetaBayes) - mean(sapply(postDraws, logLikelihood) ))
+dic <- -2*logLikelihood(thetaBayes) + 2*pDIC
+{% endhighlight %}
+
+This gives us a DIC value of $$\sim 513$$. Which is useless on its
+own, but given two models we can compare the DIC values and favour the
+model with lowest DIC. 
+
+### Model Comparison
+
+To demonstrate this, we simulate some data from a gamma distribution
+and fit two models; a gamma and a lognormal model using [Stan](http://mc-stan.org/). 
+
+The Stan code for the models is simply:
+
+{% highlight r %}
+data {
+	int N;
+	real y[N];
+}
+
+parameters {
+	real<lower=0> a;
+	real<lower=0> b;
+}
+
+model {
+	y ~ gamma(a, b);
+}
+{% endhighlight %}
+
+Replacing the gamma distribution for a lognormal in the other model. 
+
+I simulate 1000 datapoints and sample from Stan before forming a 2
+column matrix with of the posterior samples. 
+
+{% highlight r %}
+y <- rgamma(1000, 2, 4)
+
+gammaModel <- stan_model("dic_gamma.stan")
+lognormalModel <- stan_model("dic_lognormal.stan")
+
+gammaSamples <- sampling(gammaModel, list(y=y, N=length(y)))
+lognormalSamples <- sampling(lognormalModel, list(y=y, N=length(y)))
+
+postSamplesGamma <- Reduce(cbind, extract(gammaSamples, pars=c("a", "b")))
+postSampleslognormal <- Reduce(cbind, extract(lognormalSamples, pars=c("mu", "sigma")))
+{% endhighlight %}
+
+To construct a function for the DIC, you need to be able to pass in
+the data, likelihood function and posterior samples. Thankfully, R has
+a fairly standard way of using its probability distributions, we can
+rely on both `dgamma` and `dlnorm` to take in the same type of
+arguments. But the `dic` function is
+not flexible enough that any distribution can be passed through. 
+
+{% highlight r %}
+dic <- function(data, likelihood, postSamples){
+  
+  logLikelihood <- function(theta) sum(likelihood(data, theta[1], theta[2], log=T))
+  
+  thetaBayes <- colMeans(postSamples)
+  
+  pDIC <- 2*(logLikelihood(thetaBayes) - mean(apply(postSamples, 1, logLikelihood) ))
+  dic <- -2*logLikelihood(thetaBayes) + 2*pDIC
+  
+  return(dic)
+}
+{% endhighlight %}
+
+
+{% highlight r %}
+gammaDIC <- dic(y, dgamma, postSamplesGamma)
+lognormalDIC <- dic(y, dlnorm, postSampleslognormal)
+{% endhighlight %}
+
+By applying the function to the sample data and calculating the values
+we find that
+
+
+| Model | DIC |
+| -----|-----|
+| Gamma |375.2491 |
+| Lognormal | 478.6547 |
+
+The true model (gamma) has the lower DIC as expected. So everything is
+working as expected! 
+
+You can also asses the DIC on some out-of-sample data. This is achieved
+by simply simulating from the same distribution and passing it through
+the `dic` function. 
+
+{% highlight r %}
+gammaDICOut <- dic(rgamma(100, 2, 4), dgamma, postSamplesGamma)
+lognormalDICOut <- dic(rgamma(100, 2, 4), dlnorm, postSampleslognormal)
+{% endhighlight %}
+
+
+| Model | DIC |
+| -----|-----|
+| Gamma |12.42242 |
+| Lognormal | 30.78499 |
+
+
+Again, the gamma model has the lower DIC, more evidence that this is
+the correct model. 
+
+Overall, the DIC is a useful metric to asses your model correctness
+and easy to calculate using your posterior samples.
+
+
+
