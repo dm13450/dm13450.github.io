@@ -10,7 +10,7 @@
     <meta name="description" content="All rights reserved.">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/2018/01/18/dic.html">
+    <link rel="canonical" href="/2018/01/18/DIC.html">
 </head>
 
 
@@ -86,7 +86,7 @@ log-likelihood with the log-likelihood evaluated at the Bayes estimate
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{aligned}
-\text{DIC} & = \log p(y \mid \hat{\theta}) - p _{\text{DIC}} ,\\
+\text{DIC} & = -2  \log p(y \mid \hat{\theta}) + 2 p _{\text{DIC}} ,\\
 p_{\text{DIC}} & = 2 \left( \log p(y \mid \hat{\theta}) - \mathbb{E}
 _{\text{post}} \log p(y \mid \theta) \right).
 \end{aligned} %]]></script>
@@ -233,6 +233,8 @@ the correct model.</p>
 
 <p>Overall, the DIC is a useful metric to asses your model correctness
 and easy to calculate using your posterior samples.</p>
+
+<p>Submitted to <a href="https://rweekly.org/">RWeekly</a></p>
 
 
   </article>
