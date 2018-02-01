@@ -10,7 +10,7 @@
     <meta name="description" content="All rights reserved.">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/2017/01/26/Julia-Distributions.html">
+    <link rel="canonical" href="http://localhost:4000/2017/01/26/Julia-Distributions.html">
 </head>
 
 
@@ -96,10 +96,9 @@ The first step in this code is to define our distribution. As the exponential di
 
 <p>There are also other functions available. A great example is calculating the mean of a log-normal distribution. This distribution is defined with two parameters; <script type="math/tex">m</script> and <script type="math/tex">s^2</script>. However, the mean of the distribution is not equal to <script type="math/tex">m</script>. Instead it is <script type="math/tex">\exp(m+\frac{s^2}{2})</script>. The Distributions package in Julia knows this. So by simply calling <code class="highlighter-rouge">mean</code> on the <code class="highlighter-rouge">LogNormal()</code> object you can return the theoretical mean of the distribution and not have to worry about the parametrisation specifics of the distribution.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>dist = LogNormal(1,4)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dist = LogNormal(1,4)
 mean(dist) == exp(1 + 4^2/2)
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Overall, Julia and the Distributions package offer similar functionality to R. You can easily replicate some of the functions in R with very effort in Julia. This can be a useful tool if R is not quite cutting it on the speed front.</p>
 
@@ -115,7 +114,7 @@ mean(dist) == exp(1 + 4^2/2)
 
   <div class="wrapper">
 
-    <h2 class="footer-heading"> &copy; 2016  Dean Markwick </h2>
+    <h2 class="footer-heading"> &copy; 2018  Dean Markwick </h2>
 
     <div class="footer-col-wrapper">
       <div class="footer-col  footer-col-1">

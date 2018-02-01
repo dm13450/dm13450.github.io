@@ -10,7 +10,7 @@
     <meta name="description" content="All rights reserved.">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/2016/01/28/Python-Url.html">
+    <link rel="canonical" href="http://localhost:4000/2016/01/28/Python-Url.html">
 </head>
 
 
@@ -83,12 +83,11 @@
 
 <p>In Python-esque pseudo-code, this looks like:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">id_list</span><span class="p">:</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">id_list</span><span class="p">:</span>
     <span class="n">response</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">base_url</span> <span class="o">+</span> <span class="n">sessionid</span> <span class="o">+</span> <span class="n">paperid</span><span class="p">)</span>
     <span class="n">pdf_file</span> <span class="o">=</span> <span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
     <span class="n">pdf_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The simplicity of the urllib2 is what makes this short script so easy to construct and use.</p>
 
@@ -107,7 +106,7 @@
 
   <div class="wrapper">
 
-    <h2 class="footer-heading"> &copy; 2016  Dean Markwick </h2>
+    <h2 class="footer-heading"> &copy; 2018  Dean Markwick </h2>
 
     <div class="footer-col-wrapper">
       <div class="footer-col  footer-col-1">
