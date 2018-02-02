@@ -1,5 +1,5 @@
 .bundle
 .sass-cache
-Gemfile.locl
+Gemfile.loc
 _site
 *.gem
