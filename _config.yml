@@ -27,6 +27,8 @@ google_analytics: UA-113472164-1
 
 plugins:
  - jekyll-seo-tag
+ - jekyll-feed
+
 
 show_excerpts: false # set to true to show excerpts on the homepage
 
