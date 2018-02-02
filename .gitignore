@@ -1,0 +1,5 @@
+.bundle
+.sass-cache
+Gemfile.locl
+_site
+*.gem
