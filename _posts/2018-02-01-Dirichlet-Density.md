@@ -116,7 +116,7 @@ Weights |         mu  |   sigma
 0.047794118 | 0.3068369 | 0.9846167
 0.003676471 |  0.4765865 | 2.4478375
 
-From the weights, we can see that 60% of the data points are associated with a $$\mu = 0.75, \sigma = 0.4$$ cluster parameter. 
+From the weights, we can see that 60% of the data points are associated with a $$\mu = 0.64, \sigma = 0.39$$ cluster parameter. 
 
 If we want to plot our posterior estimate against our original histogram, we simply have to obtain samples of the posterior distribution.
 
