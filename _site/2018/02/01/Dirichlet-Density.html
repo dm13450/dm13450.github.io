@@ -5,9 +5,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Begin Jekyll SEO tag v2.4.0 -->
+  <!-- Begin Jekyll SEO tag v2.3.0 -->
 <title>Density Estimation with the dirichletprocesss R package | Dean Markwick</title>
-<meta name="generator" content="Jekyll v3.7.2" />
 <meta property="og:title" content="Density Estimation with the dirichletprocesss R package" />
 <meta name="author" content="Dean Markwick" />
 <meta property="og:locale" content="en_US" />
@@ -19,7 +18,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-02-01T00:00:00+00:00" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"Dean Markwick"},"headline":"Density Estimation with the dirichletprocesss R package","url":"http://localhost:4000/2018/02/01/Dirichlet-Density.html","description":"With the release of the dirichletprocess package I will be writing a series of tutorials on how to use Dirichlet processes for nonparameteric Bayesian statistics. In this first tutorial we will be using a Dirichlet process for density estimation.","dateModified":"2018-02-01T00:00:00+00:00","datePublished":"2018-02-01T00:00:00+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/02/01/Dirichlet-Density.html"},"@context":"http://schema.org"}</script>
+{"author":{"@type":"Person","name":"Dean Markwick"},"publisher":null,"description":"With the release of the dirichletprocess package I will be writing a series of tutorials on how to use Dirichlet processes for nonparameteric Bayesian statistics. In this first tutorial we will be using a Dirichlet process for density estimation.","headline":"Density Estimation with the dirichletprocesss R package","dateModified":"2018-02-01T00:00:00+00:00","name":null,"datePublished":"2018-02-01T00:00:00+00:00","sameAs":null,"url":"http://localhost:4000/2018/02/01/Dirichlet-Density.html","image":null,"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/02/01/Dirichlet-Density.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/assets/main.css">
@@ -188,8 +187,7 @@ that the data is bimodal.</p>
 
 <p>Before we begin, make sure you install and load the package.</p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">install.packages</span><span class="p">(</span><span class="s1">'dirichletprocess'</span><span class="p">)</span><span class="w">
-</span><span class="n">library</span><span class="p">(</span><span class="n">dirichletprocess</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">install.packages</span><span class="p">(</span><span class="s1">'dirichletprocess'</span><span class="p">)</span><span class="w"><br data-jekyll-commonmark-ghpages="" /></span><span class="n">library</span><span class="p">(</span><span class="n">dirichletprocess</span><span class="p">)</span></code></pre></figure>
 
 <p>Now we want to transform our data so that it is zero mean and unit variance. Always a good idea for any machine learning problem.</p>
 
@@ -213,9 +211,7 @@ that the data is bimodal.</p>
 
 <p>Here we can see the posterior mean of the found distribution and the associated credible intervals. We can look inside the <code class="highlighter-rouge">dp</code> object and find the associated cluster parameters.</p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">data.frame</span><span class="p">(</span><span class="n">Weights</span><span class="o">=</span><span class="n">dp</span><span class="o">$</span><span class="n">weights</span><span class="p">,</span><span class="w">
-                  </span><span class="n">mu</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="n">dp</span><span class="o">$</span><span class="n">clusterParameters</span><span class="p">[[</span><span class="m">1</span><span class="p">]]),</span><span class="w">
-                  </span><span class="n">sigma</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="n">dp</span><span class="o">$</span><span class="n">clusterParameters</span><span class="p">[[</span><span class="m">2</span><span class="p">]]))</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">data.frame</span><span class="p">(</span><span class="n">Weights</span><span class="o">=</span><span class="n">dp</span><span class="o">$</span><span class="n">weights</span><span class="p">,</span><span class="w"><br data-jekyll-commonmark-ghpages="" />                  </span><span class="n">mu</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="n">dp</span><span class="o">$</span><span class="n">clusterParameters</span><span class="p">[[</span><span class="m">1</span><span class="p">]]),</span><span class="w"><br data-jekyll-commonmark-ghpages="" />                  </span><span class="n">sigma</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="n">dp</span><span class="o">$</span><span class="n">clusterParameters</span><span class="p">[[</span><span class="m">2</span><span class="p">]]))</span></code></pre></figure>
 
 <table>
   <thead>
@@ -253,10 +249,7 @@ that the data is bimodal.</p>
 
 <p>If we want to plot our posterior estimate against our original histogram, we simply have to obtain samples of the posterior distribution.</p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">xGrid</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">seq</span><span class="p">(</span><span class="m">-3</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="o">=</span><span class="m">0.01</span><span class="p">)</span><span class="w">
-</span><span class="n">postSamples</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data.frame</span><span class="p">(</span><span class="n">replicate</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="n">PosteriorFunction</span><span class="p">(</span><span class="n">dp</span><span class="p">)(</span><span class="n">xGrid</span><span class="p">)))</span><span class="w">
-
-</span><span class="n">postFrame</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data.frame</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">xGrid</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">rowMeans</span><span class="p">(</span><span class="n">postSamples</span><span class="p">))</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">xGrid</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">seq</span><span class="p">(</span><span class="m">-3</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="o">=</span><span class="m">0.01</span><span class="p">)</span><span class="w"><br data-jekyll-commonmark-ghpages="" /></span><span class="n">postSamples</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data.frame</span><span class="p">(</span><span class="n">replicate</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="n">PosteriorFunction</span><span class="p">(</span><span class="n">dp</span><span class="p">)(</span><span class="n">xGrid</span><span class="p">)))</span><span class="w"><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" /></span><span class="n">postFrame</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data.frame</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">xGrid</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">rowMeans</span><span class="p">(</span><span class="n">postSamples</span><span class="p">))</span></code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">ggplot</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">geom_histogram</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data.frame</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">faithfulTrans</span><span class="p">),</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">..density..</span><span class="p">),</span><span class="w"> </span><span class="n">binwidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.25</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">geom_line</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">postFrame</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">),</span><span class="w"> </span><span class="n">colour</span><span class="o">=</span><span class="s1">'red'</span><span class="p">)</span></code></pre></figure>
 
