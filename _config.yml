@@ -40,7 +40,7 @@ header_pages:
 
 # Build settings
 markdown: kramdown
-theme: minima
+remote_theme: minima
 exclude:
   - Gemfile
   - Gemfile.lock
