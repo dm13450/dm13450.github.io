@@ -1,11 +1,3 @@
-PATH
-  remote: .
-  specs:
-    minima (2.3.0)
-      jekyll (~> 3.5)
-      jekyll-feed (~> 0.9)
-      jekyll-seo-tag (~> 2.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -199,6 +191,8 @@ GEM
       rb-inotify (>= 0.9.7)
     mercenary (0.3.6)
     mini_portile2 (2.3.0)
+    minima (2.1.1)
+      jekyll (~> 3.3)
     minitest (5.11.3)
     multipart-post (2.0.0)
     net-dns (0.8.0)
@@ -238,9 +232,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 1.15)
   github-pages
-  minima!
+  jekyll-seo-tag
+  minima
 
 BUNDLED WITH
    1.16.1

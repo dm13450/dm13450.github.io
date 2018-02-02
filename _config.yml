@@ -25,6 +25,9 @@ disqus:
 
 google_analytics: UA-113472164-1
 
+plugins:
+ - jekyll-seo-tag
+
 show_excerpts: false # set to true to show excerpts on the homepage
 
 # Minima date format
