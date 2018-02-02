@@ -1,6 +1,5 @@
 language: ruby
 cache: bundler
 rvm: 
-- 2.4
-install: script/bootstrap
-script: script/cibuild
+- 2.1
+script: "bundle exc jekyll build"
