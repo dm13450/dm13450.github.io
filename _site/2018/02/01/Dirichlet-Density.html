@@ -12,31 +12,17 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="With the release of the dirichletprocess package I will be writing a series of tutorials on how to use Dirichlet processes for nonparameteric Bayesian statistics. In this first tutorial we will be using a Dirichlet process for density estimation." />
 <meta property="og:description" content="With the release of the dirichletprocess package I will be writing a series of tutorials on how to use Dirichlet processes for nonparameteric Bayesian statistics. In this first tutorial we will be using a Dirichlet process for density estimation." />
-<link rel="canonical" href="https://dm13450.github.io/2018/02/01/Dirichlet-Density.html" />
-<meta property="og:url" content="https://dm13450.github.io/2018/02/01/Dirichlet-Density.html" />
+<link rel="canonical" href="http://localhost:4000/2018/02/01/Dirichlet-Density.html" />
+<meta property="og:url" content="http://localhost:4000/2018/02/01/Dirichlet-Density.html" />
 <meta property="og:site_name" content="Dean Markwick" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-02-01T00:00:00+00:00" />
 <script type="application/ld+json">
-{"datePublished":"2018-02-01T00:00:00+00:00","sameAs":null,"publisher":null,"mainEntityOfPage":{"@type":"WebPage","@id":"https://dm13450.github.io/2018/02/01/Dirichlet-Density.html"},"author":{"@type":"Person","name":"Dean Markwick"},"image":null,"description":"With the release of the dirichletprocess package I will be writing a series of tutorials on how to use Dirichlet processes for nonparameteric Bayesian statistics. In this first tutorial we will be using a Dirichlet process for density estimation.","name":null,"@type":"BlogPosting","url":"https://dm13450.github.io/2018/02/01/Dirichlet-Density.html","headline":"Density Estimation with the dirichletprocesss R package","dateModified":"2018-02-01T00:00:00+00:00","@context":"http://schema.org"}</script>
+{"publisher":null,"headline":"Density Estimation with the dirichletprocesss R package","dateModified":"2018-02-01T00:00:00+00:00","datePublished":"2018-02-01T00:00:00+00:00","sameAs":null,"author":{"@type":"Person","name":"Dean Markwick"},"description":"With the release of the dirichletprocess package I will be writing a series of tutorials on how to use Dirichlet processes for nonparameteric Bayesian statistics. In this first tutorial we will be using a Dirichlet process for density estimation.","image":null,"name":null,"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/02/01/Dirichlet-Density.html"},"@type":"BlogPosting","url":"http://localhost:4000/2018/02/01/Dirichlet-Density.html","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link type="application/atom+xml" rel="alternate" href="https://dm13450.github.io/feed.xml" title="Dean Markwick" />
-  
-    <script>
-if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-113472164-1', 'auto');
-  ga('send', 'pageview');
-}
-</script>
-  
-
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Dean Markwick" />
   
 </head>
 
@@ -259,7 +245,7 @@ that the data is bimodal.</p>
   </tbody>
 </table>
 
-<p>From the weights, we can see that 60% of the data points are associated with a <script type="math/tex">\mu = 0.75, \sigma = 0.4</script> cluster parameter.</p>
+<p>From the weights, we can see that 60% of the data points are associated with a <script type="math/tex">\mu = 0.64, \sigma = 0.39</script> cluster parameter.</p>
 
 <p>If we want to plot our posterior estimate against our original histogram, we simply have to obtain samples of the posterior distribution.</p>
 
@@ -278,25 +264,6 @@ that the data is bimodal.</p>
 
   
     
-
-  <div id="disqus_thread"></div>
-  <script>
-    var disqus_config = function () {
-      this.page.url = 'https://dm13450.github.io/2018/02/01/Dirichlet-Density.html';
-      this.page.identifier = 'https://dm13450.github.io/2018/02/01/Dirichlet-Density.html';
-    };
-
-    (function() {
-      var d = document, s = d.createElement('script');
-
-      s.src = 'https://dm13450.disqus.com/embed.js';
-
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-
 
   
 

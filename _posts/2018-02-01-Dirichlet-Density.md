@@ -2,6 +2,8 @@
 layout: post
 title: Density Estimation with the dirichletprocesss R package
 date: 2018-02-01
+tags: 
+ - r
 ---
 
 
