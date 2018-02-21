@@ -3,7 +3,7 @@ layout: post
 title: Extreme Values and the VIX
 date: 2018-02-12
 tags:
- -r
+ - r
 ---
 
 ``` r

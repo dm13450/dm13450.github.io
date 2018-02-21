@@ -14,6 +14,9 @@ Outside of academia, I enjoy a good film and a bit of a foodie. Here I am enjoyi
 
 ![Delicous BBQ](/assets/kbbq.JPG){: .center-image}
 
+
+My blog is also aggregated on <https://www.r-bloggers.com/>.
+
 <h3>Recent Post:</h3>
 <ul>
   {% for post in site.posts limit:1 %}
