@@ -50,7 +50,7 @@ The user must decide what distribution they wish to mix. In this
 example we will use a mixture of exponential distributions as our
 example. The unknown parameter that we will be sampling is \\(\theta
 \\). For a prior distribution we will be using the gamma distribution,
-which has two parameters \\(\alpha _0 m \beta _0 \\). We also pass these values into the constructor function.
+which has two parameters \\(\alpha _0 , \beta _0 \\). We also pass these values into the constructor function.
 
 We use the constructor function to build a new `mixingDistribution` object that will be used by the Dirichlet process functions.
 
