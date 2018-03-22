@@ -2,8 +2,7 @@
 layout: post
 title: Point Process Estimation with dirichletprocess
 date: 08-03-2018
-summary: Fit a point process model using the dirichletprocess R
-package.
+summary: Fit a point process model using the dirichletprocess R package.
 image: /assets/pointprocess_files/dp-1.png
 tags:
  - r
