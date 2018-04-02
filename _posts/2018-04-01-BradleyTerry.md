@@ -92,6 +92,6 @@ plot(smpls, pars=c("ratings")) + scale_y_continuous(labels=uniqTeams, breaks=rev
 
 ![](/assets/Red_Card_Bradley_Terry_Model_files/btmodel_lec.png)
 
-We can see that Leicester was below the average. So their title win was unlikely to be because of their ability to get someone sent off. However, Newcastle, Norwich and Aston Villa are quite far below the average also. These were the three worst teams in the Premier League and subsequently got relegated, so perhaps the sending offs didn't go there way throughout the season, which led to missed points.
+We can see that Leicester was below the average. So their title win was unlikely to be because of their ability to get someone sent off. However, Newcastle, Norwich and Aston Villa are quite far below the average also. These were the three worst teams in the Premier League and subsequently got relegated, so perhaps the sending offs didn't go their way throughout the season, which led to missed points.
 
 Overall, the actual usefulness of this type of model is questionable. It appears to be descriptive and allows us to compare teams on their ability to get the other team sent off, but how well this works as a predictive model is very dubious. Still, it's a nice foray into Bradley Terry models and shows how easy they can be fitted using Stan.
