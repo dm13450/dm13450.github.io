@@ -11,7 +11,7 @@ tags:
 
 A Bradley Terry model ranks opponents to give a probability that a match up will lead to a win or loss for either team. Draws are not allowed in the most basic Bradley Terry (BT) model, which makes them impractical for football results. There are extensions that allow for draws, ([here](https://www.jstor.org/stable/2283595)), but in this post I will show how we formulated our own 'games' in football for which a BT model can be used.
 
-As a side project I predict red cards in football and host my results at [www.illiquidodsd.com](http://www.illiquidodds.com). Therefore I'm always on the look out for new ways to see how we can model a red card occurring in a match. What if we can formulate a football match as a competition between two teams where a win is counted as getting a member of the other team sent off. Each match, i.e. Tottenham vs Arsenal can be broken down into two separate matches. One where Tottenham competes to get an Arsenal player sent off and another where Arsenal competes to get a Tottenham player sent off.
+As a side project I predict red cards in football and host my results at [www.illiquidodds.com](http://www.illiquidodds.com). Therefore I'm always on the look out for new ways to see how we can model a red card occurring in a match. What if we can formulate a football match as a competition between two teams where a win is counted as getting a member of the other team sent off. Each match, i.e. Tottenham vs Arsenal can be broken down into two separate matches. One where Tottenham competes to get an Arsenal player sent off and another where Arsenal competes to get a Tottenham player sent off.
 
 Then using this new dataset we can fit a BT model to see who is better at getting someone from the other team sent off.
 
