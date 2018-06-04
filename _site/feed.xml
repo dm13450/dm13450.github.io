@@ -1,5 +1,90 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-05-18T17:52:55+01:00</updated><id>http://localhost:4000/</id><title type="html">Dean Markwick</title><subtitle>Personal website for Dean Markwick. If you like stats, sports and rambling, you've come to the right place. All rights reserved. 
-</subtitle><author><name>Dean Markwick</name></author><entry><title type="html">Bayes Comp 2018</title><link href="http://localhost:4000/2018/05/18/Bayes-Comp.html" rel="alternate" type="text/html" title="Bayes Comp 2018" /><published>2018-05-18T00:00:00+01:00</published><updated>2018-05-18T00:00:00+01:00</updated><id>http://localhost:4000/2018/05/18/Bayes-Comp</id><content type="html" xml:base="http://localhost:4000/2018/05/18/Bayes-Comp.html">&lt;p&gt;This time last month I was in Barcelona for BayesComp 2018 at Universitat Pompeu Fabra (UPF). A conference dedicated to Bayesian statistics and the challenges it poses; from large data sets, different types of priors and upcoming software packages. I learnt quite a bit and in this post I’ll outline some of those new things.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-06-04T14:40:01+01:00</updated><id>http://localhost:4000/</id><title type="html">Dean Markwick</title><subtitle>Personal website for Dean Markwick. If you like stats, sports and rambling, you've come to the right place. All rights reserved. 
+</subtitle><author><name>Dean Markwick</name></author><entry><title type="html">Clustering with Dirichlet Processes</title><link href="http://localhost:4000/2018/05/30/Clustering.html" rel="alternate" type="text/html" title="Clustering with Dirichlet Processes" /><published>2018-05-30T00:00:00+01:00</published><updated>2018-05-30T00:00:00+01:00</updated><id>http://localhost:4000/2018/05/30/Clustering</id><content type="html" xml:base="http://localhost:4000/2018/05/30/Clustering.html">&lt;p&gt;This post is another tutorial on using my &lt;code class=&quot;highlighter-rouge&quot;&gt;dirichetprocess&lt;/code&gt; package in R. So far I have shown you &lt;a href=&quot;http://dm13450.github.io/2018/02/01/Dirichlet-Density.html&quot;&gt;how to perform density estimation&lt;/a&gt;, &lt;a href=&quot;http://dm13450.github.io/2018/03/08/dirichletprocess-pointprocess.html&quot;&gt;point process inference&lt;/a&gt;, and adding your own &lt;a href=&quot;http://dm13450.github.io/2018/02/21/Custom-Distributions-Conjugate.html&quot;&gt;custom mixture model&lt;/a&gt;. In this tutorial I will show you how Dirichlet processes can be used for clustering.&lt;/p&gt;
+
+&lt;p&gt;Before we being, make sure you download the latest version of the package from CRAN.&lt;/p&gt;
+
+&lt;div class=&quot;language-r highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;install.packages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;dirichletprocess&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We then load a few helper packages&lt;/p&gt;
+
+&lt;div class=&quot;language-r highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ggplot2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dirichletprocess&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dplyr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;For our data we will be using the classic &lt;code class=&quot;highlighter-rouge&quot;&gt;faithful&lt;/code&gt; dataset, as we did in the density estimation. But this time we will use both columns of the data.&lt;/p&gt;
+
+&lt;p&gt;First lets take a look at the data.&lt;/p&gt;
+
+&lt;div class=&quot;language-r highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ggplot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;faithful&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;waiting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eruptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;geom_point&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/clustering_files/figure-markdown_github/unnamed-chunk-1-1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There is a clear split and two distinct clusters of the data. The
+length of waiting time between eruptions is positively correlated with
+the length of that eruption. Those with a waiting time of more than 70
+minutes have eruptions lasting more than 3 minutes most of the time.&lt;/p&gt;
+
+&lt;p&gt;With a Dirichlet process we can perform some unsupervised machine
+learning and group the data based on common clusters. Mathematically, we think that the pair of observations are drawn from a multivariate normal mixture distribution.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;(\text{waiting}, \text{eruptions})_i \sim N(\mu _i,  \sigma _i)&lt;/script&gt;
+
+&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;\mu&lt;/script&gt; is a 2 dimensional vector of the mean, &lt;script type=&quot;math/tex&quot;&gt;\sigma&lt;/script&gt; is the
+ covariance matrix and &lt;script type=&quot;math/tex&quot;&gt;i&lt;/script&gt; labels the cluster parameter.&lt;/p&gt;
+
+&lt;p&gt;We think that these parameters are drawn from a Dirichlet process&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mu _i , \Sigma _i \sim \text{DP} (\alpha, G_0)&lt;/script&gt;
+
+&lt;p&gt;. Where &lt;script type=&quot;math/tex&quot;&gt;\alpha&lt;/script&gt; is the concentration of the Dirichlet process and &lt;script type=&quot;math/tex&quot;&gt;G_0&lt;/script&gt; is the base measure. This is a conjugate problem, so &lt;script type=&quot;math/tex&quot;&gt;G_0&lt;/script&gt; is just the conjugate prior for a multivariate normal model.&lt;/p&gt;
+
+&lt;p&gt;But as you are using a the &lt;code class=&quot;highlighter-rouge&quot;&gt;dirichletprocess&lt;/code&gt; package, you don’t have
+to worry about any of this maths. You can simply build a
+&lt;code class=&quot;highlighter-rouge&quot;&gt;dirichletprocess&lt;/code&gt; object and pass the data in to find the appropriate
+clusters. Again, remember to scale your data, the priors for this model
+are defined such that the data is distributed around 0.&lt;/p&gt;
+
+&lt;div class=&quot;language-r highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;faithfulTrans&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;faithful&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DirichletProcessMvnormal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;as.matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;faithfulTrans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;progressBar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;FALSE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/clustering_files/figure-markdown_github/unnamed-chunk-2-1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Two clusters have been found by the Dirichlet process and where we would expect to see them aswell. Out of the box we can perform unsupervised clustering in just 3 lines of code!&lt;/p&gt;
+
+&lt;p&gt;What if we have more than two dimensions, how does that change things?
+Thankfully it doesn’t and the procedure remains the same. You can
+still easily fit using the same functions - just passing in your data
+matrix.&lt;/p&gt;
+
+&lt;p&gt;Again, using classic stats data sets we can perform some basic
+clustering on the &lt;code class=&quot;highlighter-rouge&quot;&gt;iris&lt;/code&gt; dataset. We use the four quantitate values of
+the dataset; the lengths and widths of the sepals and petals.&lt;/p&gt;
+
+&lt;div class=&quot;language-r highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;iris&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Species&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scale&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;irisPred&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; 
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DirichletProcessMvnormal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;irisPred&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;progressBar&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;FALSE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pairs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;irisPred&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clusterLabels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/clustering_files/figure-markdown_github/unnamed-chunk-3-1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here we show how the &lt;code class=&quot;highlighter-rouge&quot;&gt;iris&lt;/code&gt; data set can be clustered into two
+different groups. We’ve used the base R graphics to produce a pairs
+plot with the two different clusters separated by colours. The four
+dimensional set has been clustered and resulted in two different
+groups. No changes needed in our Dirichlet process code.&lt;/p&gt;
+
+&lt;p&gt;Overall, using the Dirichlet process package you can easily perform
+some unsupervised clustering. The dimensionality of your data is no
+problem, at least for the software! So download &lt;code class=&quot;highlighter-rouge&quot;&gt;dirichletprocess&lt;/code&gt; and
+get clustering!&lt;/p&gt;</content><author><name>Dean Markwick</name></author><category term="r" /><summary type="html">This post is another tutorial on using my dirichetprocess package in R. So far I have shown you how to perform density estimation, point process inference, and adding your own custom mixture model. In this tutorial I will show you how Dirichlet processes can be used for clustering.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/clustering_files/figure-markdown_github/unnamed-chunk-2-1.png" /></entry><entry><title type="html">Bayes Comp 2018</title><link href="http://localhost:4000/2018/05/18/Bayes-Comp.html" rel="alternate" type="text/html" title="Bayes Comp 2018" /><published>2018-05-18T00:00:00+01:00</published><updated>2018-05-18T00:00:00+01:00</updated><id>http://localhost:4000/2018/05/18/Bayes-Comp</id><content type="html" xml:base="http://localhost:4000/2018/05/18/Bayes-Comp.html">&lt;p&gt;This time last month I was in Barcelona for BayesComp 2018 at Universitat Pompeu Fabra (UPF). A conference dedicated to Bayesian statistics and the challenges it poses; from large data sets, different types of priors and upcoming software packages. I learnt quite a bit and in this post I’ll outline some of those new things.&lt;/p&gt;
 
 &lt;p&gt;Through my work, I’ve only ever used random walk Metropolis Hastings algorithms. Therefore the convergence of my MCMC chains can be problematic as we are jumping around with little information. Step forward the Metropolis adjusted Lagenvin algorithm (&lt;a href=&quot;https://en.wikipedia.org/wiki/Metropolis-adjusted_Langevin_algorithm&quot;&gt;MALA&lt;/a&gt;). This uses the gradient of the likelihood function to make sure your sample steps are moving in the correct direction. Therefore the next proposed step in the sample can be written as&lt;/p&gt;
 
@@ -920,41 +1005,4 @@ and easy to calculate using your posterior samples.&lt;/p&gt;
 
 &lt;p&gt;So we can see that the posterior distribution for &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt; is close to the true value of 0.5, so it looks like our algorithm is working.&lt;/p&gt;
 
-&lt;p&gt;Although its just a toy model in these posts I have shown how to calculate the posterior for an autoregressive process and how to draw from such a distribution using Julia. Next stop, include more parameters and see how flexible autoregressive models can be.&lt;/p&gt;</content><author><name>Dean Markwick</name></author><summary type="html">In my previous blog post I outlined the basic AR(1) model and the necessary maths needed to infer the unknown parameter . In this post I will outline some basic Julia code to build a MCMC sampler for such a model to infer the unknown parameter .</summary></entry><entry><title type="html">Bayesian Autoregressive Processes</title><link href="http://localhost:4000/2017/06/09/Bayesian-Auto-Process.html" rel="alternate" type="text/html" title="Bayesian Autoregressive Processes" /><published>2017-06-09T00:00:00+01:00</published><updated>2017-06-09T00:00:00+01:00</updated><id>http://localhost:4000/2017/06/09/Bayesian-Auto-Process</id><content type="html" xml:base="http://localhost:4000/2017/06/09/Bayesian-Auto-Process.html">&lt;p&gt;An autoregressive process can be described by the equation&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;y_t = c + \phi y_{t-1} + \epsilon.&lt;/script&gt;
-
-&lt;p&gt;The parameter &lt;script type=&quot;math/tex&quot;&gt;c&lt;/script&gt; is some baseline, &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt; if between -1 and 1, and &lt;script type=&quot;math/tex&quot;&gt;\epsilon&lt;/script&gt; is some white noise process. If we consult the Wikipedia article on such process we find that there it is fairly trivial to calculate the unknown parameter &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt; in a frequentist setting. Googling about for a Bayesian introduction didn’t turn up anything particularly helpful, so here I try to plug that gap.&lt;/p&gt;
-
-&lt;p&gt;For any Bayesian method we need to decompose our problem into three parts; likelihood, prior and posterior distribution. For simplicity we will be setting &lt;script type=&quot;math/tex&quot;&gt;c=0&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;For the likelihood we can see that each observation &lt;script type=&quot;math/tex&quot;&gt;y_i&lt;/script&gt; is normally distributed around &lt;script type=&quot;math/tex&quot;&gt;\phi y_{i-1}&lt;/script&gt; with variance equal to that of the white noise process &lt;script type=&quot;math/tex&quot;&gt;\epsilon&lt;/script&gt;&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;p(y_i | y_1, \ldots , y_n , \sigma _\epsilon ^2) \propto \frac{1}{\sigma _\epsilon} \exp \left( \frac{-(y_i - \phi y_{i-1})^2}{2 \sigma _\epsilon ^2} \right),&lt;/script&gt;
-
-&lt;p&gt;now the likelihood is just this density multiplied across all the data.&lt;/p&gt;
-
-&lt;p&gt;Now for the prior. Like any Gaussian inference problem it is a smart choice to use a Gaussian prior on &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt; so that we get a conjugate prior. But there is a hard limit on the values of the parameter in question &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
--1 &lt; \phi  &lt; 1 %]]&gt;&lt;/script&gt;, therefore we must use the truncated normal distribution.&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;(\phi | \mu _0 , \sigma _0 ^2) = \frac{\exp \left( - \frac{ (\phi - \mu_0) ^2}{2 \sigma _0 ^2} \right)}{\sqrt{2 \pi} \sigma_0 \left(\Phi \left( \frac{b-\mu_0}{\sigma _0} \right) - \Phi \left( \frac{a-\mu_0}{\sigma _0} \right) \right) }&lt;/script&gt;
-
-&lt;p&gt;the values of &lt;script type=&quot;math/tex&quot;&gt;a , b&lt;/script&gt; set the limits of the truncation, so in our case they will be &lt;script type=&quot;math/tex&quot;&gt;-1, 1&lt;/script&gt; respectively.&lt;/p&gt;
-
-&lt;p&gt;So lets combine both the likelihood and the prior to get our posterior distribution for &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt;. Due to the conjugacy of the prior, we know that the posterior is also going to be a truncated normal distribution.&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;p( \phi | y_1 , \ldots , y_n, \mu _0  , \sigma _0 ^2, \sigma _{\epsilon} ^2 ) = \text{Truncated-Normal} ( \mu  \sigma ^{2 } , \sigma ^2  )&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mu  = \frac{\sum _i y_i y_{i-1}}{\sigma _\epsilon ^2} + \frac{\mu _0}{ \sigma _0 ^2}&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\sigma ^{2 } = \left( \frac{\sum_i y_i ^2}{\sigma _\epsilon ^2} + \frac{1}{\sigma _0^2} \right)^{-1}&lt;/script&gt;
-
-&lt;p&gt;Now these are simple enough to implement in a few lines of R and with such a simple model I’ll leave that as an exercise to the reader.&lt;/p&gt;
-
-&lt;h4 id=&quot;references&quot;&gt;References&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://arxiv.org/ftp/arxiv/papers/1611/1611.08747.pdf&quot;&gt;https://arxiv.org/ftp/arxiv/papers/1611/1611.08747.pdf&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Truncated_normal_distribution&quot;&gt;https://en.wikipedia.org/wiki/Truncated_normal_distribution&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Autoregressive_model&quot;&gt;https://en.wikipedia.org/wiki/Autoregressive_model&lt;/a&gt;&lt;/p&gt;</content><author><name>Dean Markwick</name></author><summary type="html">An autoregressive process can be described by the equation</summary></entry></feed>
+&lt;p&gt;Although its just a toy model in these posts I have shown how to calculate the posterior for an autoregressive process and how to draw from such a distribution using Julia. Next stop, include more parameters and see how flexible autoregressive models can be.&lt;/p&gt;</content><author><name>Dean Markwick</name></author><summary type="html">In my previous blog post I outlined the basic AR(1) model and the necessary maths needed to infer the unknown parameter . In this post I will outline some basic Julia code to build a MCMC sampler for such a model to infer the unknown parameter .</summary></entry></feed>
