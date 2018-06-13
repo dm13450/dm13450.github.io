@@ -150,7 +150,7 @@ An obvious extension to the baseline model is to allow the rate to
 vary over time. This leads to a general additive model (GAM). This is easily
 implemented by using `rstanarm` which acts as an excellent front end for doing common
 regression models using Stan. Before we model the data, we must add a
-time index to the data. In this case we the amount of time that has
+time index to the data. In this case we adjust by the amount of time that has
 elapsed since 1900.
 
 ``` r
