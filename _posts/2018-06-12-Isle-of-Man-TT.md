@@ -3,6 +3,7 @@ layout: post
 title: Exploring the Isle of Man TT
 date: 2018-06-12
 summary: A data driven look at the Isle of Man TT
+image: /assets/isle_of_man_files/card.png
 tags:
  - r
 ---
