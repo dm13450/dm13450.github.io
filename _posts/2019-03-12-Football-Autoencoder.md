@@ -50,7 +50,7 @@ deduce the distance between similar teams.
 Like all good machine learning tasks, 50% of the work is in preparing
 the data. 
 
-We start by loading all the data taken from <www.football-data.co.uk>. This provides us with a number of
+We start by loading all the data taken from (www.football-data.co.uk). This provides us with a number of
 statistics for many leagues and matches across Europe. 
 
 ``` r
