@@ -1,5 +1,102 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-04-10T17:49:29+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Dean Markwick</title><subtitle>Personal website for Dean Markwick. If you like stats, sports and rambling, you've come to the right place. All rights reserved. 
-</subtitle><author><name>Dean Markwick</name></author><entry><title type="html">Which Turing.jl Sampler is the Fastest?</title><link href="http://localhost:4000/2019/04/10/Turing-Sampling-Speed.html" rel="alternate" type="text/html" title="Which Turing.jl Sampler is the Fastest?" /><published>2019-04-10T00:00:00+01:00</published><updated>2019-04-10T00:00:00+01:00</updated><id>http://localhost:4000/2019/04/10/Turing-Sampling-Speed</id><content type="html" xml:base="http://localhost:4000/2019/04/10/Turing-Sampling-Speed.html">&lt;p&gt;The &lt;a href=&quot;http://turing.ml/&quot;&gt;Turing.jl&lt;/a&gt; package provides a great interface
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-04-17T17:21:22+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Dean Markwick</title><subtitle>Personal website for Dean Markwick. If you like stats, sports and rambling, you've come to the right place. All rights reserved. 
+</subtitle><author><name>Dean Markwick</name></author><entry><title type="html">Speed differences between a map and a loop in Julia</title><link href="http://localhost:4000/2019/04/17/MapLoopPerformance.html" rel="alternate" type="text/html" title="Speed differences between a map and a loop in Julia" /><published>2019-04-17T00:00:00+01:00</published><updated>2019-04-17T00:00:00+01:00</updated><id>http://localhost:4000/2019/04/17/MapLoopPerformance</id><content type="html" xml:base="http://localhost:4000/2019/04/17/MapLoopPerformance.html">&lt;p&gt;I’m currently writing some of my R functions in Julia to improve
+performance. In R it is bad form to write a loop. Instead there are
+functions like &lt;code class=&quot;highlighter-rouge&quot;&gt;lapply&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;vapply&lt;/code&gt; that map a function across a
+list. They are much faster and can be more readable than writing a
+loop. So in converting the code to Julia I was replacing the &lt;code class=&quot;highlighter-rouge&quot;&gt;lapply&lt;/code&gt;
+functions to &lt;code class=&quot;highlighter-rouge&quot;&gt;map&lt;/code&gt;. Then I would benchmark the Julia function compared
+to the R function and I was seeing a performance benefit but nothing
+to write home about. This was troubling as the
+&lt;a href=&quot;https://julialang.org/benchmarks/&quot;&gt;benchmarks&lt;/a&gt; suggest that Julia is
+&lt;em&gt;much&lt;/em&gt; faster than R. I was doing something wrong and decided to
+investigate the performance difference between a loop and map in
+Julia.&lt;/p&gt;
+
+&lt;div class=&quot;language-julia highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BenchmarkTools&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Statistics&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;In this simple example, we want to count the amount of elements are
+assigned a cluster label.&lt;/p&gt;
+
+&lt;div class=&quot;language-julia highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;clusterLabels&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;x&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The naive implementation using &lt;code class=&quot;highlighter-rouge&quot;&gt;map&lt;/code&gt; can be written as:&lt;/p&gt;
+
+&lt;div class=&quot;language-julia highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt; pointsPerCluster_map&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clusterLabels&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clusterLabels&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;maximum&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clusterLabels&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;pointsPerCluster&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clusterLabels&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;mapBM&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;@benchmark&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pointsPerCluster_map&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clusterLabels&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;BenchmarkTools.Trial: 
+  memory estimate:  21.73 KiB
+  allocs estimate:  18
+  --------------
+  minimum time:     2.794 μs (0.00% GC)
+  median time:      4.319 μs (0.00% GC)
+  mean time:        6.917 μs (41.06% GC)
+  maximum time:     6.618 ms (99.87% GC)
+  --------------
+  samples:          10000
+  evals/sample:     8
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;So of the order of microseconds, which seems reasonable enough. When
+you write the same code in R you get a median of about 6-7
+microseconds. So the Julia gets about a 2x speed up, nice!&lt;/p&gt;
+
+&lt;p&gt;But when you unpack the map and write it in a loop the results are
+almost unbelievable.&lt;/p&gt;
+
+&lt;div class=&quot;language-julia highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt; pointsPerCluster_loop&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clusterLabels&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;maxSize&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;maximum&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clusterLabels&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;ppc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int64&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;maxSize&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;)&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clusterLabels&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;ppc&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;ppc&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;pointsPerCluster_loop&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clusterLabels&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;loopBM&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;@benchmark&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pointsPerCluster_loop&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clusterLabels&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;BenchmarkTools.Trial: 
+  memory estimate:  128 bytes
+  allocs estimate:  1
+  --------------
+  minimum time:     53.101 ns (0.00% GC)
+  median time:      57.738 ns (0.00% GC)
+  mean time:        91.857 ns (13.29% GC)
+  maximum time:     57.285 μs (99.79% GC)
+  --------------
+  samples:          10000
+  evals/sample:     985
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;By using a for loop we are now in nanosecond territory. We can
+extract the median runtime of both approaches and use the &lt;code class=&quot;highlighter-rouge&quot;&gt;judge&lt;/code&gt;
+function to give a final say.&lt;/p&gt;
+
+&lt;div class=&quot;language-julia highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;judge&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;median&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mapBM&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;median&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loopBM&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;BenchmarkTools.TrialJudgement: 
+  time:   +7380.62% =&amp;gt; regression (5.00% tolerance)
+  memory: +17287.50% =&amp;gt; regression (1.00% tolerance)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;A performance improvement of 7,000% and 17,000% better memory performance. Unbelievable results!&lt;/p&gt;
+
+&lt;p&gt;If you are making the leap from R to Julia like for like
+translation might not be optimal. Instead start thinking about loops again&lt;/p&gt;</content><author><name>Dean Markwick</name></author><category term="-julia" /><summary type="html">I’m currently writing some of my R functions in Julia to improve performance. In R it is bad form to write a loop. Instead there are functions like lapply and vapply that map a function across a list. They are much faster and can be more readable than writing a loop. So in converting the code to Julia I was replacing the lapply functions to map. Then I would benchmark the Julia function compared to the R function and I was seeing a performance benefit but nothing to write home about. This was troubling as the benchmarks suggest that Julia is much faster than R. I was doing something wrong and decided to investigate the performance difference between a loop and map in Julia.</summary></entry><entry><title type="html">Which Turing.jl Sampler is the Fastest?</title><link href="http://localhost:4000/2019/04/10/Turing-Sampling-Speed.html" rel="alternate" type="text/html" title="Which Turing.jl Sampler is the Fastest?" /><published>2019-04-10T00:00:00+01:00</published><updated>2019-04-10T00:00:00+01:00</updated><id>http://localhost:4000/2019/04/10/Turing-Sampling-Speed</id><content type="html" xml:base="http://localhost:4000/2019/04/10/Turing-Sampling-Speed.html">&lt;p&gt;The &lt;a href=&quot;http://turing.ml/&quot;&gt;Turing.jl&lt;/a&gt; package provides a great interface
 for performing Bayesian inference using a variety of algorithms. But
 what algorithm allows you to go from data to samples the quickest?  In
 this blog post I will be sampling from a simple model to demonstrate
@@ -3006,89 +3103,4 @@ leave one-out-cross validation and posterior p-values.&lt;/p&gt;
 
 &lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
 
-&lt;p&gt;In this blog post I have shown you how to download a data-table from Wikipedia, clean it up using some reg-ex and do some basic plots. I then proceeded to model the total number of deaths per year using a Bayesian GLM and GAM model. The GAM model was a better fitting model which we then used to predict the future number of deaths. For which the overall outlook appears to be constant. I hope you’ve learnt something from reading the blog post, if you’ve any questions or improvements please leave a comment below or contact me on Twitter!.&lt;/p&gt;</content><author><name>Dean Markwick</name></author><category term="r" /><summary type="html">In this post I will be making use of these R packages. Download them all from CRAN to follow along.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/isle_of_man_files/twitcard.png" /></entry><entry><title type="html">Clustering with Dirichlet Processes</title><link href="http://localhost:4000/2018/05/30/Clustering.html" rel="alternate" type="text/html" title="Clustering with Dirichlet Processes" /><published>2018-05-30T00:00:00+01:00</published><updated>2018-05-30T00:00:00+01:00</updated><id>http://localhost:4000/2018/05/30/Clustering</id><content type="html" xml:base="http://localhost:4000/2018/05/30/Clustering.html">&lt;p&gt;This post is another tutorial on using my &lt;code class=&quot;highlighter-rouge&quot;&gt;dirichetprocess&lt;/code&gt; package in R. So far I have shown you &lt;a href=&quot;http://dm13450.github.io/2018/02/01/Dirichlet-Density.html&quot;&gt;how to perform density estimation&lt;/a&gt;, &lt;a href=&quot;http://dm13450.github.io/2018/03/08/dirichletprocess-pointprocess.html&quot;&gt;point process inference&lt;/a&gt;, and adding your own &lt;a href=&quot;http://dm13450.github.io/2018/02/21/Custom-Distributions-Conjugate.html&quot;&gt;custom mixture model&lt;/a&gt;. In this tutorial I will show you how Dirichlet processes can be used for clustering.&lt;/p&gt;
-
-&lt;p&gt;Before we being, make sure you download the latest version of the package from CRAN.&lt;/p&gt;
-
-&lt;div class=&quot;language-r highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;install.packages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;dirichletprocess&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;We then load a few helper packages&lt;/p&gt;
-
-&lt;div class=&quot;language-r highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ggplot2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dirichletprocess&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dplyr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;For our data we will be using the classic &lt;code class=&quot;highlighter-rouge&quot;&gt;faithful&lt;/code&gt; dataset, as we did in the density estimation. But this time we will use both columns of the data.&lt;/p&gt;
-
-&lt;p&gt;First lets take a look at the data.&lt;/p&gt;
-
-&lt;div class=&quot;language-r highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ggplot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;faithful&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;waiting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eruptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;geom_point&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/clustering_files/figure-markdown_github/unnamed-chunk-1-1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;There is a clear split and two distinct clusters of the data. The
-length of waiting time between eruptions is positively correlated with
-the length of that eruption. Those with a waiting time of more than 70
-minutes have eruptions lasting more than 3 minutes most of the time.&lt;/p&gt;
-
-&lt;p&gt;With a Dirichlet process we can perform some unsupervised machine
-learning and group the data based on common clusters. Mathematically, we think that the pair of observations are drawn from a multivariate normal mixture distribution.&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;(\text{waiting}, \text{eruptions})_i \sim N(\mu _i,  \sigma _i)&lt;/script&gt;
-
-&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;\mu&lt;/script&gt; is a 2 dimensional vector of the mean, &lt;script type=&quot;math/tex&quot;&gt;\sigma&lt;/script&gt; is the
- covariance matrix and &lt;script type=&quot;math/tex&quot;&gt;i&lt;/script&gt; labels the cluster parameter.&lt;/p&gt;
-
-&lt;p&gt;We think that these parameters are drawn from a Dirichlet process&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mu _i , \Sigma _i \sim \text{DP} (\alpha, G_0)&lt;/script&gt;
-
-&lt;p&gt;. Where &lt;script type=&quot;math/tex&quot;&gt;\alpha&lt;/script&gt; is the concentration of the Dirichlet process and &lt;script type=&quot;math/tex&quot;&gt;G_0&lt;/script&gt; is the base measure. This is a conjugate problem, so &lt;script type=&quot;math/tex&quot;&gt;G_0&lt;/script&gt; is just the conjugate prior for a multivariate normal model.&lt;/p&gt;
-
-&lt;p&gt;But as you are using a the &lt;code class=&quot;highlighter-rouge&quot;&gt;dirichletprocess&lt;/code&gt; package, you don’t have
-to worry about any of this maths. You can simply build a
-&lt;code class=&quot;highlighter-rouge&quot;&gt;dirichletprocess&lt;/code&gt; object and pass the data in to find the appropriate
-clusters. Again, remember to scale your data, the priors for this model
-are defined such that the data is distributed around 0.&lt;/p&gt;
-
-&lt;div class=&quot;language-r highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;faithfulTrans&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;faithful&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DirichletProcessMvnormal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;as.matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;faithfulTrans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;progressBar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;FALSE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/clustering_files/figure-markdown_github/unnamed-chunk-2-1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Two clusters have been found by the Dirichlet process and where we would expect to see them aswell. Out of the box we can perform unsupervised clustering in just 3 lines of code!&lt;/p&gt;
-
-&lt;p&gt;What if we have more than two dimensions, how does that change things?
-Thankfully it doesn’t and the procedure remains the same. You can
-still easily fit using the same functions - just passing in your data
-matrix.&lt;/p&gt;
-
-&lt;p&gt;Again, using classic stats data sets we can perform some basic
-clustering on the &lt;code class=&quot;highlighter-rouge&quot;&gt;iris&lt;/code&gt; dataset. We use the four quantitate values of
-the dataset; the lengths and widths of the sepals and petals.&lt;/p&gt;
-
-&lt;div class=&quot;language-r highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;iris&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Species&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scale&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;irisPred&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; 
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DirichletProcessMvnormal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;irisPred&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;progressBar&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;FALSE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pairs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;irisPred&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clusterLabels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/clustering_files/figure-markdown_github/unnamed-chunk-3-1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Here we show how the &lt;code class=&quot;highlighter-rouge&quot;&gt;iris&lt;/code&gt; data set can be clustered into two
-different groups. We’ve used the base R graphics to produce a pairs
-plot with the two different clusters separated by colours. The four
-dimensional set has been clustered and resulted in two different
-groups. No changes needed in our Dirichlet process code.&lt;/p&gt;
-
-&lt;p&gt;Overall, using the Dirichlet process package you can easily perform
-some unsupervised clustering. The dimensionality of your data is no
-problem, at least for the software! So download &lt;code class=&quot;highlighter-rouge&quot;&gt;dirichletprocess&lt;/code&gt; and
-get clustering!&lt;/p&gt;</content><author><name>Dean Markwick</name></author><category term="r" /><summary type="html">This post is another tutorial on using my dirichetprocess package in R. So far I have shown you how to perform density estimation, point process inference, and adding your own custom mixture model. In this tutorial I will show you how Dirichlet processes can be used for clustering.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/clustering_files/figure-markdown_github/unnamed-chunk-2-1.png" /></entry></feed>
+&lt;p&gt;In this blog post I have shown you how to download a data-table from Wikipedia, clean it up using some reg-ex and do some basic plots. I then proceeded to model the total number of deaths per year using a Bayesian GLM and GAM model. The GAM model was a better fitting model which we then used to predict the future number of deaths. For which the overall outlook appears to be constant. I hope you’ve learnt something from reading the blog post, if you’ve any questions or improvements please leave a comment below or contact me on Twitter!.&lt;/p&gt;</content><author><name>Dean Markwick</name></author><category term="r" /><summary type="html">In this post I will be making use of these R packages. Download them all from CRAN to follow along.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/isle_of_man_files/twitcard.png" /></entry></feed>

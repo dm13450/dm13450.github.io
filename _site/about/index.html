@@ -130,14 +130,19 @@
 <h3>Recent Post:</h3>
 <ul>
   
-      <a href="/2019/04/10/Turing-Sampling-Speed.html">Which Turing.jl Sampler is the Fastest?</a>
-      <p>The <a href="http://turing.ml/">Turing.jl</a> package provides a great interface
-for performing Bayesian inference using a variety of algorithms. But
-what algorithm allows you to go from data to samples the quickest?  In
-this blog post I will be sampling from a simple model to demonstrate
-how quickly you can sample from a model. This is useful
-for anyone that has a Turing model in the middle of another model that
-they need to get samples from.</p>
+      <a href="/2019/04/17/MapLoopPerformance.html">Speed differences between a map and a loop in Julia</a>
+      <p>I’m currently writing some of my R functions in Julia to improve
+performance. In R it is bad form to write a loop. Instead there are
+functions like <code class="highlighter-rouge">lapply</code> and <code class="highlighter-rouge">vapply</code> that map a function across a
+list. They are much faster and can be more readable than writing a
+loop. So in converting the code to Julia I was replacing the <code class="highlighter-rouge">lapply</code>
+functions to <code class="highlighter-rouge">map</code>. Then I would benchmark the Julia function compared
+to the R function and I was seeing a performance benefit but nothing
+to write home about. This was troubling as the
+<a href="https://julialang.org/benchmarks/">benchmarks</a> suggest that Julia is
+<em>much</em> faster than R. I was doing something wrong and decided to
+investigate the performance difference between a loop and map in
+Julia.</p>
 
 
   
