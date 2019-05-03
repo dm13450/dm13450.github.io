@@ -13,15 +13,15 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal website for Dean Markwick. If you like stats, sports and rambling, you’ve come to the right place. All rights reserved." />
 <meta property="og:description" content="Personal website for Dean Markwick. If you like stats, sports and rambling, you’ve come to the right place. All rights reserved." />
-<link rel="canonical" href="https://dm13450.github.io/about/" />
-<meta property="og:url" content="https://dm13450.github.io/about/" />
+<link rel="canonical" href="http://localhost:4000/about/" />
+<meta property="og:url" content="http://localhost:4000/about/" />
 <meta property="og:site_name" content="Dean Markwick" />
 <script type="application/ld+json">
-{"url":"https://dm13450.github.io/about/","name":"Dean Markwick","author":{"@type":"Person","name":"Dean Markwick"},"headline":"About","description":"Personal website for Dean Markwick. If you like stats, sports and rambling, you’ve come to the right place. All rights reserved.","@type":"WebSite","@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/about/","name":"Dean Markwick","author":{"@type":"Person","name":"Dean Markwick"},"headline":"About","description":"Personal website for Dean Markwick. If you like stats, sports and rambling, you’ve come to the right place. All rights reserved.","@type":"WebSite","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link type="application/atom+xml" rel="alternate" href="https://dm13450.github.io/feed.xml" title="Dean Markwick" />
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Dean Markwick" />
   
 
 
@@ -130,19 +130,12 @@
 <h3>Recent Post:</h3>
 <ul>
   
-      <a href="/2019/04/17/MapLoopPerformance.html">Speed differences between a map and a loop in Julia</a>
-      <p>I’m currently writing some of my R functions in Julia to improve
-performance. In R it is bad form to write a loop. Instead there are
-functions like <code class="highlighter-rouge">lapply</code> and <code class="highlighter-rouge">vapply</code> that map a function across a
-list. They are much faster and can be more readable than writing a
-loop. So in converting the code to Julia I was replacing the <code class="highlighter-rouge">lapply</code>
-functions to <code class="highlighter-rouge">map</code>. Then I would benchmark the Julia function compared
-to the R function and I was seeing a performance benefit but nothing
-to write home about. This was troubling as the
-<a href="https://julialang.org/benchmarks/">benchmarks</a> suggest that Julia is
-<em>much</em> faster than R. I was doing something wrong and decided to
-investigate the performance difference between a loop and map in
-Julia.</p>
+      <a href="/2019/05/03/Map-Loop-Generator.html">Benchmarking maps, loops, generators and broadcasting in Julia</a>
+      <p>A few weeks ago I wrote a blog post about the speed differences
+between <code class="highlighter-rouge">map</code> and <code class="highlighter-rouge">loop</code>. I posted it to reddit and got some feedback
+on a) why the map was so slow and b) other ways the calculation
+could be made which are just as quick as a loop. In this post I’m
+writing about these new methods and adding them to the comparison.</p>
 
 
   
