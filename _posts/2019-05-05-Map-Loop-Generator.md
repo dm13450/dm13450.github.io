@@ -226,21 +226,25 @@ plot!(nms, log.(timeArray[:, 3]), seriestype=:scatter, labels="Maximum")
 ![Log running times](/assets/maploop/output_16_0.svg)
 
 ```julia
-bar(nms[2:4], (timeArray[2:4, 1]), seriestype=:scatter, yaxis=("Time"), label="Median")
-plot!(nms[2:4], (timeArray[2:4, 2]), seriestype=:scatter, label="Maximum")
+bar(nms[2:4], (timeArray[2:4, 2]), seriestype=:scatter, yaxis=("Time"), label="Median")
 ```
 
 We have to plot the $$\log$$ of the running times as the naive `map`
 is that much slower. The other methods are all about the same though,
 so lets remove the `map` and focus on the fast methods. 
 
+<!---
 ![Running times](/assets/maploop/output_17_0.svg)
+--->
+
+![Median running times](/assets/maploop/output_18_0.svg)
 
 Here we can see that the loop method is still the fastest. The methods
 provided in the feedback improve on the naive `map` but still cannot
-compete with the loop. Using the `@simd` and `@inbounds` macro reduce
-the maximum value but don't change the overall median
+compete with the loop. Using the `@simd` and `@inbounds` macro don't change the overall median
 value for it to be worth the potential danger.
+
+
 
 Overall there are lots of ways to accomplish this task, but the loop
 still comes out on top. Even using the "go-faster" macros doesn't
