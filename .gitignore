@@ -4,3 +4,4 @@ Gemfile.loc
 _site
 *.gem
 _drafts
+.DS_Store
