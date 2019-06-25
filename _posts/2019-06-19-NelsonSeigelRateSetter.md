@@ -1,9 +1,19 @@
 ---
 layout: post
 title: The Nelson Siegel Model and P2P Bonds
+date: 19-06-2019
 tags:
  -r
 ---
+
+In an earlier
+[post](http://dm13450.github.io/2019/02/06/Ratesetter-Yield.html) I
+looked at the yield curve of the P2P bonds from [RateSetter](https://www.ratesetter.com/). In this
+post I'll be taking the next step by taking a well known financial
+model and applying it to the bonds to describe the yield
+curve. This model will provide some parameters that describe the current
+state of the RateSetter market and allow us to look at the overall
+history of the yields. 
 
 ```r
 require(readr)
@@ -15,14 +25,6 @@ require(tidyr)
 numIts <- 2000
 ```
 
-In an earlier
-[post](http://dm13450.github.io/2019/02/06/Ratesetter-Yield.html) I
-looked at the yield curve of the P2P bonds from [RateSetter](https://www.ratesetter.com/). In this
-post I'll be taking the next step by taking a well known financial
-model and applying it to the bonds to describe the yield
-curve. This model will provide some parameters that describe the current
-state of the RateSetter market and allow us to look at the overall
-history of the yields. 
 
 ### The Data
 
