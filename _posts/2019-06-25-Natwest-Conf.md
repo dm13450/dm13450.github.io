@@ -22,11 +22,11 @@ The talk started by introducing the difference between classical and quantum com
 
 In an optimisation task, you want to find the global minimum, the overal low point of the objective function and not a local minimum.
 
-![](/assets/natwest/quantplot1.png)
+![](/assets/natwest/quantPlot1.png)
 
 This function would be hard to optimise using classical techniques, most likely it would get stuck in one of the local minimums and report that as that as the optimal value. But, if you use a quantum algorithm, quantum tunnelling becomes an option. The qubit state would have a nonzero probability of being in the global state and tunnel through the high energy barrier. 
 
-![](/assets/natwest/quantplot2.png)
+![](/assets/natwest/quantPlot2.png)
 
 Quantum tunneling is a well studied phenomena, so to see it being used in terms of machine learning is quite special. Normally you would just think of it as being a mathematical perk of quantum effects, not something with practical application.
 
