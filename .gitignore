@@ -5,3 +5,6 @@ _site
 *.gem
 _drafts
 .DS_Store
+.DS_Store
+assets/.DS_Store
+.DS_Store
