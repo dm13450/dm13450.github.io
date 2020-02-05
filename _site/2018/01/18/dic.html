@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Begin Jekyll SEO tag v2.5.0 -->
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Deviance Information Criteria | Dean Markwick</title>
 <meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Deviance Information Criteria" />
@@ -19,7 +19,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-01-18T00:00:00+00:00" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/2018/01/18/DIC.html","headline":"Deviance Information Criteria","dateModified":"2018-01-18T00:00:00+00:00","datePublished":"2018-01-18T00:00:00+00:00","author":{"@type":"Person","name":"Dean Markwick"},"description":"Deviation information criteria (DIC) is a metric used to compare Bayesian models. It is closely related to the Akaike information criteria (AIC) which is defined as , where k is the number of parameters in a model and is the maximised log-likelihood. The DIC makes some changes to this formula. Firstly by replacing a maximised log-likelihood with the log-likelihood evaluated at the Bayes estimate and by replacing with an alternative correction","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/01/18/DIC.html"},"@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"datePublished":"2018-01-18T00:00:00+00:00","headline":"Deviance Information Criteria","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/01/18/DIC.html"},"url":"http://localhost:4000/2018/01/18/DIC.html","author":{"@type":"Person","name":"Dean Markwick"},"description":"Deviation information criteria (DIC) is a metric used to compare Bayesian models. It is closely related to the Akaike information criteria (AIC) which is defined as , where k is the number of parameters in a model and is the maximised log-likelihood. The DIC makes some changes to this formula. Firstly by replacing a maximised log-likelihood with the log-likelihood evaluated at the Bayes estimate and by replacing with an alternative correction","@type":"BlogPosting","dateModified":"2018-01-18T00:00:00+00:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/assets/main.css">
@@ -206,8 +206,8 @@ column matrix with of the posterior samples.</p>
 <p>To construct a function for the DIC, you need to be able to pass in
 the data, likelihood function and posterior samples. Thankfully, R has
 a fairly standard way of using its probability distributions, we can
-rely on both <code class="highlighter-rouge">dgamma</code> and <code class="highlighter-rouge">dlnorm</code> to take in the same type of
-arguments. But the <code class="highlighter-rouge">dic</code> function is
+rely on both <code class="language-plaintext highlighter-rouge">dgamma</code> and <code class="language-plaintext highlighter-rouge">dlnorm</code> to take in the same type of
+arguments. But the <code class="language-plaintext highlighter-rouge">dic</code> function is
 not flexible enough that any distribution can be passed through.</p>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">dic</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">likelihood</span><span class="p">,</span><span class="w"> </span><span class="n">postSamples</span><span class="p">){</span><span class="w">
@@ -252,7 +252,7 @@ working as expected!</p>
 
 <p>You can also asses the DIC on some out-of-sample data. This is achieved
 by simply simulating from the same distribution and passing it through
-the <code class="highlighter-rouge">dic</code> function.</p>
+the <code class="language-plaintext highlighter-rouge">dic</code> function.</p>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">gammaDICOut</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">dic</span><span class="p">(</span><span class="n">rgamma</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">),</span><span class="w"> </span><span class="n">dgamma</span><span class="p">,</span><span class="w"> </span><span class="n">postSamplesGamma</span><span class="p">)</span><span class="w">
 </span><span class="n">lognormalDICOut</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">dic</span><span class="p">(</span><span class="n">rgamma</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">),</span><span class="w"> </span><span class="n">dlnorm</span><span class="p">,</span><span class="w"> </span><span class="n">postSampleslognormal</span><span class="p">)</span></code></pre></figure>

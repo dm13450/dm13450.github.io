@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Begin Jekyll SEO tag v2.5.0 -->
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Kelly Betting - Part Two | Dean Markwick</title>
 <meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Kelly Betting - Part Two" />
@@ -19,7 +19,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2016-09-29T00:00:00+01:00" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/2016/09/29/Kelly-Betting-Part-Two.html","headline":"Kelly Betting - Part Two","dateModified":"2016-09-29T00:00:00+01:00","datePublished":"2016-09-29T00:00:00+01:00","author":{"@type":"Person","name":"Dean Markwick"},"description":"In my previous post I have outlined the basics of Kelly betting. Now I will be looking at the optimal bet size for placing bets on multiple simultaneous events that are independent of one another. We will be using R to numerically solve the resulting equations and hopefully learn some quirks of function optimisation in R.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2016/09/29/Kelly-Betting-Part-Two.html"},"@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"datePublished":"2016-09-29T00:00:00+01:00","headline":"Kelly Betting - Part Two","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2016/09/29/Kelly-Betting-Part-Two.html"},"url":"http://localhost:4000/2016/09/29/Kelly-Betting-Part-Two.html","author":{"@type":"Person","name":"Dean Markwick"},"description":"In my previous post I have outlined the basics of Kelly betting. Now I will be looking at the optimal bet size for placing bets on multiple simultaneous events that are independent of one another. We will be using R to numerically solve the resulting equations and hopefully learn some quirks of function optimisation in R.","@type":"BlogPosting","dateModified":"2016-09-29T00:00:00+01:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/assets/main.css">
@@ -141,7 +141,7 @@
 
 <p>Firstly, let us define our expectation function</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>expectedBankRoll &lt;- function(x, p, b){
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>expectedBankRoll &lt;- function(x, p, b){
   expBankRoll = p*log(1+(b-1)*x) + (1-p)*log(1-x)
   return(sum(expBankRoll))
 }
@@ -149,9 +149,9 @@
 
 <p>due to the vectorised nature of R functions both <script type="math/tex">p</script> and <script type="math/tex">b</script> can be lists and there is no need to loop through each value.</p>
 
-<p>To find the <script type="math/tex">x</script> values for given <script type="math/tex">p</script> and <script type="math/tex">b</script> values that maximise the bank roll we can use the <code class="highlighter-rouge">optim</code> function. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/optim.html">Optim</a> is R’s numerical optimisation routine that can implement a number of different algorithms for finding the minimum of a given function. Therefore, for it to be any use to us, we need to multiply our function by -1 such that the maximum now becomes the minimum.</p>
+<p>To find the <script type="math/tex">x</script> values for given <script type="math/tex">p</script> and <script type="math/tex">b</script> values that maximise the bank roll we can use the <code class="language-plaintext highlighter-rouge">optim</code> function. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/optim.html">Optim</a> is R’s numerical optimisation routine that can implement a number of different algorithms for finding the minimum of a given function. Therefore, for it to be any use to us, we need to multiply our function by -1 such that the maximum now becomes the minimum.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>p = c(0.7, 0.8)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>p = c(0.7, 0.8)
 b = c(1.3, 1.2)
 optim(c(0.5, 0.5), function(x) (-1)*expectedBankRoll(x, p, b))
 </code></pre></div></div>
@@ -160,7 +160,7 @@ optim(c(0.5, 0.5), function(x) (-1)*expectedBankRoll(x, p, b))
 
 <p>But there is a few caveats. Firstly we need to account for the fact that the sum of our bets must be less than 1. Secondly, the bets must also be positive numbers. To account for these restrictions we must modify our expected bank roll function</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>expectedBankRoll &lt;- function(x, p, b){
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>expectedBankRoll &lt;- function(x, p, b){
   if(sum(x) &gt; 1 | any(x&lt;0)){return(-99999)}
   expBankRoll = p*log(1+(b-1)*x) + (1-p)*log(1-x)
   return(sum(expBankRoll))

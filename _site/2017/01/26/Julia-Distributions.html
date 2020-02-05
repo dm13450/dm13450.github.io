@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Begin Jekyll SEO tag v2.5.0 -->
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>An Introduction to Julia and Distributions | Dean Markwick</title>
 <meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="An Introduction to Julia and Distributions" />
@@ -19,7 +19,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2017-01-26T00:00:00+00:00" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/2017/01/26/Julia-Distributions.html","headline":"An Introduction to Julia and Distributions","dateModified":"2017-01-26T00:00:00+00:00","datePublished":"2017-01-26T00:00:00+00:00","author":{"@type":"Person","name":"Dean Markwick"},"description":"Julia is a new language on the block aimed at being a suitable mid point between the adaptability of Python and the speed of Matlab. Its a nice fall-back when my R code is just that bit too slow to really churn through some numbers.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2017/01/26/Julia-Distributions.html"},"@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"datePublished":"2017-01-26T00:00:00+00:00","headline":"An Introduction to Julia and Distributions","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2017/01/26/Julia-Distributions.html"},"url":"http://localhost:4000/2017/01/26/Julia-Distributions.html","author":{"@type":"Person","name":"Dean Markwick"},"description":"Julia is a new language on the block aimed at being a suitable mid point between the adaptability of Python and the speed of Matlab. Its a nice fall-back when my R code is just that bit too slow to really churn through some numbers.","@type":"BlogPosting","dateModified":"2017-01-26T00:00:00+00:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/assets/main.css">
@@ -129,12 +129,12 @@
 
 <p>In this post I will outline how the basics of the distributions package and how you can replicate some of the functionality of R.</p>
 
-<p>Firstly, we need to install the Distributions package. This is done by calling <code class="highlighter-rouge">Pkg.add("Distributions")</code>. Now that is installed we need to load it into the namespace. Open a new Julia instance and load the package with <code class="highlighter-rouge">using Distributions</code>. The necessary functions are now loaded.</p>
+<p>Firstly, we need to install the Distributions package. This is done by calling <code class="language-plaintext highlighter-rouge">Pkg.add("Distributions")</code>. Now that is installed we need to load it into the namespace. Open a new Julia instance and load the package with <code class="language-plaintext highlighter-rouge">using Distributions</code>. The necessary functions are now loaded.</p>
 
 <p>Our first exercise will be to sample <script type="math/tex">N</script> exponentially distributed variables and check that the density of the samples tends to the pdf of the exponential distribution as <script type="math/tex">N</script> becomes larger. 
-The first step in this code is to define our distribution. As the exponential distribution only requires one parameter, <script type="math/tex">m</script>, this is as simple as calling <code class="highlighter-rouge">Exponential(m)</code> in our code. Now we use a number of different functions on the distribution.</p>
+The first step in this code is to define our distribution. As the exponential distribution only requires one parameter, <script type="math/tex">m</script>, this is as simple as calling <code class="language-plaintext highlighter-rouge">Exponential(m)</code> in our code. Now we use a number of different functions on the distribution.</p>
 
-<p>We can sample from this distribution using <code class="highlighter-rouge">rand(dist, N)</code> where <script type="math/tex">N</script> is the number of samples to draw. We can then overlay the pdf of the distribution by using <code class="highlighter-rouge">pdf(dist, x)</code>.</p>
+<p>We can sample from this distribution using <code class="language-plaintext highlighter-rouge">rand(dist, N)</code> where <script type="math/tex">N</script> is the number of samples to draw. We can then overlay the pdf of the distribution by using <code class="language-plaintext highlighter-rouge">pdf(dist, x)</code>.</p>
 
 <p>Combing these commands allows us to draw a graph (using the Julia package <a href="http://gadflyjl.org/stable/">Gadfly</a>) like this:</p>
 
@@ -142,9 +142,9 @@ The first step in this code is to define our distribution. As the exponential di
 
 <p>Here we can see the small sample size does not resemble the pdf but the large sample size does. So we are correctly drawing from the exponential distribution as expected.</p>
 
-<p>There are also other functions available. A great example is calculating the mean of a log-normal distribution. This distribution is defined with two parameters; <script type="math/tex">m</script> and <script type="math/tex">s^2</script>. However, the mean of the distribution is not equal to <script type="math/tex">m</script>. Instead it is <script type="math/tex">\exp(m+\frac{s^2}{2})</script>. The Distributions package in Julia knows this. So by simply calling <code class="highlighter-rouge">mean</code> on the <code class="highlighter-rouge">LogNormal()</code> object you can return the theoretical mean of the distribution and not have to worry about the parametrisation specifics of the distribution.</p>
+<p>There are also other functions available. A great example is calculating the mean of a log-normal distribution. This distribution is defined with two parameters; <script type="math/tex">m</script> and <script type="math/tex">s^2</script>. However, the mean of the distribution is not equal to <script type="math/tex">m</script>. Instead it is <script type="math/tex">\exp(m+\frac{s^2}{2})</script>. The Distributions package in Julia knows this. So by simply calling <code class="language-plaintext highlighter-rouge">mean</code> on the <code class="language-plaintext highlighter-rouge">LogNormal()</code> object you can return the theoretical mean of the distribution and not have to worry about the parametrisation specifics of the distribution.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dist = LogNormal(1,4)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dist = LogNormal(1,4)
 mean(dist) == exp(1 + 4^2/2)
 </code></pre></div></div>
 
