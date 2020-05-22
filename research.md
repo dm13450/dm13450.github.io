@@ -7,8 +7,16 @@ permalink: /Research/
 My research interests include the following: 
 
 - Predicting extreme values in markets and financial products. 
-- Non-parametric Bayesian methods. 
+- Nonparametric Bayesian methods. 
 - Point-process inference.
+
+My PhD thesis was titled "Bayesian Nonparametric Hawkes Processes with
+Applications". I took the standard Hawkes process, made some of the
+components nonparametric and applied it to various situations like;
+terror attacks, fx trading and soccer goals. All of the inference was
+done in a Bayesian manner with the nonparametric bits using a
+Dirichlet process. 
+
 
 ### Software
 
@@ -17,6 +25,13 @@ can download it within R using `install.packages("dirichletprocess")`
 or by visiting the CRAN page
 [dirichletprocess](https://cran.r-project.org/package=dirichletprocess). Any
 bugs, questions or help can be discussed on the [github page](https://github.com/dm13450/dirichletprocess).
+
+I've also built a Julia package for fitting Hawkes processes. You can
+download it using the package manager in Julia (`add
+HawkesProcesses`). If you like maths you can read the deriavtions
+[here]({{site.url}}/assets/hawkesprocesses.pdf). If you want help with
+the package use the
+[github page](https://github.com/dm13450/HawkesProcesses.jl).
 
 I've also got a keen interest in sports modelling, looking at how we
 can predict the outcomes of various sports based on available
