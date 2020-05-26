@@ -17,7 +17,7 @@
 <meta property="og:url" content="http://localhost:4000/Research/" />
 <meta property="og:site_name" content="Dean Markwick" />
 <script type="application/ld+json">
-{"headline":"Research","@type":"WebPage","author":{"@type":"Person","name":"Dean Markwick"},"url":"http://localhost:4000/Research/","description":"Personal website for Dean Markwick. If you like stats, sports and rambling, you’ve come to the right place. All rights reserved.","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Research","author":{"@type":"Person","name":"Dean Markwick"},"url":"http://localhost:4000/Research/","description":"Personal website for Dean Markwick. If you like stats, sports and rambling, you’ve come to the right place. All rights reserved.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/assets/main.css">
@@ -119,9 +119,16 @@
 
 <ul>
   <li>Predicting extreme values in markets and financial products.</li>
-  <li>Non-parametric Bayesian methods.</li>
+  <li>Nonparametric Bayesian methods.</li>
   <li>Point-process inference.</li>
 </ul>
+
+<p>My PhD thesis was titled “Bayesian Nonparametric Hawkes Processes with
+Applications”. I took the standard Hawkes process, made some of the
+components nonparametric and applied it to various situations like;
+terror attacks, fx trading and soccer goals. All of the inference was
+done in a Bayesian manner with the nonparametric bits using a
+Dirichlet process.</p>
 
 <h3 id="software">Software</h3>
 
@@ -130,6 +137,13 @@ can download it within R using <code class="language-plaintext highlighter-rouge
 or by visiting the CRAN page
 <a href="https://cran.r-project.org/package=dirichletprocess">dirichletprocess</a>. Any
 bugs, questions or help can be discussed on the <a href="https://github.com/dm13450/dirichletprocess">github page</a>.</p>
+
+<p>I’ve also built a Julia package for fitting Hawkes processes. You can
+download it using the package manager in Julia (<code class="language-plaintext highlighter-rouge">add
+HawkesProcesses</code>). If you like maths you can read the deriavtions
+<a href="http://localhost:4000/assets/hawkesprocesses.pdf">here</a>. If you want help with
+the package use the
+<a href="https://github.com/dm13450/HawkesProcesses.jl">github page</a>.</p>
 
 <p>I’ve also got a keen interest in sports modelling, looking at how we
 can predict the outcomes of various sports based on available
