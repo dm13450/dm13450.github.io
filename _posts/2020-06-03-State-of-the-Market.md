@@ -6,8 +6,6 @@ tags:
   -r
 ---
 
-
-
 My `dirichletprocess` package for R has the ability to fit Infinite Hidden Markov
 Models using a Dirichlet process. To demonstrate this functionality I
 will fit a Hidden Markov model to some financial data to see how the
@@ -163,7 +161,9 @@ dphmm1 <- DirichletHMMCreate(trainFrame$y, mdobj,
 dphmm2 <- DirichletHMMCreate(trainFrame$y, mdobj, 
                              alpha = 0.1, beta = 0.1)
 
-ts <- 75000
+its <- 75000
+
+dpList <- list(dphmm1, dphmm2)
 
 dpList <- mclapply(dpList, Fit, its=its, progressBar=F, mc.cores=3)
 endTime <- now()
