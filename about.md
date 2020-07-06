@@ -4,15 +4,38 @@ title: About
 permalink: /about/
 ---
 
-I am a newly started graduate student at University College London (UCL)  and a member of the Financial Computing CDT. I have just completed my MRes in Computer Science and now started my PhD in the Statistical Science department.  Previously, I completed an MPhys in Theoretical Physics at the University of Manchester. 
+I have recently defended (and now minorly correcting) my PhD in Statistical Science where I studied
+at University College London (UCL)  and a member of the Financial
+Computing CDT. I also have an MRes in Computer Science and an MPhys in
+Theoretical Physics from the University of Manchester. 
 
-I have worked in the finance industry at large investment bank as part of an equity derivatives team that engineered software to price a large range of securities. I have also worked at a smaller firm as an intern trading emerging market products in both European and American markets.  
+I have worked in the finance industry at large investment bank as part
+of an equity derivatives team that engineered software to price a
+large range of securities. I have also worked at a smaller firm as an
+intern trading ETFs across the globe
 
-I also have a keen interest in sports modelling and how statistics can be used in professional sports and gambling.
+# My Day Job Now
 
-Outside of academia, I enjoy a good film and a bit of a foodie. Here I am enjoying some delicious Korean BBQ.
+I'm a Quant at BestX and spend the day researching financial markets,
+which typically involves cleaning data, making graphs and trying to
+come up with some interesting insights about the world of FX and fixed
+income trading.
 
-![Delicous BBQ](/assets/kbbq.JPG){: .center-image}
+Examples of my work can be found in the trade press:
+
+* [To Cross or Not to Cross](https://www.profit-loss.com/to-cross-or-not-to-cross)
+* [Choppy markets revive quest for RFQs magic number](https://www.fx-markets.com/trading/7550661/choppy-markets-revive-quest-for-rfqs-magic-number)
+* [Volatile FX markets reveal pitfalls of RFQ](https://www.fx-markets.com/infrastructure/7539591/volatile-fx-markets-reveal-pitfalls-of-rfq)
+
+All of which you probably need to be a subscriber to.  
+
+# Outside the Day Job
+
+I also have a keen interest in sports modelling and how statistics can
+be used in professional sports and gambling, I enjoy a good film,
+watching a boxset too quickly and a bit of a foodie. Here I am enjoying some delicious Korean BBQ.
+
+![Delicious BBQ](/assets/kbbq.JPG){: .center-image}
 
 
 My blog is also aggregated on <https://www.r-bloggers.com/>.
