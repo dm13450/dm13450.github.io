@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>An Introduction to Julia and Distributions | Dean Markwick</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="An Introduction to Julia and Distributions" />
 <meta name="author" content="Dean Markwick" />
 <meta property="og:locale" content="en_US" />
@@ -131,10 +131,10 @@
 
 <p>Firstly, we need to install the Distributions package. This is done by calling <code class="language-plaintext highlighter-rouge">Pkg.add("Distributions")</code>. Now that is installed we need to load it into the namespace. Open a new Julia instance and load the package with <code class="language-plaintext highlighter-rouge">using Distributions</code>. The necessary functions are now loaded.</p>
 
-<p>Our first exercise will be to sample <script type="math/tex">N</script> exponentially distributed variables and check that the density of the samples tends to the pdf of the exponential distribution as <script type="math/tex">N</script> becomes larger. 
-The first step in this code is to define our distribution. As the exponential distribution only requires one parameter, <script type="math/tex">m</script>, this is as simple as calling <code class="language-plaintext highlighter-rouge">Exponential(m)</code> in our code. Now we use a number of different functions on the distribution.</p>
+<p>Our first exercise will be to sample \(N\) exponentially distributed variables and check that the density of the samples tends to the pdf of the exponential distribution as \(N\) becomes larger. 
+The first step in this code is to define our distribution. As the exponential distribution only requires one parameter, \(m\), this is as simple as calling <code class="language-plaintext highlighter-rouge">Exponential(m)</code> in our code. Now we use a number of different functions on the distribution.</p>
 
-<p>We can sample from this distribution using <code class="language-plaintext highlighter-rouge">rand(dist, N)</code> where <script type="math/tex">N</script> is the number of samples to draw. We can then overlay the pdf of the distribution by using <code class="language-plaintext highlighter-rouge">pdf(dist, x)</code>.</p>
+<p>We can sample from this distribution using <code class="language-plaintext highlighter-rouge">rand(dist, N)</code> where \(N\) is the number of samples to draw. We can then overlay the pdf of the distribution by using <code class="language-plaintext highlighter-rouge">pdf(dist, x)</code>.</p>
 
 <p>Combing these commands allows us to draw a graph (using the Julia package <a href="http://gadflyjl.org/stable/">Gadfly</a>) like this:</p>
 
@@ -142,7 +142,7 @@ The first step in this code is to define our distribution. As the exponential di
 
 <p>Here we can see the small sample size does not resemble the pdf but the large sample size does. So we are correctly drawing from the exponential distribution as expected.</p>
 
-<p>There are also other functions available. A great example is calculating the mean of a log-normal distribution. This distribution is defined with two parameters; <script type="math/tex">m</script> and <script type="math/tex">s^2</script>. However, the mean of the distribution is not equal to <script type="math/tex">m</script>. Instead it is <script type="math/tex">\exp(m+\frac{s^2}{2})</script>. The Distributions package in Julia knows this. So by simply calling <code class="language-plaintext highlighter-rouge">mean</code> on the <code class="language-plaintext highlighter-rouge">LogNormal()</code> object you can return the theoretical mean of the distribution and not have to worry about the parametrisation specifics of the distribution.</p>
+<p>There are also other functions available. A great example is calculating the mean of a log-normal distribution. This distribution is defined with two parameters; \(m\) and \(s^2\). However, the mean of the distribution is not equal to \(m\). Instead it is \(\exp(m+\frac{s^2}{2})\). The Distributions package in Julia knows this. So by simply calling <code class="language-plaintext highlighter-rouge">mean</code> on the <code class="language-plaintext highlighter-rouge">LogNormal()</code> object you can return the theoretical mean of the distribution and not have to worry about the parametrisation specifics of the distribution.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dist = LogNormal(1,4)
 mean(dist) == exp(1 + 4^2/2)

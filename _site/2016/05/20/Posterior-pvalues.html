@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Posterior p-values | Dean Markwick</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Posterior p-values" />
 <meta name="author" content="Dean Markwick" />
 <meta property="og:locale" content="en_US" />
@@ -125,23 +125,23 @@
   <div class="post-content e-content" itemprop="articleBody">
     <p>I am now at the point in my work where I need to check my models and whether they correctly describe the data. To do this, lets introduce posterior p-values for a Bayesian model.</p>
 
-<p>Say we have data <script type="math/tex">y</script> that we fit using a model <script type="math/tex">F</script> with parameters <script type="math/tex">\theta</script>. As we would have used MCMC to fit the model we have chain of parameter values <script type="math/tex">\{\theta ^{(0)} ... \theta ^{(n)}\}</script>.</p>
+<p>Say we have data \(y\) that we fit using a model \(F\) with parameters \(\theta\). As we would have used MCMC to fit the model we have chain of parameter values \(\{\theta ^{(0)} ... \theta ^{(n)}\}\).</p>
 
-<p>For each parameter value we can obtain simulated data <script type="math/tex">\hat{y} _i = F( \theta ^{(i)})</script> such that we now have <script type="math/tex">n</script> simulated data sets.</p>
+<p>For each parameter value we can obtain simulated data \(\hat{y} _i = F( \theta ^{(i)})\) such that we now have \(n\) simulated data sets.</p>
 
-<p>We now chose a test statistic, <script type="math/tex">T</script> and calculate it for each simulated data set. We can now how <script type="math/tex">T_{\text{real}}</script> compares to the <script type="math/tex">T_{\text{sim}}</script>. If <script type="math/tex">T_{\text{real}}</script> is drastically different from the simulated <script type="math/tex">T</script>’s then there is a problem with our model, it is not correctly picking up something intrinsic to the real data.</p>
+<p>We now chose a test statistic, \(T\) and calculate it for each simulated data set. We can now how \(T_{\text{real}}\) compares to the \(T_{\text{sim}}\). If \(T_{\text{real}}\) is drastically different from the simulated \(T\)’s then there is a problem with our model, it is not correctly picking up something intrinsic to the real data.</p>
 
 <p>Like all good introductions, lets add some real data to try and explain the concepts better.</p>
 
 <p>Our real data will be simulated from the Generalised Pareto distribution (gpd) and we will fit both an exponential model and a gpd model.</p>
 
-<p>So now we have three data sets, <script type="math/tex">y_{\text{real}}, \hat{y}_{\text{gpd}}, \hat{y}_{\text{exp}}</script>.</p>
+<p>So now we have three data sets, \(y_{\text{real}}, \hat{y}_{\text{gpd}}, \hat{y}_{\text{exp}}\).</p>
 
 <p><img src="/assets/realandsimdata.png" alt="Real and Simulated Data" class="center-image" /></p>
 
 <p>We can see straight away that the gpd model has nicely replicated the general shape of the real data, where as the exponential model has produced a poor fit.</p>
 
-<p>Now we chose a test statistic, <script type="math/tex">T</script>. For simplicity we shall use the maximum value of the data set, <script type="math/tex">T(x) = \max x_i</script>.</p>
+<p>Now we chose a test statistic, \(T\). For simplicity we shall use the maximum value of the data set, \(T(x) = \max x_i\).</p>
 
 <p>So we now calculate the maximum value for all our simulated datatsets of both models and see how the maximum of the real data compares.</p>
 

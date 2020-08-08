@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Kelly Betting - Part Two | Dean Markwick</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Kelly Betting - Part Two" />
 <meta name="author" content="Dean Markwick" />
 <meta property="og:locale" content="en_US" />
@@ -127,13 +127,13 @@
 
 <p>Again this requires maximising the expected value of the log of the bankroll</p>
 
-<p><script type="math/tex">\mathbb{E} \left[ \log (x)\right] = \sum _i p_i \log (1+ (b_i-1) x_i) + (1-p_i) \log (1- x_i)</script>,</p>
+<p>\(\mathbb{E} \left[ \log (x)\right] = \sum _i p_i \log (1+ (b_i-1) x_i) + (1-p_i) \log (1- x_i)\),</p>
 
-<p>where each event <script type="math/tex">i</script> has a probability <script type="math/tex">p_i</script> of occurring, decimal odds of <script type="math/tex">b_i</script> and <script type="math/tex">x_i</script> is the size of the bet.</p>
+<p>where each event \(i\) has a probability \(p_i\) of occurring, decimal odds of \(b_i\) and \(x_i\) is the size of the bet.</p>
 
 <p>Now that we have multiple bets, the total amount staked must be less than 1</p>
 
-<p><script type="math/tex">\sum _i x_i \leq 1</script>,</p>
+<p>\(\sum _i x_i \leq 1\),</p>
 
 <p>however in practise this is usually capped at some lesser value which is then referred to as fractional Kelly betting.</p>
 
@@ -147,16 +147,16 @@
 }
 </code></pre></div></div>
 
-<p>due to the vectorised nature of R functions both <script type="math/tex">p</script> and <script type="math/tex">b</script> can be lists and there is no need to loop through each value.</p>
+<p>due to the vectorised nature of R functions both \(p\) and \(b\) can be lists and there is no need to loop through each value.</p>
 
-<p>To find the <script type="math/tex">x</script> values for given <script type="math/tex">p</script> and <script type="math/tex">b</script> values that maximise the bank roll we can use the <code class="language-plaintext highlighter-rouge">optim</code> function. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/optim.html">Optim</a> is R’s numerical optimisation routine that can implement a number of different algorithms for finding the minimum of a given function. Therefore, for it to be any use to us, we need to multiply our function by -1 such that the maximum now becomes the minimum.</p>
+<p>To find the \(x\) values for given \(p\) and \(b\) values that maximise the bank roll we can use the <code class="language-plaintext highlighter-rouge">optim</code> function. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/optim.html">Optim</a> is R’s numerical optimisation routine that can implement a number of different algorithms for finding the minimum of a given function. Therefore, for it to be any use to us, we need to multiply our function by -1 such that the maximum now becomes the minimum.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>p = c(0.7, 0.8)
 b = c(1.3, 1.2)
 optim(c(0.5, 0.5), function(x) (-1)*expectedBankRoll(x, p, b))
 </code></pre></div></div>
 
-<p>This code will find the two <script type="math/tex">x</script> values that maximise the expected bank roll and therefore consider the output as the Kelly bet for two simultaneous results.</p>
+<p>This code will find the two \(x\) values that maximise the expected bank roll and therefore consider the output as the Kelly bet for two simultaneous results.</p>
 
 <p>But there is a few caveats. Firstly we need to account for the fact that the sum of our bets must be less than 1. Secondly, the bets must also be positive numbers. To account for these restrictions we must modify our expected bank roll function</p>
 
@@ -167,7 +167,7 @@ optim(c(0.5, 0.5), function(x) (-1)*expectedBankRoll(x, p, b))
 }
 </code></pre></div></div>
 
-<p>The returning of a large value if any of the restrictions of <script type="math/tex">x</script> are broken ensures that we get reasonable results from optim. This also has the added benefit of setting <script type="math/tex">x_i</script> to zero for any event that does not have a positive expected value based on the odds offered. Therefore, to arrive at the optimal bet sizes for a collection of events, just pass in the probabilities and the odds.</p>
+<p>The returning of a large value if any of the restrictions of \(x\) are broken ensures that we get reasonable results from optim. This also has the added benefit of setting \(x_i\) to zero for any event that does not have a positive expected value based on the odds offered. Therefore, to arrive at the optimal bet sizes for a collection of events, just pass in the probabilities and the odds.</p>
 
 <p>In the next part I will be looking at bet hedging and how this can effect the stake size and overall profitability of a betting system.</p>
 

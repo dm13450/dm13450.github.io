@@ -7,19 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Julia Code for Sampling an AR(1) model | Dean Markwick</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Julia Code for Sampling an AR(1) model" />
 <meta name="author" content="Dean Markwick" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="In my previous blog post I outlined the basic AR(1) model and the necessary maths needed to infer the unknown parameter . In this post I will outline some basic Julia code to build a MCMC sampler for such a model to infer the unknown parameter ." />
-<meta property="og:description" content="In my previous blog post I outlined the basic AR(1) model and the necessary maths needed to infer the unknown parameter . In this post I will outline some basic Julia code to build a MCMC sampler for such a model to infer the unknown parameter ." />
+<meta name="description" content="In my previous blog post I outlined the basic AR(1) model and the necessary maths needed to infer the unknown parameter \(\phi\). In this post I will outline some basic Julia code to build a MCMC sampler for such a model to infer the unknown parameter \(\phi\)." />
+<meta property="og:description" content="In my previous blog post I outlined the basic AR(1) model and the necessary maths needed to infer the unknown parameter \(\phi\). In this post I will outline some basic Julia code to build a MCMC sampler for such a model to infer the unknown parameter \(\phi\)." />
 <link rel="canonical" href="http://localhost:4000/2017/06/12/Auto-Julia.html" />
 <meta property="og:url" content="http://localhost:4000/2017/06/12/Auto-Julia.html" />
 <meta property="og:site_name" content="Dean Markwick" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2017-06-12T00:00:00+01:00" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","headline":"Julia Code for Sampling an AR(1) model","dateModified":"2017-06-12T00:00:00+01:00","datePublished":"2017-06-12T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2017/06/12/Auto-Julia.html"},"author":{"@type":"Person","name":"Dean Markwick"},"url":"http://localhost:4000/2017/06/12/Auto-Julia.html","description":"In my previous blog post I outlined the basic AR(1) model and the necessary maths needed to infer the unknown parameter . In this post I will outline some basic Julia code to build a MCMC sampler for such a model to infer the unknown parameter .","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","headline":"Julia Code for Sampling an AR(1) model","dateModified":"2017-06-12T00:00:00+01:00","datePublished":"2017-06-12T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2017/06/12/Auto-Julia.html"},"author":{"@type":"Person","name":"Dean Markwick"},"url":"http://localhost:4000/2017/06/12/Auto-Julia.html","description":"In my previous blog post I outlined the basic AR(1) model and the necessary maths needed to infer the unknown parameter \\(\\phi\\). In this post I will outline some basic Julia code to build a MCMC sampler for such a model to infer the unknown parameter \\(\\phi\\).","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/assets/main.css">
@@ -123,9 +123,9 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>In my previous blog post I outlined the basic AR(1) model and the necessary maths needed to infer the unknown parameter <script type="math/tex">\phi</script>. In this post I will outline some basic Julia code to build a MCMC sampler for such a model to infer the unknown parameter <script type="math/tex">\phi</script>.</p>
+    <p>In my previous blog post I outlined the basic AR(1) model and the necessary maths needed to infer the unknown parameter \(\phi\). In this post I will outline some basic Julia code to build a MCMC sampler for such a model to infer the unknown parameter \(\phi\).</p>
 
-<p>Firstly, we need to simulate some data. From the previous post we know that the data <script type="math/tex">y</script> comes simply from the previous value, plus some fixed noise. In Julia this is simply writing a for loop and using the Distributions package to sample some white noise.</p>
+<p>Firstly, we need to simulate some data. From the previous post we know that the data \(y\) comes simply from the previous value, plus some fixed noise. In Julia this is simply writing a for loop and using the Distributions package to sample some white noise.</p>
 
 <figure class="highlight"><pre><code class="language-julia" data-lang="julia"><span class="k">function</span><span class="nf"> simulate_ar</span><span class="x">(</span><span class="n">phi</span><span class="x">,</span> <span class="n">n</span><span class="x">)</span>
 
@@ -143,7 +143,7 @@
 	 <span class="k">return</span> <span class="n">y</span>
 <span class="k">end</span></code></pre></figure>
 
-<p>For 1000 data points with <script type="math/tex">\phi=0.5</script> such a process looks like:</p>
+<p>For 1000 data points with \(\phi=0.5\) such a process looks like:</p>
 
 <p><img src="/assets/y_plot.svg" alt="AR1 Process Plot" class="center-image" /></p>
 
@@ -165,7 +165,7 @@ the sum of squares and the lagged sum of squares ( [see here] (http://dm13450.gi
 
 <p><img src="/assets/phi_density.svg" alt="Phi Density Plot" class="center-image" /></p>
 
-<p>So we can see that the posterior distribution for <script type="math/tex">\phi</script> is close to the true value of 0.5, so it looks like our algorithm is working.</p>
+<p>So we can see that the posterior distribution for \(\phi\) is close to the true value of 0.5, so it looks like our algorithm is working.</p>
 
 <p>Although its just a toy model in these posts I have shown how to calculate the posterior for an autoregressive process and how to draw from such a distribution using Julia. Next stop, include more parameters and see how flexible autoregressive models can be.</p>
 

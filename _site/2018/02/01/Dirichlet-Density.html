@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Density Estimation with the dirichletprocesss R package | Dean Markwick</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Density Estimation with the dirichletprocesss R package" />
 <meta name="author" content="Dean Markwick" />
 <meta property="og:locale" content="en_US" />
@@ -134,12 +134,12 @@ estimation.</p>
 
 <p>Reading the Wikipedia article on <a href="https://en.wikipedia.org/wiki/Dirichlet_process">Dirichlet processes</a> isn’t all that helpful for building a picture of what a Dirichlet process is and how it can be used in statistics. So here is my attempt at high level explanation!</p>
 
-<p>Lets assume we have some data <script type="math/tex">\mathbf{y}</script> that is from some distribution <script type="math/tex">F</script>. Now <script type="math/tex">F</script> can be any kind of weird and wonderful shape. It can be bimodal or even multimodal. It could be fully bounded or strictly positive. Basically, we are not limited to your normal parametric distributions such as Normal, Gamma etc. Instead, we are going to use a Dirichlet process to approximate <script type="math/tex">F</script> by assuming is a mixture of some parametric distribution <script type="math/tex">K(\theta)</script> where <script type="math/tex">\theta</script> are the parameters of this parametric distribution.</p>
+<p>Lets assume we have some data \(\mathbf{y}\) that is from some distribution \(F\). Now \(F\) can be any kind of weird and wonderful shape. It can be bimodal or even multimodal. It could be fully bounded or strictly positive. Basically, we are not limited to your normal parametric distributions such as Normal, Gamma etc. Instead, we are going to use a Dirichlet process to approximate \(F\) by assuming is a mixture of some parametric distribution \(K(\theta)\) where \(\theta\) are the parameters of this parametric distribution.</p>
 
-<p>Now your data is made up of individual observations <script type="math/tex">y_i</script> and you chose a building block distribution <script type="math/tex">K</script> that we will combine to form <script type="math/tex">F</script>. 
-Each of these observations is from its own distribution <script type="math/tex">K(\theta _i)</script> with its own parameter <script type="math/tex">\theta _i</script>. So if you have 20 data points, you will have 20 <script type="math/tex">\theta_i</script>’s. But here is the key point of a Dirichlet process: <strong>Some of these <script type="math/tex">\theta _i</script>’s will be the same as each other</strong>. So at the end you will hopefully have a smaller set of <em>unique</em> <script type="math/tex">\theta _i</script>’s across your data. Whilst each datapoint has its own parameter, it is not necessarily a unique parameter.</p>
+<p>Now your data is made up of individual observations \(y_i\) and you chose a building block distribution \(K\) that we will combine to form \(F\). 
+Each of these observations is from its own distribution \(K(\theta _i)\) with its own parameter \(\theta _i\). So if you have 20 data points, you will have 20 \(\theta_i\)’s. But here is the key point of a Dirichlet process: <strong>Some of these \(\theta _i\)’s will be the same as each other</strong>. So at the end you will hopefully have a smaller set of <em>unique</em> \(\theta _i\)’s across your data. Whilst each datapoint has its own parameter, it is not necessarily a unique parameter.</p>
 
-<p>To fit a Dirichlet process, you iterate through all the datapoints, checking whether a datapoint <script type="math/tex">y_i</script> should be assigned a parameter from the other <script type="math/tex">\theta _j</script>’s assigned to <script type="math/tex">y_j</script>, or whether a new <script type="math/tex">\theta _i</script> should be used. Eventually, you will find a point where every data point has its best parameter assigned and no more changes happen and you have fit your Dirichlet process to the data.</p>
+<p>To fit a Dirichlet process, you iterate through all the datapoints, checking whether a datapoint \(y_i\) should be assigned a parameter from the other \(\theta _j\)’s assigned to \(y_j\), or whether a new \(\theta _i\) should be used. Eventually, you will find a point where every data point has its best parameter assigned and no more changes happen and you have fit your Dirichlet process to the data.</p>
 
 <h3 id="modeling-time">Modeling Time!</h3>
 
@@ -202,7 +202,7 @@ that the data is bimodal.</p>
 
 <p>How could we model this in a Bayesian way and arrive at a probability distribution for this data? The answer: a Dirichlet process.</p>
 
-<p>We believe that the waiting data is from a mixture of Normal distributions with parameters <script type="math/tex">\theta_i = \{ \mu _i , \sigma _i \}</script>.  So from our previous explanation, our <script type="math/tex">K</script> is the normal distribution, and each data point will have its own mean and variance. But remember, these parameters are not unique, multiple data points can have the same parameters. This means we expect the parameters to converge to a number of select clusters which will accurately model the data.</p>
+<p>We believe that the waiting data is from a mixture of Normal distributions with parameters \(\theta_i = \{ \mu _i , \sigma _i \}\).  So from our previous explanation, our \(K\) is the normal distribution, and each data point will have its own mean and variance. But remember, these parameters are not unique, multiple data points can have the same parameters. This means we expect the parameters to converge to a number of select clusters which will accurately model the data.</p>
 
 <p>Now for the <code class="language-plaintext highlighter-rouge">dirichletprocess</code> bit.</p>
 
@@ -269,7 +269,7 @@ that the data is bimodal.</p>
   </tbody>
 </table>
 
-<p>From the weights, we can see that 60% of the data points are associated with a <script type="math/tex">\mu = 0.64, \sigma = 0.39</script> cluster parameter.</p>
+<p>From the weights, we can see that 60% of the data points are associated with a \(\mu = 0.64, \sigma = 0.39\) cluster parameter.</p>
 
 <p>If we want to plot our posterior estimate against our original histogram, we simply have to obtain samples of the posterior distribution.</p>
 

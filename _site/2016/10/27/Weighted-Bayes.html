@@ -7,19 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Thoughts on Weights in Bayesian Regression | Dean Markwick</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Thoughts on Weights in Bayesian Regression" />
 <meta name="author" content="Dean Markwick" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Weighted regression is common in frequentist approaches to regression. Typically, the weights are known and can be interpreted as the amount each data point is allowed to influence the link between the variables in question. This can be written as where is the ‘weighting’." />
-<meta property="og:description" content="Weighted regression is common in frequentist approaches to regression. Typically, the weights are known and can be interpreted as the amount each data point is allowed to influence the link between the variables in question. This can be written as where is the ‘weighting’." />
+<meta name="description" content="Weighted regression is common in frequentist approaches to regression. Typically, the weights are known and can be interpreted as the amount each data point is allowed to influence the link between the variables in question. This can be written as \(\mathbf{y} = \sum _i w_i \beta _i x_i\) where \(w_i\) is the ‘weighting’." />
+<meta property="og:description" content="Weighted regression is common in frequentist approaches to regression. Typically, the weights are known and can be interpreted as the amount each data point is allowed to influence the link between the variables in question. This can be written as \(\mathbf{y} = \sum _i w_i \beta _i x_i\) where \(w_i\) is the ‘weighting’." />
 <link rel="canonical" href="http://localhost:4000/2016/10/27/Weighted-Bayes.html" />
 <meta property="og:url" content="http://localhost:4000/2016/10/27/Weighted-Bayes.html" />
 <meta property="og:site_name" content="Dean Markwick" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2016-10-27T00:00:00+01:00" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","headline":"Thoughts on Weights in Bayesian Regression","dateModified":"2016-10-27T00:00:00+01:00","datePublished":"2016-10-27T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2016/10/27/Weighted-Bayes.html"},"author":{"@type":"Person","name":"Dean Markwick"},"url":"http://localhost:4000/2016/10/27/Weighted-Bayes.html","description":"Weighted regression is common in frequentist approaches to regression. Typically, the weights are known and can be interpreted as the amount each data point is allowed to influence the link between the variables in question. This can be written as where is the ‘weighting’.","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","headline":"Thoughts on Weights in Bayesian Regression","dateModified":"2016-10-27T00:00:00+01:00","datePublished":"2016-10-27T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2016/10/27/Weighted-Bayes.html"},"author":{"@type":"Person","name":"Dean Markwick"},"url":"http://localhost:4000/2016/10/27/Weighted-Bayes.html","description":"Weighted regression is common in frequentist approaches to regression. Typically, the weights are known and can be interpreted as the amount each data point is allowed to influence the link between the variables in question. This can be written as \\(\\mathbf{y} = \\sum _i w_i \\beta _i x_i\\) where \\(w_i\\) is the ‘weighting’.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/assets/main.css">
@@ -124,8 +124,8 @@
 
   <div class="post-content e-content" itemprop="articleBody">
     <p>Weighted regression is common in frequentist approaches to regression. Typically, the weights are known and can be interpreted as the amount each data point is allowed to influence the link between the variables in question. This can be written as
-<script type="math/tex">\mathbf{y} = \sum _i w_i \beta _i x_i</script> 
-where <script type="math/tex">w_i</script> is the ‘weighting’.</p>
+\(\mathbf{y} = \sum _i w_i \beta _i x_i\) 
+where \(w_i\) is the ‘weighting’.</p>
 
 <p>For example if you have some knowledge that a particular data point is less accurate than all the others. You can assign it a weight such that relative to all the other data points it has less of an impact on the final result. Weighted regression can also be a useful tool in building robust regression models - ones that are less susceptible to outliers as such outliers are given small weights.</p>
 

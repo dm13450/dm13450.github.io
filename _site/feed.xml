@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-06T07:16:08+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Dean Markwick</title><subtitle>Personal website for Dean Markwick. If you like stats, sports and rambling, you've come to the right place. All rights reserved. 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-08-08T13:03:31+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Dean Markwick</title><subtitle>Personal website for Dean Markwick. If you like stats, sports and rambling, you've come to the right place. All rights reserved. 
 </subtitle><author><name>Dean Markwick</name></author><entry><title type="html">AlphaVantage.jl - Getting Market Data into Julia</title><link href="http://localhost:4000/2020/07/05/AlphaVantage.html" rel="alternate" type="text/html" title="AlphaVantage.jl - Getting Market Data into Julia" /><published>2020-07-05T00:00:00+01:00</published><updated>2020-07-05T00:00:00+01:00</updated><id>http://localhost:4000/2020/07/05/AlphaVantage</id><content type="html" xml:base="http://localhost:4000/2020/07/05/AlphaVantage.html">&lt;p&gt;&lt;a href=&quot;https://www.alphavantage.co/&quot;&gt;AlphaVantage&lt;/a&gt; is a market data provider that is nice enough to provide
 free access to a wide variety of data. It is my goto financial data
 provider ( &lt;a href=&quot;http://dm13450.github.io/2020/06/03/State-of-the-Market.html&quot;&gt;used here&lt;/a&gt; ) , because a) it’s free and b) there is an R package that
@@ -366,8 +366,8 @@ through the data points and  assigning each point to a cluster
 sequentially. A point can belong to
 either the previous cluster (yesterday’s cluster) or form its own
 cluster where the ability to form
-its own cluster is controlled by the parameters &lt;script type=&quot;math/tex&quot;&gt;\alpha,
-\beta&lt;/script&gt;. These are &lt;em&gt;hyperparameters&lt;/em&gt; which
+its own cluster is controlled by the parameters \(\alpha,
+\beta\). These are &lt;em&gt;hyperparameters&lt;/em&gt; which
 dictate the overall state ‘stickiness’ and how easy it is to form a new
 cluster. Then once every datapoint has a new state we update the state
 parameters using all the data assigned to that state. This gives an iterative
@@ -376,7 +376,7 @@ Bayesian method for fitting these models;&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;Iterate over the data assigning it to a state.&lt;/li&gt;
   &lt;li&gt;Iterate over the states updating the parameters.&lt;/li&gt;
-  &lt;li&gt;Update the hyperparameters &lt;script type=&quot;math/tex&quot;&gt;\alpha, \beta&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;Update the hyperparameters \(\alpha, \beta\).&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;Thanks to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dirichletprocess&lt;/code&gt; you don’t have to worry about any of
@@ -407,7 +407,7 @@ each DP for 75000 iterations and will discard the first 37500
 iterations as burnin. The fitting took 17.5 minutes on my late 2013
 MacBook Pro.&lt;/p&gt;
 
-&lt;p&gt;We use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;coda&lt;/code&gt; package to assess whether the &lt;script type=&quot;math/tex&quot;&gt;\alpha, \beta&lt;/script&gt; values
+&lt;p&gt;We use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;coda&lt;/code&gt; package to assess whether the \(\alpha, \beta\) values
 have converged to similar values.&lt;/p&gt;
 
 &lt;div class=&quot;language-r highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;paramCoda&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mcmc.list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lapply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dpList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; 
@@ -540,8 +540,7 @@ conduct the rest of our analysis.&lt;/p&gt;
 &lt;p&gt;Here we have plotted the closing price of the SPY ETF over time, with the
 dashed lines separating the different states that the model has found
 and then the colours indicating whether we are in a positive return
-period (bull) &lt;script type=&quot;math/tex&quot;&gt;\mu &gt; 0&lt;/script&gt; or a negative return period (bear) &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
-\mu &lt; 0 %]]&gt;&lt;/script&gt;. Most of
+period (bull) \(\mu &amp;gt; 0\) or a negative return period (bear) \(\mu &amp;lt; 0\). Most of
 the time we’ve been in continual positive return, with only the
 volatility changing. We can see though that the Great Financial Crisis
 had a negative return period, as did early 2018. Unsurprisingly we are
@@ -566,11 +565,11 @@ wish for I suppose.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/assets/HMMFinPost_files/figure-gfm/unnamed-chunk-12-1.png&quot; alt=&quot;&quot; /&gt;&lt;!-- --&gt;&lt;/p&gt;
 
 &lt;p&gt;Here we can see that there have only been four states with negative
-average &lt;script type=&quot;math/tex&quot;&gt;\mu&lt;/script&gt; and the most recent negative state was very
+average \(\mu\) and the most recent negative state was very
 negative. The rest are all positive each with slightly different
 volatility.&lt;/p&gt;
 
-&lt;p&gt;This &lt;script type=&quot;math/tex&quot;&gt;\sigma&lt;/script&gt; parameter is distributed around 1 because we
+&lt;p&gt;This \(\sigma\) parameter is distributed around 1 because we
 normalised the return with the standard deviation so any changes in
 this parameter must also be combined with the rolling volatility we
 calculated at the start. Most recently the volatility has seen more
@@ -1045,15 +1044,15 @@ in yields between these products. A popular model in the fixed income
 space is the Nelson-Siegel model which links the yield of the bond with
 how long it has left until maturity.&lt;/p&gt;
 
-&lt;p&gt;The Nelson-Siegel model for a yield &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; of maturity &lt;script type=&quot;math/tex&quot;&gt;\tau&lt;/script&gt; can be written as&lt;/p&gt;
+&lt;p&gt;The Nelson-Siegel model for a yield \(y\) of maturity \(\tau\) can be written as&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;y(\tau \mid \beta _0, \beta _1, \beta _2, \lambda) = \beta_0 +
+\[y(\tau \mid \beta _0, \beta _1, \beta _2, \lambda) = \beta_0 +
 (\beta_1 + \beta _2) \cdot \frac{\lambda}{\tau} \left( 1 - \exp (-
 \frac{\tau}{\lambda}) \right) - \beta _2 \cdot \left( \exp \left( -
-\frac{\tau}{\lambda} \right)  \right)&lt;/script&gt;
+\frac{\tau}{\lambda} \right)  \right)\]
 
-&lt;p&gt;where the &lt;script type=&quot;math/tex&quot;&gt;\beta _i&lt;/script&gt; values have direct interpretations of interest
-rates and &lt;script type=&quot;math/tex&quot;&gt;\lambda&lt;/script&gt; is a scaling parameter.&lt;/p&gt;
+&lt;p&gt;where the \(\beta _i\) values have direct interpretations of interest
+rates and \(\lambda\) is a scaling parameter.&lt;/p&gt;
 
 &lt;p&gt;We can write this as an R function and use optimisation to find
 the best parameters for a given dataset.&lt;/p&gt;
@@ -1190,16 +1189,16 @@ can change overtime.&lt;/p&gt;
 
 &lt;h3 id=&quot;a-dynamic-model&quot;&gt;A Dynamic Model&lt;/h3&gt;
 
-&lt;p&gt;A more general model is to allow the &lt;script type=&quot;math/tex&quot;&gt;\beta&lt;/script&gt; values to vary over
+&lt;p&gt;A more general model is to allow the \(\beta\) values to vary over
 time. We rewrite the above basic model so that the parmeters at each
 day of the week take on a value that depends of the previous value
 of the parameter, this means that is can very with each day of the
 week and there are parameters that control the amount of variation.&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\beta ^{i} = \theta_0 + \theta _1 \beta ^{i-1}&lt;/script&gt;
+\[\beta ^{i} = \theta_0 + \theta _1 \beta ^{i-1}\]
 
-&lt;p&gt;This means that the parameter on day &lt;script type=&quot;math/tex&quot;&gt;i&lt;/script&gt; depends on the previous day
-by a constant amount &lt;script type=&quot;math/tex&quot;&gt;\theta _0&lt;/script&gt; and an amount $\theta _1$ time the
+&lt;p&gt;This means that the parameter on day \(i\) depends on the previous day
+by a constant amount \(\theta _0\) and an amount $\theta _1$ time the
 previous value.&lt;/p&gt;
 
 &lt;p&gt;Again, this type of model is written in Stan (&lt;a href=&quot;/assets/NelsonSigelRateSetterPost_files/nel_sig_dynamic.stan&quot;&gt;here&lt;/a&gt;), but now requires a
@@ -1275,7 +1274,7 @@ model is much better than the previous static one. It takes more time to
 compute, but the benefit is there. The simple variation allowed in the
 parameters can adapt to the available data.&lt;/p&gt;
 
-&lt;p&gt;How do the &lt;script type=&quot;math/tex&quot;&gt;\beta&lt;/script&gt; parameters change over time? These are easily
+&lt;p&gt;How do the \(\beta\) parameters change over time? These are easily
 extracted from the posterior samples and can be plotted as a function of
 time.&lt;/p&gt;
 
@@ -1301,29 +1300,29 @@ interval. What do these parameters represent? Here is a handy table:&lt;/p&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt;\beta _0&lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;\(\beta _0\)&lt;/td&gt;
       &lt;td&gt;Long term rates&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt;\beta _1&lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;\(\beta _1\)&lt;/td&gt;
       &lt;td&gt;Short term rates&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt;\beta _2&lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;\(\beta _2\)&lt;/td&gt;
       &lt;td&gt;Medium term rates&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;Now &lt;script type=&quot;math/tex&quot;&gt;\beta _0&lt;/script&gt; has been decreasing overtime which suggests that the
+&lt;p&gt;Now \(\beta _0\) has been decreasing overtime which suggests that the
 long term interest rate on RateSetter bonds is also decreasing. I
 imagine this would be interpreted as confidence improving in the
 overall platform, mainly because the Bank of England base rate has not
-changed significantly over this period. The &lt;script type=&quot;math/tex&quot;&gt;\beta _2&lt;/script&gt; parameter has
+changed significantly over this period. The \(\beta _2\) parameter has
 remained fairly consistent at around -5 overtime, before recently
 increasing. This is a bit tougher to interpret as there is no real
 ‘medium’ bond price that we can view the equivalent change
-in. Likewise, &lt;script type=&quot;math/tex&quot;&gt;\beta _1&lt;/script&gt; started at a consistent value of -4, before
+in. Likewise, \(\beta _1\) started at a consistent value of -4, before
 increasing from 2016 and decreasing in 2018. This shows the
 sensitivity of the short-term rates, reflected in the rolling market,
 which is by and large the more liquid contract and more likely to
@@ -1333,7 +1332,7 @@ experience fluctuations.&lt;/p&gt;
 a 28 day window for reporting the average yield on each of the
 contracts. You can see this change in the frist figure as the
 fluctuations have suddenly dipped and the curves are now much smoother.
-We can see a similar change to this in the &lt;script type=&quot;math/tex&quot;&gt;\beta&lt;/script&gt;
+We can see a similar change to this in the \(\beta\)
 values.&lt;/p&gt;
 
 &lt;div class=&quot;language-r highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ratesetterBetas&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dmy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;01-01-2019&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ratesetterBetasSub&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
@@ -1354,8 +1353,8 @@ smoothed out with the smoother yields as inputs. Again, good to see that
 the model can handle a sudden change in the data. It also makes the
 trend in the data a little easier to spot. The rolling market has
 remained fairly constant, whilst the 1 and 5 year markets have decreased,
-this is reflected in a decrease in the &lt;script type=&quot;math/tex&quot;&gt;\beta_0&lt;/script&gt; parameter, an
-increase in the &lt;script type=&quot;math/tex&quot;&gt;\beta _1&lt;/script&gt; parameter and &lt;script type=&quot;math/tex&quot;&gt;\beta _2&lt;/script&gt; remaining the
+this is reflected in a decrease in the \(\beta_0\) parameter, an
+increase in the \(\beta _1\) parameter and \(\beta _2\) remaining the
 same.&lt;/p&gt;
 
 &lt;p&gt;Now with just 3 unequally spaced contracts available to buy its hard
@@ -1397,13 +1396,12 @@ generating data from a toy model. There will a number of groups that
 have Poisson observations with a parameter that is drawn from some
 common distribution.&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{aligned}
-N_i &amp; \sim \text{Poisson} (\lambda _i) \\
-\lambda _i &amp; \sim \text{Gamma} (8, 2)
-\end{aligned} %]]&gt;&lt;/script&gt;
+\[\begin{aligned}
+N_i &amp;amp; \sim \text{Poisson} (\lambda _i) \\
+\lambda _i &amp;amp; \sim \text{Gamma} (8, 2)
+\end{aligned}\]
 
-&lt;p&gt;Our hierarchical distribution is the &lt;script type=&quot;math/tex&quot;&gt;\text{Gamma} (8, 2)&lt;/script&gt; function
+&lt;p&gt;Our hierarchical distribution is the \(\text{Gamma} (8, 2)\) function
 and our sampling method needs to be able to recover this.&lt;/p&gt;
 
 &lt;div class=&quot;language-r highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;nGroups&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
@@ -1424,12 +1422,11 @@ and our sampling method needs to be able to recover this.&lt;/p&gt;
 &lt;p&gt;The likelihood is the Poisson distribution, therefore a conjugate prior
 is the gamma distribution.&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{aligned}
-N_i &amp; \sim \text{Poisson} (\lambda _i) \\
-\lambda  &amp; \sim  \text{Gamma} (\alpha _0, \beta _0) \\
-\lambda \mid N _i &amp; \sim  \text{Gamma} (\alpha _0 + \sum _{i=1} ^n N_i, \beta _0 + n)
-\end{aligned} %]]&gt;&lt;/script&gt;
+\[\begin{aligned}
+N_i &amp;amp; \sim \text{Poisson} (\lambda _i) \\
+\lambda  &amp;amp; \sim  \text{Gamma} (\alpha _0, \beta _0) \\
+\lambda \mid N _i &amp;amp; \sim  \text{Gamma} (\alpha _0 + \sum _{i=1} ^n N_i, \beta _0 + n)
+\end{aligned}\]
 
 &lt;h3 id=&quot;simple-model&quot;&gt;Simple Model&lt;/h3&gt;
 
@@ -1443,7 +1440,7 @@ observations in the group. We could sample from this distribution using
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;This is easily written in Stan whilst making full use of vectorisation. The
-prior parmeters &lt;script type=&quot;math/tex&quot;&gt;(\alpha _0, \beta _0)&lt;/script&gt; are set to values of 0.01&lt;/p&gt;
+prior parmeters \((\alpha _0, \beta _0)\) are set to values of 0.01&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;data {
   int&amp;lt;lower=0&amp;gt; N;
@@ -1523,10 +1520,10 @@ some wider than the others due to the amount of data available. This is
 what we expect for a ‘no pool’ model. None of the data is shared and
 therefore no benefits from the hierarchy.&lt;/p&gt;
 
-&lt;p&gt;In the sampler, we set the parameters to &lt;script type=&quot;math/tex&quot;&gt;(\alpha_0 = \beta _0 =0.01)&lt;/script&gt;
+&lt;p&gt;In the sampler, we set the parameters to \((\alpha_0 = \beta _0 =0.01)\)
 which is the typical ‘uninformative’ prior &lt;sup&gt;1&lt;/sup&gt;. Now we want to
 find the best fitting prior distribution and actually sample values of
-&lt;script type=&quot;math/tex&quot;&gt;\alpha _0&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\beta _0&lt;/script&gt;. This pools the data and we get the
+\(\alpha _0\) and \(\beta _0\). This pools the data and we get the
 benefit of sharing.&lt;/p&gt;
 
 &lt;h3 id=&quot;a-hierarchical-model&quot;&gt;A Hierarchical Model&lt;/h3&gt;
@@ -1535,7 +1532,7 @@ benefit of sharing.&lt;/p&gt;
 fit the same data with the same setting and assess the outcome.&lt;/p&gt;
 
 &lt;p&gt;This involves changing the model section of the Stan program. Now the
-&lt;script type=&quot;math/tex&quot;&gt;\lambda&lt;/script&gt; parameter is from both the prior and the posterior.&lt;/p&gt;
+\(\lambda\) parameter is from both the prior and the posterior.&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;model {
   alpha0 ~ normal(0, 5);
@@ -1603,8 +1600,8 @@ longer than the simple model but still takes no time at all.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/ConjuagetPost_files/figure-gfm/unnamed-chunk-8-1.png&quot; alt=&quot;&quot; /&gt;&lt;!-- --&gt;&lt;/p&gt;
 
-&lt;p&gt;Again, the &lt;script type=&quot;math/tex&quot;&gt;\lambda&lt;/script&gt; samples align with the true parameters which is
-reassuring. When we graph the resulting &lt;script type=&quot;math/tex&quot;&gt;\alpha _0, \beta _0&lt;/script&gt; values
+&lt;p&gt;Again, the \(\lambda\) samples align with the true parameters which is
+reassuring. When we graph the resulting \(\alpha _0, \beta _0\) values
 we find that they are getting the correct values. So whilst we are
 exploiting the conjugacy we can still add in hyper parameters.&lt;/p&gt;
 
@@ -1717,14 +1714,14 @@ with the components from my &lt;code class=&quot;language-plaintext highlighter-
 
 &lt;h2 id=&quot;a-markov-model&quot;&gt;A Markov Model&lt;/h2&gt;
 
-&lt;p&gt;Given we have some data &lt;script type=&quot;math/tex&quot;&gt;y_t&lt;/script&gt; with &lt;script type=&quot;math/tex&quot;&gt;t=1,\ldots,n&lt;/script&gt; and some
-unobserved states &lt;script type=&quot;math/tex&quot;&gt;s_t&lt;/script&gt;. We believe that the data is drawn from some
+&lt;p&gt;Given we have some data \(y_t\) with \(t=1,\ldots,n\) and some
+unobserved states \(s_t\). We believe that the data is drawn from some
 distribution that depends on the state&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;y_t \mid s_t \sim p(y_t \mid s_t, \theta _t),&lt;/script&gt;
+\[y_t \mid s_t \sim p(y_t \mid s_t, \theta _t),\]
 
-&lt;p&gt;such that each state has some parameter &lt;script type=&quot;math/tex&quot;&gt;\theta _t&lt;/script&gt; associated with
-it. Like a Dirichlet process, these &lt;script type=&quot;math/tex&quot;&gt;\theta _t&lt;/script&gt;s might be the same.&lt;/p&gt;
+&lt;p&gt;such that each state has some parameter \(\theta _t\) associated with
+it. Like a Dirichlet process, these \(\theta _t\)s might be the same.&lt;/p&gt;
 
 &lt;p&gt;Typically in a Markovian model, the number of states allowed is fixed.
 However, in this case, there is a no theoretical limit to the number of
@@ -1734,8 +1731,8 @@ states can be learnt from the data.&lt;/p&gt;
 
 &lt;p&gt;Also, a Markov model is usually defined by a transition matrix, where
 each entry contains the probability of moving from that state. In the
-Dirichlet case, we parameterise the states by &lt;script type=&quot;math/tex&quot;&gt;\alpha&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\beta&lt;/script&gt;.
-&lt;script type=&quot;math/tex&quot;&gt;\alpha&lt;/script&gt; describes the stickiness of a state and &lt;script type=&quot;math/tex&quot;&gt;\beta&lt;/script&gt; controls the
+Dirichlet case, we parameterise the states by \(\alpha\) and \(\beta\).
+\(\alpha\) describes the stickiness of a state and \(\beta\) controls the
 tendency to explore more states.&lt;/p&gt;
 
 &lt;h3 id=&quot;inference&quot;&gt;Inference&lt;/h3&gt;
@@ -1744,10 +1741,10 @@ tendency to explore more states.&lt;/p&gt;
 follows:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Sample the states &lt;script type=&quot;math/tex&quot;&gt;s_t&lt;/script&gt;&lt;/li&gt;
-  &lt;li&gt;Sample the state parameters &lt;script type=&quot;math/tex&quot;&gt;\theta_t&lt;/script&gt; using the data assigned to
-that state &lt;script type=&quot;math/tex&quot;&gt;y_t&lt;/script&gt;&lt;/li&gt;
-  &lt;li&gt;Sample the hyper parameters i.e. &lt;script type=&quot;math/tex&quot;&gt;\alpha, \beta&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;Sample the states \(s_t\)&lt;/li&gt;
+  &lt;li&gt;Sample the state parameters \(\theta_t\) using the data assigned to
+that state \(y_t\)&lt;/li&gt;
+  &lt;li&gt;Sample the hyper parameters i.e. \(\alpha, \beta\).&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;Steps 2 is simple enough, it is just a case of collecting all the data
@@ -1758,10 +1755,10 @@ intervention needed from the user.&lt;/p&gt;
 &lt;p&gt;Step 3 is also simple. This just requires the posterior which is
 written in the paper as&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;p(\alpha, \beta) \propto \text{Gamma} (a _{\alpha}, b_{\alpha})
+\[p(\alpha, \beta) \propto \text{Gamma} (a _{\alpha}, b_{\alpha})
 \text{Gamma} (a _{\beta}, b_{\beta}) \prod _{i=1} ^{k+1} \frac{\beta
 \Gamma (\alpha + \beta)}{\Gamma (\alpha)} \frac{\Gamma (n_{ii} +
-\alpha)}{\Gamma (n_{ii} + 1 + \alpha - \beta) },&lt;/script&gt;
+\alpha)}{\Gamma (n_{ii} + 1 + \alpha - \beta) },\]
 
 &lt;p&gt;this can then easily be sampled from using Metropolis Hastings or
 whatever algorithm you chose.&lt;/p&gt;
@@ -1776,20 +1773,19 @@ it is next to the new state. It can’t form a new state on its own in the
 middle of another state.&lt;/p&gt;
 
 &lt;p&gt;This reduces the amount of computation needed, as we now only need to
-sample at points where the state changes. Sampling state &lt;script type=&quot;math/tex&quot;&gt;s_t&lt;/script&gt; is only
-needed if &lt;script type=&quot;math/tex&quot;&gt;s_{t-1}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;s_{t+1}&lt;/script&gt; are different. The full derivation
+sample at points where the state changes. Sampling state \(s_t\) is only
+needed if \(s_{t-1}\) and \(s_{t+1}\) are different. The full derivation
 of the transition probabilities can be found in the paper, for now, the
 simplified versions can be written as&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{aligned}
-pr(s_t = i-1) &amp; = \frac{n_{ii} + \alpha}{n_{ii} + 1 + \beta + \alpha} p(y_t \mid \theta _{i-1}), \\
-pr(s_t = i+1) &amp; = \frac{n_{i+1i+1} + \alpha}{n_{i+1i+1} + 1 + \beta + \alpha} p(y_t \mid \theta _{i+1}),
-\end{aligned} %]]&gt;&lt;/script&gt;
+\[\begin{aligned}
+pr(s_t = i-1) &amp;amp; = \frac{n_{ii} + \alpha}{n_{ii} + 1 + \beta + \alpha} p(y_t \mid \theta _{i-1}), \\
+pr(s_t = i+1) &amp;amp; = \frac{n_{i+1i+1} + \alpha}{n_{i+1i+1} + 1 + \beta + \alpha} p(y_t \mid \theta _{i+1}),
+\end{aligned}\]
 
-&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;n_{ii}&lt;/script&gt; counts the number of self transitions for state
-&lt;script type=&quot;math/tex&quot;&gt;i&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;n_{i+1i+1}&lt;/script&gt; counts the number of self transitions for state
-&lt;script type=&quot;math/tex&quot;&gt;i+1&lt;/script&gt;.&lt;/p&gt;
+&lt;p&gt;where \(n_{ii}\) counts the number of self transitions for state
+\(i\) and \(n_{i+1i+1}\) counts the number of self transitions for state
+\(i+1\).&lt;/p&gt;
 
 &lt;p&gt;From these equations we can see that the probability of transition is
 likelihood of the data with the parameters of the state multiplied by
@@ -1814,8 +1810,8 @@ first dataset changes once and the second changes twice.&lt;/p&gt;
 
 &lt;p&gt;Rather than write a separate constructor for each type of model, we can
 use a generic creator method and just pass in the appropriate
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MixingDistribution&lt;/code&gt; object. We also give the model starting &lt;script type=&quot;math/tex&quot;&gt;\alpha&lt;/script&gt;
-and &lt;script type=&quot;math/tex&quot;&gt;\beta&lt;/script&gt; values.&lt;/p&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MixingDistribution&lt;/code&gt; object. We also give the model starting \(\alpha\)
+and \(\beta\) values.&lt;/p&gt;
 
 &lt;div class=&quot;language-r highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;its&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;50000&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mdobj&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GaussianMixtureCreate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;

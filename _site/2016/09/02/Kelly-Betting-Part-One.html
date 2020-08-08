@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Kelly Betting - Part One | Dean Markwick</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Kelly Betting - Part One" />
 <meta name="author" content="Dean Markwick" />
 <meta property="og:locale" content="en_US" />
@@ -134,19 +134,19 @@
 
 <h3 id="why-kelly-bet">Why Kelly Bet?</h3>
 
-<p>Imagine you have a model that predicts the outcome of the event with a probability <script type="math/tex">p</script>. You wish to place a bet on this outcome occurring and find that the bookmakers offer (decimal) odds <script type="math/tex">b</script>. Do you bet the whole house, or are you more conservative? What is the optimal bet size? This was answered by Kelly in 1956.</p>
+<p>Imagine you have a model that predicts the outcome of the event with a probability \(p\). You wish to place a bet on this outcome occurring and find that the bookmakers offer (decimal) odds \(b\). Do you bet the whole house, or are you more conservative? What is the optimal bet size? This was answered by Kelly in 1956.</p>
 
 <p>To derive the result, we wish to maximise the expected log value of the event. The expected value is</p>
 
-<script type="math/tex; mode=display">\mathbb{E} \left[ \log X \right] = p \log (1+ (b-1) x) + (1-p) \log (1- x),</script>
+\[\mathbb{E} \left[ \log X \right] = p \log (1+ (b-1) x) + (1-p) \log (1- x),\]
 
-<p>where <script type="math/tex">x</script> is the amount that is bet. So to find the value of <script type="math/tex">x</script> that maximises the expected bank roll we need to do some differentiation</p>
+<p>where \(x\) is the amount that is bet. So to find the value of \(x\) that maximises the expected bank roll we need to do some differentiation</p>
 
-<script type="math/tex; mode=display">\frac{\partial}{\partial x} \mathbb{E} \left[ \log X \right] = \frac{p(b-1)}{1 + (b-1)x} - \frac{1-p}{1-x}=0,</script>
+\[\frac{\partial}{\partial x} \mathbb{E} \left[ \log X \right] = \frac{p(b-1)}{1 + (b-1)x} - \frac{1-p}{1-x}=0,\]
 
-<script type="math/tex; mode=display">\frac{p(b-1)}{1 + (b-1)x} = \frac{1-p}{1-x},</script>
+\[\frac{p(b-1)}{1 + (b-1)x} = \frac{1-p}{1-x},\]
 
-<script type="math/tex; mode=display">x = \frac{pb-1}{b-1}</script>
+\[x = \frac{pb-1}{b-1}\]
 
 <p>Now if we check the Wikipedia article on Kelly betting we find that this is the same result if we convert from decimal odds to fractional odds. Therefore, for whatever probability your model spits out and whatever the odds the bookmaker offers you, you can place a bet that has a positive expected value and thus probably a good idea.</p>
 

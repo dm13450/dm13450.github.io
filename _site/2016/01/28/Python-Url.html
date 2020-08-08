@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Bulk Downloading from Turnitin using Python. | Dean Markwick</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Bulk Downloading from Turnitin using Python." />
 <meta name="author" content="Dean Markwick" />
 <meta property="og:locale" content="en_US" />
@@ -132,9 +132,9 @@
 <p>In Python-esque pseudo-code, this looks like:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">id_list</span><span class="p">:</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">base_url</span> <span class="o">+</span> <span class="n">sessionid</span> <span class="o">+</span> <span class="n">paperid</span><span class="p">)</span>
-    <span class="n">pdf_file</span> <span class="o">=</span> <span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-    <span class="n">pdf_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">urllib2</span><span class="p">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">base_url</span> <span class="o">+</span> <span class="n">sessionid</span> <span class="o">+</span> <span class="n">paperid</span><span class="p">)</span>
+    <span class="n">pdf_file</span> <span class="o">=</span> <span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">read</span><span class="p">())</span>
+    <span class="n">pdf_file</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>The simplicity of the urllib2 is what makes this short script so easy to construct and use.</p>
