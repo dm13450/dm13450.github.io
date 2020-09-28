@@ -5,16 +5,6 @@ tags:
   -r
 ---
 
-``` r
-set.seed(2020)
-require(palmerpenguins)
-require(dirichletprocess)
-require(ggplot2)
-require(dplyr)
-require(tidyr)
-require(patchwork)
-theme_set(theme_classic())
-```
 
 Dirichlet processes are complicated but this blog post will be simple. I
 will show you what a Dirichlet process looks like before it sees the data
