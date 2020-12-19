@@ -15,8 +15,7 @@ Applications". I took the standard Hawkes process, made some of the
 components nonparametric and applied it to various situations like;
 terror attacks, fx trading and soccer goals. All of the inference was
 done in a Bayesian manner with the nonparametric bits using a
-Dirichlet process. 
-
+Dirichlet process. You can download my PhD [here](https://discovery.ucl.ac.uk/id/eprint/10109374/3/Markwick_10109374_thesis.pdf)
 
 ### Software
 
@@ -39,5 +38,7 @@ data.
 
 I've also got a keen interest in sports modelling, looking at how we
 can predict the outcomes of various sports based on available
-data. Check out [www.illiquidodds.com](http://www.illiquidodds.com) for more on this kind of work. 
+data. I briefly ran (a now defunct) website
+[www.illiquidodds.com](http://www.illiquidodds.com) where I provided
+odds on a red card across all of English football. 
 

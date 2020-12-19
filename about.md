@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-I have recently defended (and now minorly correcting) my PhD in Statistical Science where I studied
+I have recently finished my PhD in Statistical Science where I studied
 at University College London (UCL)  and a member of the Financial
 Computing CDT. I also have an MRes in Computer Science and an MPhys in
 Theoretical Physics from the University of Manchester. 
@@ -18,8 +18,8 @@ intern trading ETFs across the globe
 
 I'm a Quant at BestX and spend the day researching financial markets,
 which typically involves cleaning data, making graphs and trying to
-come up with some interesting insights about the world of FX and fixed
-income trading.
+come up with some (hopefully) interesting insights about the world of FX, fixed
+income and equity trading.
 
 Examples of my work can be found in the trade press:
 
@@ -36,7 +36,6 @@ be used in professional sports and gambling, I enjoy a good film,
 watching a boxset too quickly and a bit of a foodie. Here I am enjoying some delicious Korean BBQ.
 
 ![Delicious BBQ](/assets/kbbq.JPG){: .center-image}
-
 
 My blog is also aggregated on <https://www.r-bloggers.com/>.
 

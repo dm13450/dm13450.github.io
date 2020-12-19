@@ -115,7 +115,7 @@
   </header>
 
   <div class="post-content">
-    <p>I have recently defended (and now minorly correcting) my PhD in Statistical Science where I studied
+    <p>I have recently finished my PhD in Statistical Science where I studied
 at University College London (UCL)  and a member of the Financial
 Computing CDT. I also have an MRes in Computer Science and an MPhys in
 Theoretical Physics from the University of Manchester.</p>
@@ -129,8 +129,8 @@ intern trading ETFs across the globe</p>
 
 <p>I’m a Quant at BestX and spend the day researching financial markets,
 which typically involves cleaning data, making graphs and trying to
-come up with some interesting insights about the world of FX and fixed
-income trading.</p>
+come up with some (hopefully) interesting insights about the world of FX, fixed
+income and equity trading.</p>
 
 <p>Examples of my work can be found in the trade press:</p>
 
@@ -155,13 +155,23 @@ watching a boxset too quickly and a bit of a foodie. Here I am enjoying some del
 <h3>Recent Post:</h3>
 <ul>
   
-      <a href="/2020/11/03/BayesPointProcess.html">Proper Bayesian Estimation of a Point Process in Julia</a>
-      <p>I know how to use Stan and I know how to use Turing. But how do
-those packages perform the posterior sampling for the underlying
-models. Can I write a posterior distribution down and get
-<code class="language-plaintext highlighter-rouge">AdvancedHMC.jl</code> to sample it? This is exactly what I want to do with
-a point process where the posterior distribution of the model is a
-touch more complicated than your typical regression problems.</p>
+      <a href="/2020/12/19/EdwardAndFlux.html">Converting an Edward Tutorial (Python) to Flux (Julia)</a>
+      <p>Edward is a probabilistic programming language like Stan, PyMC3
+ and Turing.jl. You write a model out and can perform statistical
+ inference on some data. Edward is a more ‘machine learning’ focused than Stan as
+ you can build neural nets and all the fun, modern techniques that the cool kids
+ are using. Flux.jl takes a similar ‘machine learning’ approach but this
+ time in Julia. Flux can build neural nets and also much
+ more. There is an intersection here between Edward and Flux, so it
+ makes sense to think that you can perform similar tasks. That is the whole point of this blog post, translating this
+ Edward tutorial: <a href="http://edwardlib.org/getting-started">http://edwardlib.org/getting-started</a> into Julia code
+ for Flux. So anyone reading this can get an idea of:</p>
+
+<ul>
+  <li>what Flux is all about,</li>
+  <li>how the Python Edward code can be transformed into Julia,</li>
+  <li>how to build a simple neural nets and infer the parameters in a Bayesian way.</li>
+</ul>
 
 
   
