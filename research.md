@@ -15,7 +15,7 @@ Applications". I took the standard Hawkes process, made some of the
 components nonparametric and applied it to various situations like;
 terror attacks, fx trading and soccer goals. All of the inference was
 done in a Bayesian manner with the nonparametric bits using a
-Dirichlet process. You can download my PhD [here](https://discovery.ucl.ac.uk/id/eprint/10109374/3/Markwick_10109374_thesis.pdf)
+Dirichlet process. You can download my PhD [here](https://discovery.ucl.ac.uk/id/eprint/10109374/3/Markwick_10109374_thesis.pdf).
 
 ### Software
 
