@@ -59,7 +59,7 @@ into suitable states with suitable parameters. I will show how you use
 my `dirichletprocess` package to fit this type of model and how it can
 be applied to an ETF's change in returns.
 
-So if you want to play along at home, download thes packages, fire up
+So if you want to play along at home, download these packages, fire up
 RStudio and get programming!
 
 You'll need to download the dev version of `diricheltprocess` as I
@@ -166,7 +166,6 @@ its <- 75000
 dpList <- list(dphmm1, dphmm2)
 
 dpList <- mclapply(dpList, Fit, its=its, progressBar=F, mc.cores=3)
-endTime <- now()
 ```
 
 We fit two different DPHMM with different starting parameters to assess
@@ -301,7 +300,6 @@ trainFrame %>% mutate(PlotColour = if_else(Mu > 0, "Positive", "Negative")) -> t
 
 ggplot(trainFrame, aes(x=timestamp, y=adjusted_close, colour=PlotColour)) + 
   geom_point(size = 0.5) + 
-  #geom_vline(data=stateChangesDF, aes(xintercept=timestamp), linetype="longdash") + 
   theme(legend.position = "bottom", legend.title = element_blank()) + 
   xlab("") + 
   ylab("Price")
