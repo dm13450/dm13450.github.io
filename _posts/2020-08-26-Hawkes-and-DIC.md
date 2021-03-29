@@ -145,7 +145,7 @@ judge(median(benchmarkThreaded), median(benchmarkBasic))
 ```
 
     BenchmarkTools.TrialJudgement: 
-      time:   -36.63% => [32mimprovement[39m (5.00% tolerance)
-      memory: +0.00% => [0minvariant (1.00% tolerance)
+      time:   -36.63% => improvement (5.00% tolerance)
+      memory: +0.00% => minvariant (1.00% tolerance)
 
 There we have it, using 4 threads instead of just the 1 gives us a 35% time improvement without too much hard work, which is nice. 
