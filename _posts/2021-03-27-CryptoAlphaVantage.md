@@ -51,7 +51,7 @@ ratingsFrame
 
 
 
-Three superb, three attractive and one caution. THETA gets a lower utility score which is dragging down its overal rating. By the looks of it, THETA is some sort of streaming/YouTube-esque project, get paid their token by giving your excess computing power to video streams. There website is (here)[https://www.thetatoken.org/] and I'll let you judge whether they deserve that rating. 
+Three superb, three attractive and one caution. THETA gets a lower utility score which is dragging down its overal rating. By the looks of it, THETA is some sort of streaming/YouTube-esque project, get paid their token by giving your excess computing power to video streams. There website is [here](https://www.thetatoken.org/) and I'll let you judge whether they deserve that rating. 
 
 To summarise briefly each of the ratings is on a 0 to 1000 scale in three different areas: 
 
@@ -80,7 +80,7 @@ Now for each 10 tokens we can grab their monthly data and calculate some stats a
 monthlyData = digital_currency_monthly.(ccys[inds], datatype = "csv");
 ```
 
-Again formatting the returned data into a nice dataframe gives us a monthly view of the price action for each of the currencies. I format the date column, calculate the monthly log return and cumulative log return 
+Again formatting the returned data into a nice dataframe gives us a monthly view of the price action for each of the currencies. I format the date column, calculate the monthly log return and cumulative log return.
 
 
 ```julia
