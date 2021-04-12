@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="About" />
 <script type="application/ld+json">
-{"@type":"WebSite","name":"Dean Markwick","author":{"@type":"Person","name":"Dean Markwick"},"url":"http://localhost:4000/about/","description":"Personal website for Dean Markwick. If you like stats, sports and rambling, you’ve come to the right place. All rights reserved.","headline":"About","@context":"https://schema.org"}</script>
+{"headline":"About","description":"Personal website for Dean Markwick. If you like stats, sports and rambling, you’ve come to the right place. All rights reserved.","url":"http://localhost:4000/about/","author":{"@type":"Person","name":"Dean Markwick"},"@type":"WebSite","name":"Dean Markwick","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/assets/main.css">
@@ -157,8 +157,17 @@ watching a boxset too quickly and a bit of a foodie. Here I am enjoying some del
 <h3>Recent Post:</h3>
 <ul>
   
-      <a href="/2021/03/27/CryptoAlphaVantage.html">Crypto Data using AlphaVantatge.jl</a>
-      <p>Julia 1.6 is hot off the press, so I’ve installed it and fired off this quick blog post to give 1.6 a test drive. So far, so good and there is a real decrease now in the latencies in both loading up packages and getting things going.</p>
+      <a href="/2021/04/06/GoalsFromTeamStrength.html">Predicting Goals from the Odds a Team Will Win</a>
+      <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">knitr</span><span class="o">::</span><span class="n">opts_chunk</span><span class="o">$</span><span class="n">set</span><span class="p">(</span><span class="n">fig.retina</span><span class="o">=</span><span class="m">2</span><span class="p">)</span><span class="w">
+</span><span class="n">require</span><span class="p">(</span><span class="n">readr</span><span class="p">)</span><span class="w">
+</span><span class="n">require</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span><span class="w">
+</span><span class="n">require</span><span class="p">(</span><span class="n">tidyr</span><span class="p">)</span><span class="w">
+</span><span class="n">require</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span><span class="w">
+</span><span class="n">require</span><span class="p">(</span><span class="n">rstanarm</span><span class="p">)</span><span class="w">
+</span><span class="n">require</span><span class="p">(</span><span class="n">mgcv</span><span class="p">)</span><span class="w">
+</span><span class="n">require</span><span class="p">(</span><span class="n">caret</span><span class="p">)</span><span class="w">
+</span><span class="n">require</span><span class="p">(</span><span class="n">lubridate</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
 
 
   

@@ -5,3 +5,5 @@ gem "minima"
 gem 'jekyll-seo-tag'
 
 source "https://rubygems.org"
+
+gem "webrick", "~> 1.7"
