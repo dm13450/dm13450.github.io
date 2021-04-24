@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Accidentally Quadratic with DataFrames in Julia
+date: 2021-04-21
+tags: 
+  - julia
 ---
 
 
