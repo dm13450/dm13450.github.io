@@ -27,7 +27,7 @@ This is a chunky blog post and is laid out as follows:
 * [The Data](#the-data)
 * [Hawkes Processes](#hawkes-processes)
 * [The Models](#the-models)
-  * [Individual Model](#the-individaul-model)
+  * [Individual Model](#the-individual-model)
   * [Hierarchical Model](#the-hierarhical-model)
 * [Model Checking](#model-checking)
 * [Model Comparisons](#model-comparison)
