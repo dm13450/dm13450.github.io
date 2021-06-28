@@ -453,3 +453,8 @@ Hopefully you've now got a good idea about the basic approaches to high frequenc
 As I kept saying, getting 1000 trades at a time is a bit limiting, so I will be on the hunt for a larger data set of crypto trade data. 
 
 If there is anything you want me to specifically look at, let me know in the comments below! 
+
+
+* Julia 1.6
+* CoinbasePro.jl 0.1.1
+
