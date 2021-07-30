@@ -27,8 +27,7 @@ Examples of my work can be found in the trade press:
 * [Choppy markets revive quest for RFQs magic number](https://www.fx-markets.com/trading/7550661/choppy-markets-revive-quest-for-rfqs-magic-number)
 * [Volatile FX markets reveal pitfalls of RFQ](https://www.fx-markets.com/infrastructure/7539591/volatile-fx-markets-reveal-pitfalls-of-rfq)
 * [Price limits in FX algos: fill your boots](https://www.fx-markets.com/tech-and-data/4336451/price-limits-in-fx-algos-fill-your-boots)
-*
-[BestX RFQ Par Introduces a New Way to Look at Hit Ratios](https://thefullfx.com/bestx-rfq-par-introduces-a-new-way-to-look-at-hit-ratios/)
+* [BestX RFQ Par Introduces a New Way to Look at Hit Ratios](https://thefullfx.com/bestx-rfq-par-introduces-a-new-way-to-look-at-hit-ratios/)
 * [How Long Should TWAP algos run?](https://www.fx-markets.com/trading/7859441/how-long-should-twap-algos-run)
 
 All of which you probably need to be a subscriber to. 
