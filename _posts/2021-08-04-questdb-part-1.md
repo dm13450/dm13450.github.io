@@ -66,7 +66,7 @@ features for timeseries data.
 I am setting the processes up using a programming pattern called
 'product/consumer'. This means building one process that produces data and a separate process that can consume data. Having the two functions separate allows for a better scalability if you wanted to add in more exchanges or workers. It also means that there is a degree of independence between the two processes and reducing the coupling should make for an easier development experience. 
 
-To set this up in Julia we need to create a `RemoteChannel` which is how the producer and consumer processes will comunicate. It will be fileld up with the type `Trade` that we will also create. 
+To set this up in Julia we need to create a `RemoteChannel` which is how the producer and consumer processes will comunicate. It will be filled up with the type `Trade` that we will also create. 
 
 
 ```julia
@@ -84,7 +84,7 @@ Trade() = Trade("", "", NaN, NaN, 0, "")
 Base.isempty(x::Trade) = x.id == ""
 ```
 
-After creating the struct we also add in the null creator function and also a method for checking whether a trade but overal it is a simple type that just contains the relevant information for each trade found. 
+After creating the struct we also add in the null creator function and also a method for checking whether a trade but overall it is a simple type that just contains the relevant information for each trade found. 
 
 The `RemoteChannel` comes from the `Distributed` package. 
 
@@ -251,7 +251,7 @@ and it will show you all the trades saved down so far. Or
 select min(timestamp), max(timestamp) from coinbase_trades
 ```
 
-to see the earliest and lastest timestamp in traditional SQL. Or using the timeseries database features: 
+to see the earliest and latest timestamp in traditional SQL. Or using the timeseries database features: 
 
 ```sql
 select * from coinbase_trades
