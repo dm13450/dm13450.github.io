@@ -1,5 +1,5 @@
 ---
-title: QuestDB Part2 - High Frequency Finance (again!)
+title: QuestDB Part 2 - High Frequency Finance (again!)
 layout: post
 date: 2021-08-12
 tags:
