@@ -271,7 +271,7 @@ plot!(-1:0.1:1, coef(miModel)[1] .* collect(-1:0.1:1), label="Model", linewidth=
 ![png](/assets/questdb2/output_25_0.png)
 
 You can see how the model lines of with the data and there is a very
-slight trend that is picked. So overal, a better, if still very simple
+slight trend that is picked. So overall, a better, if still very simple
 model of market impact. 
 
 # Trades with Top of Book
