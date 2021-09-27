@@ -15,6 +15,26 @@ match should be easy for them and difficult for their opponent. If the
 odds are similar for either team, then the match is balanced and their
 is no apparent difficulty for either side.
 
+
+***
+Enjoy these types of post? Then you should sign up to my newsletter. It's a short monthly recap of anything and everything I've found interesting recently plus
+any posts I've written. So sign up and stay informed!
+
+<p>
+<form
+  action="https://buttondown.email/api/emails/embed-subscribe/dm13450"
+  method="post"
+  target="popupwindow"
+  onsubmit="window.open('https://buttondown.email/dm13450', 'popupwindow')"
+  class="embeddable-buttondown-form">
+  <label for="bd-email">Enter your email</label>
+  <input type="email" name="email" id="bd-email" />
+  <input type="hidden" value="1" name="embed" />
+  <input type="submit" value="Subscribe" />
+  </form>
+  </p>
+***
+
 ## Kullback–Leibler Divergence
 
 The
@@ -23,7 +43,7 @@ is a fancy method of comparing how two probability distributions are
 different. It has a vast array of applications and can be used in lots
 of different contexts, from time series analysis to machine learning
 model fitting. In our case we are using it to compare the
-matche outcome probability distribution to a reference distribution.  
+match outcome probability distribution to a reference distribution.  
 
 For each match there is a probability distribution,
 $$p_\text{win}, p_\text{draw}, p_\text{lose}$$ which we can derive from
@@ -107,7 +127,7 @@ odds.
 uniform distribution.
 3. For the match favourite (likely winner) the match difficulty is
 $$K$$.
-4. For theother team the match difficulty is -$$K$$. 
+4. For the other team the match difficulty is -$$K$$. 
 
 
 ## Fixture Difficulty Per Team
@@ -166,7 +186,7 @@ so nothing too fancy.
 
 I fit three models, one with just the odds, one with the difficulty
 only and one with both odds and the difficulty. Each of the three
-models also has a variable for the divison that the match was played
+models also has a variable for the division that the match was played
 in with all two way interactions. The result is a factor (-1 for a
 loss, 0 for a draw and 1 for a win). 
 
@@ -194,7 +214,7 @@ models after 2020.
 
 So not much difference between the models in terms of accuracy or the
 Cohen's $$\kappa$$ value so I think we can
-conclude the difficulty of a match doesn't’t really add anything.
+conclude the difficulty of a match doesn't really add anything.
 The match difficulty is a second order effect compared to the match
 outcome probabilities, so unlikely to really improve model
 performance, its adding minimal amount of information.

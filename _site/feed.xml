@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-09-26T11:53:04+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Dean Markwick</title><subtitle>Personal website for Dean Markwick. If you like stats, sports and rambling, you&apos;ve come to the right place. All rights reserved. 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-09-27T19:43:25+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Dean Markwick</title><subtitle>Personal website for Dean Markwick. If you like stats, sports and rambling, you&apos;ve come to the right place. All rights reserved. 
 </subtitle><author><name>Dean Markwick</name></author><entry><title type="html">How Tough is that Football Match?</title><link href="http://localhost:4000/2021/09/26/Fixture-Difficulty.html" rel="alternate" type="text/html" title="How Tough is that Football Match?" /><published>2021-09-26T00:00:00+01:00</published><updated>2021-09-26T00:00:00+01:00</updated><id>http://localhost:4000/2021/09/26/Fixture-Difficulty</id><content type="html" xml:base="http://localhost:4000/2021/09/26/Fixture-Difficulty.html">&lt;p&gt;How do we quantify the difficulty of a soccer match and can we
 construct a single number that will explain how easy or hard the match
 is for a team to win? I think we
@@ -8,6 +8,20 @@ match should be easy for them and difficult for their opponent. If the
 odds are similar for either team, then the match is balanced and their
 is no apparent difficulty for either side.&lt;/p&gt;
 
+&lt;hr /&gt;
+&lt;p&gt;Enjoy these types of post? Then you should sign up to my newsletter. It’s a short monthly recap of anything and everything I’ve found interesting recently plus
+any posts I’ve written. So sign up and stay informed!&lt;/p&gt;
+
+&lt;p&gt;
+&lt;form action=&quot;https://buttondown.email/api/emails/embed-subscribe/dm13450&quot; method=&quot;post&quot; target=&quot;popupwindow&quot; onsubmit=&quot;window.open(&apos;https://buttondown.email/dm13450&apos;, &apos;popupwindow&apos;)&quot; class=&quot;embeddable-buttondown-form&quot;&gt;
+  &lt;label for=&quot;bd-email&quot;&gt;Enter your email&lt;/label&gt;
+  &lt;input type=&quot;email&quot; name=&quot;email&quot; id=&quot;bd-email&quot; /&gt;
+  &lt;input type=&quot;hidden&quot; value=&quot;1&quot; name=&quot;embed&quot; /&gt;
+  &lt;input type=&quot;submit&quot; value=&quot;Subscribe&quot; /&gt;
+  &lt;/form&gt;
+  &lt;/p&gt;
+&lt;hr /&gt;
+
 &lt;h2 id=&quot;kullbackleibler-divergence&quot;&gt;Kullback–Leibler Divergence&lt;/h2&gt;
 
 &lt;p&gt;The
@@ -16,7 +30,7 @@ is a fancy method of comparing how two probability distributions are
 different. It has a vast array of applications and can be used in lots
 of different contexts, from time series analysis to machine learning
 model fitting. In our case we are using it to compare the
-matche outcome probability distribution to a reference distribution.&lt;/p&gt;
+match outcome probability distribution to a reference distribution.&lt;/p&gt;
 
 &lt;p&gt;For each match there is a probability distribution,
 \(p_\text{win}, p_\text{draw}, p_\text{lose}\) which we can derive from
@@ -132,7 +146,7 @@ odds.&lt;/li&gt;
 uniform distribution.&lt;/li&gt;
   &lt;li&gt;For the match favourite (likely winner) the match difficulty is
 \(K\).&lt;/li&gt;
-  &lt;li&gt;For theother team the match difficulty is -\(K\).&lt;/li&gt;
+  &lt;li&gt;For the other team the match difficulty is -\(K\).&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;fixture-difficulty-per-team&quot;&gt;Fixture Difficulty Per Team&lt;/h2&gt;
@@ -191,7 +205,7 @@ so nothing too fancy.&lt;/p&gt;
 
 &lt;p&gt;I fit three models, one with just the odds, one with the difficulty
 only and one with both odds and the difficulty. Each of the three
-models also has a variable for the divison that the match was played
+models also has a variable for the division that the match was played
 in with all two way interactions. The result is a factor (-1 for a
 loss, 0 for a draw and 1 for a win).&lt;/p&gt;
 
@@ -239,7 +253,7 @@ models after 2020.&lt;/p&gt;
 
 &lt;p&gt;So not much difference between the models in terms of accuracy or the
 Cohen’s \(\kappa\) value so I think we can
-conclude the difficulty of a match doesn’t’t really add anything.
+conclude the difficulty of a match doesn’t really add anything.
 The match difficulty is a second order effect compared to the match
 outcome probabilities, so unlikely to really improve model
 performance, its adding minimal amount of information.&lt;/p&gt;
