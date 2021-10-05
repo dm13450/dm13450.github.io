@@ -1,0 +1,395 @@
+---
+title: "How Tough is that Football Match?"
+output: github_document
+---
+
+
+
+
+
+
+```{r setup}
+knitr::opts_chunk$set(warning = FALSE,
+                      fig.retina=2)
+require(readr)
+require(dplyr)
+require(tidyr)
+require(ggplot2)
+require(TTR)
+require(knitr)
+require(lubridate)
+require(caret)
+require(mgcv)
+require(hrbrthemes)
+theme_set(theme_ipsum())
+
+klDiverance <- function(x){
+  sum(x * log(3*x))
+}
+```
+
+```{r}
+# Loads the data from football-data.co.uk
+rawData <- loadBulkData()
+```
+
+```{r}
+rawData %>% 
+  select(
+    Div, Season,
+    HomeTeam, AwayTeam, FTR, 
+    PSCH, PSCD, PSCA, Date, 
+    FTHG, FTAG,
+    HS, AS,
+    HST, AST) %>%
+  mutate(Date = dmy(Date)) %>% 
+  drop_na -> cleanData
+
+cleanData %>% 
+  mutate(HomeRawProb = 1/PSCH,
+         AwayRawProb = 1/PSCA,
+         DrawRawProb = 1/PSCD,
+         OverRound = HomeRawProb + AwayRawProb + DrawRawProb,
+         HomeProb = HomeRawProb / OverRound,
+         AwayProb = AwayRawProb / OverRound,
+         DrawProb = DrawRawProb / OverRound,
+         MatchID = 1:n()) -> cleanData
+
+cleanData %>% 
+  group_by(MatchID) %>% 
+  summarise(KL = sum(klDiverance(HomeProb) + 
+                       klDiverance(AwayProb) + 
+                       klDiverance(DrawProb))) %>% 
+  ungroup -> klData
+
+left_join(cleanData, klData, by='MatchID') -> cleanData
+```
+
+
+```{r}
+ggplot(cleanData, aes(x=KL)) + 
+  geom_histogram(bins = 20) + 
+  xlab("Kullback–Leibler Divergence") + 
+  ylab("Count")
+```
+
+
+```{r}
+cleanData %>% 
+  filter(KL %in% c(max(KL), min(KL))) %>% 
+  select(Date, HomeTeam, AwayTeam, contains("PSC"), KL) %>% 
+  kable
+```
+
+Barcelon vs Almeria is the easiest match in the database, whereas Legance vs Espanol in 2018 was the most evenly matched. 
+
+# Fixture Difficulty Per Team
+
+```{r}
+cleanData %>% 
+  mutate(
+    Favourite = sign(HomeProb - AwayProb),
+    HomeTeamDifficulty = KL * Favourite,
+    AwayTeamDifficulty = -1*HomeTeamDifficulty) -> cleanData
+```
+
+```{r}
+cleanData %>% 
+  select(Date, HomeTeam, Div, Season, 
+         FTHG, FTAG, HS, AS, HST, AST,
+         HomeTeamDifficulty, FTR, HomeProb, DrawProb, AwayProb) %>% 
+  rename(Team = HomeTeam, 
+         GoalsScored = FTHG,
+         GoalsConceeded = FTAG,
+         Shots = HS,
+         ShotsOnTarget = HST, 
+         ShotsConceeded = AS,
+         ShotsOnTargetConceeded = AST,
+         Difficulty = HomeTeamDifficulty,
+         WinProb = HomeProb, 
+         DrawProb = DrawProb, 
+         LoseProb = AwayProb) %>% 
+  mutate(Result = case_when(FTR == "H" ~ 1,
+                            FTR == "A" ~ -1,
+                            FTR == "D" ~ 0),
+         Home = 1,
+         MatchID = 1:n()) -> homeData
+
+cleanData %>% 
+  select(Date, AwayTeam, Div, Season,
+         FTAG, FTHG, FTHG, FTAG, HS, AS, HST, AST,
+         AwayTeamDifficulty, FTR, HomeProb, DrawProb, AwayProb) %>% 
+  rename(Team = AwayTeam, 
+         GoalsScored = FTAG,
+         GoalsConceeded = FTHG,
+         Shots = AS,
+         ShotsOnTarget = AST, 
+         ShotsConceeded = HS,
+         ShotsOnTargetConceeded = HST,
+         Difficulty = AwayTeamDifficulty,
+         WinProb = AwayProb, 
+         DrawProb = DrawProb, 
+         LoseProb = HomeProb) %>% 
+  mutate(Result = case_when(FTR == "H" ~ -1,
+                            FTR == "A" ~ 1,
+                            FTR == "D" ~ 0),
+         Home = 0,
+         MatchID = 1:n()) -> awayData
+
+
+modelData <- bind_rows(homeData, awayData)
+modelData %>% 
+  mutate(ResultF = factor(Result, levels = c(-1, 0, 1))) -> modelData
+```
+
+```{r}
+modelData %>% 
+  filter(Team %in% c("Barcelona", "Man City",
+                     "West Ham", "Tottenham",
+                     "Real Madrid", "Man United",
+                     "Arsenal", "Liverpool", "Chelsea")) %>% 
+  group_by(Team) %>% 
+  arrange(Date) %>% 
+  mutate(SmoothDifficulty = EMA(Difficulty, 12)) %>% 
+  ungroup -> smoothData
+```
+
+
+```{r}
+quantile(abs(modelData$Difficulty), na.rm=T, probs = seq(0, 1, by=0.2))
+```
+
+
+
+```{r}
+ggplot(smoothData %>% drop_na(), 
+       aes(x=Date, y=SmoothDifficulty, colour=Season)) + 
+  geom_point() + 
+  geom_smooth(method="gam", colour="black") +
+  facet_wrap(~Team, scales="free_y") + 
+  xlab("") + 
+  ylab("Difficulty (smoothed)") + 
+  geom_hline(yintercept = 0) + 
+  theme(legend.position = "none") + 
+  scale_color_brewer(palette = "Paired")
+```
+
+
+# League Difficulty
+
+
+
+```{r}
+modelData %>% 
+  distinct(MatchID, .keep_all = T) %>% 
+  group_by(Season, Div) %>% 
+  summarise(Difficulty = mean(abs(Difficulty)),
+            Error = sd(abs(Difficulty))) -> leagueDifficulty
+
+ggplot(leagueDifficulty %>% filter(Div %in% c("E0", "SP1", "I1", "D1", "F1"),
+                                   Season != "2122"), 
+       aes(x=Season, y=Difficulty,
+           colour=Div, group=Div)) + 
+  geom_point() + 
+  geom_line() + 
+  theme(legend.position = "bottom", legend.title = element_blank()) + 
+  scale_color_brewer(palette = "Dark2")
+```
+
+
+# Predictive Power?
+
+
+```{r}
+modelData %>% 
+  filter(Date < dmy("01-01-2020")) -> trainData
+modelData %>% 
+  filter(Date >= dmy("01-01-2020")) -> testData
+```
+
+
+## Match Outcome
+
+
+```{r}
+require(nnet)
+
+resultModelNull <- multinom(ResultF ~  (Div + WinProb + DrawProb + LoseProb) ^ 2, 
+                            data=trainData)
+
+resultModel <- multinom(ResultF ~ (Div + Difficulty + WinProb + DrawProb + LoseProb) ^ 2, 
+                        data=trainData)
+
+resultModelDiff <- multinom(ResultF ~ (Div + Difficulty ) ^2 , 
+                        data=trainData)
+```
+
+
+```{r}
+modelList <- list("Odds Only" = resultModelNull,
+                  "Odds and Difficulty" = resultModel,
+                  "Difficulty Only" = resultModelDiff)
+
+bind_rows(lapply(seq_along(modelList), 
+       function(i) data.frame(t(postResample(predict(modelList[[i]], newdata=testData),
+                                testData$ResultF)),
+                              Model = names(modelList)[i])
+       )) %>% 
+  arrange(-Kappa) %>% 
+  kable(digits=3)
+```
+
+
+
+# Goals and Difficulty
+
+
+
+```{r}
+goalsScored_glm <- glm(GoalsScored ~ Difficulty, 
+                       family = "poisson", data=trainData)
+goalsScored_gam <- gam(GoalsScored ~ s(Difficulty), 
+                       familty = "poisson", data=trainData)
+goalsScored_null <- nullModel(y=trainData$GoalsScored)
+```
+
+
+
+```{r}
+modelList <- list("GLM"=goalsScored_glm,
+                  "GAM" = goalsScored_gam,
+                  "Null" = goalsScored_null)
+
+metrics <- bind_rows(lapply(modelList, 
+                 function(x) 
+                   data.frame(t(postResample(
+                     predict(x, newdata=testData, type="response"),
+                     testData$GoalsScored)))))
+metrics$Model <- names(modelList)
+
+metrics %>% 
+  arrange(RMSE) %>% 
+  kable(digits=3)
+```
+
+ 
+
+```{r}
+testGrid_glm <- data.frame(Difficulty = seq(-1, 1, by=0.1), Model = "GLM")
+testGrid_gam <- data.frame(Difficulty = seq(-1, 1, by=0.1), Model = "GAM")
+
+glmPreds <- predict(goalsScored_glm, 
+                               newdata = testGrid_glm, 
+                               type='response', se.fit=T)
+
+gamPreds <- predict(goalsScored_gam, 
+                               newdata=testGrid_gam, 
+                               type="response", se.fit = T)
+
+testGrid_gam$Scored <- gamPreds$fit
+testGrid_gam$Error <- gamPreds$se.fit
+
+testGrid_glm$Scored <- glmPreds$fit
+testGrid_glm$Error <- glmPreds$se.fit
+
+testGrid <- bind_rows(testGrid_glm, testGrid_gam)
+```
+
+
+
+```{r}
+modelData %>% 
+  group_by(DifficultyRound = round(Difficulty, 2)) %>% 
+  summarise(Scored = mean(GoalsScored),
+            Error = sd(GoalsScored)/sqrt(n()),
+            N=n()) -> modelDataEmp
+```
+
+
+```{r}
+ggplot(testGrid, aes(x=Difficulty, y=Scored, colour=Model, fill = Model,
+                     ymin=Scored - 1.96*Error, ymax=Scored + 1.96*Error)) + 
+  geom_pointrange(data=modelDataEmp, aes(x=DifficultyRound, y=Scored, 
+                                    ymin = Scored - 1.96*Error, 
+                                    ymax = Scored + 1.96*Error), 
+             inherit.aes = F, alpha=0.5) + 
+  geom_line(size=1.5) + 
+  geom_ribbon(alpha=0.5) +
+  theme(legend.position = "bottom") + 
+  scale_colour_brewer(palette = "Dark2") + 
+  scale_fill_brewer(palette = "Dark2") 
+```
+
+
+# Shots and Shots on Target
+
+
+```{r}
+goalsModel <- gam(GoalsScored ~ s(Difficulty), 
+                  data=trainData, family="poisson", method="REML")
+shotsModel <- gam(Shots ~ s(Difficulty), 
+                  data=trainData, family = "poisson", method="REML")
+targetShotsModel <- gam(ShotsOnTarget ~ s(Difficulty), 
+                        data=trainData,  family = "poisson", method="REML")
+```
+
+```{r}
+modelList <- list("Goals" = goalsModel,
+                  "Shots" = shotsModel,
+                  "TargetShots" = targetShotsModel)
+
+metrics <- bind_rows(lapply(modelList, 
+                 function(x) 
+                   data.frame(t(postResample(
+                     predict(x, newdata=testData, type="response"),
+                     testData$GoalsScored)))))
+metrics$Model <- names(modelList)
+
+metrics %>% 
+  arrange(Rsquared) %>% 
+  kable(digits=3)
+```
+
+
+
+
+```{r}
+goalsPlot <- plot(goalsModel)
+shotsPlot <- plot(shotsModel)
+shotsTargetPlot <- plot(targetShotsModel)
+
+allData <- bind_rows(
+  data.frame(Difficulty = goalsPlot[[1]]$x, 
+             Predicted = goalsPlot[[1]]$fit, 
+             Error = goalsPlot[[1]]$se, Model = "Goals"),
+  
+    data.frame(Difficulty = shotsPlot[[1]]$x, 
+               Predicted = shotsPlot[[1]]$fit, 
+               Error = shotsPlot[[1]]$se, Model = "Shots"),
+  
+    data.frame(Difficulty = shotsTargetPlot[[1]]$x, 
+               Predicted = shotsTargetPlot[[1]]$fit, 
+               Error = shotsTargetPlot[[1]]$se, Model = "Target Shots")
+)
+```
+
+
+
+```{r}
+ggplot(allData, 
+       aes(x=Difficulty, 
+           y=Predicted, 
+           ymin = Predicted - 1.96 * Error, 
+           ymax = Predicted + 1.96 * Error, 
+           fill = Model,
+           colour = Model)) + 
+  geom_line() + 
+  geom_ribbon(alpha = 0.5) + 
+  ylab("Predicted Effect") + 
+  theme(legend.position = "bottom", legend.title = element_blank()) + 
+  scale_colour_brewer(palette = "Dark2") + 
+  scale_fill_brewer(palette = "Dark2")
+```
+ 
+
+

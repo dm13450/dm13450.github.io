@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-09-27T20:22:38+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Dean Markwick</title><subtitle>Personal website for Dean Markwick. If you like stats, sports and rambling, you&apos;ve come to the right place. All rights reserved. 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-10-05T16:07:20+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Dean Markwick</title><subtitle>Personal website for Dean Markwick. If you like stats, sports and rambling, you&apos;ve come to the right place. All rights reserved. 
 </subtitle><author><name>Dean Markwick</name></author><entry><title type="html">How Tough is that Football Match?</title><link href="http://localhost:4000/2021/09/26/Fixture-Difficulty.html" rel="alternate" type="text/html" title="How Tough is that Football Match?" /><published>2021-09-26T00:00:00+01:00</published><updated>2021-09-26T00:00:00+01:00</updated><id>http://localhost:4000/2021/09/26/Fixture-Difficulty</id><content type="html" xml:base="http://localhost:4000/2021/09/26/Fixture-Difficulty.html">&lt;p&gt;How do we quantify the difficulty of a soccer match and can we
 construct a single number that will explain how easy or hard the match
 is for a team to win? I think we
@@ -417,6 +417,15 @@ a palette using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&
 
 &lt;p&gt;The models were fitted using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nnet&lt;/code&gt; (for the outcome model) and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mgcv&lt;/code&gt;
 for the all the GAMs. Nothing fancy.&lt;/p&gt;
+
+&lt;p&gt;You can download a notebook that contains all the code here:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/assets/FixtureDifficultyUpload.Rmd&quot;&gt;Notebook&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You’ll have to download the football data yourself, but then the above
+can be run.&lt;/p&gt;
 
 &lt;div class=&quot;language-r highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;knitr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opts_chunk&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;warning&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;FALSE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
                       &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fig.retina&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;

@@ -331,6 +331,13 @@ a palette using `scale_colour_brewer` function.
 The models were fitted using `nnet` (for the outcome model) and `mgcv`
 for the all the GAMs. Nothing fancy.
 
+You can download a notebook that contains all the code here:
+
+* [Notebook](/assets/FixtureDifficultyUpload.Rmd)
+
+You'll have to download the football data yourself, but then the above
+can be run. 
+
 ``` r
 knitr::opts_chunk$set(warning = FALSE,
                       fig.retina=2)
