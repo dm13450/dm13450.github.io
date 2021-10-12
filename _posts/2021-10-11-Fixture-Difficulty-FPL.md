@@ -93,7 +93,7 @@ fplModelData[-trainIndexes, ] -> testData
 
 It is a simple model, I am just including the fixture
 difficulty, the value of the player and what position they play in and
-all second order effects. The difficulty will be a non-linear splice
+all second order effects. The difficulty will be a non-linear spline
 for each position category. 
 
 ``` r
@@ -101,15 +101,18 @@ gamModel <- gam(total_points ~ s(Difficulty, by=position) + (value + position)^2
                   data=trainData, 
                   family="poisson",
                   method="REML")
-}
 ```
 
 This fits pretty quickly so we can move onto understanding how
 difficulty effects the total points for each position. 
 
 ``` r
-ggplot(pltFrame, aes(x=Difficulty, y=exp(Fit), ymin=exp(Fit - 1.96*SE), ymax = exp(Fit + 1.96*SE), 
-                     colour=as.factor(Position), fill=as.factor(Position))) + 
+ggplot(pltFrame, aes(x=Difficulty,
+                                 y=exp(Fit),
+								 ymin=exp(Fit - 1.96*SE),
+								 ymax = exp(Fit + 1.96*SE), 
+								 colour=as.factor(Position),
+								 fill=as.factor(Position))) + 
   geom_line() + 
   geom_ribbon(alpha=0.5) + 
   facet_wrap(~Position, scales="free_y") + 
