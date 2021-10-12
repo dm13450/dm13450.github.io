@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Fixture Difficulty and Fantasy Premier League
+title: Fixture Difficulty and Fantasy Premier League Point Predictions
 date: 2021-10-12
 tags:
   - r
