@@ -132,12 +132,11 @@ function and slightly adjust it to account for the other players.
 
 Whilst there are still balloons to be popped we go through each player
 and obtain the number of darts they want to through and then check to see if
-they hit a bad balloon. If they do hit a bad ballon, they are given a
+they hit a bad balloon. If they do hit a bad balloon, they are given a
 result and no longer participate. If all the balloons are popped the
 game finishes. For each game, we randomise the starting order of the players. 
 
 ```python
-
 def run_game(throw_function):
     bad_balloons = random.sample(range(100), 5)
     bad_balloons.sort()
