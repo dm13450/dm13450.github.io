@@ -28,7 +28,7 @@ some elements of game theory and randomness. It went as follows:
 >the winner scores 10 points.
 
 I'll walk you through how I simulated this task in
-Python examined the different strategies and what the optimal
+Python, examined the different strategies and what the optimal
 strategy turned out to be. I'll finally pose
 some open questions on where to take this next.
 
