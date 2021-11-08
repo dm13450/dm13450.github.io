@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Ecomonic Indicators from AlphaVantage 
-date: 2021-11-05
+date: 2021-11-08
 tags:
   - julia
 ---
