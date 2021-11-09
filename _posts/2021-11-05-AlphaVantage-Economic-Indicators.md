@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Ecomonic Indicators from AlphaVantage 
+title:  Economic Indicators from AlphaVantage 
 date: 2021-11-08
 tags:
   - julia
@@ -84,7 +84,7 @@ quite a bit in this post.
 
 ## Real GDP per Capita
 
-The problem with GDP is that it doesn't take into account how big the country is. If you have more people in your economy then you can probably generate more money. Likewise, to compare your current GDP with historical values it is probably wise to divide by the population size, which gives a general indication of overal quality of life. 
+The problem with GDP is that it doesn't take into account how big the country is. If you have more people in your economy then you can probably generate more money. Likewise, to compare your current GDP with historical values it is probably wise to divide by the population size, which gives a general indication of overall quality of life. 
 
 
 ```julia
