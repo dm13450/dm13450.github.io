@@ -142,7 +142,9 @@ plot(allyields[!, :timestamp], allyields[!, :value], group = allyields[!, :Tenor
 
 
 
-Rates have continuously fallen since the peaks in the 1980s. You can also 
+Rates have continuously fallen since the peaks in the 1980s. You can
+also see brief flashes of where the 3 month yield was the highest out
+of all the rates. 
 
 What happens though when the short-term yields are higher than the
 long-term rates? This is when the yield curve 'inverts' and the market
@@ -354,7 +356,7 @@ plot(unemPlot, nfpPlot)
 
 
 
-Unemployment went very high briefly after COVID before coming back down, so seems to have adverted that crisis. NFP numbers are also progressing upwards since the COVID disruption. 
+Unemployment went very high briefly after COVID before coming back down, so seems to have averted that crisis. NFP numbers are also progressing upwards since the COVID disruption. 
 
 # Conclusion
 

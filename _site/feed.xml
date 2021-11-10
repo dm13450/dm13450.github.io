@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-09T08:26:46+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Dean Markwick</title><subtitle>Personal website for Dean Markwick. If you like stats, sports and rambling, you&apos;ve come to the right place. All rights reserved. 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-10T08:42:00+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Dean Markwick</title><subtitle>Personal website for Dean Markwick. If you like stats, sports and rambling, you&apos;ve come to the right place. All rights reserved. 
 </subtitle><author><name>Dean Markwick</name></author><entry><title type="html">Economic Indicators from AlphaVantage</title><link href="http://localhost:4000/2021/11/08/AlphaVantage-Economic-Indicators.html" rel="alternate" type="text/html" title="Economic Indicators from AlphaVantage" /><published>2021-11-08T00:00:00+00:00</published><updated>2021-11-08T00:00:00+00:00</updated><id>http://localhost:4000/2021/11/08/AlphaVantage-Economic-Indicators</id><content type="html" xml:base="http://localhost:4000/2021/11/08/AlphaVantage-Economic-Indicators.html">&lt;p&gt;&lt;a href=&quot;https://www.alphavantage.co/&quot;&gt;AlphaVantage&lt;/a&gt; has added endpoints to
 the FRED data repository and I’ve extended the Julia package
 &lt;a href=&quot;https://github.com/ellisvalentiner/AlphaVantage.jl&quot;&gt;AlphaVantage.jl&lt;/a&gt; to use them. This gives you an easy way to include some economic data into your models. This blog post will detail the new functions and I’ll be dusting off my AS-Level in economics to try and explain what they all mean.&lt;/p&gt;
@@ -102,7 +102,9 @@ quite a bit in this post.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/AlphaVantageEconomic/output_13_0.svg&quot; alt=&quot;svg&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Rates have continuously fallen since the peaks in the 1980s. You can also&lt;/p&gt;
+&lt;p&gt;Rates have continuously fallen since the peaks in the 1980s. You can
+also see brief flashes of where the 3 month yield was the highest out
+of all the rates.&lt;/p&gt;
 
 &lt;p&gt;What happens though when the short-term yields are higher than the
 long-term rates? This is when the yield curve ‘inverts’ and the market
@@ -264,7 +266,7 @@ whereas retail sales have continued to increase and regained their highs even af
 
 &lt;p&gt;&lt;img src=&quot;/assets/AlphaVantageEconomic/output_34_0.svg&quot; alt=&quot;svg&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Unemployment went very high briefly after COVID before coming back down, so seems to have adverted that crisis. NFP numbers are also progressing upwards since the COVID disruption.&lt;/p&gt;
+&lt;p&gt;Unemployment went very high briefly after COVID before coming back down, so seems to have averted that crisis. NFP numbers are also progressing upwards since the COVID disruption.&lt;/p&gt;
 
 &lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
 
