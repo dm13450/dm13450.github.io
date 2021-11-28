@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: About Me
 permalink: /about/
 ---
 
@@ -12,7 +12,21 @@ Theoretical Physics from the University of Manchester.
 I have worked in the finance industry at large investment bank as part
 of an equity derivatives team that engineered software to price a
 large range of securities. I have also worked at a smaller firm as an
-intern trading ETFs across the globe
+intern trading ETFs across the globe.
+
+I'm an open source contributor with multiple projects
+ongoing: [dirichletprocess](https://github.com/dm13450/dirichletprocess),
+[HawkesProcesses.jl](https://github.com/dm13450/HawkesProcesses.jl),
+[AlphaVantage.jl](https://github.com/ellisvalentiner/AlphaVantage.jl),
+[CoinbsePro.jl](https://github.com/dm13450/CoinbasePro.jl).
+
+I've written guest posts for QuestDB:
+
+* [High frequency finance with Julia and QuestDB](https://questdb.io/blog/2021/09/17/high-frequency-finance-julia-lang)
+* [A tour of high-frequency finance via the Julia language and QuestDB](https://questdb.io/tutorial/2021/11/22/high-frequency-finance-introduction-julia-lang/)
+
+What me to write for you or have something else interesting? Email me
+at dean[dot]markwick[at]talk21[dot]com
 
 # My Day Job Now
 

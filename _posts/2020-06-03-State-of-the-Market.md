@@ -71,6 +71,31 @@ devtools::install_github("dm13450/dirichletprocess")
 ```
 
 
+<p></p>
+
+***
+Enjoy these types of posts? Then you should sign up for my newsletter. It's a short monthly recap of anything and everything I've found interesting recently plus
+any posts I've written. So sign up and stay informed!
+
+<p>
+<form
+	action="https://buttondown.email/api/emails/embed-subscribe/dm13450"
+	method="post"
+	target="popupwindow"
+	onsubmit="window.open('https://buttondown.email/dm13450', 'popupwindow')"
+	class="embeddable-buttondown-form">
+	<label for="bd-email">Enter your email</label>
+	<input type="email" name="email" id="bd-email" />
+	<input type="hidden" value="1" name="embed" />
+	<input type="submit" value="Subscribe" />
+</form>
+</p>
+
+***
+
+<p></p>
+
+
 ``` r
 set.seed(20202020)
 knitr::opts_chunk$set(warning = FALSE, message = FALSE)
@@ -121,7 +146,8 @@ ggplot(spy, aes(x=timestamp, y=RollingSD)) +
 ```
 
 
-![](/assets/HMMFinPost_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![Returns and Volatility of the S&P 500](/assets/HMMFinPost_files/figure-gfm/unnamed-chunk-3-1.png
+ "Returns and Volatility of the S&P 500")
 
 From the normalised returns we can see that the values are bounded
 between -5 and 2, so a normal distribution will be sufficient to
@@ -195,9 +221,10 @@ gelman.diag(paramCoda)
     ## 
     ## 1.01
 
-This shows that everything has converged nicely. For more information on
-convergence of Dirichlet processes you can read my previous blog post
-[here](http://dm13450.github.io/2020/01/11/Dirichlet-Convergence.html).
+This shows that everything has converged nicely. For more information
+on
+[convergence of Dirichlet processes](https://dm13450.github.io/2020/01/11/Dirichlet-Convergence.html)
+you can read my previous blog post.
 
 We now want to see what state each data point has been assigned. 
 
@@ -219,7 +246,8 @@ ggplot(avgStates, aes(x=Time, y=StateAllocation, colour=Params)) +
   ylab("Average State Allocation")
 ```
 
-![](/assets/HMMFinPost_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![Average State Allocation per Chain](/assets/HMMFinPost_files/figure-gfm/unnamed-chunk-6-1.png
+ "Average State Allocation per Chain")<!-- -->
 
 When we plot the average state allocation for each point we can see that
 the two different DP models have similar state numbers with jumps at
@@ -241,7 +269,8 @@ ggplot(allocFrame, aes(x=Time, y=AvgAlloc, ymin=LQ_Alloc, ymax=UQ_Alloc)) +
   ylab("Average State Allocation")
 ```
 
-![](/assets/HMMFinPost_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![Average State Allocation with Uncertainty](/assets/HMMFinPost_files/figure-gfm/unnamed-chunk-8-1.png
+ "Average State Allocation with Uncertainty")<!-- -->
 
 This is a Bayesian model so we can easily extract out the uncertainty
 around the state allocations and get an idea about how confident we
@@ -305,7 +334,8 @@ ggplot(trainFrame, aes(x=timestamp, y=adjusted_close, colour=PlotColour)) +
   ylab("Price")
 ```
 
-![](/assets/HMMFinPost_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![S&P 500 Price and State](/assets/HMMFinPost_files/figure-gfm/unnamed-chunk-11-1.png
+ "S&P 500 Price and State")<!-- -->
 
 Here we have plotted the closing price of the SPY ETF over time, with the
 dashed lines separating the different states that the model has found
@@ -333,7 +363,8 @@ ggplot(trainFrame, aes(x=timestamp, y=Sigma, ymin=LQ_Sigma, ymax=UQ_Sigma)) +
   xlab("")
 ```
 
-![](/assets/HMMFinPost_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![Average and Standard Deviation State Parameters](/assets/HMMFinPost_files/figure-gfm/unnamed-chunk-12-1.png
+ "Average and Standard Deviation State Parameters")<!-- -->
 
 Here we can see that there have only been four states with negative
 average $$\mu$$ and the most recent negative state was very

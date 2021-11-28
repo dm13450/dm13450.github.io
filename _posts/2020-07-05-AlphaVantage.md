@@ -1,26 +1,55 @@
 ---
 layout: post
 title:  AlphaVantage.jl - Getting Market Data into Julia
+date: 2020-07-05
+tags:
+ - julia
 ---
 
 [AlphaVantage](https://www.alphavantage.co/) is a market data provider that is nice enough to provide
 free access to a wide variety of data. It is my goto financial data
-provider ( [used here](http://dm13450.github.io/2020/06/03/State-of-the-Market.html) ) , because a) it's free and b) there is an R package that
+provider ( [State of the Market - Infinite State Hidden Markov Models](https://dm13450.github.io/2020/06/03/State-of-the-Market.html) ) , because a) it's free and b) there is an R package that
 accesses the API easily. However, there was no Julia package for
 AlphaVantage, so I saw a gap in the market. 
 
-After searching GitHub I found [this](https://github.com/ellisvalentiner/AlphaVantage.jl) repository that was two years out
+After searching GitHub I found the [AlphaVantage.jl](https://github.com/ellisvalentiner/AlphaVantage.jl) repository that was two years out
 of date, but had the bare bones of functionality that I knew I would
 be able to build upon. I forked the project, brought it up to date
 with all the AlphaVantage functions and have now released it to the
 world in the Julia registry. You can easily install the package just
 like any other Julia package using `Pkg.add("AlphaVantage")`.
 
+<p></p>
+
+***
+Enjoy these types of posts? Then you should sign up for my newsletter. It's a short monthly recap of anything and everything I've found interesting recently plus
+any posts I've written. So sign up and stay informed!
+
+<p>
+<form
+	action="https://buttondown.email/api/emails/embed-subscribe/dm13450"
+	method="post"
+	target="popupwindow"
+	onsubmit="window.open('https://buttondown.email/dm13450', 'popupwindow')"
+	class="embeddable-buttondown-form">
+	<label for="bd-email">Enter your email</label>
+	<input type="email" name="email" id="bd-email" />
+	<input type="hidden" value="1" name="embed" />
+	<input type="submit" value="Subscribe" />
+</form>
+</p>
+
+***
+
+<p></p>
+
+
 This blog post will detail all the different function available and
 illustrate how you can pull the data, massage it into a nice format
 and plot using the typical Julia tools. 
 
-# Available Functionality
+## Available Functionality from AlphaVantage
+
 1.  Stock data at both intraday, daily, weekly and monthly
 frequencies.
 2. Technical indicators for stocks.
@@ -31,10 +60,11 @@ time scales.
 So jump into the section that interests you.
 
 The package is designed to replicate the API functions from the
-AlphaVantage documentation, so you can look up any of the functions in
-their documentation [here](https://www.alphavantage.co/documentation/)
-and find the equivalent in this Julia package. If I've missed any or
-one isn't working correctly, raise on issue on Github [here](https://github.com/ellisvalentiner/AlphaVantage.jl).
+[AlphaVantage documentation](https://www.alphavantage.co/documentation/),
+so you can look up any of the functions there and find the
+equivalent in this Julia package. If I've missed any or one isn't
+working correctly, raise on issue on Github
+[here](https://github.com/ellisvalentiner/AlphaVantage.jl).
 
 These are the Julia packages I use in this blog post:
 
@@ -77,7 +107,7 @@ function intra_to_dataframe(rawData)
 end
 ```
 
-# Stocks
+## Stock Market Data
 
 AlphaVantage provides daily, weekly and monthly historical stock data from 2000 right up to when you call the function. With the `adjusted` functions you also get dividends and adjusted closing prices to account for these dividends. 
 
@@ -100,11 +130,12 @@ plot(tsla.Date, tsla.open, label="Open", title="TSLA Daily")
 
 
 
-![svg](/assets/alphavantage_files/output_6_0.svg)
+![Daily TSLA Prices from AlphaVantage](/assets/alphavantage_files/output_6_0.svg
+ "Daily TSLA Prices from AlphaVantage")
 
 Here is the Tesla daily opening stock price. 
 
-## Intraday
+## Intraday Stock Data
 
 What separates AlphaVantage from say google or yahoo finance data is the intraday data. They provide high frequency bars at intervals from 1 minute to an hour. The only disadvantage is that the maximum amount of data appears to be 5 days for a stock. Still better than nothing!
 
@@ -118,9 +149,10 @@ allPlot = plot(tslaIntra.DateTime, tslaIntra.open, label="Open", title = "TSLA I
 plot(allPlot, subPlot, layout=(1,2))
 ```
 
-![svg](/assets/alphavantage_files/output_10_0.svg)
+![Intraday TSLA Prices from AlphaVantage](/assets/alphavantage_files/output_10_0.svg
+ "Intraday TSLA Prices from AlphaVantage")
 
-## Technical Indicators
+## Stock Technical Indicators
 
 AlphaVantage also provide a wide range of technical indicators, the
 most of which I don't understand and will probably never use. But,
@@ -140,7 +172,8 @@ plot(rsiSub[!, :time], rsiSub[!, :RSI], title="TSLA")
 hline!([30, 70], label=["Oversold", "Overbought"])
 ```
 
-![svg](/assets/alphavantage_files/output_15_0.svg)
+![RSI Values from AlphaVantage](/assets/alphavantage_files/output_15_0.svg
+ "RSI Values from AlphaVantage")
 
 In this case, adding the threshold lines make a nice channel that the value falls between. 
 
@@ -171,7 +204,7 @@ sectorRaw["Rank F: Year-to-Date (YTD) Performance"]
 
 Great year for IT, not so great for energy. 
 
-# Forex
+## Forex Market Data
 
 Moving onto the foreign exchange market, again, AlphaVantage provide multiple time scales and many currencies.
 
@@ -188,7 +221,8 @@ eurgbp.close = Float64.(eurgbp.close)
 plot(eurgbp.Date, eurgbp.open, label="open", title="EURGBP")
 ```
 
-![svg](/assets/alphavantage_files/output_25_0.svg)
+![AlphaVantage Weekly FX Data](/assets/alphavantage_files/output_25_0.svg
+ "AlphaVantage Weekly FX Data")
 
 Which looks great for a liquid currency like EURGBP, but they have a whole host of currencies so don't limit yourself to just the basics, explore some NDF's. 
 
@@ -205,12 +239,13 @@ usdkrw.close = Float64.(usdkrw.close)
 plot(usdkrw.Date, usdkrw.open, label="open", title="USDKRW")
 ```
 
-![svg](/assets/alphavantage_files/output_28_0.svg)
+![AlphaVantage Monthly FX Data](/assets/alphavantage_files/output_28_0.svg
+ "AlphaVantage Monthly FX Data")
 
 Although I'm not sure exactly what they are providing here, be it a
 spot price or a 1 month forward that is more typical for NDFs. 
 
-# FX Intraday
+## FX Intraday Data
 
 Again, intraday data is available for the FX pairs. 
 
@@ -223,9 +258,10 @@ usdcad.open = Float64.(usdcad.open)
 plot(usdcad.timestamp, usdcad.open, label="Open", title="USDCAD")
 ```
 
-![svg](/assets/alphavantage_files/output_33_0.svg)
+![Alphva Vantage Intraday FX Data](/assets/alphavantage_files/output_33_0.svg
+ "Alphva Vantage Intraday FX Data")
 
-# Crypto
+## Crypto Market Data
 
 Now for digital currencies. The API follows the same style as traditional currencies and again has more digital currencies than you can shake a stick at. Again daily, weekly and monthly data is available plus a 'health-index' monitor that reports how healthy a cryptocurrency is based on different features.
 
@@ -262,11 +298,18 @@ eth.Open = Float64.(eth[!, Symbol("open (USD)")])
 plot(eth.Date, eth.Open, label="Open", title = "Ethereum")
 ```
 
-![svg](/assets/alphavantage_files/output_39_0.svg)
+![ETH Daily Prices from AlphaVantage](/assets/alphavantage_files/output_39_0.svg
+ "ETH Daily Prices from AlphaVantage")
 
-# Conclusion
+## Conclusion
 
 If you've ever wanted to explore financial timeseries you can't really
 do much better than using AlphaVantage. So go grab yourself an API
 key, download this package and see if you can work out what Hilbert
 transform, dominant cycle phase (`HT_DCPHASE` in the package) represents for a stock! 
+
+Be sure to checkout my other tutorials for AlphaVantage:
+
+* [Fundamental Stock Data from AlphaVantage.jl](https://dm13450.github.io/2021/01/01/Fundamental-AlphaVantage.html)
+* [Crypto Data using AlphaVantatge.jl](https://dm13450.github.io/2021/03/27/CryptoAlphaVantage.html)
+* [Economic Indicators from AlphaVantage](https://dm13450.github.io/2021/11/08/AlphaVantage-Economic-Indicators.html)
