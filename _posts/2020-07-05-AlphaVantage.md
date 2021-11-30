@@ -8,7 +8,7 @@ tags:
 
 [AlphaVantage](https://www.alphavantage.co/) is a market data provider that is nice enough to provide
 free access to a wide variety of data. It is my goto financial data
-provider ( [State of the Market - Infinite State Hidden Markov Models](https://dm13450.github.io/2020/06/03/State-of-the-Market.html) ) , because a) it's free and b) there is an R package that
+provider ([State of the Market - Infinite State Hidden Markov Models](https://dm13450.github.io/2020/06/03/State-of-the-Market.html)) , because a) it's free and b) there is an R package that
 accesses the API easily. However, there was no Julia package for
 AlphaVantage, so I saw a gap in the market. 
 

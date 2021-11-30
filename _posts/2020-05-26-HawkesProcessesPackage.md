@@ -1,18 +1,47 @@
 ---
 layout: post
-title: "HawkesProcesses.jl: An Introduction"
-date: 2020-05-26
+title: "An Introduction to Hawkes Processes with HawkesProcesses.jl"
+date: 2020-05-26 
 tags:
   -julia
 ---
+
+`HawkesProcesses.jl` is a Julia package that provides a number of
+functions to model events using a Hawkes process. This vignette
+demonstrates how you can use the package and fit Hawkes processes to
+your data. Here are the fine details on the
+[Hawkes process maths](https://dm13450.github.io/assets/hawkesprocesses.pdf).
+
+So download the package and you can follow along with my post. 
 
 ```julia
 using HawkesProcesses
 using Distributions
 using Plots
 ```
+<p></p>
 
-`HawkesProcesses` is a Julia package that provides a number of functions to model events using a Hawkes process. This vignette demonstrates how you can use the package. For details on the maths involved in the functions see the pdf document [here](https://dm13450.github.io/assets/hawkesprocesses.pdf).
+***
+Enjoy these types of posts? Then you should sign up for my newsletter. It's a short monthly recap of anything and everything I've found interesting recently plus
+any posts I've written. So sign up and stay informed!
+
+<p>
+<form
+	action="https://buttondown.email/api/emails/embed-subscribe/dm13450"
+	method="post"
+	target="popupwindow"
+	onsubmit="window.open('https://buttondown.email/dm13450', 'popupwindow')"
+	class="embeddable-buttondown-form">
+	<label for="bd-email">Enter your email</label>
+	<input type="email" name="email" id="bd-email" />
+	<input type="hidden" value="1" name="embed" />
+	<input type="submit" value="Subscribe" />
+</form>
+</p>
+
+***
+
+<p></p>
 
 ## Intensity of a Hawkes Process
 
@@ -41,13 +70,14 @@ plot(ts, intensity, xlabel = "Time", ylabel = "Intensity", label="")
 
 
 
-![svg](/assets/hawkesvignette/output_7_0.svg)
+![Hawkes Process Intensity](/assets/hawkesvignette/output_7_0.svg
+ "Hawkes Process Intensity")
 
 
 
 As expected two spikes of intensity when the events occur.
 
-## Simulation
+## Simulating a Hawkes Process
 
 
 ```julia
@@ -67,15 +97,16 @@ plot!(simevents, repeat([mean(intensity)], length(simevents)), seriestype=:scatt
 
 
 
-![svg](/assets/hawkesvignette/output_12_0.svg)
+![Events from a Hawkes process simulation](/assets/hawkesvignette/output_12_0.svg
+ "Hawkes process simulation")
 
 
 
 Again, spikes of events occurring followed by slightly quieter periods which shows the clustering effect of the Hawkes process. 
 
-## Bayesian Estimation using a Latent Variable
+## Bayesian Estimation of a Hawkes Processs using a Latent Variable
 
-This package provides an enhanced method of MCMC sampling of the Hawkes process parameters. By exploiting a latent variable (mathematical details can be found [here]()) we are able to more efficiently sample from the posterior distribution than by doing direct Gibbs sampling using the likelihood and prior. 
+This package provides an enhanced method of MCMC sampling of the Hawkes process parameters. By exploiting a latent variable (mathematical details can be found [here](https://dm13450.github.io/assets/hawkesprocesses.pdf)) we are able to more efficiently sample from the posterior distribution than by doing direct Gibbs sampling using the likelihood and prior. 
 
 
 ```julia
@@ -101,7 +132,8 @@ plot(histogram(bgSamps, label="Background", colour=:darkred),
 
 
 
-![svg](/assets/hawkesvignette/output_18_0.svg)
+![Hawkes process parameter histograms](/assets/hawkesvignette/output_18_0.svg
+ "Hawkes process parameter histograms")
 
 
 
@@ -126,13 +158,14 @@ plot(bgplot, kappaplot, kernplot, layout = (1, 3))
 
 
 
-![svg](/assets/hawkesvignette/output_20_0.svg)
+![Hawkes process parameter convergence](/assets/hawkesvignette/output_20_0.svg
+ "Hawkes process parameter convergence")
 
 
 
 A basic visual inspection shows that the chains are exploring the parameter space nicely. 
 
-## Likelihood
+## Hawkes Process Likelihood
 
 The likelihood of a Hawkes process can be used in a number of ways. It can assess the goodness of fit of a particular parameter set or it can be used to estimate parameters aswell. 
 
@@ -184,11 +217,12 @@ kernPlot = plot(kernArray, kernLikelihood, xlabel="Parameter Values", ylabel = "
 plot(bgPlot, kappaPlot, kernPlot, layout=(3,1))
 ```
 
-![svg](/assets/hawkesvignette/output_29_0.svg)
+![Hawkes process likelihood distributions](/assets/hawkesvignette/output_29_0.svg
+ "Hawkes process likelihood distributions")
 
 Here we demonstrate the shape of the likelihood for the different values in parameters. As expected the likelihood reaches its maximum value at the true values. 
 
-## Maximum Likelihood Estimation
+## Maximum Likelihood Estimation of a Hawkes Process
 
 Using the likelihood function from HawkesProcesses we can use optimisation to find the parameters that produce the maximum values of the likelihood. 
 
@@ -218,3 +252,5 @@ Optim.minimizer(opt)
      2.8440961890338596 
 
 The parameters are close to the true values but this isn't always the case. In practise the likelihood function of a Hawkes process is very flat around the maximum and can prove difficult to optimise over. 
+
+
