@@ -8,6 +8,12 @@ tags:
  - r
 ---
 
+
+My R package `dirichletprocess` can easily estimate the intensity
+function of a point process. I use a Bayesian
+nonparametric method to infer the intensity function as a mixed
+model. 
+
 ``` r
 require(dplyr)
 require(tidyr)
@@ -16,7 +22,7 @@ require(dirichletprocess)
 require(boot)
 ```
 
-[In my first tutorial](http://dm13450.github.io/2018/02/01/Dirichlet-Density.html) I demonstrated how you can use the `dirichletprocess` package to estimate densities using nonparametric Bayesian mixtures. In the second tutorial I showed how easy it is to add in your own conjugate mixture models [here](http://dm13450.github.io/2018/02/21/Custom-Distributions-Conjugate.html). In part three of this tutorial series I will show how you can use a Dirichlet process to estimate a point process model.
+[In my first tutorial](https://dm13450.github.io/2018/02/01/Dirichlet-Density.html) I demonstrated how you can use the `dirichletprocess` package to estimate densities using nonparametric Bayesian mixtures. In the second tutorial I showed how easy it is to [add in your own conjugate mixture models](https://dm13450.github.io/2018/02/21/Custom-Distributions-Conjugate.html). In part three of this tutorial series I will show how you can use a Dirichlet process to estimate a point process model.
 
 But firstly what is a point process? [Wikipedia](https://en.wikipedia.org/wiki/Point_process) states that a point process is a collection of points randomly located on some space. So, if we have a rectangle, a collection of random points inside the rectangle is a point process. For example, lets say we have a field where flowers are growing randomly. The co-ordinates where each flower is located form a point process. Or, in a 1 dimensional example, we might be observing how long it takes for a bus to arrive at a bus stop. Each time a bus arrives, the time is noted. These collection of bus arrival times form a 1D point process.
 
@@ -34,11 +40,12 @@ process example that records the dates of coal mine explosions that resulted in 
 qplot(coal[,1], geom="histogram", binwidth=1, )
 ```
 
-![](/assets/pointprocess_files/unnamed-chunk-2-1.png)
+![Coal explosion histogram](/assets/pointprocess_files/unnamed-chunk-2-1.png
+ "Coal explosions histogram")
 
 Here we can see that the rate of accidents is not constant. There was quite an increase in accidents from 1850 til 1875 when the number of accidents declined. At the turn of the 20th Century, accidents were fairly constant until 1925 when they started increasing. This type of non-constant pattern suggests an inhomogeneous Poisson process might be an improvement on a basic Poisson process.
 
-### An Inhomogeneous Point Process Model
+## An Inhomogeneous Point Process Model
 
 We think that the event times are distributed from an inhomogeneous Poisson process with rate $$λ(t)$$. We will decompose this rate into two components, a amplitude $$λ_0$$ and a density $$f(t)$$. We will use a Dirichlet mixture of Beta distributions to model $$f(t)$$. The amplitude $$λ_0$$ will be estimated using conjugate Gamma prior distribution to draw from the prior.
 
@@ -84,7 +91,7 @@ For the constant Poisson point process our density $$f(t)$$ is simply
 $$\frac{1}{T}$$. I.e the pdf of a uniform distribution. Out $$\lambda
 _0$$ is the same. 
 
-### Residuals
+## Point Process Residuals
 
 Now that we have two models, we wish to see if our more complicated
 inhomogeneous model is better than a constant point process model. The
