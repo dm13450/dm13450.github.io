@@ -9,7 +9,7 @@ tags:
 
 
 In an older [blog
-post](http://dm13450.github.io/2018/06/12/Isle-of-Man-TT.html) I looked
+post](https://dm13450.github.io/2018/06/12/Isle-of-Man-TT.html) I looked
 at how fitting Bayesian GAM’s are a piece of cake using `rstanarm`. I
 needed an excuse to explore hierarchical models, so using this post as a
 way of showing you how you can fit and explore such models using

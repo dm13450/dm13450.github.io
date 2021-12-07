@@ -6,13 +6,13 @@ tags:
   - julia
 ---
 
-[Last time](http://dm13450.github.io/2021/08/05/questdb-part-1.html) I showed you how to set up a producer/consumer model to
+[Last time](https://dm13450.github.io/2021/08/05/questdb-part-1.html) I showed you how to set up a producer/consumer model to
 build a database of BTCUSD trades using the CoinbasePro WebSocket
 feed. Now I'll show you how you can connect to the same database to
 pull out the data, use some specific timeseries database queries and
 hopefully show where this type of database is useful by improving some
 of my old calculations. You should read one of my older blog posts on
-high frequency finance ([here](http://dm13450.github.io/2021/06/25/HighFreqCrypto.html)) as I'm going to repeat some of the calculations using more data this time. 
+high frequency finance ([here](https://dm13450.github.io/2021/06/25/HighFreqCrypto.html)) as I'm going to repeat some of the calculations using more data this time. 
 
 ***
 Enjoy these types of post? Then you should sign up to my newsletter. It's a short monthly recap of anything and everything I've found interesting recently plus

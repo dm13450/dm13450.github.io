@@ -71,7 +71,7 @@ More details are on their website [here](https://flipsidecrypto.com/products/rat
 
 # Timeseries Data
 
-AlphaVantage also offer the usual time series data at daily, weekly and monthly frequencies. Hopefully you've read my other posts ([basic market data](http://dm13450.github.io/2020/07/05/AlphaVantage.html) and [fundamental data](http://dm13450.github.io/2021/01/01/Fundamental-AlphaVantage.html)), so this is nothing new! 
+AlphaVantage also offer the usual time series data at daily, weekly and monthly frequencies. Hopefully you've read my other posts ([basic market data](https://dm13450.github.io/2020/07/05/AlphaVantage.html) and [fundamental data](https://dm13450.github.io/2021/01/01/Fundamental-AlphaVantage.html)), so this is nothing new! 
 
 Now for each 10 tokens we can grab their monthly data and calculate some stats and plot some graphs.
 

@@ -8,7 +8,7 @@ tags:
  - r
 ---
 
-This post is another tutorial on using my `dirichetprocess` package in R. So far I have shown you [how to perform density estimation](http://dm13450.github.io/2018/02/01/Dirichlet-Density.html), [point process inference](http://dm13450.github.io/2018/03/08/dirichletprocess-pointprocess.html), and adding your own [custom mixture model](http://dm13450.github.io/2018/02/21/Custom-Distributions-Conjugate.html). In this tutorial I will show you how Dirichlet processes can be used for clustering.
+This post is another tutorial on using my `dirichetprocess` package in R. So far I have shown you [how to perform density estimation](https://dm13450.github.io/2018/02/01/Dirichlet-Density.html), [point process inference](https://dm13450.github.io/2018/03/08/dirichletprocess-pointprocess.html), and adding your own [custom mixture model](https://dm13450.github.io/2018/02/21/Custom-Distributions-Conjugate.html). In this tutorial I will show you how Dirichlet processes can be used for clustering.
 
 Before we being, make sure you download the latest version of the package from CRAN.
 

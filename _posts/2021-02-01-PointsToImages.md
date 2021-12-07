@@ -6,7 +6,7 @@ tags:
   -r
 ---
 
-[Last week](http://dm13450.github.io/2021/01/25/ExpGoalsUpdate.html) I
+[Last week](https://dm13450.github.io/2021/01/25/ExpGoalsUpdate.html) I
 updated my overachieving visualisations and replaced dots and labels
 with the appropriate crests of the football club. This post is showing
 you how to use `ggplot` to do the same. In short, I copied Michael

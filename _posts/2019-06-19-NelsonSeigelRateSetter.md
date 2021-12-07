@@ -7,7 +7,7 @@ tags:
 ---
 
 In an earlier
-[post](http://dm13450.github.io/2019/02/06/Ratesetter-Yield.html) I
+[post](https://dm13450.github.io/2019/02/06/Ratesetter-Yield.html) I
 looked at the yield curve of the P2P bonds from [RateSetter](https://www.ratesetter.com/). In this
 post I'll be taking the next step by taking a well known financial
 model and applying it to the bonds to describe the yield

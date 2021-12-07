@@ -6,7 +6,7 @@ tags:
  - julia
 ---
 
-My [post](http://dm13450.github.io/2018/01/18/DIC.html) on the deviance information criteria on my blog is one of the most popular ones I've ever written. So to take that theoretical concept and apply it to my new package [HawkesProcesses.jl](http://dm13450.github.io/2020/05/26/HawkesProcessesPackage.html) and show you how to construct the different functions needed to calculate the DIC. 
+My post on the [deviance information criteria](https://dm13450.github.io/2018/01/18/DIC.html) on my blog is one of the most popular ones I've ever written. So to take that theoretical concept and apply it to my new package [HawkesProcesses.jl](https://dm13450.github.io/2020/05/26/HawkesProcessesPackage.html) and show you how to construct the different functions needed to calculate the DIC. 
 
 Firstly, a recap on the DIC,
 
@@ -88,7 +88,7 @@ dic = -2*mean(posteriorSamples) + 2*pdic
 
 There we have it, simple to calculate and can now be used to critique the model. For example, we could fit another Hawkes model with a different kernel, calculate the DIC using the new samples and compare the values, the better fitting model will have a lower DIC value. 
 
-# Bonus: Multithreading
+## Bonus: Multithreading
 
 
 ```julia

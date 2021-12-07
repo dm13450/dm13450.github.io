@@ -152,7 +152,7 @@
 <p>Pretty much looks like a random walk around 0 as expected.</p>
 
 <p>Now to compute the statistics for the posterior distribution we need
-the sum of squares and the lagged sum of squares ( [see here] (http://dm13450.github.io/2017/06/09/Bayesian-Auto-Process.html)). Then using the Distributions package again we can sample from a truncated normal distribution. We have used a prior distribution of a truncated normal distribution with 0 mean and a standard deviation of 5.</p>
+the sum of squares and the lagged sum of squares ( [see here] (https://dm13450.github.io/2017/06/09/Bayesian-Auto-Process.html)). Then using the Distributions package again we can sample from a truncated normal distribution. We have used a prior distribution of a truncated normal distribution with 0 mean and a standard deviation of 5.</p>
 
 <figure class="highlight"><pre><code class="language-julia" data-lang="julia"><span class="k">function</span><span class="nf"> posterior_ar</span><span class="x">(</span><span class="n">n</span><span class="x">,</span> <span class="n">y</span><span class="x">)</span>
 	 <span class="n">n</span> <span class="o">=</span> <span class="n">length</span><span class="x">(</span><span class="n">y</span><span class="x">)</span>

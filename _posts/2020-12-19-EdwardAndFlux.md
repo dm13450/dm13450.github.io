@@ -131,7 +131,7 @@ function nn_forward(xs, nn_params::AbstractVector)
 end
 ```
 
-These utility functions mean that we are tearing down the neural net and rebuilding it with the new parameters with each iteration. `Turing` deals with finding the best parameters by doing the Bayesian sampling (see my previous [post](http://dm13450.github.io/2020/11/03/BayesPointProcess.html) on Hamilton MCMC sampling).
+These utility functions mean that we are tearing down the neural net and rebuilding it with the new parameters with each iteration. `Turing` deals with finding the best parameters by doing the Bayesian sampling (see my previous [post](https://dm13450.github.io/2020/11/03/BayesPointProcess.html) on Hamilton MCMC sampling).
 
 We think the 6 parameters of the neural net are drawn from a multivariate normal distribution and the parameters are all uncorrelated with each other. The observations are also from a normal distribution with mean from the neural net and variance $$\sigma$$.
 

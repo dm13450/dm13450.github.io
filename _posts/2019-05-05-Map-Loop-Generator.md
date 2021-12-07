@@ -16,7 +16,7 @@ writing about these new methods and adding them to the comparison.
 
 For a more detailed explanation of the problem I'm trying to solve, check out my previous
 post
-[here](http://dm13450.github.io/2019/04/17/MapLoopPerformance.html). For
+[here](https://dm13450.github.io/2019/04/17/MapLoopPerformance.html). For
 now I'm just going to recap.
 
 ```julia

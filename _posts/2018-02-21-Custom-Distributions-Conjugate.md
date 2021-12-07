@@ -6,7 +6,7 @@ tags:
  - r
 ---
 
-In my previous [article](http://dm13450.github.io/2018/02/01/Dirichlet-Density.html) I showed how you can use the [dirichletprocess](https://github.com/dm13450/dirichletprocess) package for non-parametric density estimation. This time I will demonstrate how you can use the package to create your own mixture models. The ease of creating your own mixture models is the main advantage of our [dirichletprocess](https://cran.r-project.org/package=dirichletprocess) package compared to the others out there. By using the S3 class system in R, you can easily build your own Dirichlet process mixture of what ever distribution you want.
+In my previous [article](https://dm13450.github.io/2018/02/01/Dirichlet-Density.html) I showed how you can use the [dirichletprocess](https://github.com/dm13450/dirichletprocess) package for non-parametric density estimation. This time I will demonstrate how you can use the package to create your own mixture models. The ease of creating your own mixture models is the main advantage of our [dirichletprocess](https://cran.r-project.org/package=dirichletprocess) package compared to the others out there. By using the S3 class system in R, you can easily build your own Dirichlet process mixture of what ever distribution you want.
 
 Firstly, make sure you have downloaded the package from CRAN.
 

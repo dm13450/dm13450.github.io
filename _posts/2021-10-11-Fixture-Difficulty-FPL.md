@@ -6,7 +6,7 @@ tags:
   - r
 ---
 
-[In my last blog post](http://dm13450.github.io/2021/09/26/Fixture-Difficulty.html) I showed how the odds can be used to measure the
+[In my last blog post](https://dm13450.github.io/2021/09/26/Fixture-Difficulty.html) I showed how the odds can be used to measure the
 difficulty of a football match. I then took this difficulty and
 investigated how predictive it was for the outcome of the match (not
 very predictive) and the goals/shots taken in the match (more

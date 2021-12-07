@@ -36,7 +36,7 @@ using DataFrames, DataFramesMeta, Dates
 using Plots
 ```
 
-# Listing Status
+## Listing Status
 
 Firstly, we can get a list of stocks that are actively trading. 
 
@@ -76,7 +76,7 @@ When googling some of these stocks though, the IPO date doesn't appear to be 100
 They have correctly recorded Apple's IPO date though, so it might just
 be something about older stocks, or something else I am missing. 
 
-# Company Overview {#companyoverview}
+## Company Overview {#companyoverview}
 
 The first new function is `company_overview` which does what it says
 on the tin. 
@@ -114,7 +114,7 @@ co = AlphaVantage.company_overview("AAPL")
 
 Here we get a dictionary with 59 different metrics about the company. There are lots of different quantitate and qualitative values about the company in question and provides a useful overview. 
 
-# Income Statement {#incomestatement}
+## Income Statement {#incomestatement}
 
 The income statement summarises a companies revenues and expenses. In short it shows where the money was coming in (revenue) and where it was going out (expenses).
 
@@ -200,11 +200,11 @@ plot(Date.(totalRevenue[:Date]),
      title = "Apple")
 ```
 
-![svg](/assets/fundamental/output_23_0.svg)
+![Apple Total Revenue](/assets/fundamental/output_23_0.svg "Apple Total Revenue")
 
 Here we have Apple quarterly total revenue, with a predictable pattern peaking in the first quarter. 
 
-# Balance Sheet {#balancesheet}
+## Balance Sheet {#balancesheet}
 
 A balance sheet summarises a companies assets, what it owns and its liabilities, what it owns to other people.
 
@@ -270,11 +270,12 @@ liabPlot = plot(Date.(fLiabilities[:Date]),
 plot(cashPlot, liabPlot)
 ```
 
-![svg](/assets/fundamental/output_30_0.svg)
+![Ford Balance Sheet](/assets/fundamental/output_30_0.svg "Ford
+ Balance Sheet")
 
 As per the intro I've plotted Fords cash and short term investment balance against something the owe, the total liabilities. 
 
-# Cash Flow {#cashflow}
+## Cash Flow {#cashflow}
 
 The cash flow statement shows the changes in the balance sheet. It helps judge a companies ability to meet its cash needs, i.e. pay their employers or service their debt. 
 
@@ -342,11 +343,12 @@ plot(Date.(cashflow[:Date]),
 
 
 
-![svg](/assets/fundamental/output_36_0.svg)
+![Tesla Cash Flow](/assets/fundamental/output_36_0.svg "Tesla Cash
+ Flow")
 
 
 
-# Earnings {#earnings}
+## Earnings {#earnings}
 
 Each company reports their earnings each quarter and summarise their performance of the previous quarter. There are more dates available for earnings, but also slightly different fields for the quarterly and annual results. 
 
@@ -430,7 +432,7 @@ plot(Date.(reported[:Date]),
      title = "Apple")
 ```
 
-![svg](/assets/fundamental/output_44_0.svg)
+![Apple Earnings](/assets/fundamental/output_44_0.svg "Apple Earnings")
 
 There you go, lots more functions for the package and something
 different than just looking at stock prices. This fundamental data
@@ -439,4 +441,4 @@ so go grab your free API key from
 [AlphaVantage](https://www.alphavantage.co/) and get exploring!
 
 If you are new to AlphaVantage you can also check out my previous post
-on getting market data into Julia [here](http://dm13450.github.io/2020/07/05/AlphaVantage.html).
+on [getting market data into Julia](https://dm13450.github.io/2020/07/05/AlphaVantage.html).

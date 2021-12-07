@@ -28,7 +28,7 @@ But firstly what is a point process? [Wikipedia](https://en.wikipedia.org/wiki/P
 
 Point processes appear all the time in finance. Last month I wrote
 about extreme values in the
-[VIX index](http://dm13450.github.io/2018/02/12/Vix-Extreme.html). Every
+[VIX index](https://dm13450.github.io/2018/02/12/Vix-Extreme.html). Every
 time the VIX breaks a set threshold can be thought of as a point
 process. Or even every time a stock is traded is a point process. 
 

@@ -20,7 +20,7 @@ to terror attacks. I was concerned about *extreme* terror attacks and
 how a Hawkes process can model them in  variety of ways to try and
 understand the statistical consequences of a large terror attack.
 
-In this blog post I will do the same, but focus on *all* terror attacks across a variety of countries and build two Hawkes models to see how well they describe these attacks. This will be the first blog post I've written on applying my `HawkesProcesses.jl` Julia [package](https://github.com/dm13450/HawkesProcesses.jl), so should serve as a more practical introduction than my previous outline of the package which I wrote about previously [here](http://dm13450.github.io/2020/05/26/HawkesProcessesPackage.html). 
+In this blog post I will do the same, but focus on *all* terror attacks across a variety of countries and build two Hawkes models to see how well they describe these attacks. This will be the first blog post I've written on applying my `HawkesProcesses.jl` Julia [package](https://github.com/dm13450/HawkesProcesses.jl), so should serve as a more practical introduction than my previous outline of the package which I wrote about previously [here](https://dm13450.github.io/2020/05/26/HawkesProcessesPackage.html). 
 
 This is a chunky blog post and is laid out as follows: 
 
@@ -415,7 +415,7 @@ model?
 
 How do we know what model is better? I've written about deviance
 information criteria before
-([here](http://dm13450.github.io/2020/08/26/Hawkes-and-DIC.html)) and
+([here](https://dm13450.github.io/2020/08/26/Hawkes-and-DIC.html)) and
 it is implemented in this `HawkesProcesses` package. But I might aswell use this to illustrate other information criteria's; Bayesian and Akaike. Both are about weighing up the likelihood with the number of parameters in the model. There is an important point to note that these methods are not strictly Bayesian and don't make full use of the full posterior sampling, but I think it is useful to have a general indicator and comparison between models, even if it isn't strictly pure. Plus this also highlights the benefits of a Bayesian approach, you can reduce it to a frequentist estimate just by taking your point estimate of the parameters. 
 
 By assuming that each country is independent of each other, we arrive at a final likelihood value by summing up each individual likelihood for the country. Then by separating the training set likelihood and total likelihood we can come up with a test set likelihood, which we can use to perform our model comparison. 
@@ -486,7 +486,7 @@ When we look at just the test set we can see that the likelihood is higher and b
 
 The hierarchical model is also preferred as it shows how the model is generalisable to countries not included in the test set. Whereas for the individual model there is no way of using parameters of other countries to apply to a new country. 
 
-There is another model that is in between both one set of parameters for all countries and $$3N$$ parameters for $$N$$ countries and that involves partial pooling, I've written about pooling before [here](http://dm13450.github.io/2018/10/24/Referee-Cautions.html) and you can take similar ideas and apply them to this applications. It takes a bit more work and is beyond the scope of this blog post, so I will save that for another blog post. 
+There is another model that is in between both one set of parameters for all countries and $$3N$$ parameters for $$N$$ countries and that involves partial pooling, I've written about pooling before [here](https://dm13450.github.io/2018/10/24/Referee-Cautions.html) and you can take similar ideas and apply them to this applications. It takes a bit more work and is beyond the scope of this blog post, so I will save that for another blog post. 
 
 ## National Security Policy Implications
 

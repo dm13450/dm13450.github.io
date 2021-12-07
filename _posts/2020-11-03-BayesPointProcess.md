@@ -2,6 +2,8 @@
 layout: post
 title: Proper Bayesian Estimation of a Point Process in Julia
 date: 03-11-2020
+tags:
+  - julia
 ---
 
 

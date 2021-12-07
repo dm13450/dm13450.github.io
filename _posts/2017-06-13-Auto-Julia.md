@@ -33,7 +33,7 @@ For 1000 data points with $$\phi=0.5$$ such a process looks like:
 Pretty much looks like a random walk around 0 as expected. 
 
 Now to compute the statistics for the posterior distribution we need
-the sum of squares and the lagged sum of squares ( [see here] (http://dm13450.github.io/2017/06/09/Bayesian-Auto-Process.html)). Then using the Distributions package again we can sample from a truncated normal distribution. We have used a prior distribution of a truncated normal distribution with 0 mean and a standard deviation of 5. 
+the sum of squares and the lagged sum of squares ( [see here] (https://dm13450.github.io/2017/06/09/Bayesian-Auto-Process.html)). Then using the Distributions package again we can sample from a truncated normal distribution. We have used a prior distribution of a truncated normal distribution with 0 mean and a standard deviation of 5. 
 
 {% highlight julia %}
 function posterior_ar(n, y)
