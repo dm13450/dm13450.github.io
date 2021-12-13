@@ -3,6 +3,7 @@
 gem 'github-pages', group: :jekyll_plugins
 gem "minima"
 gem 'jekyll-seo-tag'
+gem 'jekyll-sitemap'
 
 source "https://rubygems.org"
 
