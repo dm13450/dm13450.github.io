@@ -6,7 +6,7 @@ tags:
   -julia
 ---
 
-AlphaVantage recently made fundamental data available through their
+AlphaVantage recently made fundamental data for stocks available through their
 API and thanks to some new contributors to the `AlphaVantage.jl` Julia
 package you can now easily import this data into your Julia project.
 
@@ -41,9 +41,9 @@ using Plots
 Firstly, we can get a list of stocks that are actively trading. 
 
 ```julia
-listingData = AlphaVantage.listingstatus()
-stocks = DataFrame(listingData[1])
-names!(stocks, Symbol.(vec(listingData[2])))
+listingData = AlphaVantage.listing_status()
+stocks = DataFrame(listingData[1], :auto)
+rename!(stocks, Symbol.(vec(listingData[2])))
 first(stocks, 5)
 ```
 
@@ -82,7 +82,7 @@ The first new function is `company_overview` which does what it says
 on the tin. 
 
 ```julia
-co = AlphaVantage.company_overview("AAPL")
+co = AlphaVantage.company_overview("AAPL", datatype = "json")
 ```
 
     Dict{String,Any} with 59 entries:
@@ -119,7 +119,7 @@ Here we get a dictionary with 59 different metrics about the company. There are 
 The income statement summarises a companies revenues and expenses. In short it shows where the money was coming in (revenue) and where it was going out (expenses).
 
 ```julia
-is = AlphaVantage.income_statement("AAPL")
+is = AlphaVantage.income_statement("AAPL", datatype = "json")
 ```
 
     Dict{String,Any} with 3 entries:
@@ -193,7 +193,8 @@ Then what I have done is written the functions that allow you to extract any of 
 
 
 ```julia
-totalRevenue = AlphaVantage.totalRevenue_quarterlys("AAPL")
+totalRevenue = AlphaVantage.totalRevenue_quarterlys("AAPL", datatype =
+"json")
 plot(Date.(totalRevenue[:Date]), 
      parse.(Float64, totalRevenue[:totalRevenue]) ./ 1e9, 
      label = "Revenue (billions)",
@@ -210,7 +211,7 @@ A balance sheet summarises a companies assets, what it owns and its liabilities,
 
 
 ```julia
-bs = AlphaVantage.balance_sheet("AAPL")
+bs = AlphaVantage.balance_sheet("AAPL", datatype = "json")
 ```
 
 
@@ -258,8 +259,10 @@ Again, like the income statement, any of these keys can be extracted quarterly o
 
 
 ```julia
-fCash = AlphaVantage.cashAndShortTermInvestments_quarterlys("F")
-fLiabilities = AlphaVantage.totalLiabilities_quarterlys("F")
+fCash = AlphaVantage.cashAndShortTermInvestments_quarterlys("F",
+datatype = "json")
+fLiabilities = AlphaVantage.totalLiabilities_quarterlys("F", datatype
+= "json")
 cashPlot = plot(Date.(fCash[:Date]), 
                 parse.(Float64, fCash[:cashAndShortTermInvestments])/1e9, 
                 label="Cash and Short Term Investments (billions)",
@@ -281,7 +284,7 @@ The cash flow statement shows the changes in the balance sheet. It helps judge a
 
 
 ```julia
-cf = AlphaVantage.cash_flow("TSLA")
+cf = AlphaVantage.cash_flow("TSLA", datatype = "json")
 ```
 
 
@@ -332,7 +335,7 @@ string.(keys(cf["quarterlyReports"][1]))
 
 
 ```julia
-cashflow = AlphaVantage.cashflowFromFinancing_annuals("TSLA")
+cashflow = AlphaVantage.cashflowFromFinancing_annuals("TSLA", datatype="json")
 
 plot(Date.(cashflow[:Date]), 
      parse.(Float64, cashflow[:cashflowFromFinancing]) ./ 1e9, 
@@ -354,7 +357,7 @@ Each company reports their earnings each quarter and summarise their performance
 
 
 ```julia
-earnings = AlphaVantage.earnings("AAPL")
+earnings = AlphaVantage.earnings("AAPL", datatype = "json")
 ```
 
 
@@ -425,7 +428,8 @@ extrema(Date.(get.(earnings["annualEarnings"], "fiscalDateEnding", "")))
 
 
 ```julia
-reported = AlphaVantage.reportedEPS_quarterlyEarnings("AAPL")
+reported = AlphaVantage.reportedEPS_quarterlyEarnings("AAPL",
+datatype="json")
 plot(Date.(reported[:Date]), 
      parse.(Float64, reported[:reportedEPS]), 
      label="Reported EPS",
