@@ -111,6 +111,8 @@ This outputs the relevant quantities of the benchmarking times.
 
 ## Mixed Effects Models Python with statsmodels
 
+The Python syntax for fitting these types of models is similar to R.
+
 * Python 3.9.4
 * statmodels 0.13.1
 
