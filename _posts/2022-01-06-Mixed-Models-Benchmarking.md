@@ -170,6 +170,16 @@ m1 = fit(MixedModel, @formula(bill_length_mm ~ 1 + (1|species) + sex), modelData
 * sex:male coefficient - 3.694
 * group variance of - 19.68751
 
+We notice that the variance in the intercept here is different
+compared to the previous to methods. Julia uses maximum likelihood by
+default whereas R and Python default to REML (Restricted Maximum
+Likelihood) for fitting the models. As the dataset only has three
+groups, (there are three penguin species) then these methods will
+start to produce different results, as we can see. Thanks to Phillip
+Alday and Reddit user PuppySteaks for pointing this out. For more info
+you can read Phillip's comment on the [differences between ML and REML](https://github.com/dm13450/dm13450.github.io/issues/9).
+
+
 We use the
 [BenchmarkTools.jl](https://github.com/JuliaCI/BenchmarkTools.jl)
 package to run the function 10,000 times.
