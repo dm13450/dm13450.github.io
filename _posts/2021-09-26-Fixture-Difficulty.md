@@ -65,7 +65,7 @@ outcomes are from the uniform distribution.
 
 Right enough maths. Onto the data.
 
-Once again we turn to [www.football-data.co.uk](www.football-data.co.uk) to download the
+Once again we turn to [www.football-data.co.uk](https://www.football-data.co.uk) to download the
 results from many leagues across the years. We then convert the Pinnacle
 closing odds into probabilities $$\left( p ^{\text{raw}} =
 \frac{1}{\text{Decimal Odds}} \right)$$ using the standard normalisation
