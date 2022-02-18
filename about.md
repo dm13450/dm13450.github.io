@@ -20,20 +20,26 @@ ongoing: [dirichletprocess](https://github.com/dm13450/dirichletprocess),
 [AlphaVantage.jl](https://github.com/ellisvalentiner/AlphaVantage.jl),
 [CoinbsePro.jl](https://github.com/dm13450/CoinbasePro.jl).
 
-I've written guest posts for QuestDB:
+I've written guest posts for [QuestDB](https://questdb.io/):
 
 * [High frequency finance with Julia and QuestDB](https://questdb.io/blog/2021/09/17/high-frequency-finance-julia-lang)
 * [A tour of high-frequency finance via the Julia language and QuestDB](https://questdb.io/tutorial/2021/11/22/high-frequency-finance-introduction-julia-lang/)
 
-What me to write for you or have something else interesting? Email me
+Want me to write for you or have something else interesting? Email me
 at dean[dot]markwick[at]talk21[dot]com
 
 # My Day Job Now
 
-I'm a Quant at BestX and spend the day researching financial markets,
-which typically involves cleaning data, making graphs and trying to
-come up with some (hopefully) interesting insights about the world of FX, fixed
-income and equity trading.
+I'm currently an electronic trading quant working on both principal
+and algo exectution. I build models, analyse data and construct
+algorithms to try and get the best prices in the market with the
+lowest impact. 
+
+I'm was a quant at [BestX](https://www.bestx.co.uk/) and spent the day
+researching financial markets with a focus on transaction cost
+analysis (TCA).  This involved cleaning data, making graphs and trying
+to come up with some (hopefully) interesting insights about the world
+of FX, fixed income and equity trading.
 
 Examples of my work can be found in the trade press:
 
@@ -44,7 +50,7 @@ Examples of my work can be found in the trade press:
 * [BestX RFQ Par Introduces a New Way to Look at Hit Ratios](https://thefullfx.com/bestx-rfq-par-introduces-a-new-way-to-look-at-hit-ratios/)
 * [How Long Should TWAP algos run?](https://www.fx-markets.com/trading/7859441/how-long-should-twap-algos-run)
 
-All of which you probably need to be a subscriber to. 
+Some of which are behind a paywall. 
 
 # Outside the Day Job
 
