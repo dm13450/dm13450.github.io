@@ -9,10 +9,7 @@ at University College London (UCL)  and a member of the Financial
 Computing CDT. I also have an MRes in Computer Science and an MPhys in
 Theoretical Physics from the University of Manchester. 
 
-I have worked in the finance industry at large investment bank as part
-of an equity derivatives team that engineered software to price a
-large range of securities. I have also worked at a smaller firm as an
-intern trading ETFs across the globe.
+I run a dashboard for crypto liquidity: <https://cryptoliquiditymetrics.com/>
 
 I'm an open source contributor with multiple projects
 ongoing: [dirichletprocess](https://github.com/dm13450/dirichletprocess),
@@ -31,7 +28,7 @@ at dean[dot]markwick[at]talk21[dot]com
 # My Day Job Now
 
 I'm currently an electronic trading quant working on both principal
-and algo exectution. I build models, analyse data and construct
+and algo execution. I build models, analyse data and construct
 algorithms to try and get the best prices in the market with the
 lowest impact. 
 
