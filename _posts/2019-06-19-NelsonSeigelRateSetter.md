@@ -6,14 +6,14 @@ tags:
  -r
 ---
 
-In an earlier
-[post](https://dm13450.github.io/2019/02/06/Ratesetter-Yield.html) I
-looked at the yield curve of the P2P bonds from [RateSetter](https://www.ratesetter.com/). In this
-post I'll be taking the next step by taking a well known financial
-model and applying it to the bonds to describe the yield
-curve. This model will provide some parameters that describe the current
-state of the RateSetter market and allow us to look at the overall
-history of the yields. 
+In an earlier post I looked at the
+[yield curve of the P2P bonds](https://dm13450.github.io/2019/02/06/Ratesetter-Yield.html)
+from [RateSetter](https://www.ratesetter.com/). In this post I'll be
+taking the next step by taking a well known financial model and
+applying it to the bonds to describe the yield curve. This model will
+provide some parameters that describe the current state of the
+RateSetter market and allow us to look at the overall history of the
+yields.
 
 ```r
 require(readr)
@@ -26,7 +26,7 @@ numIts <- 2000
 ```
 
 
-### The Data
+## RateSetter Loan Data
 
 First we need to download the data. RateSetter have recently changed
 how they provide the data, now you can pull the csv files straight
@@ -70,7 +70,7 @@ fullData %>%
                          Contract == "5Year"~ 5*12)) -> cleanData
 ```
 
-### The Model
+## The Nelson-Siegel Model
 
 Now we want a mathematical model that can explain the difference
 in yields between these products. A popular model in the fixed income
@@ -155,7 +155,7 @@ results, but it would be better to use a Bayesian approach and get
 uncertainty for free from the sampling. 
 
 
-### Bayesian Methods
+## The Bayesian Nelson-Siegel Model
 
 We can rewrite the above model in Stan and sample from the posterior
 distribution using Hamiltonian Monte Carlo. The Stan code can be found [here](/assets/NelsonSigelRateSetterPost_files/nel_sig.stan)
@@ -225,7 +225,7 @@ adequate. The daily yields change too much for the parameters of the
 model. This means that we need to modify the model to something that
 can change overtime.
 
-### A Dynamic Model
+## A Dynamic Bayesian Nelson-Siegel Model
 
 A more general model is to allow the $$\beta$$ values to vary over
 time. We rewrite the above basic model so that the parmeters at each
@@ -236,7 +236,7 @@ week and there are parameters that control the amount of variation.
 $$\beta ^{i} = \theta_0 + \theta _1 \beta ^{i-1}$$
 
 This means that the parameter on day $$i$$ depends on the previous day
-by a constant amount $$\theta _0$$ and an amount $\theta _1$ time the
+by a constant amount $$\theta _0$$ and an amount $$\theta _1$$ time the
 previous value. 
 
 Again, this type of model is written in Stan ([here](/assets/NelsonSigelRateSetterPost_files/nel_sig_dynamic.stan)), but now requires a
@@ -395,7 +395,11 @@ information.
 
 A big help in writing the Stan code was this
 [post](https://khakieconomics.github.io/2016/08/29/A-brief-introduction-to-factor-models-in-stan.html)
-by Jim Savage. If
-you want to know more about the Nelson-Siegel model you can't go wrong
-with [Wikipedia](https://en.wikipedia.org/wiki/Fixed-income_attribution). A paper on [Arxiv](https://arxiv.org/pdf/1809.06077.pdf)
-does a similar model for US Treasury data
+by Jim Savage. If you want to know more about the Nelson-Siegel model
+you can't go wrong with
+[Wikipedia](https://en.wikipedia.org/wiki/Fixed-income_attribution). A
+paper on [Arxiv](https://arxiv.org/pdf/1809.06077.pdf) does a similar
+model for US Treasury data.
+
+If you want to read more about RateSetter bonds, you can read my
+previous post on the [basics of the yield curve](https://dm13450.github.io/2019/02/06/Ratesetter-Yield.html).

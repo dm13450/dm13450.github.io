@@ -9,6 +9,12 @@ tags:
    -r
 ---
 
+I will be using R to anaylse the yield curve of the Peer to peer
+lender RateSetter. This is an exploration of the data RateSetter
+provide, with the goal of producing a final animation of the yield
+curve through time. 
+
+
 ``` r
 require(readr)
 require(lubridate)
@@ -16,11 +22,6 @@ require(dplyr)
 require(ggplot2)
 require(tidyr)
 ```
-
-I will be using R to anaylse the yield curve of the Peer to peer
-lender RateSetter. This is an exploration of the data RateSetter
-provide, with the goal of producing a final animation of the yield
-curve through time. 
 
 ## Peer to Peer Lending
 
@@ -39,8 +40,7 @@ contract where your money is locked up for 1 year and a 5 year contract,
 where, you guessed it, your money is locked up for 5 years.
 
 RateSetter are nice enough to provide their historical data for
-[free](https://invest.ratesetter.com/aboutus/statistics). They have
-daily quotes for the different products.
+free. They have daily quotes for the different products.
 
 ``` r
 rawData <- read_csv("clean.csv", col_names = F)
@@ -92,7 +92,7 @@ Here we can see that the rates for the different products change quite a
 lot throughout the dataset. But there is some semblance of structure
 between the rates. That is not an accident.
 
-### Fixed Income 101
+## Fixed Income 101
 
 When comparing products like this with different lifetimes we need to
 look at the yield curve. The yield curve is defined at the difference in
@@ -206,3 +206,7 @@ zoom through time and look at the evolution of the yield curve. Overall,
 a good exploratory analysis of the data. In the near future I’ll start
 looking at some modelling questions and see if we build some predictive
 analytics.
+
+If you liked this post, checkout my modelling of the RateSetter yield
+curve using the
+[Neslson-Siegel model](https://dm13450.github.io/2019/06/19/NelsonSeigelRateSetter.html). 

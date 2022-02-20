@@ -6,8 +6,37 @@ tags:
   -julia 
 ---
 
-Edward is a probabilistic programming language like Stan, PyMC3
- and Turing.jl. You write a model out and can perform statistical
+Here I'll be showing you how to take a model built in Python with
+Edward, convert it into Julia and perform the same type of inference
+using Flux and Turing.jl.
+
+<p></p>
+
+***
+Enjoy these types of posts? Then you should sign up for my newsletter. It's a short monthly recap of anything and everything I've found interesting recently plus
+any posts I've written. So sign up and stay informed!
+
+<p>
+<form
+	action="https://buttondown.email/api/emails/embed-subscribe/dm13450"
+	method="post"
+	target="popupwindow"
+	onsubmit="window.open('https://buttondown.email/dm13450', 'popupwindow')"
+	class="embeddable-buttondown-form">
+	<label for="bd-email">Enter your email</label>
+	<input type="email" name="email" id="bd-email" />
+	<input type="hidden" value="1" name="embed" />
+	<input type="submit" value="Subscribe" />
+</form>
+</p>
+
+***
+
+<p></p>
+
+
+Edward is a probabilistic programming language like [Stan](https://mc-stan.org/), [PyMC3](https://docs.pymc.io/en/v3/)
+ and [Turing.jl](https://docs.pymc.io/en/v3/). You write a model and can perform statistical
  inference on some data. Edward is a more 'machine learning' focused than Stan as
  you can build neural nets and all the fun, modern techniques that the cool kids
  are using. Flux.jl takes a similar 'machine learning' approach but this
@@ -44,7 +73,7 @@ plot(xTrain, yTrain, seriestype=:scatter, label="Train Data")
 plot!(xTrain, cos.(xTrain), label="Truth")
 ```
 
-![svg](/assets/edwardflux/output_4_0.svg)
+![True data from the cos function](/assets/edwardflux/output_4_0.svg "True data from the cos function")
 
 To build the neural net we chain two dense layers with `tanh` nonlinearities inbetween the layers. We use the mean square error as our loss function which we minimise using gradient descent. This is the most basic way in which you can build and train the neural net. Directly replicating what Edward does comes later, for now we just want to get things working. 
 
@@ -98,14 +127,18 @@ plot!(xTrain, cos.(xTrain), label="True")
 plot!(x, y, seriestype=:scatter, label="Data")
 ```
 
-![svg](/assets/edwardflux/output_11_0.svg)
+![Predicted cruve from Flux](/assets/edwardflux/output_11_0.svg "Predicted cruve from Flux")
 
 Everything looking good. Our neural net has found something similar to the true function, so hopefully you are convinced that we can now add a layer of complexity. Slight disagreement around the tails, but that is where we are lacking some data, so not too big of a deal. 
 
-# The Same - But Bayes
+## Bayesian Neural Networks with Flux and Turing
 
 All the above captured the spirit, but not the whole point of the
-Edward tutorial, which is to create a *Bayesian* neural net. With a Bayesian neural net there is a probability distribution over the weights, rather than just singular values to maximise. In Julia, we have to call upon our old friend `Turing.jl`. The Turing team have written about Bayesian nets [here](https://turing.ml/dev/tutorials/3-bayesnn/). I've taken some of that code and shuffled it about for this application. 
+Edward tutorial, which is to create a *Bayesian* neural net. With a
+Bayesian neural net there is a probability distribution over the
+weights, rather than just singular values to maximise. In Julia, we
+have to call upon our old friend `Turing.jl`. The Turing team have
+written about [Bayesian neural networks](https://turing.ml/dev/tutorials/03-bayesian-neural-network/). I've taken some of that code and shuffled it about for this application. 
 
 ```julia
 using Turing
@@ -173,7 +206,7 @@ plot!(x, Array(nn_forward(hcat(x...), bestParams)'),
       seriestype=:scatter, label="MAP Estimate")
 ```
 
-![svg](/assets/edwardflux/output_22_0.svg)
+![MAP estimate of the function](/assets/edwardflux/output_22_0.svg "MAP estimate of the function")
 
 We can also sample from this posterior distribution by looking at the different parameters from the sampling process. 
 
@@ -194,7 +227,7 @@ plot!(sp, x, y, seriestype=:scatter, label="Training Data", colour="red")
 sp
 ```
 
-![svg](/assets/edwardflux/output_24_0.svg)
+![Posterior draws of the function](/assets/edwardflux/output_24_0.svg "Posterior draws of the function")
 
 Again, looking sensible and representing the true underlying
 function. Plus as we have done this using Bayes, we have a good
@@ -212,11 +245,11 @@ plot!(sigPlot, ch2[:sigma], label="Chain 2")
 plot(lPlot, sigPlot)
 ```
 
-![svg](/assets/edwardflux/output_26_0.svg)
+![Chain convergence](/assets/edwardflux/output_26_0.svg "Chain convergence")
 
 Both chains are looking like they have converged, so we can trust our sampling process. 
 
-# Conclusion
+## Conclusion
 
 I actually surprised myself with how easy it was to build and sample
 from the neural net in a Bayesian manner. I originally thought that I
