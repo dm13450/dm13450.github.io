@@ -50,7 +50,7 @@ data. Using a WebSocket though has other benefits. With the REST API it is impol
 Before we get started though you need to download and install QuestDB. As I'm on a Mac I downloaded it using Homebrew and started the process like `questdb start`.
 You can get more information on downloading QuestDB [here](https://questdb.io/get-questdb/) for your system. 
 
-The rest of the blog cost will walk you through the following steps.  
+The rest of the blog cost will walk you through the following steps.
 
 * The Producer/Consumer pattern
 * Using WebSockets in Julia
@@ -259,7 +259,7 @@ latest by exchange
 
 which will pull out the last timestamp. 
 
-# Summary
+## Summary
 
 That's the end of part 1. You should hopefully QuestDB installed and slowly filling up with trades from Coinbase now. In the next part, I'll show you how to connect to the database and pull the data to do some analysis. 
 
@@ -268,7 +268,14 @@ You can also connect to QuestDB using [Grafana](https://grafana.com/) and build 
 
 Questions? Feedback? Comments? Let me know below! 
 
-# Version Info
+## Version Info
 
 * QuestDB 6.0.4
 * Julia 1.6
+
+
+## Related Posts
+
+* (QuestDB Part 2 - High Frequency Finance
+(again!))[https://dm13450.github.io/2021/08/12/questdb-part2.html]
+* (Order Flow Imbalance - A High Frequency Trading Signal)[https://dm13450.github.io/2022/02/02/Order-Flow-Imbalance.html]
