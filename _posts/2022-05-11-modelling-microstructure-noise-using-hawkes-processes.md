@@ -57,7 +57,7 @@ happen and how these things are self-exciting. You may have read my
 work on Hawkes process before, either through my Julia package
 [HawkesProcess.jl](https://dm13450.github.io/2020/05/26/HawkesProcessesPackage.html),
 or examples of me
-[using Hawkes processes to model terror attack data]() or just
+[using Hawkes processes to model terror attack data](https://dm13450.github.io/2021/03/02/Terror-Attacks-Hawkes-Processes.html) or just
 [how to calculate the deviance information criteria of a Hawkes process](https://dm13450.github.io/2020/08/26/Hawkes-and-DIC.html). The
 real hardcore might have read my Ph.D. thesis.
 
