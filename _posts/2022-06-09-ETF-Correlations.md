@@ -357,7 +357,7 @@ This is only for 2019 though, we are interested in how these correlations
 change over time. For this, we will need to calculate a rolling
 correlation.
 
-# Calculating a Rolling Correlation
+## Calculating a Rolling Correlation
 
 It might sound fancy but in short, a rolling correlation is just using a
 sliding window across the observations as an input into the correlation
