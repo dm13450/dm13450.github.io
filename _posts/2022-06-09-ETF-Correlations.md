@@ -736,7 +736,7 @@ similar behaviour. Using these groups we found that KSO and USO both
 move similarly, and KSA provides a proxy for oil without the volatility
 of investing directly in the commodity.
 
-# References
+## References
 
 -   <https://bio723-class.github.io/Bio723-book/clustering-in-r.html#plotting-dendrograms-in-dendextend>
 

@@ -105,7 +105,7 @@ formatting the x axis with a timeseries plot.
 
 Now to move onto updating my previous graphs with this new dataset. 
 
-# Order Sign Correlation
+## Order Sign Correlation
 
 The correlation between buys and sells follows a power law. Last time,
 I only had 1000 trades to work after pulling them using the REST API. Now I've got 200x more, which should improve the uncertainty around the previous values. 
@@ -158,7 +158,7 @@ with just 1000 trades. $$\gamma$$ is less than one which means it is
  future for a long time. This is usually explained as the effect of
  people breaking up large trades into slices and executing them bit by bit. 
 
-# Size Distribution
+## Order Size Distribution
 
 Again, the size of each trade follows a power law distribution too. We use a slightly different method to estimate the exponent and last time with just 1000 trades we struggled to get a stable value. Now, with so much more data we can have another crack. 
 
@@ -205,7 +205,7 @@ value or not. It is always appears to be decreasing no mate the sample
 size. Maybe I still need more data or maybe need a better
 understanding of the Hill estimator! 
 
-# Market Impact
+## Market Impact
 
 I've not been using QuestDB to its full potential and repeating all my
 previous graphs hasn't fully exploited the available features. One of those features is the
@@ -274,7 +274,7 @@ You can see how the model lines of with the data and there is a very
 slight trend that is picked. So overall, a better, if still very simple
 model of market impact. 
 
-# Trades with Top of Book
+## Trades with Top of Book
 
 Now I've saved down the best bid and offer using the same process as Part 1 of this series. Over the same time period, the best bid and offer data has 17 million rows. So quite a bit more.
 
@@ -379,7 +379,7 @@ strategy is unknown, but your trading costs are known. If it costs you
 price will change by 0.5bps, then your at a loss even if you were 100%
 right on the price direction! 
 
-# Summary
+## Summary
 
 QuestDB makes working with this data incredibly easy. Both aggregating
 the data using `SAMPLE BY` and joining two datasets using `AS
