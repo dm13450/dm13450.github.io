@@ -6,8 +6,12 @@ tags:
   - julia
 ---
 
+Point proceseses crop up everywhere. From modelling when a bus
+arrives, or to when a particle decays. They all involve an intensity
+function, so how do we fit an intensity function to some data in
+Bayesian way?
 
-I know how to use Stan and I know how to use Turing. But how do
+I know how to use [Stan](https://mc-stan.org/) and I know how to use [Turing](https://turing.ml/stable/). But how do
 those packages perform the posterior sampling for the underlying
 models. Can I write a posterior distribution down and get
 `AdvancedHMC.jl` to sample it? This is exactly what I want to do with
@@ -15,6 +19,34 @@ a point process where the posterior distribution of the model is a
 touch more complicated than your typical regression problems. 
 
 This post will take you through my thought process and how you got from an idea, to a simulation of that idea, frequentist estimation of the simulated data and then a full Bayesian sampling of the problem. 
+
+
+
+<p></p>
+
+***
+Enjoy these types of posts? Then you should sign up for my newsletter. It's a short monthly recap of anything and everything I've found interesting recently plus
+any posts I've written. So sign up and stay informed!
+
+<p>
+<form
+	action="https://buttondown.email/api/emails/embed-subscribe/dm13450"
+	method="post"
+	target="popupwindow"
+	onsubmit="window.open('https://buttondown.email/dm13450', 'popupwindow')"
+	class="embeddable-buttondown-form">
+	<label for="bd-email">Enter your email</label>
+	<input type="email" name="email" id="bd-email" />
+	<input type="hidden" value="1" name="embed" />
+	<input type="submit" value="Subscribe" />
+</form>
+</p>
+
+***
+
+<p></p>
+
+
 
 But first, these are the Julia libraries that we will be using.
 
@@ -25,9 +57,9 @@ using StatsPlots
 using Distributions
 ```
 
-# Inhomogeneous Point Processes
+## The Inhomogeneous Point Processes
 
-A point process basically describes the time when something happens. That "thing" we can call an event and they happen between $$0$$ and some maximum time $$T$$. We describe the probability of an event happening at time $$t$$ with an intensity $$\lambda$$. Specifically we are going to use 4 different parameters for a polynomial.  
+A point process basically describes the time when something happens. That "thing" we call an event and they happen between $$0$$ and some maximum time $$T$$. We describe the probability of an event happening at time $$t$$ with an intensity $$\lambda$$. Specifically we are going to use 4 different parameters for a polynomial. 
 
 $$\lambda (t) = \exp \left( \beta _0 + \beta _1 t + \beta _2 t^2 + \beta _3 ^2 t^3 \right)$$
 
@@ -49,7 +81,7 @@ This looks like something that definitely changes over time. When
 $$\lambda(t)$$ is high we expect more events and likewise when it is
 low there will be fewer events. 
 
-# Simulating by Thinning
+## Simulating a Point Process by Thinning
 
 Let us simulate a point process using this intensity function. To do
 so we use a procedure called thinning. This can be explained as a
@@ -75,7 +107,7 @@ histogram(events,label=:none)
 
 A steady decreasing amount of events following the intensity function from above. 
 
-# Maximum Likelihood Estimation
+## Maximum Likelihood Estimation of a Point Process
 
 The log likelihood of a point process can be written as:
 
@@ -106,7 +138,7 @@ Not a bad result! Our estimated intensity function is pretty close to
 the actual function. So now we know that we can both simulate from a inhomogeneous point
 process and that our likelihood can infer the correct parameters. 
 
-# Bayesian Inference
+## Bayesian Inference of a Point Process
 
 Now for the good stuff. All of the above is needed for the Bayesian inference procedure. If you can't get the maximum likelihood working for a relatively simple problem like above, adding in the complications of Bayesian inference will just get you knotted up without any results. So with the good results from above let us proceed to the Bayes methods. With the `AdvancedHMC.jl` package I can use all the fancy MCMC algos and upgrade from the basic Metropolis Hastings sampling. 
 
@@ -187,7 +219,7 @@ plot!(λ(collect(0:maxT), bayesEst), label = "Bayes")
 
 Again, the bayesian estimate of the function isn't too far from the true intensity. Success!
 
-# Conclusion
+## Conclusion
 
 So what have I learnt after writing all this: 
 * `AdvancedHMC.jl` is easy to use and despite all the scary terms and settings you can get away with the defaults. 

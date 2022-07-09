@@ -22,7 +22,7 @@ using CSV, Dates, Statistics
 ccys = ["BTC", "ETH", "ADA", "DOT", "BNB", "USDT", "XRP", "UNI", "THETA", "LTC"]
 ```
 
-# FCAS Health Index from Flipside Crypto
+## FCAS Health Index from Flipside Crypto
 
 AlphaVantage have partnered with [Flipside Crypto](https://flipsidecrypto.com/) to provide their ratings of different coins. This is designed to give some further info on different coins rather than just looking at what recently increased massively.
 
@@ -51,7 +51,7 @@ ratingsFrame
 
 
 
-Three superb, three attractive and one caution. THETA gets a lower utility score which is dragging down its overal rating. By the looks of it, THETA is some sort of streaming/YouTube-esque project, get paid their token by giving your excess computing power to video streams. There website is [here](https://www.thetatoken.org/) and I'll let you judge whether they deserve that rating. 
+Three superb, three attractive and one caution. THETA gets a lower utility score which is dragging down its overal rating. By the looks of it, THETA is some sort of streaming/YouTube-esque project, get paid their token by giving your excess computing power to video streams. There website is [ThetaToken](https://www.thetatoken.org/) and I'll let you judge whether they deserve that rating. 
 
 To summarise briefly each of the ratings is on a 0 to 1000 scale in three different areas: 
 
@@ -67,9 +67,9 @@ This looks at the market conditions around the coin, so things like liquidity an
 
 On chain activities, network activity and transactions, so is the coin being used for something actually useful. Hence why you can see why ETH is ranked the highest here. 
 
-More details are on their website [here](https://flipsidecrypto.com/products/ratings).
+More details are on the [Flipside Crypto](https://flipsidecrypto.com/products/ratings) website.
 
-# Timeseries Data
+## Crypto Timeseries Data
 
 AlphaVantage also offer the usual time series data at daily, weekly and monthly frequencies. Hopefully you've read my other posts ([basic market data](https://dm13450.github.io/2020/07/05/AlphaVantage.html) and [fundamental data](https://dm13450.github.io/2021/01/01/Fundamental-AlphaVantage.html)), so this is nothing new! 
 
@@ -109,7 +109,7 @@ first(prices, 5)
 
 ```julia
 returnPlot = plot(prices[!, :timestamp], prices[!, :CumReturn], group=prices[!, :Symbol],
-                  title="Cummulative Return",
+                  title="Cumulative Return",
                   legend=:topleft)
 mcPlot = plot(prices[!, :timestamp], 
               prices[!, Symbol("market cap (USD)")] .* prices[!, Symbol("close (USD)")], 
@@ -134,7 +134,7 @@ There we go, solid cumulative monthly returns (to the moon!) but bit of a declin
 
 which will return the same type of data, just indexed differently. 
 
-# Is the Rating Correlated with Monthly Trading Volume?
+## Is the Rating Correlated with Monthly Trading Volume?
 
 We've got two data sets, now we want to see if we can explain some the crypto scores with how much is traded each month. For this we simply take the monthly data, average the monthly volume traded and join it with the ratings dataframe. 
 
@@ -177,6 +177,6 @@ Solid linear relationship in the score and dev score metrics, not so much for th
 
 Side note though, the graphs are a bit rough around the edges, labels are overlapping and even crossing though the axis. Julia needs a `ggrepel` equivalent. 
 
-# Summary
+## Summary
 
 Much like the other functions in AlphaVantage.jl everything comes through quite nicely and once you have the data its up to you to find something interesting!

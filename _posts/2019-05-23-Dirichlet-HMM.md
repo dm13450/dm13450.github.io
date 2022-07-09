@@ -6,18 +6,38 @@ tags:
  -r
 ---
 
+Using my [dirichletprocess](https://github.com/dm13450/dirichletprocess) package I have implemented a hidden Markov
+model from “Dirichlet Process Hidden Markov Multiple Change-point
+Model” \[1\] . You can build a hidden Markov model using a Dirichlet process
+with the components from my `dirichletprocess` package.
+
+***
+Enjoy these types of post? Then you should sign up to my newsletter. It's a short monthly recap of anything and everything I've found interesting recently plus
+any posts I've written. So sign up and stay informed!
+
+<p>
+<form
+  action="https://buttondown.email/api/emails/embed-subscribe/dm13450"
+  method="post"
+  target="popupwindow"
+  onsubmit="window.open('https://buttondown.email/dm13450', 'popupwindow')"
+  class="embeddable-buttondown-form">
+  <label for="bd-email">Enter your email</label>
+  <input type="email" name="email" id="bd-email" />
+  <input type="hidden" value="1" name="embed" />
+  <input type="submit" value="Subscribe" />
+  </form>
+  </p>
+***
+
+
 ``` r
 set.seed(2019)
 require(dirichletprocess)
 require(ggplot2)
 require(ggExtra)
 ```
-## Introduction
 
-Using my `dirichletprocess` package I have implemented a hidden Markov
-model from “Dirichlet Process Hidden Markov Multiple Change-point
-Model” \[1\] . You can build a hidden Markov model using a Dirichlet process
-with the components from my `dirichletprocess` package.
 
 ## A Markov Model
 
@@ -44,7 +64,7 @@ Dirichlet case, we parameterise the states by $$\alpha$$ and $$\beta$$.
 $$\alpha$$ describes the stickiness of a state and $$\beta$$ controls the
 tendency to explore more states.
 
-### Inference
+## Hidden Markov Model Inference
 
 In the paper \[1\] they detail a Gibbs sampler that can be summarised as
 follows:
@@ -74,7 +94,7 @@ whatever algorithm you chose.
 
 Its the first step that required the most work in implementation.
 
-### Sampling the States
+## Sampling the States
 
 We have left to right transition restriction. Which means that each
 state can either stay in the current state or move into a new state if
@@ -109,7 +129,7 @@ the same general process as the normal Dirichlet process inference
 process. Calculate likelihoods and weight the states by their
 popularity.
 
-# Synthetic Data Example
+## Synthetic Data Example
 
 In the paper \[1\] they use two synthetic examples. In each cases the
 data is generated from a normal distribution with different means. The
@@ -192,6 +212,12 @@ model. Using the framework from \[1\] it has been a simple process of
 adapting the existing functionality of the package to provide a new
 type of model. Give it a try on your data and see if a hidden Markov
 model works\!
+
+If you want a practical example you can read where I apply this type
+of model to the stock market and how we can come up with the
+[state of the market](https://dm13450.github.io/2020/06/03/State-of-the-Market.html).
+If you prefer a video, I've done a quick talk for UseR 2021: https://www.youtube.com/watch?v=6kSPwHcO6L0
+
 
 ### References
 

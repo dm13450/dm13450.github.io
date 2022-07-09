@@ -358,6 +358,6 @@ plot(unemPlot, nfpPlot)
 
 Unemployment went very high briefly after COVID before coming back down, so seems to have averted that crisis. NFP numbers are also progressing upwards since the COVID disruption. 
 
-# Conclusion
+## Conclusion
 
 Well done on making it this far. Quite a few words and also graphs that all appear to look very similar. Hopefully, you've learned something new, or you are about to correct me on something by leaving a comment below! 

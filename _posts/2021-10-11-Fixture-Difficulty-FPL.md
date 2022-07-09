@@ -223,7 +223,7 @@ more points in a harder match. It would be a brave strategy to always
 favour the difficult keeper, but if it came down to your last decision it
 might be enough of a differential to push you up your minileague.
 
-# Environment
+## Environment
 
 ``` r
 knitr::opts_chunk$set(warning = FALSE,

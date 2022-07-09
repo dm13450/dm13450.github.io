@@ -56,7 +56,7 @@ different physical measurements. There is some nice clustering in the
 data which makes it perfect for some multivariate modelling. But first
 we will start with one dimension. 
 
-# One Dimension
+## One Dimension Dirichlet Processes
 
 What does a one dimension Dirichlet process represent? Simply a density
 estimation of the variable we are interested in. So for example, the
@@ -124,7 +124,7 @@ width of the posterior distribution represents the uncertainty in the
 estimate, likewise in the Dirichlet process, the width that the curves
 trace out represent the uncertainty.
 
-# Two Dimensions
+## A Two Dimensional Dirichlet Process
 
 Let us take it up a notch and see what happens in two dimensions. We
 want to model the bill length and bill depth of the penguins. This
