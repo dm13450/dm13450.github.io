@@ -567,7 +567,7 @@ fit!(xgbTunedMachine, rows=train, verbosity=0)
 | XGBoost | Default | 0.206 | 0.939 | 0.514 | 0.0998 | 0.909 |
 | XGBoost | $$\alpha =0, \lambda = 4.11$$ $$ \gamma = 0, \eta = 0.11$$| 0.163 | 0.943 | 0.531 | 0.089 | 0.910 |
 
-So a slight improvement in the $$\kappa$ metric, but the fact some of
+So a slight improvement in the $$\kappa$$ metric, but the fact some of
 the hyperparameters have gone to zero makes me think it's going to be
 overfitting the data. We will have to wait to look at the test
 data performance. 
@@ -1171,7 +1171,7 @@ openPred = DataFrame(LoanID = openLoans.Loan_code, IR = openLoans[!, "Interest_R
 
 <div class="data-frame"><table class="data-frame"><thead><tr><th></th><th>LoanID</th><th>IR</th><th>PBadLoan</th><th>KellyBet</th></tr><tr><th></th><th title="String15">String15</th><th title="Float64">Float64</th><th title="Float32">Float32</th><th title="Float64">Float64</th></tr></thead><tbody><tr><th>1</th><td>EE5448</td><td>0.11</td><td>0.0108697</td><td>0.890315</td></tr><tr><th>2</th><td>LT5483</td><td>0.13</td><td>0.107889</td><td>0.0621998</td></tr><tr><th>3</th><td>EE4639-8</td><td>0.1</td><td>0.344656</td><td>0.0</td></tr><tr><th>4</th><td>FI8826-5</td><td>0.11</td><td>0.296051</td><td>0.0</td></tr><tr><th>5</th><td>EE7276-21</td><td>0.11</td><td>0.00193848</td><td>0.980439</td></tr><tr><th>6</th><td>ES1315-5</td><td>0.11</td><td>0.0695816</td><td>0.297859</td></tr><tr><th>7</th><td>DE9367-4</td><td>0.12</td><td>0.996251</td><td>0.0</td></tr><tr><th>8</th><td>EE6663</td><td>0.1075</td><td>0.0389999</td><td>0.59821</td></tr><tr><th>9</th><td>LT8958-19</td><td>0.13</td><td>0.282564</td><td>0.0</td></tr><tr><th>10</th><td>LT1231-5</td><td>0.1</td><td>0.332272</td><td>0.0</td></tr><tr><th>11</th><td>FI8738-5</td><td>0.12</td><td>0.771727</td><td>0.0</td></tr></tbody></table></div>
 
-So three properties should be avoided, (the ones where the Kelly bet is
+So six properties should be avoided, (the ones where the Kelly bet is
 0) and the model believes all others can be invested in. So an encouraging result.
 
 ## Conclusion
