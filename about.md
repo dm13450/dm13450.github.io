@@ -27,10 +27,9 @@ at dean[dot]markwick[at]talk21[dot]com
 
 # Talks
 
-*
-[Using Hawkes Processes in Julia: Finance and More!](https://www.youtube.com/watch?v=LhnCr7R_Jf0)
+* [Using Hawkes Processes in Julia: Finance and More!](https://www.youtube.com/watch?v=LhnCr7R_Jf0)
 * [Optimising Fantasy Football with JuMP](https://www.youtube.com/watch?v=IS-lziTqClE)
-*[Building the BestX Event Risk Model using HawkesProcesses.jl](https://www.youtube.com/watch?v=3ulzb6qnOXY)
+* [Building the BestX Event Risk Model using HawkesProcesses.jl](https://www.youtube.com/watch?v=3ulzb6qnOXY)
 * [State of the Market](https://youtu.be/6kSPwHcO6L0)
 
 # My Day Job Now
