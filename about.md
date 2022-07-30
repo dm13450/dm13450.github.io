@@ -15,7 +15,7 @@ I'm an open source contributor with multiple projects
 ongoing: [dirichletprocess](https://github.com/dm13450/dirichletprocess),
 [HawkesProcesses.jl](https://github.com/dm13450/HawkesProcesses.jl),
 [AlphaVantage.jl](https://github.com/ellisvalentiner/AlphaVantage.jl),
-[CoinbsePro.jl](https://github.com/dm13450/CoinbasePro.jl).
+[CoinbsePro.jl](https://github.com/dm13450/CoinbasePro.jl), [AlpacaMarkets.jl](https://github.com/dm13450/AlpacaMarkets.jl).
 
 I've written guest posts for [QuestDB](https://questdb.io/):
 
@@ -25,6 +25,14 @@ I've written guest posts for [QuestDB](https://questdb.io/):
 Want me to write for you or have something else interesting? Email me
 at dean[dot]markwick[at]talk21[dot]com
 
+# Talks
+
+*
+[Using Hawkes Processes in Julia: Finance and More!](https://www.youtube.com/watch?v=LhnCr7R_Jf0)
+* [Optimising Fantasy Football with JuMP](https://www.youtube.com/watch?v=IS-lziTqClE)
+*[Building the BestX Event Risk Model using HawkesProcesses.jl](https://www.youtube.com/watch?v=3ulzb6qnOXY)
+* [State of the Market](https://youtu.be/6kSPwHcO6L0)
+
 # My Day Job Now
 
 I'm currently an electronic trading quant working on both principal
@@ -32,7 +40,7 @@ and algo execution. I build models, analyse data and construct
 algorithms to try and get the best prices in the market with the
 lowest impact. 
 
-I'm was a quant at [BestX](https://www.bestx.co.uk/) and spent the day
+I was a quant at [BestX](https://www.bestx.co.uk/) and spent the day
 researching financial markets with a focus on transaction cost
 analysis (TCA).  This involved cleaning data, making graphs and trying
 to come up with some (hopefully) interesting insights about the world
