@@ -210,10 +210,6 @@ portRes = @transform(portRes, :TotalReturnC = cumsum(:TotalReturn),
                               :TotalReturnTCC = cumsum(:TotalReturnTC),
                               :TotalReturnULC = cumsum(:TotalReturnUL))
 
-portRes2022 = @transform(@subset(portRes, :Date .>= Date("2022-01-01")), 
-            :TotalReturnC = cumsum(:TotalReturn), :TotalReturnLOC = cumsum(:TotalReturnLO))
-allPricesClean2022 = @subset(allPricesClean, :Date .>= Date("2022-01-01"))
-
 plot(portRes.Date, portRes.TotalReturnC, label = "Trend Following", legendposition = :topleft, linewidth=3)
 plot!(portRes.Date, portRes.TotalReturnLOC, label = "Trend Following - LO", legendposition = :topleft, linewidth=3)
 
