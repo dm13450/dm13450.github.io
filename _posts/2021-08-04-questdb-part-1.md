@@ -166,7 +166,9 @@ to ingest data. This is as easy as sending a string down the
 connection and QuestDB does the parsing to place it into the database
 table. This string needs to take on a specific format: 
 
-`table, string_column=value, numeric_column_1=value, numeric_column_2=value timestamp`
+```
+table, string_column=value, numeric_column_1=value, numeric_column_2=value timestamp
+```
 
 We build this using an `IOBuffer` to incrementally add to the payload string. 
 
@@ -253,8 +255,7 @@ select min(timestamp), max(timestamp) from coinbase_trades
 to see the earliest and latest timestamp in traditional SQL. Or using the timeseries database features: 
 
 ```sql
-select * from coinbase_trades
-latest by exchange
+select * from coinbase_trades latest by exchange
 ```
 
 which will pull out the last timestamp. 
@@ -276,6 +277,6 @@ Questions? Feedback? Comments? Let me know below!
 
 ## Related Posts
 
-* (QuestDB Part 2 - High Frequency Finance
-(again!))[https://dm13450.github.io/2021/08/12/questdb-part2.html]
-* (Order Flow Imbalance - A High Frequency Trading Signal)[https://dm13450.github.io/2022/02/02/Order-Flow-Imbalance.html]
+* [QuestDB Part 2 - High Frequency Finance
+(again!)](https://dm13450.github.io/2021/08/12/questdb-part2.html)
+* [Order Flow Imbalance - A High Frequency Trading Signal](https://dm13450.github.io/2022/02/02/Order-Flow-Imbalance.html)
