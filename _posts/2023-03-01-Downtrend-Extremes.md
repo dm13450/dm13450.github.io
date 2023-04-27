@@ -338,7 +338,7 @@ lambda(t::Array{<:Number}, params::Array{<:Number}, spy::DataFrame) = map(x-> la
 
 The likelihood of a point process is 
 
-$$ \mathcal{L} = \sum _{t_i} log(\lambda (t_i)) - \int _0 ^T \lambda (t) \mathrm{d} $$ 
+$$ \mathcal{L} = \sum _{t_i} log(\lambda (t_i)) - \int _0 ^T \lambda (t) \mathrm{d} t$$ 
 
 We have to use numerical integration to do the second half of the equation which is where the `QuadGK.jl` package comes in. We pass it a function and it will do the integration for us. Job done!
 
