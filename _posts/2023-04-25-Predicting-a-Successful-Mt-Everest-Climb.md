@@ -2,8 +2,6 @@
 layout: post
 title: Predicting a Successful Mt Everest Climb
 date: 2023-04-27
-tags:
-  - julia 
 ---
 
 Climbing Mount Everest is a true test of human endurance with a real risk of death. [The Himalayan Database](https://www.himalayandatabase.com/index.html) is a data repository, available for free, that records various details about the peaks, people, and expeditions to climb the different Nepalese Himalayan mountains and provides the data for this analysis. In this blog post, I'll show you how to load the database and explore some of the features before building a model that tries to predict how you can successfully climb Mount Everest.
