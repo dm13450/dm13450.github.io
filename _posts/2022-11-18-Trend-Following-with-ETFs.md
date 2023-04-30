@@ -1,11 +1,14 @@
 ---
 layout: post
 title: Trend Following with ETFs
+date: 2022-11-18
 tags:
   - julia
 ---
 
-Trend following is a rebranded name for momentum trading strategies. It looks at assets where the price has gone up and buying them because it believes the price will continue to rise and likewise for falling prices where it sells. I'll use this post to show you how to build a basic trend-following strategy in Julia with free market data.
+Trend following is a rebranded name for momentum trading strategies. It looks at assets where the price has gone up and buying them because it believes the price will continue to rise and likewise for falling prices where it sells.
+
+I'll use this post to show you how to build a basic trend-following strategy in Julia with free market data.
 
 <p></p>
 
@@ -34,7 +37,7 @@ Trend following is one of the core quant strategies out there and countless piec
 
 Over the past few months, we have been experiencing the first actual period of sustained volatility and general negative performance across all asset classes. Stocks no longer just go up. This is driven by inflation, the strengthening of the dollar, and the rise in global interest rates it feels like always buying equities 100% isn't a foolproof plan and diversifying can help. This is where trend following comes in. It wants to try and provide positive returns whether the market is going up or down and, give diversification in regimes like we appear to be in today. 
 
-As ever I'll be using [AlpacaMarkets.jl](https://github.com/dm13450/AlpacaMarkets.jl) for data and walking you through all the steps. My inspiration comes from the Cantab Capital (now part of GAM) where they had a beautiful blog post doing similar: [Trend is not your only friend](https://www.gam.com/en/our-thinking/gam-systematic/trend-is-not-your-only-friend). Since moving over to the GAM website it no longer looks as good!
+As ever I'll be using [AlpacaMarkets.jl](https://github.com/dm13450/AlpacaMarkets.jl) for data and walking you through all the steps. My inspiration comes from the Cantab Capital (now part of GAM) where they had a beautiful blog post doing similar, Trend is not your only friend. Since moving over to the GAM website it no longer looks as good! They've now taken the post down, so you need to go through the Wayback machine to get an idea of what their blog posts looked like. 
 
 
 ```julia
