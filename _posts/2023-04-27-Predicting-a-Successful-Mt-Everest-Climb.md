@@ -435,7 +435,7 @@ first(fi, 5)
 
 
 
-So using oxygen, taking the 0th route up, being an H-A Worker, and either being from Nepal or a UK citizen appears to have the greatest impact on being successful. Using oxygen is an obvious benefit/cannot be avoided and I don't think anyone believes that their chance of success would be higher without oxygen. Being Nepalases is the one I would struggle with. 
+So using oxygen, taking the 0th route up, being an H-A Worker, and either being from Nepal or a UK citizen appears to have the greatest impact on being successful. Using oxygen is an obvious benefit/cannot be avoided and I don't think anyone believes that their chance of success would be higher without oxygen. Being Nepalese is the one I would struggle with. 
 
 How does the model perform on the hold-out set? We've got 30% of the data that hasn't been used in the fitting that can also validate how well the model performs. 
 
