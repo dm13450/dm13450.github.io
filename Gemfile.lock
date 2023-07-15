@@ -259,3 +259,5 @@ DEPENDENCIES
   minima
   webrick (~> 1.7)
 
+BUNDLED WITH
+   2.4.16
