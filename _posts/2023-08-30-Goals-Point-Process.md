@@ -255,9 +255,9 @@ intensity function. We will use *thinning* to simulate the
 inhomogeneous intensity. This means generating more points than expected
 from a larger intensity, and then choosing what ones remain as a ratio
 between the larger intensity and true intensity. For a more in-depth
-discussion I’ve written about it previously in my (Proper Bayesian
+discussion I’ve written about it previously in my ![Proper Bayesian
 Estimation of a Point Process in
-Julia)[https://dm13450.github.io/2020/11/03/BayesPointProcess.html]
+Julia](https://dm13450.github.io/2020/11/03/BayesPointProcess.html)
 post.
 
 ``` r
