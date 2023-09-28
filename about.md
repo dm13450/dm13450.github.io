@@ -4,12 +4,11 @@ title: About Me
 permalink: /about/
 ---
 
-I have recently finished my PhD in Statistical Science where I studied
-at University College London (UCL)  and a member of the Financial
-Computing CDT. I also have an MRes in Computer Science and an MPhys in
+I've got a PhD in Statistical Science from University College London
+(UCL) and my thesis was [Bayesian Nonparametric Hawkes Processes with Applications](https://discovery.ucl.ac.uk/id/eprint/10109374/). I also have an MRes in Computer Science and an MPhys in
 Theoretical Physics from the University of Manchester. 
 
-I run a dashboard for crypto liquidity: <https://cryptoliquiditymetrics.com/>
+I run a dashboard for crypto liquidity and pre-trade analytics: <https://cryptoliquiditymetrics.com/>
 
 I'm an open source contributor with multiple projects
 ongoing: [dirichletprocess](https://github.com/dm13450/dirichletprocess),
@@ -27,6 +26,9 @@ at dean[dot]markwick[at]talk21[dot]com
 
 # Talks
 
+* Unique Liquidity and Measuring Execution Quality, TradeTechFX 2023
+* [Machine Learning Property Loans for Fun and Profit](https://www.youtube.com/watch?v=7MbjHNpycbc)
+* [Simulating RFQ Trading in Julia](https://www.youtube.com/watch?v=dWgyrH6B5AY)
 * [Using Hawkes Processes in Julia: Finance and More!](https://www.youtube.com/watch?v=LhnCr7R_Jf0)
 * [Optimising Fantasy Football with JuMP](https://www.youtube.com/watch?v=IS-lziTqClE)
 * [Building the BestX Event Risk Model using HawkesProcesses.jl](https://www.youtube.com/watch?v=3ulzb6qnOXY)
