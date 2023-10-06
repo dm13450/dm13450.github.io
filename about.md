@@ -49,6 +49,7 @@ of FX, fixed income and equity trading.
 
 Examples of my work can be found in the trade press:
 
+* [What Happens When a Primary FX Venue Goes Offline?](https://thefullfx.com/what-happens-when-a-primary-fx-venue-goes-offline/)
 * [FX Markets Remained Orderly During Recent Interventions](https://thefullfx.com/fx-markets-remained-orderly-during-recent-interventions-bofa/)
 * [To Cross or Not to Cross](https://www.profit-loss.com/to-cross-or-not-to-cross)
 * [Choppy markets revive quest for RFQs magic number](https://www.fx-markets.com/trading/7550661/choppy-markets-revive-quest-for-rfqs-magic-number)
