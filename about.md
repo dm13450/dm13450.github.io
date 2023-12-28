@@ -26,6 +26,7 @@ at dean[dot]markwick[at]talk21[dot]com
 
 # Talks
 
+* Mo Dealers, Mo Problems, QuantMinds 2023
 * Unique Liquidity and Measuring Execution Quality, TradeTechFX 2023
 * [Machine Learning Property Loans for Fun and Profit](https://www.youtube.com/watch?v=7MbjHNpycbc)
 * [Simulating RFQ Trading in Julia](https://www.youtube.com/watch?v=dWgyrH6B5AY)
@@ -49,7 +50,8 @@ of FX, fixed income and equity trading.
 
 Examples of my work can be found in the trade press:
 
-* [What Happens When a Primary FX Venue Goes Offline?](https://thefullfx.com/what-happens-when-a-primary-fx-venue-goes-offline/)
+* [What Happens When a Primary FX Venue Goes Offline?](https://thefullfx.com/what-happens-when-a-primary-fx-venue-goes-offline/) -
+  3rd most read article of 2023 on Full FX. 
 * [FX Markets Remained Orderly During Recent Interventions](https://thefullfx.com/fx-markets-remained-orderly-during-recent-interventions-bofa/)
 * [To Cross or Not to Cross](https://www.profit-loss.com/to-cross-or-not-to-cross)
 * [Choppy markets revive quest for RFQs magic number](https://www.fx-markets.com/trading/7550661/choppy-markets-revive-quest-for-rfqs-magic-number)
