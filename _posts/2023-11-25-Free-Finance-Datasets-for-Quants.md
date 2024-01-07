@@ -210,6 +210,16 @@ you can lift easily.
 fi2010 = CSV.read(download("https://raw.githubusercontent.com/simaki/fi2010/main/data/data.csv"),DataFrame);
 ```
 
+**Update on 7/01/2024**
+
+Since posting this the above link has gone offline and the user has
+deleted their Github account! Instead the data set can be found here:
+<https://etsin.fairdata.fi/dataset/73eb48d7-4dbc-4a10-a52a-da745b47a649/data>
+. I've not verified if its in the same format, so there might be some
+additional work going from the raw data to how this blog post sets it
+up. Thank's to the commentators below pointing this out. 
+
+
 The data is wide (each column is a depth level of the price and
 volume) so I turn each into a long data set and add the level, side
 and variable as a new column. 
