@@ -9,7 +9,7 @@ tags:
 Volatility measures the scales of price changes and is an easy way to
 describe how busy markets are. High volatility means there are periods
 of large price changes and vice versa, low volatility means periods of
-small changes. In this post, I'll show you how to measure realised
+small changes. In this post, I'll show you how to calculate realised (realized)
 volatility and demonstrate how it can be used. If you just want a live
 view of crypto volatility, take a look at
 [cryptoliquiditymetrics](https://cryptoliquiditymetrics.com/) where I have added in a new card with the volatility over the last 24 hours. 
@@ -41,7 +41,7 @@ any posts I've written. So sign up and stay informed!
 
 
 To start with we will be looking at daily data. Using my
-CoinbasePro.jl package in a Julia we can get the last 300 days OHLC
+[CoinbasePro.jl](https://github.com/dm13450/CoinbasePro.jl) package in a Julia we can get the last 300 days OHLC
 prices.
 
 I'm running Julia 1.7 and all the packages were updated using
@@ -58,7 +58,7 @@ using RollingFunctions
 From my [CoinbasePro.jl](https://github.com/dm13450/CoinbasePro.jl)
 package, we can pull in the daily candles of Bitcoin. 86400 is the
 frequency for daily data. Coinbase restrict you to just 300 data
-points
+points so our period of time will be the previous 300 days. 
 
 ```julia
 dailydata = CoinbasePro.candles("BTC-USD", now()-Day(300), now(), 86400);
@@ -70,7 +70,7 @@ first(dailydata, 4)
 <div class="data-frame"><p>4 rows × 7 columns</p><table class="data-frame"><thead><tr><th></th><th>close</th><th>high</th><th>low</th><th>open</th><th>unix_time</th><th>volume</th><th>time</th></tr><tr><th></th><th title="Float64">Float64</th><th title="Float64">Float64</th><th title="Float64">Float64</th><th title="Float64">Float64</th><th title="Int64">Int64</th><th title="Float64">Float64</th><th title="Date">Date</th></tr></thead><tbody><tr><th>1</th><td>50978.6</td><td>51459.0</td><td>48909.8</td><td>48909.8</td><td>1615075200</td><td>13965.2</td><td>2021-03-07</td></tr><tr><th>2</th><td>52415.2</td><td>52425.0</td><td>49328.6</td><td>50976.2</td><td>1615161600</td><td>18856.3</td><td>2021-03-08</td></tr><tr><th>3</th><td>54916.4</td><td>54936.0</td><td>51845.0</td><td>52413.2</td><td>1615248000</td><td>21177.1</td><td>2021-03-09</td></tr><tr><th>4</th><td>55890.7</td><td>57402.1</td><td>53025.0</td><td>54921.6</td><td>1615334400</td><td>28326.1</td><td>2021-03-10</td></tr></tbody></table></div>
 
 
-Plotting this gives you the typical price path. Now realised
+Plotting this gives you the typical price path of daily closing prices. Now realised
 volatility is a measure of how varied this price was
 over time. Was it stable or were there wild swings?
 
