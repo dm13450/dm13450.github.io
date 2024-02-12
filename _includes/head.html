@@ -23,7 +23,7 @@
 
     {% if page.image %}
     <meta name="twitter:card"  content="summary_large_image">
-    <meta name="twitter:image" content="{{ site.url }}{{ page.image }}">
+    <meta name="twitter:image" content="{{ site.url }}{{ page.image.path }}">
     {% else %}
     <meta name="twitter:card"  content="summary">
     <meta name="twitter:image" content="{{ site.title_image }}">
