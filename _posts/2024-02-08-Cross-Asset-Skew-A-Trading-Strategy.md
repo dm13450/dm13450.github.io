@@ -247,7 +247,7 @@ hline!([0], color = "black", label = :none)
 p
 ```
 
-![Asset class skew portfolios](/assets/skew/skewPortfolios.png "Asset class skew portfolios"){: .center-image}
+![Asset class skew portfolios](/assets/skew/skewPortfolios-min.png "Asset class skew portfolios"){: .center-image}
 
 These are the results for each asset class. Interestingly, all of them (except Other) have a positive return as of February and most have never fallen below their starting returns. Commodities are very volatile and swung back and forth quite dramatically, equities have been one-way traffic in the right direction! 
 
@@ -275,7 +275,7 @@ It's great that these portfolios both at an asset level and global level have en
 
 This is simple enough to compare, we can look at the equal-weighted return of all the assets in the group and see how that ended up. 
 
-![Comparing market portfolios to the skew portfolios](/assets/skew/marketPlots.png "Comparing market portfolios to the skew portfolios"){: .center-image}
+![Comparing market portfolios to the skew portfolios](/assets/skew/marketPlots-min.png "Comparing market portfolios to the skew portfolios"){: .center-image}
 
 Again, all of the skew portfolios have outperformed the market portfolio (except the Other asset class). so this is a good indication that this skew strategy is adding something new. 
 
