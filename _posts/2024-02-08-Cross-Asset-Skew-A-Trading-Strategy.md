@@ -12,26 +12,14 @@ image:
 
 I recently listened to S7E3 of Flirting with Models which had [Nick Baltas](https://twitter.com/nbaltas?lang=en) talking about [Multi Asset and Multi-Strategy portfolios](https://www.flirtingwithmodels.com/2024/01/02/s7e3-multi-asset-multi-strategy-portfolios/). Nick highlighted his work on cross-asset skew and how it can compliment your typical equity factors (momentum, growth, value etc.) and is an under-explored topic in portfolio construction. After reading the original paper, [Cross-Asset Skew](https://www.researchgate.net/profile/Nick-Baltas/publication/338498916_Cross-Asset_Skew/links/5ecc6b2c299bf1c09adf5a24/Cross-Asset-Skew.pdf), I decided to try and replicate the results and see whether skew comes out in the wash and produces any alpha. 
 
-
 <p></p>
 ***
-Enjoy these types of posts? Then you should sign up for my newsletter. It's a short monthly recap of anything and everything I've found interesting recently plus
-any posts I've written. So sign up and stay informed!
-
-<p>
-<form
-	action="https://buttondown.email/api/emails/embed-subscribe/dm13450"
-	method="post"
-	target="popupwindow"
-	onsubmit="window.open('https://buttondown.email/dm13450', 'popupwindow')"
-	class="embeddable-buttondown-form">
-	<label for="bd-email">Enter your email</label>
-	<input type="email" name="email" id="bd-email" />
-	<input type="hidden" value="1" name="embed" />
-	<input type="submit" value="Subscribe" />
-</form>
-</p>
-
+Enjoy these types of posts? Then you should sign up for my newsletter. 
+<div style="text-align: center;">
+<iframe src="https://dm13450.substack.com/embed" width="480"
+height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
+frameborder="0" scrolling="no"></iframe>
+</div>
 ***
 <p></p>
 

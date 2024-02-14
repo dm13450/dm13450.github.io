@@ -7,35 +7,21 @@
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
-	<form
-	action="https://buttondown.email/api/emails/embed-subscribe/dm13450"
-	method="post"
-	target="popupwindow"
-	onsubmit="window.open('https://buttondown.email/dm13450', 'popupwindow')"
-	class="embeddable-buttondown-form"
-	>
-	<label for="bd-email">Enter your email</label>
-	<input type="email" name="email" id="bd-email" />
-	<input type="hidden" value="1" name="embed" />
-	<p>
-	<input type="submit" value="Subscribe" />
-	</p>
-	<p>
-	    <a href="https://buttondown.email" target="_blank">Powered by Buttondown.</a>
-	</p>
-	</form>
 
-
-	
+	<p>{{ site.description | escape }}</p>
       </div>
 
       <div class="footer-col footer-col-2">
         {% include social.html %}
       </div>
-
+      
       <div class="footer-col footer-col-3">
-        <p>{{ site.description | escape }}</p>
+        <!--<p>{{ site.description | escape }}</p>-->
+		<iframe src="https://dm13450.substack.com/embed" width="300"
+	height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
+	frameborder="0" scrolling="no"></iframe>
       </div>
+     
     </div>
 
   </div>
