@@ -9,6 +9,23 @@ tags:
   -r
 ---
 
+
+One of the main benefits of my R package `dirichletprocess` is the
+ability to drop in the objects it creates as components of models. In
+this blog post I will show you how you can use a Dirichlet process as a
+prior distribution of a parameter in a Bayesian model.
+
+<p></p>
+***
+Enjoy these types of posts? Then you should sign up for my newsletter. 
+<div style="text-align: center;">
+<iframe src="https://dm13450.substack.com/embed" width="480"
+height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
+frameborder="0" scrolling="no"></iframe>
+</div>
+***
+<p></p>
+
 ``` r
 require(dplyr)
 require(knitr)
@@ -18,12 +35,7 @@ require(rstan)
 require(tidyr)
 ```
 
-One of the main benefits of my R package `dirichletprocess` is the
-ability to drop in the objects it creates as components of models. In
-this blog post I will show you how you can use a Dirichlet process as a
-prior distribution of a parameter in a Bayesian model.
-
-### Rats\!
+## Rats\!
 
 The data we will be using consists of 71 experiments where $$N$$ rats
 are given a drug and $$y$$ are found to have developed tumours.

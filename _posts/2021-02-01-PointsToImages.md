@@ -17,6 +17,18 @@ available on [Github](https://github.com/dm13450/FootballCrests) and
 showing you how to download them so everyone can use the crests
 easily. 
 
+
+<p></p>
+***
+Enjoy these types of posts? Then you should sign up for my newsletter. 
+<div style="text-align: center;">
+<iframe src="https://dm13450.substack.com/embed" width="480"
+height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
+frameborder="0" scrolling="no"></iframe>
+</div>
+***
+<p></p>
+
 If you are using ggplot then your normal scatter and label plot command will look like this:
 
 ``` r

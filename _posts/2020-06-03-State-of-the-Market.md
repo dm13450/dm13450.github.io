@@ -81,31 +81,7 @@ this
 devtools::install_github("dm13450/dirichletprocess")
 ```
 
-
-<p></p>
-
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. It's a short monthly recap of anything and everything I've found interesting recently plus
-any posts I've written. So sign up and stay informed!
-
-<p>
-<form
-	action="https://buttondown.email/api/emails/embed-subscribe/dm13450"
-	method="post"
-	target="popupwindow"
-	onsubmit="window.open('https://buttondown.email/dm13450', 'popupwindow')"
-	class="embeddable-buttondown-form">
-	<label for="bd-email">Enter your email</label>
-	<input type="email" name="email" id="bd-email" />
-	<input type="hidden" value="1" name="embed" />
-	<input type="submit" value="Subscribe" />
-</form>
-</p>
-
-***
-
-<p></p>
-
+Then load all the other packages. 
 
 ``` r
 set.seed(20202020)

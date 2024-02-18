@@ -13,6 +13,17 @@ assignment probabilities of each datapoint. Now this is an interesting
 problem when using a Dirichlet process to cluster data and in this
 blog post I'll outline how this can be accomplished. 
 
+<p></p>
+***
+Enjoy these types of posts? Then you should sign up for my newsletter. 
+<div style="text-align: center;">
+<iframe src="https://dm13450.substack.com/embed" width="480"
+height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
+frameborder="0" scrolling="no"></iframe>
+</div>
+***
+<p></p>
+
 When we fit a Dirichlet process to the data, we make use of the
 [Chinese restaurant analogy](https://en.wikipedia.org/wiki/Chinese_restaurant_process)
 each datapoint is assigned its cluster based on the popularity of each

@@ -12,6 +12,18 @@ on a) why the map was so slow and b) other ways the calculation
 could be made which are just as quick as a loop. In this post I'm
 writing about these new methods and adding them to the comparison.
 
+
+<p></p>
+***
+Enjoy these types of posts? Then you should sign up for my newsletter. 
+<div style="text-align: center;">
+<iframe src="https://dm13450.substack.com/embed" width="480"
+height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
+frameborder="0" scrolling="no"></iframe>
+</div>
+***
+<p></p>
+
 ## Previous Methods
 
 For a more detailed explanation of the problem I'm trying to solve, check out my previous

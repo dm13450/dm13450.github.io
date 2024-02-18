@@ -8,6 +8,18 @@ tags:
 
 My [previous post](https://dm13450.github.io/2020/09/11/ExpGoals.html) on expected goals in September received a good reception, so I've decided to keep on top of the model and provide an interactive way of keeping you up-to-date with what teams are outperforming the pre and post match model. I've also sharpened up the visualisations this time and replaced the points and labels with each teams crests.
 
+<p></p>
+***
+Enjoy these types of posts? Then you should sign up for my newsletter. 
+<div style="text-align: center;">
+<iframe src="https://dm13450.substack.com/embed" width="480"
+height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
+frameborder="0" scrolling="no"></iframe>
+</div>
+***
+<p></p>
+
+
 If you just want to see some results, check out my new shiny app that will be kept up to date with the model and how teams are performing.
 
 * <https://deanmarkwick.shinyapps.io/FootballVis>

@@ -14,26 +14,16 @@ What AlphaVantage has done here is nothing new, and you can get the
 FRED data directly from source <https://fred.stlouisfed.org> both
 through an API and also just downloading csvs. But having another a way to get this economic data into a Julia environment is always a bonus. 
 
+<p></p>
 ***
-Enjoy these types of posts? Then you should sign up for my newsletter. It's a short monthly recap of anything and everything I've found interesting recently plus
-any posts I've written. So sign up and stay informed!
-
-<p>
-<form
-  action="https://buttondown.email/api/emails/embed-subscribe/dm13450"
-  method="post"
-  target="popupwindow"
-  onsubmit="window.open('https://buttondown.email/dm13450', 'popupwindow')"
-  class="embeddable-buttondown-form">
-  <label for="bd-email">Enter your email</label>
-  <input type="email" name="email" id="bd-email" />
-  <input type="hidden" value="1" name="embed" />
-  <input type="submit" value="Subscribe" />
-  </form>
-</p>
-
+Enjoy these types of posts? Then you should sign up for my newsletter. 
+<div style="text-align: center;">
+<iframe src="https://dm13450.substack.com/embed" width="480"
+height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
+frameborder="0" scrolling="no"></iframe>
+</div>
 ***
-
+<p></p>
 Make sure you've upgraded your AlphaVantage.jl to version to 0.4.1. I'm
 running Julia 1.6.
 
