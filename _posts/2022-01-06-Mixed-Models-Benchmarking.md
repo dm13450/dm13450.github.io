@@ -12,27 +12,14 @@ effects model using `lme4` in R, `statsmodels` in Python, plus
 showing how `MixedModels.jl` in Julia is also a viable option.
 
 <p></p>
-
 ***
-Enjoy these types of posts? Then you should sign up for my newsletter. It's a short monthly recap of anything and everything I've found interesting recently plus
-any posts I've written. So sign up and stay informed!
-
-<p>
-<form
-	action="https://buttondown.email/api/emails/embed-subscribe/dm13450"
-	method="post"
-	target="popupwindow"
-	onsubmit="window.open('https://buttondown.email/dm13450', 'popupwindow')"
-	class="embeddable-buttondown-form">
-	<label for="bd-email">Enter your email</label>
-	<input type="email" name="email" id="bd-email" />
-	<input type="hidden" value="1" name="embed" />
-	<input type="submit" value="Subscribe" />
-</form>
-</p>
-
+Enjoy these types of posts? Then you should sign up for my newsletter. 
+<div style="text-align: center;">
+<iframe src="https://dm13450.substack.com/embed" width="480"
+height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
+frameborder="0" scrolling="no"></iframe>
+</div>
 ***
-
 <p></p>
 
 Data science is always up for debating whether R or Python is the better
@@ -45,7 +32,7 @@ recently been having performance issues in R with a mixed model.
 I have a dataset with 1604 groups for a random effect that has been
 grinding to a halt when fitting in R using `lme4`. The team at `lme4`
 have a vignette titled
-[performance tips](https://cran.r-project.org/web/packages/lme4/vignettes/lmerperf.html)
+[lme4 performance tips](https://cran.r-project.org/web/packages/lme4/vignettes/lmerperf.html)
 which at the bottom suggests using Julia to speed things up. So I've
 taken it upon myself to benchmark the basic model-fitting performances
 to see if there is a measurable difference. You can use this post as

@@ -21,26 +21,16 @@ So this is a blog post on how to get started with QuestDB. We will be
 connecting to Coinbase WebSockets in Julia to download trades that
 will be stored in a QuestDB table.
 
+<p></p>
 ***
-Enjoy these types of post? Then you should sign up to my newsletter. It's a short monthly recap of anything and everything I've found interesting recently plus
-any posts I've written. So sign up and stay informed!
-
-<p>
-<form
-  action="https://buttondown.email/api/emails/embed-subscribe/dm13450"
-  method="post"
-  target="popupwindow"
-  onsubmit="window.open('https://buttondown.email/dm13450', 'popupwindow')"
-  class="embeddable-buttondown-form"
->
-  <label for="bd-email">Enter your email</label>
-  <input type="email" name="email" id="bd-email" />
-  <input type="hidden" value="1" name="embed" />
-  <input type="submit" value="Subscribe" />
-  </form>
-  </p>
+Enjoy these types of posts? Then you should sign up for my newsletter. 
+<div style="text-align: center;">
+<iframe src="https://dm13450.substack.com/embed" width="480"
+height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
+frameborder="0" scrolling="no"></iframe>
+</div>
 ***
-
+<p></p>
 
 
 I've written about getting data using [Coinbase's REST APIs](https://dm13450.github.io/2021/06/25/HighFreqCrypto.html) and

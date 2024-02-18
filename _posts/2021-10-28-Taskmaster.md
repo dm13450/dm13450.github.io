@@ -15,6 +15,17 @@ what it is about? Watch some highlights on their Youtube
 channel [here](https://www.youtube.com/c/Taskmaster/featured) (hopefully,
 it works in your country). 
 
+<p></p>
+***
+Enjoy these types of posts? Then you should sign up for my newsletter. 
+<div style="text-align: center;">
+<iframe src="https://dm13450.substack.com/embed" width="480"
+height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
+frameborder="0" scrolling="no"></iframe>
+</div>
+***
+<p></p>
+
 It is my Thursday night ritual to settle down and watch this show and
 in a recent episode the final task set up an interesting problem that had
 some elements of game theory and randomness. It went as follows:
@@ -31,26 +42,6 @@ I'll walk you through how I simulated this task in
 Python, examined the different strategies and what the optimal
 strategy turned out to be. I'll finally pose
 some open questions on where to take this next.
-
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. It's a short monthly recap of anything and everything I've found interesting recently plus
-any posts I've written. So sign up and stay informed!
-
-<p>
-<form
-  action="https://buttondown.email/api/emails/embed-subscribe/dm13450"
-  method="post"
-  target="popupwindow"
-  onsubmit="window.open('https://buttondown.email/dm13450', 'popupwindow')"
-  class="embeddable-buttondown-form">
-  <label for="bd-email">Enter your email</label>
-  <input type="email" name="email" id="bd-email" />
-  <input type="hidden" value="1" name="embed" />
-  <input type="submit" value="Subscribe" />
-  </form>
-</p>
-
-***
 
 This is a task with some game theory, probability, and randomness, the type of
 thing that gets my grey matter active. Plus, one of the contestants

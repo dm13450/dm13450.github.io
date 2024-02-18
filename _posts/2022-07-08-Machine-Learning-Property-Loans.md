@@ -15,27 +15,14 @@ build a machine learning model that will help us choose loans that
 won't go bad?
 
 <p></p>
-
 ***
-Enjoy these types of posts? Then you should sign up for my newsletter. It's a short monthly recap of anything and everything I've found interesting recently plus
-any posts I've written. So sign up and stay informed!
-
-<p>
-<form
-	action="https://buttondown.email/api/emails/embed-subscribe/dm13450"
-	method="post"
-	target="popupwindow"
-	onsubmit="window.open('https://buttondown.email/dm13450', 'popupwindow')"
-	class="embeddable-buttondown-form">
-	<label for="bd-email">Enter your email</label>
-	<input type="email" name="email" id="bd-email" />
-	<input type="hidden" value="1" name="embed" />
-	<input type="submit" value="Subscribe" />
-</form>
-</p>
-
+Enjoy these types of posts? Then you should sign up for my newsletter. 
+<div style="text-align: center;">
+<iframe src="https://dm13450.substack.com/embed" width="480"
+height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
+frameborder="0" scrolling="no"></iframe>
+</div>
 ***
-
 <p></p>
 
 There is a variety of information available with each loan offer. You know what country it is in, what type of property, the interest rate, and the amount of money they are asking for relative to the total property value. All of these variables will be used to set the interest rate and the higher the interest rate, the more likely the loan will go bad. Earning more interest on a loan is a consequence of the higher risk. But what if the people at Estateguru set the interest rate wrong? Can we get a better model of predicting when a loan goes bad and use that to only invest in the 'higher' quality loans? 

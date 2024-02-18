@@ -8,6 +8,17 @@ tags:
 
 My post on the [deviance information criteria](https://dm13450.github.io/2018/01/18/DIC.html) on my blog is one of the most popular ones I've ever written. So to take that theoretical concept and apply it to my new package [HawkesProcesses.jl](https://dm13450.github.io/2020/05/26/HawkesProcessesPackage.html) and show you how to construct the different functions needed to calculate the DIC. 
 
+<p></p>
+***
+Enjoy these types of posts? Then you should sign up for my newsletter. 
+<div style="text-align: center;">
+<iframe src="https://dm13450.substack.com/embed" width="480"
+height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
+frameborder="0" scrolling="no"></iframe>
+</div>
+***
+<p></p>
+
 Firstly, a recap on the DIC,
 
 $$

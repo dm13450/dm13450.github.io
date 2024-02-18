@@ -12,6 +12,17 @@ will fit a Hidden Markov model to some financial data to see how the
 states change over time and hopefully highlight why this might be
 useful. 
 
+<p></p>
+***
+Enjoy these types of posts? Then you should sign up for my newsletter. 
+<div style="text-align: center;">
+<iframe src="https://dm13450.substack.com/embed" width="480"
+height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
+frameborder="0" scrolling="no"></iframe>
+</div>
+***
+<p></p>
+
 The typical Markov model in finance assumes two states; a bull state
 where the market is rising and a bear state where the market is
 falling. By markets rising we mean that the average return is positive

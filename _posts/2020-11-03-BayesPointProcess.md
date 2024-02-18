@@ -20,33 +20,16 @@ touch more complicated than your typical regression problems.
 
 This post will take you through my thought process and how you got from an idea, to a simulation of that idea, frequentist estimation of the simulated data and then a full Bayesian sampling of the problem. 
 
-
-
 <p></p>
-
 ***
-Enjoy these types of posts? Then you should sign up for my newsletter. It's a short monthly recap of anything and everything I've found interesting recently plus
-any posts I've written. So sign up and stay informed!
-
-<p>
-<form
-	action="https://buttondown.email/api/emails/embed-subscribe/dm13450"
-	method="post"
-	target="popupwindow"
-	onsubmit="window.open('https://buttondown.email/dm13450', 'popupwindow')"
-	class="embeddable-buttondown-form">
-	<label for="bd-email">Enter your email</label>
-	<input type="email" name="email" id="bd-email" />
-	<input type="hidden" value="1" name="embed" />
-	<input type="submit" value="Subscribe" />
-</form>
-</p>
-
+Enjoy these types of posts? Then you should sign up for my newsletter. 
+<div style="text-align: center;">
+<iframe src="https://dm13450.substack.com/embed" width="480"
+height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
+frameborder="0" scrolling="no"></iframe>
+</div>
 ***
-
 <p></p>
-
-
 
 But first, these are the Julia libraries that we will be using.
 

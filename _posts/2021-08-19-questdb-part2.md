@@ -14,25 +14,16 @@ hopefully show where this type of database is useful by improving some
 of my old calculations. You should read one of my older blog posts on
 high frequency finance ([here](https://dm13450.github.io/2021/06/25/HighFreqCrypto.html)) as I'm going to repeat some of the calculations using more data this time. 
 
+<p></p>
 ***
-Enjoy these types of post? Then you should sign up to my newsletter. It's a short monthly recap of anything and everything I've found interesting recently plus
-any posts I've written. So sign up and stay informed!
-
-<p>
-<form
-  action="https://buttondown.email/api/emails/embed-subscribe/dm13450"
-  method="post"
-  target="popupwindow"
-  onsubmit="window.open('https://buttondown.email/dm13450', 'popupwindow')"
-  class="embeddable-buttondown-form"
->
-  <label for="bd-email">Enter your email</label>
-  <input type="email" name="email" id="bd-email" />
-  <input type="hidden" value="1" name="embed" />
-  <input type="submit" value="Subscribe" />
-  </form>
-  </p>
+Enjoy these types of posts? Then you should sign up for my newsletter. 
+<div style="text-align: center;">
+<iframe src="https://dm13450.substack.com/embed" width="480"
+height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
+frameborder="0" scrolling="no"></iframe>
+</div>
 ***
+<p></p>
 
 I ingested just over 24 hours worth of data over the 24th and 25th of July. Completely missed the massive rally though, which is just my luck, that would have been interesting to look at! Oh well.
 

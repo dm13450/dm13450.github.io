@@ -9,29 +9,15 @@ tags:
 The financial markets have [livened up in the last week](https://www.bloomberg.com/news/articles/2018-02-09/a-conundrum-for-hedgers-now-that-you-need-it-the-vix-is-at-32). After a sudden spike in the VIX index last Monday, world markets are teetering on the edge of correction territory. This spike in the VIX also lead to the liquidation of the [XIV ETN](https://www.bloomberg.com/news/articles/2018-02-06/credit-suisse-is-said-to-consider-redemption-of-volatility-note). But how unusual was this spike in the VIX? In this blog post we examine the distribution of the VIX index and apply two simple models to gauge the probability of large spikes in the VIX.
 
 <p></p>
-
 ***
-Enjoy these types of posts? Then you should sign up for my newsletter. It's a short monthly recap of anything and everything I've found interesting recently plus
-any posts I've written. So sign up and stay informed!
-
-<p>
-<form
-	action="https://buttondown.email/api/emails/embed-subscribe/dm13450"
-	method="post"
-	target="popupwindow"
-	onsubmit="window.open('https://buttondown.email/dm13450', 'popupwindow')"
-	class="embeddable-buttondown-form">
-	<label for="bd-email">Enter your email</label>
-	<input type="email" name="email" id="bd-email" />
-	<input type="hidden" value="1" name="embed" />
-	<input type="submit" value="Subscribe" />
-</form>
-</p>
-
+Enjoy these types of posts? Then you should sign up for my newsletter. 
+<div style="text-align: center;">
+<iframe src="https://dm13450.substack.com/embed" width="480"
+height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
+frameborder="0" scrolling="no"></iframe>
+</div>
 ***
-
 <p></p>
-
 
 Let us start with explaining the [VIX index](https://en.wikipedia.org/wiki/VIX). You can think of the VIX as an indicator for large moves in stock prices. A high VIX value means that there currently a large chance of a big change in stock prices. Whereas a lower VIX indicates prices are unlikely to change by much. A lower VIX is preferable and sometimes the VIX is referred to as 'the fear gauge' of the stock market. Therefore, it is important to understand how the VIX can change over time and what types of values we might see.
 

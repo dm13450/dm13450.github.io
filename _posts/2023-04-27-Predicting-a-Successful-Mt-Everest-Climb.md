@@ -8,29 +8,16 @@ tags:
 
 Climbing Mount Everest is a true test of human endurance with a real risk of death. [The Himalayan Database](https://www.himalayandatabase.com/index.html) is a data repository, available for free, that records various details about the peaks, people, and expeditions to climb the different Nepalese Himalayan mountains and provides the data for this analysis. In this blog post, I'll show you how to load the database and explore some of the features before building a model that tries to predict how you can successfully climb Mount Everest.
 
-
 <p></p>
 ***
-Enjoy these types of posts? Then you should sign up for my newsletter. It's a short monthly recap of anything and everything I've found interesting recently plus
-any posts I've written. So sign up and stay informed!
-
-<p>
-<form
-	action="https://buttondown.email/api/emails/embed-subscribe/dm13450"
-	method="post"
-	target="popupwindow"
-	onsubmit="window.open('https://buttondown.email/dm13450', 'popupwindow')"
-	class="embeddable-buttondown-form">
-	<label for="bd-email">Enter your email</label>
-	<input type="email" name="email" id="bd-email" />
-	<input type="hidden" value="1" name="embed" />
-	<input type="submit" value="Subscribe" />
-</form>
-</p>
-
+Enjoy these types of posts? Then you should sign up for my newsletter. 
+<div style="text-align: center;">
+<iframe src="https://dm13450.substack.com/embed" width="480"
+height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
+frameborder="0" scrolling="no"></iframe>
+</div>
 ***
 <p></p>
-
 
 Over the past few months, I've been training for a marathon and have been trying to understand the best way to train and maximise my performance. This means extensive research and reading to get an idea of what the science says. [Endure by Alex Hutchinson](http://alexhutchinson.net/) is a book I recommend and it takes a look at the way the human body functions over long distances/extreme tasks - such as climbing Mount Everest with no oxygen or ultra, ultra marathoners with an overarching reference to the [Breaking2](https://en.wikipedia.org/wiki/Breaking2) project by Nike.
 

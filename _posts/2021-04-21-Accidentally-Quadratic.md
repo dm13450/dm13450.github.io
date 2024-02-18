@@ -6,23 +6,24 @@ tags:
   - julia
 ---
 
-
-```julia
-using DataFrames, DataFramesMeta
-using BenchmarkTools
-using Plots
-```
-
 A post recently done the rounds where it looks like GTA had a bad
 implementation of an algorithm that scaled in a quadratic fashion ([How I cut GTA Online loading times by 70%](https://nee.lv/2021/02/28/How-I-cut-GTA-Online-loading-times-by-70/)),
 which echoed a [Bruce Dawson](https://randomascii.wordpress.com/) quote article about how it is common for
 quadratically efficient processes to end up in production.
-Quadratic
-algorithms are fast enough when testing but once in production all of
+Quadratic algorithms are fast enough when testing but once in production all of
 a sudden the performance issues catch up with you and your sat with a
-very inefficient process.
+very inefficient process. Well that happened to me. 
 
-Well that happened to me. 
+<p></p>
+***
+Enjoy these types of posts? Then you should sign up for my newsletter. 
+<div style="text-align: center;">
+<iframe src="https://dm13450.substack.com/embed" width="480"
+height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
+frameborder="0" scrolling="no"></iframe>
+</div>
+***
+<p></p>
 
 Every month I recalibrate a model using the latest data pulled from a
 database. I take this raw data and generate some features, fit a model
@@ -32,6 +33,13 @@ id's with the old data and new data to work out which trades need new features n
 Basically, imagine I have a dataframe, and I want to find all the rows
 that match some values. In this mock example, column `B` contains the
 IDs and I've some new IDs that I want to filter the dataframe for. 
+
+
+```julia
+using DataFrames, DataFramesMeta
+using BenchmarkTools
+using Plots
+```
 
 I'll create a large mock dataframe as an example. 
 

@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Does a Terror Attack Lead to More Terror Attacks?
+date: 2021-03-02
+tags:
+ -julia
 ---
 
 Do terror attacks cause more terror attacks? If they do then they are
@@ -20,44 +23,34 @@ to terror attacks. I was concerned about *extreme* terror attacks and
 how a Hawkes process can model them in  variety of ways to try and
 understand the statistical consequences of a large terror attack.
 
+
+<p></p>
+***
+Enjoy these types of posts? Then you should sign up for my newsletter. 
+<div style="text-align: center;">
+<iframe src="https://dm13450.substack.com/embed" width="480"
+height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
+frameborder="0" scrolling="no"></iframe>
+</div>
+***
+<p></p>
+
 In this blog post I will do the same, but focus on *all* terror attacks across a variety of countries and build two Hawkes models to see how well they describe these attacks. This will be the first blog post I've written on applying my `HawkesProcesses.jl` Julia [package](https://github.com/dm13450/HawkesProcesses.jl), so should serve as a more practical introduction than my previous outline of the package which I wrote about previously [here](https://dm13450.github.io/2020/05/26/HawkesProcessesPackage.html). 
 
 This is a chunky blog post and is laid out as follows: 
 
-* [The Data](#the-data)
+* [The Terror Attack Data](#the-terror-attack-data)
 * [Hawkes Processes](#hawkes-processes)
 * [The Models](#the-models)
   * [Individual Model](#the-individual-model)
-  * [Hierarchical Model](#the-hierarhical-model)
+  * [Hierarchical Model](#the-hierarchical-model)
 * [Model Checking](#model-checking)
 * [Model Comparisons](#model-comparison)
 * [National Security Policy Implications](#national-security-policy-implications)
 
-***
-Before I get into the meat and bones of the work though, I'd like the
-chance to ask you to sign up to my newsletter. Its a short monthly
-recap of anything and everything I've found interesting recently plus
-any posts I've written. So sign up and stay informed!
-
-<p>
-<form
-  action="https://buttondown.email/api/emails/embed-subscribe/dm13450"
-  method="post"
-  target="popupwindow"
-  onsubmit="window.open('https://buttondown.email/dm13450', 'popupwindow')"
-  class="embeddable-buttondown-form"
->
-  <label for="bd-email">Enter your email</label>
-  <input type="email" name="email" id="bd-email" />
-  <input type="hidden" value="1" name="embed" />
-  <input type="submit" value="Subscribe" />
-  </form>
-  </p>
-***
-
 With that out the way, onto the statistics. 
 
-## The Data
+## The Terror Attack Data
 
 ```julia
 using CSV, DataFrames, DataFramesMeta

@@ -9,25 +9,13 @@ date: 2022-08-21
 
 
 <p></p>
-
 ***
-Enjoy these types of posts? Then you should sign up for my newsletter. It's a short monthly recap of anything and everything I've found interesting recently plus
-any posts I've written. So sign up and stay informed!
-
-<p>
-<form
-	action="https://buttondown.email/api/emails/embed-subscribe/dm13450"
-	method="post"
-	target="popupwindow"
-	onsubmit="window.open('https://buttondown.email/dm13450', 'popupwindow')"
-	class="embeddable-buttondown-form">
-	<label for="bd-email">Enter your email</label>
-	<input type="email" name="email" id="bd-email" />
-	<input type="hidden" value="1" name="embed" />
-	<input type="submit" value="Subscribe" />
-</form>
-</p>
-
+Enjoy these types of posts? Then you should sign up for my newsletter. 
+<div style="text-align: center;">
+<iframe src="https://dm13450.substack.com/embed" width="480"
+height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
+frameborder="0" scrolling="no"></iframe>
+</div>
 ***
 <p></p>
 
@@ -47,7 +35,7 @@ Each section will have a function that I've written with Copilot's assistance. I
 
 ### Pull the data.
 
-I have a [QuestDB]() database that stores bid and offer data for Bitcoin. QuestDB provides a REST API that lets you run commands with an HTTP request. 
+I have a [QuestDB](https://questdb.io/) database that stores bid and offer data for Bitcoin. QuestDB provides a REST API that lets you run commands with an HTTP request. 
 
 ```python
 def get_data():

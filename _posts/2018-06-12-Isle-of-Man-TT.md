@@ -29,6 +29,18 @@ The Isle of Man TT (Tourist Trophy) is an infamous bike race. The course is a 37
 
 In this blog post I will walk through downloading the data from Wikipedia, performing some exploratory analysis before attempting to the model the number of deaths of time.
 
+<p></p>
+***
+Enjoy these types of posts? Then you should sign up for my newsletter. 
+<div style="text-align: center;">
+<iframe src="https://dm13450.substack.com/embed" width="480"
+height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
+frameborder="0" scrolling="no"></iframe>
+</div>
+***
+<p></p>
+
+
 Scraping the Data
 -----------------
 
