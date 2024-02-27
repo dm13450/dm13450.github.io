@@ -231,11 +231,6 @@ X_encoded = MLJ.transform(encMach, X);
 X_encoded.MO2USED = X_encoded.MO2USED .- 1;
 ```
 
-    [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mTraining machine(ContinuousEncoder(drop_last = false, …), …).
-    [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mSome features cannot be replaced with `Continuous` features and will be dropped: [:PEAKID]. 
-
-
-
 ```julia
 standardizer = @load Standardizer pkg=MLJModels
 stanMach = fit!(machine(
@@ -281,25 +276,9 @@ evaluate!(constMachine,
 ```
 
 
-
-
-    PerformanceEvaluation object with these fields:
-      measure, operation, measurement, per_fold,
-      per_observation, fitted_params_per_fold,
-      report_per_fold, train_test_rows
-    Extract:
-    ┌─────────────────────┬──────────────┬─────────────┬──────────┬─────────────────
-    │[22m measure             [0m│[22m operation    [0m│[22m measurement [0m│[22m 1.96*SE  [0m│[22m per_fold      [0m ⋯
-    ├─────────────────────┼──────────────┼─────────────┼──────────┼─────────────────
-    │ Accuracy()          │ predict_mode │ 0.512       │ 0.00995  │ [0.509, 0.525, ⋯
-    │ BalancedAccuracy(   │ predict_mode │ 0.5         │ 1.96e-16 │ [0.5, 0.5, 0.5 ⋯
-    │   adjusted = false) │              │             │          │                ⋯
-    │ Kappa()             │ predict_mode │ 0.0         │ 0.0      │ [0.0, 0.0, 0.0 ⋯
-    └─────────────────────┴──────────────┴─────────────┴──────────┴─────────────────
-    [36m                                                                1 column omitted[0m
-
-
-
+| Model | Accuracy | Kappa |
+|------|--------|-----|
+| Null    | 0.512      | 0.0
 
 For classification tasks, the null model is essentially tossing a coin, so the accuracy will be around 50% and the $$\kappa$$ is zero. 
 
@@ -321,25 +300,10 @@ evaluate!(lmMachine,
 ```
 
 
-
-
-    PerformanceEvaluation object with these fields:
-      measure, operation, measurement, per_fold,
-      per_observation, fitted_params_per_fold,
-      report_per_fold, train_test_rows
-    Extract:
-    ┌─────────────────────┬──────────────┬─────────────┬─────────┬──────────────────
-    │[22m measure             [0m│[22m operation    [0m│[22m measurement [0m│[22m 1.96*SE [0m│[22m per_fold       [0m ⋯
-    ├─────────────────────┼──────────────┼─────────────┼─────────┼──────────────────
-    │ Accuracy()          │ predict_mode │ 0.884       │ 0.00642 │ [0.889, 0.884,  ⋯
-    │ BalancedAccuracy(   │ predict_mode │ 0.886       │ 0.0054  │ [0.888, 0.887,  ⋯
-    │   adjusted = false) │              │             │         │                 ⋯
-    │ Kappa()             │ predict_mode │ 0.769       │ 0.0123  │ [0.777, 0.77, 0 ⋯
-    └─────────────────────┴──────────────┴─────────────┴─────────┴──────────────────
-    [36m                                                                1 column omitted[0m
-
-
-
+| Model | Accuracy | Kappa |
+|------|--------|-----|
+| Null    | 0.512      | 0.0 |
+| Linear Regression | 0.884 | 0.769 |
 
 This gives a good improvement over the null model, so indicates our included features have some sort of information useful in predicting success. 
 
@@ -380,26 +344,13 @@ evaluate!(xgbMachine,
          verbosity=0)
 ```
 
+| Model | Accuracy | Kappa |
+|------|--------|-----|
+| Null    | 0.512      | 0.0 |
+| Linear Regression | 0.884 | 0.769 |
+| XGBoost | 0.889 | 0.778 |
 
-
-
-    PerformanceEvaluation object with these fields:
-      measure, operation, measurement, per_fold,
-      per_observation, fitted_params_per_fold,
-      report_per_fold, train_test_rows
-    Extract:
-    ┌────────────┬──────────────┬─────────────┬─────────┬───────────────────────────
-    │[22m measure    [0m│[22m operation    [0m│[22m measurement [0m│[22m 1.96*SE [0m│[22m per_fold                [0m ⋯
-    ├────────────┼──────────────┼─────────────┼─────────┼───────────────────────────
-    │ Accuracy() │ predict_mode │ 0.889       │ 0.00477 │ [0.89, 0.889, 0.896, 0.8 ⋯
-    │ Kappa()    │ predict_mode │ 0.778       │ 0.00928 │ [0.78, 0.778, 0.793, 0.7 ⋯
-    └────────────┴──────────────┴─────────────┴─────────┴───────────────────────────
-    [36m                                                                1 column omitted[0m
-
-
-
-
-We get 85% accuracy compared to the linear regression 81% and a $$\kappa$$ increase too, so looking like a good model. 
+We get 88.9% accuracy compared to the linear regression 88.4% and a $$\kappa$$ increase too, so looking like a good model. 
 
 ## How Do I Succeed in the Climbing Mount Everest?
 
