@@ -102,7 +102,7 @@ to two decimal places). In this match, each of the outcomes had very
 similar odds. Also, funny to note how both matches involved Spanish
 teams. 
 
-# From a KL Divergence to a Match Difficulty
+## From a KL Divergence to a Match Difficulty
 
 The KL divergence value shows how unbalanced a match was, but to
 convert it into a difficulty metric we need to understand who the
@@ -311,7 +311,7 @@ In my next post I’ll use this difficulty measure in the Fantasy
 Premier League setting to see if players score more points in easier
 or hard matches.
 
-# Environment and Footnotes
+## Environment and Footnotes
 
 A bit like shownotes, I'll describe here how I've plotted the graphs.
 Unsurprisingly, they've all been built in `ggplot2` with the `ipsum`
