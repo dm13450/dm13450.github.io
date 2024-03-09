@@ -4,6 +4,10 @@ title: Calibrating an Ornstein–Uhlenbeck Process
 date: 2024-03-09
 tags:
   - julia
+image:
+  path: assets/ouprocess/oudemo.png
+  width: 500
+  height: 500
 ---
 
 Read enough quant finance papers or books and you'll come across the
