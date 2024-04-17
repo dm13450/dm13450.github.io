@@ -6,6 +6,11 @@ tags:
  - r
 ---
 
+The most frequent question I’m asked about my Dirichlet process package
+is how to know whether it has converged to a meaningful result. In this
+blog post I’ll outline how you can assess convergence in a Dirichlet
+process model. 
+
 ``` r
 knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 require(dirichletprocess)
@@ -15,14 +20,20 @@ require(tidyr)
 numIts <- 1000
 ```
 
-The most frequent question I’m asked about my Dirichlet process package
-is how to know whether it has converged to a meaningful result. In this
-blog post I’ll outline how you can assess convergence in a Dirichlet
-process model. 
-
 As our example we are going to cluster the waiting time and eruption
 lengths of the `faithful` geyser. This is a standard dataset in R and so
 download my package and you can play along too!
+
+<p></p>
+***
+Enjoy these types of posts? Then you should sign up for my newsletter. 
+<div style="text-align: center;">
+<iframe src="https://dm13450.substack.com/embed" width="480"
+height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
+frameborder="0" scrolling="no"></iframe>
+</div>
+***
+<p></p>
 
 To start with, we fit the default multivariate Dirichlet process model
 to the data and run the inference for 1000 iterations. The results are
