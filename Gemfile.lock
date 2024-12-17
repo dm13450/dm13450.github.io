@@ -263,7 +263,7 @@ GEM
     unf_ext (0.0.9.1)
     unicode-display_width (1.8.0)
     uri (0.13.0)
-    webrick (1.8.1)
+    webrick (1.8.2)
 
 PLATFORMS
   x86_64-darwin-20
@@ -274,7 +274,7 @@ DEPENDENCIES
   jekyll-seo-tag
   jekyll-sitemap
   minima
-  webrick (~> 1.7)
+  webrick (~> 1.8)
 
 BUNDLED WITH
    2.4.16
