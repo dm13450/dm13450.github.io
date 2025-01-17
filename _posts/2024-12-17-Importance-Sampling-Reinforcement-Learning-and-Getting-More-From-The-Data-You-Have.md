@@ -1,6 +1,13 @@
 ---
 layout: post
 title: Importance Sampling, Reinforcement Learning and Getting More From The Data You Have
+date: 2024-12-17
+tags:
+ - julia
+images:
+  path: /assets/importancesampling/simplestrat.png
+  width: 500
+  height: 500
 ---
 
 A new paper hit my feed [Choosing trading strategies in electronic execution using
