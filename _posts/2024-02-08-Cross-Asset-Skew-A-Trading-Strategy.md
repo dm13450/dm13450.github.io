@@ -10,7 +10,7 @@ image:
   width: 500
 ---
 
-I recently listened to S7E3 of Flirting with Models which had [Nick Baltas](https://twitter.com/nbaltas?lang=en) talking about [Multi Asset and Multi-Strategy portfolios](https://www.flirtingwithmodels.com/2024/01/02/s7e3-multi-asset-multi-strategy-portfolios/). Nick highlighted his work on cross-asset skew and how it can compliment your typical equity factors (momentum, growth, value etc.) and is an under-explored topic in portfolio construction. After reading the original paper, [Cross-Asset Skew](https://www.researchgate.net/profile/Nick-Baltas/publication/338498916_Cross-Asset_Skew/links/5ecc6b2c299bf1c09adf5a24/Cross-Asset-Skew.pdf), I decided to try and replicate the results and see whether skew comes out in the wash and produces any alpha. 
+I recently listened to S7E3 of Flirting with Models which had [Nick Baltas](https://twitter.com/nbaltas?lang=en) talking about [Multi Asset and Multi-Strategy portfolios](https://www.flirtingwithmodels.com/episodes/Kcr3dlatn2Q). Nick highlighted his work on cross-asset skew and how it can compliment your typical equity factors (momentum, growth, value etc.) and is an under-explored topic in portfolio construction. After reading the original paper, [Cross-Asset Skew](https://www.researchgate.net/profile/Nick-Baltas/publication/338498916_Cross-Asset_Skew/links/5ecc6b2c299bf1c09adf5a24/Cross-Asset-Skew.pdf), I decided to try and replicate the results and see whether skew comes out in the wash and produces any alpha. 
 
 <p></p>
 ***
@@ -99,8 +99,7 @@ The overall strategy is looking at **cross-sectional skew**, so how skewed an as
 
 The original paper uses futures data from 1990 up to 2017 to run the backtest, I will be instead using different ETFs and a much shorter timescale, just because that's all the data I have available from my `AlpacaMarkets` free account using [AlpacaMarkets.jl](https://github.com/dm13450/AlpacaMarkets.jl). 
 
-Blackrock is nice enough to publish this document for their different equity funds across the globe, [Around the World with iShares Country ETFs](
-https://www.ishares.com/us/literature/brochure/around-the-world-with-ishares-country-etfs-en-us.pdf), which I use to get the different country equity performance plus some broader indexes. 
+Blackrock is nice enough to publish this document for their different equity funds across the globe, [Around the World with iShares Country ETFs](https://www.scribd.com/document/854561949/Around-the-World-With-Ishares-Country-Etfs-en-Us), which I use to get the different country equity performance plus some broader indexes. 
 
 For the fixed income part I just try and take a cross-section of the different types of fixed income instruments available and different durations, mixing long-term, short-term, government, corporates, etc.
 

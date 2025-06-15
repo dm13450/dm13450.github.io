@@ -7,7 +7,6 @@ tags:
  - r
 ---
 
-
 In an older [blog
 post](https://dm13450.github.io/2018/06/12/Isle-of-Man-TT.html) I looked
 at how fitting Bayesian GAM’s are a piece of cake using `rstanarm`. I
@@ -38,7 +37,7 @@ knitr::opts_chunk$set(cache=TRUE)
 rawData <- loadBulkData(leaguePattern = "E")
 ```
 
-Using the data from <http://www.football-data.co.uk/> we select all the
+Using the data from <https://www.football-data.co.uk/> we select all the
 English games from the 2015/16 season onwards. Why? The names of the
 referees are most consistent from this point onwards. Using older
 seasons would have meant too much data cleaning for this humble post.

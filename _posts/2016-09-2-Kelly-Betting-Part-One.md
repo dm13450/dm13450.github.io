@@ -40,4 +40,4 @@ In the next part I will be looking at multiple bets occurring at the same time a
 
 <https://en.wikipedia.org/wiki/Kelly_criterion>
 
-<http://www.sportsbookreview.com/picks/tools/kelly-calculator/>
+<https://www.sportsbookreview.com/picks/tools/kelly-calculator/>
