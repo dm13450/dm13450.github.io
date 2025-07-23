@@ -24,7 +24,7 @@ I've written guest posts for [QuestDB](https://questdb.io/):
 Want me to write for you or have something else interesting? Email me
 at dean[dot]markwick[at]talk21[dot]com
 
-# Talks
+## Talks
 
 * Mo Dealers, Mo Problems, QuantMinds 2023
 * Unique Liquidity and Measuring Execution Quality, TradeTechFX 2023
@@ -35,7 +35,7 @@ at dean[dot]markwick[at]talk21[dot]com
 * [Building the BestX Event Risk Model using HawkesProcesses.jl](https://www.youtube.com/watch?v=3ulzb6qnOXY)
 * [State of the Market](https://youtu.be/6kSPwHcO6L0)
 
-# My Day Job Now
+## My Day Job Now
 
 I'm currently an electronic trading quant working on both principal
 and algo execution. I build models, analyse data and construct
@@ -62,7 +62,7 @@ Examples of my work can be found in the trade press:
 
 Some of which are behind a paywall. 
 
-# Outside the Day Job
+## Outside the Day Job
 
 I also have a keen interest in sports modelling and how statistics can
 be used in professional sports and gambling, I enjoy a good film,

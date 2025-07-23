@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Cyclical Embedding"
+date: 2025-06-16
 tags:
   - julia
 images:
