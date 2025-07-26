@@ -81,11 +81,11 @@ plot(
   )
 ```
 
-![Line chart showing daily trading volume for SPY ETF over time. The chart displays a fluctuating pattern with several peaks and troughs, illustrating periods of higher and lower trading activity.]{/assets/deeplearning/part1/volumes.png}
+![Line chart showing daily trading volume for SPY ETF over time. The chart displays a fluctuating pattern with several peaks and troughs, illustrating periods of higher and lower trading activity.](/assets/deeplearning/part1/volumes.png){:width="80%"  .center-image}
 
 Looking at the autocorrelation, we can see a long-range dependence on the daily volumes, but when we take the daily difference in daily volume, we see a strong effect at lag 1, and the rest are much smaller. 
 
-![Bar chart displaying autocorrelation of daily trading volume for SPY ETF across multiple lags. The chart shows a prominent negative bar at lag 1, indicating strong mean reversion, followed by smaller bars for subsequent lags.]{/assets/deeplearning/part1/volumes_autocor.png}
+![Bar chart displaying autocorrelation of daily trading volume for SPY ETF across multiple lags. The chart shows a prominent negative bar at lag 1, indicating strong mean reversion, followed by smaller bars for subsequent lags.](/assets/deeplearning/part1/volumes_autocor.png){:width="80%"  .center-image}
 
 A negative value at lag 1 indicates a mean reversion-like process, but more importantly, means modelling the difference in daily volume will be easier than just directly modelling the daily volumes. 
 
