@@ -1,14 +1,29 @@
 ---
 layout: post
-title: Crypto Data using AlphaVantatge.jl 
+title: Crypto Data using AlphaVantage.jl 
 date: 2021-03-27
 tags:
   - julia
+images:
+  path: /assets/AlphaVantageCrypto/output_15_0.svg
+  width: 500
+  height: 500
 ---
 
 Julia 1.6 is hot off the press, so I've installed it and fired off this quick blog post to give 1.6 a test drive. So far, so good and there is a real decrease now in the latencies in both loading up packages and getting things going. 
 
-AlphaVantage have data on cryptocurrencies and not just stocks and fx. Each of which are implemented in [AlphaVantage.jl](https://github.com/ellisvalentiner/AlphaVantage.jl). This is a simple blogpost that takes you through each function and how it might be useful to analyse cryptocurrencies. 
+<p></p>
+***
+Enjoy these types of posts? Then you should sign up for my newsletter. 
+<div style="text-align: center;">
+<iframe src="https://dm13450.substack.com/embed" width="480"
+height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
+frameborder="0" scrolling="no"></iframe>
+</div>
+***
+<p></p>
+
+[AlphaVantage](https://www.alphavantage.co/) have data on cryptocurrencies and not just stocks and fx. Each of which are implemented in [AlphaVantage.jl](https://github.com/ellisvalentiner/AlphaVantage.jl). This is a simple blogpost that takes you through each function and how it might be useful to analyse cryptocurrencies. 
 
 Firstly, what coins are available? Over 500 (542 to be precise). Now as a crypto tourist, I'm only really familiar with the most popular ones that are causing the headlines. So I've taken the top 10 from [coinmarketcap](https://coinmarketcap.com/) and will use those to demonstrate what AlphaVantage can do.
 
@@ -24,7 +39,7 @@ ccys = ["BTC", "ETH", "ADA", "DOT", "BNB", "USDT", "XRP", "UNI", "THETA", "LTC"]
 
 ## FCAS Health Index from Flipside Crypto
 
-AlphaVantage have partnered with [Flipside Crypto](https://flipsidecrypto.com/) to provide their ratings of different coins. This is designed to give some further info on different coins rather than just looking at what recently increased massively.
+AlphaVantage have partnered with [Flipside Crypto](https://flipsidecrypto.xyz/) to provide their ratings of different coins. This is designed to give some further info on different coins rather than just looking at what recently increased massively.
 
 
 ```julia
@@ -51,7 +66,7 @@ ratingsFrame
 
 
 
-Three superb, three attractive and one caution. THETA gets a lower utility score which is dragging down its overal rating. By the looks of it, THETA is some sort of streaming/YouTube-esque project, get paid their token by giving your excess computing power to video streams. There website is [ThetaToken](https://www.thetatoken.org/) and I'll let you judge whether they deserve that rating. 
+Three superb, three attractive and one caution. THETA gets a lower utility score which is dragging down its overall rating. By the looks of it, THETA is some sort of streaming/YouTube-esque project, get paid their token by giving your excess computing power to video streams. There website is [ThetaToken](https://www.thetatoken.org/) and I'll let you judge whether they deserve that rating. 
 
 To summarise briefly each of the ratings is on a 0 to 1000 scale in three different areas: 
 
@@ -120,12 +135,7 @@ mcPlot = plot(prices[!, :timestamp],
 plot(returnPlot, mcPlot)
 ```
 
-
-
-
-![svg](/assets/AlphaVantageCrypto/output_15_0.svg)
-
-
+![svg](/assets/AlphaVantageCrypto/output_15_0.svg){:width="80%"  .center-image}
 
 There we go, solid cumulative monthly returns (to the moon!) but bit of a decline in market cap recently after a week of negative returns. If you want higher frequencies there is always 
 
@@ -169,7 +179,7 @@ plot(scorePlots...)
 
 
 
-![svg](/assets/AlphaVantageCrypto/output_19_0.svg)
+![svg](/assets/AlphaVantageCrypto/output_19_0.svg){:width="80%"  .center-image}
 
 
 

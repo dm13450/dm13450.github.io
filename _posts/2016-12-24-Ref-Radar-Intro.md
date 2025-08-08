@@ -4,9 +4,9 @@ title: Introducing the Referee Radar
 date: 2016-12-24
 ---
 
-The radar plot is a good way to analyse different metrics across a group. The football player radar made popular by [Ted Knutson](http://statsbomb.com/2016/04/understand-football-radars-for-mugs-and-muggles/) is good at comparing players and seeing how their stats stack up against one another. Here I will be taking a similar concept and using the radar plot to analyse the referee's in the professional game in England. 
+The radar plot is a good way to analyse different metrics across a group. The football player radar made popular by Ted Knutson ([Understand football radars for mugs and muggles](https://statsbomb.com/2016/04/understand-football-radars-for-mugs-and-muggles/)) is good at comparing players and seeing how their stats stack up against one another. Here I will be taking a similar concept and using the radar plot to analyse the referee's in the professional game in England. 
 
-First, we need to chose some metrics. Using the data from [Football-Data](http://www.football-data.co.uk/) we can download all the league matches from the last three seasons. In this data we are privy to the number of fouls, yellow cards and red cards for both the home and away team. That gives us 6 variables for each match and each referee, the perfect amount for a radar plot. 
+First, we need to chose some metrics. Using the data from [Football-Data](https://www.football-data.co.uk/) we can download all the league matches from the last three seasons. In this data we are privy to the number of fouls, yellow cards and red cards for both the home and away team. That gives us 6 variables for each match and each referee, the perfect amount for a radar plot. 
 
 For each referee we can calculate the average amount of fouls, yellow and red cards the gave to both the home and away team. This will allow us to detect whether a referee is particularly card happy or even has a home or away bias. In terms of practicality, we have to set a threshold for minimum number of games officiated. We remove any ref that has refereed less than 20 games over the three seasons. 
 

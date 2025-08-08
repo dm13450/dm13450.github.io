@@ -89,7 +89,7 @@ We can see here that 5% of the data is greater than 3.6. It is very fat tailed. 
 ## Modelling the VIX Extremes
 
 If we treated all the ranges as i.i.d from a log-normal distribution,
-how would it look? This is easy to implement using [Stan](http://mc-stan.org/).
+how would it look? This is easy to implement using [Stan](https://mc-stan.org/).
 
 ``` r
 lognormalModel <- stan_model("lognormal.stan")

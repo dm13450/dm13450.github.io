@@ -59,7 +59,7 @@ rawData <- loadBulkData()
 
 We are interested in the statistics of the match, i.e. how many goals
 were scored, shots taken, corners conceded. These will be our
-features. For a full explanation of the variable names, [data dictionary](http://www.football-data.co.uk/notes.txt).
+features. For a full explanation of the variable names, [data dictionary](https://www.football-data.co.uk/notes.txt).
 
 ``` r
 rawData %>% 

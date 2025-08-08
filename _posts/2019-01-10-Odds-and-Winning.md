@@ -22,7 +22,7 @@ reqs <- c("lubridate",
 ```
 
 The data is collected from
-[football-data.co.uk](http://www.football-data.co.uk/). Each match is
+[football-data.co.uk](https://www.football-data.co.uk/). Each match is
 recorded with a number of full time odds. I’ve written the actual odds
 columns to a different csv, which I load and then subset the different
 odds for home and away.
