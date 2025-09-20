@@ -4,9 +4,15 @@ title: About Me
 permalink: /about/
 ---
 
-I've got a PhD in Statistical Science from University College London
-(UCL) and my thesis was [Bayesian Nonparametric Hawkes Processes with Applications](https://discovery.ucl.ac.uk/id/eprint/10109374/). I also have an MRes in Computer Science and an MPhys in
-Theoretical Physics from the University of Manchester. 
+I am a quant researcher focused on execution at both the high (parent) and low (order routing) level. I also dabble in market-making and alpha signals when there is a spare 5 minutes at work. 
+
+Previously, I was a quant at [BestX](https://www.bestx.co.uk/) and spent the day
+researching financial markets with a focus on transaction cost
+analysis (TCA). Hopefully I shared some interesting insights about the world
+of FX, fixed income and equity trading and built some cool product features.
+
+I have a PhD in Statistical Science from University College London
+(UCL) and my thesis was [Bayesian Nonparametric Hawkes Processes with Applications](https://discovery.ucl.ac.uk/id/eprint/10109374/). I also have an MRes in Computer Science and an MPhys in Theoretical Physics from the University of Manchester. 
 
 I run a dashboard for crypto liquidity and pre-trade analytics: <https://cryptoliquiditymetrics.com/>
 
@@ -26,6 +32,7 @@ at dean[dot]markwick[at]talk21[dot]com
 
 ## Talks
 
+* From Capitol Hill to the FX desk: How US policy impacts FX execution, TradeTechFX 2025
 * Mo Dealers, Mo Problems, QuantMinds 2023
 * Unique Liquidity and Measuring Execution Quality, TradeTechFX 2023
 * [Machine Learning Property Loans for Fun and Profit](https://www.youtube.com/watch?v=7MbjHNpycbc)
@@ -35,20 +42,7 @@ at dean[dot]markwick[at]talk21[dot]com
 * [Building the BestX Event Risk Model using HawkesProcesses.jl](https://www.youtube.com/watch?v=3ulzb6qnOXY)
 * [State of the Market](https://youtu.be/6kSPwHcO6L0)
 
-## My Day Job Now
-
-I'm currently an electronic trading quant working on both principal
-and algo execution. I build models, analyse data and construct
-algorithms to try and get the best prices in the market with the
-lowest impact. 
-
-I was a quant at [BestX](https://www.bestx.co.uk/) and spent the day
-researching financial markets with a focus on transaction cost
-analysis (TCA).  This involved cleaning data, making graphs and trying
-to come up with some (hopefully) interesting insights about the world
-of FX, fixed income and equity trading.
-
-Examples of my work can be found in the trade press:
+## Articles
 
 * [What Happens When a Primary FX Venue Goes Offline?](https://thefullfx.com/what-happens-when-a-primary-fx-venue-goes-offline/) -
   3rd most read article of 2023 on Full FX. 
