@@ -4,6 +4,10 @@ title: "Premier League Survival – How Many Points Are Enough?"
 date: 2025-10-31
 tags: 
     - python
+images:
+  path: /assets/relegation/safe.png
+  width: 500
+  height: 500
 ---
 
 It's been an interesting start to the Premier League. All of the promoted teams (Sunderland, Leeds and Burnley) are outside the relegation zone, with Wolves and West Ham struggling at the bottom. So I want to look back at the other seasons and work out the average number of points throughout the season that characterises relegation teams, and how many points do you need to avoid relegation?
