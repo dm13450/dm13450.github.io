@@ -32,6 +32,7 @@ at dean[dot]markwick[at]talk21[dot]com
 
 ## Talks
 
+* Execution algorithms and adaptive strategies, FX Markets Europe 2025
 * Disruption or Optimisation? AI’s Role in the Future of Trading, Fixed Income Leaders Summit 2025
 * From Capitol Hill to the FX desk: How US policy impacts FX execution, TradeTechFX 2025
 * Mo Dealers, Mo Problems, QuantMinds 2023
