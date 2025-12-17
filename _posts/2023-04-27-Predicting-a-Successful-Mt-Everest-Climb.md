@@ -19,11 +19,11 @@ frameborder="0" scrolling="no"></iframe>
 ***
 <p></p>
 
-Over the past few months, I've been training for a marathon and have been trying to understand the best way to train and maximise my performance. This means extensive research and reading to get an idea of what the science says. [Endure by Alex Hutchinson](http://alexhutchinson.net/) is a book I recommend and it takes a look at the way the human body functions over long distances/extreme tasks - such as climbing Mount Everest with no oxygen or ultra, ultra marathoners with an overarching reference to the [Breaking2](https://en.wikipedia.org/wiki/Breaking2) project by Nike.
+Over the past few months, I've been training for a marathon and have been trying to understand the best way to train and maximise my performance. This means extensive research and reading to get an idea of what the science says. [Endure by Alex Hutchinson](https://alexhutchinson.net/) is a book I recommend and it takes a look at the way the human body functions over long distances/extreme tasks - such as climbing Mount Everest with no oxygen or ultra, ultra marathoners with an overarching reference to the [Breaking2](https://en.wikipedia.org/wiki/Breaking2) project by Nike.
 
 In one section the book references something called the Himalayan Database which is a database of expeditions to Mount Everest and other mountains in the Himalayas. As a data lover, this piqued my interest as an interesting data source and something a bit different from my usual data explorations around finance/sports. So I downloaded the database, worked out how to load it, and had a poke around the data. 
 
-If you go to the website, [himalayandatabase](http://www.himalayandatabase.com), you can download the data yourself and follow along. 
+If you go to the website, [himalayandatabase](https://www.himalayandatabase.com), you can download the data yourself and follow along. 
 
 The database is distributed in the DBF format and the website itself is a bit of a blast from the past. It expects you to download a custom data viewer program to look at the data, but thankfully there are people in the R world that demonstrated how to load the raw DBF files. I've taken inspiration from this, downloaded the DBF files, loaded up `DBFTables.jl` and loaded the data into Julia. 
 

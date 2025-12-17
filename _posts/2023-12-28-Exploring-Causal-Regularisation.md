@@ -4,6 +4,10 @@ title: Exploring Causal Regularisation
 date: 2023-12-28
 tags:
   - julia
+images: 
+  path: /assets/causalregularisation/output_5_0.png
+  width: 500
+  height: 500
 ---
 
 A good prediction model isn't necessarily a good causal model. You could be missing a key variable in your dataset that is driving the underlying behavior so you end up with a good predictive model but not the correct explanation as to *why* things behave that way. Taking a causal approach is a tougher problem and needs an understanding of whether we have access to the right variables or we are making the right link between variables and an outcome. Causal regularisation is a method that uses machine learning techniques (regularisation!) to try and produce models that can be interpreted causally. 
@@ -203,7 +207,7 @@ $$||(Y - a X)|| ^2 - \lambda || a || ^2.$$
 
 So we can see how regularisation is an additional component of OLS regression. $$\lambda$$ is a hyperparameter that is just a number and controls how much restriction we place on the $$a$$ values. 
 
-To do ridge regression in Julia I'll be leaning on the [MLJ.jl](https://alan-turing-institute.github.io/MLJ.jl/dev/) framework and using that to build out the learning machines. 
+To do ridge regression in Julia I'll be leaning on the [MLJ.jl](https://juliaml.ai/) framework and using that to build out the learning machines. 
 
 
 ```julia

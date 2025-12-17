@@ -45,7 +45,7 @@ using Plots
 ```
 
 It's a big CSV file, so this isn't the best way to store the data,
-instead, stick it into a database like [QuestDB](https://questdb.io/)
+instead, stick it into a database like [QuestDB](https://questdb.com/)
 that are made for time series data. 
 
 ```julia

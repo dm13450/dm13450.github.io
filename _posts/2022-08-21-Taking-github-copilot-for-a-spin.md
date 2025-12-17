@@ -35,7 +35,7 @@ Each section will have a function that I've written with Copilot's assistance. I
 
 ### Pull the data.
 
-I have a [QuestDB](https://questdb.io/) database that stores bid and offer data for Bitcoin. QuestDB provides a REST API that lets you run commands with an HTTP request. 
+I have a [QuestDB](https://questdb.com/) database that stores bid and offer data for Bitcoin. QuestDB provides a REST API that lets you run commands with an HTTP request. 
 
 ```python
 def get_data():

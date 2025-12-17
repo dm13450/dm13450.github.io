@@ -6,7 +6,7 @@ tags:
 - julia
 ---
 
-[QuestDB](https://questdb.io/) is a timeseries database that is well suited for financial
+[QuestDB](https://questdb.com/) is a timeseries database that is well suited for financial
 data. It is built with timestamps in mind both when storing the data
 and also when getting the data out. This makes it the ideal candidate
 as a storage system for crypto trades. 
@@ -38,7 +38,7 @@ this WebSocket method is an alternative way to get the same
 data. Using a WebSocket though has other benefits. With the REST API it is impolite to constantly query the endpoint to pull data in realtime. Plus you don't know when something has changed, you pull the data, compare it to what you know and then see if there has been an update. With a WebSocket, it just tells you when something has changed, like when a new trade has occurred. This makes it great for building up a database, you can just connect to the firehose and save down all the trades that are coming through. Open the flood gates rather than always asking if something had changed. 
 
 Before we get started though you need to download and install QuestDB. As I'm on a Mac I downloaded it using Homebrew and started the process like `questdb start`.
-You can get more information on downloading QuestDB [here](https://questdb.io/get-questdb/) for your system. 
+You can get more information on downloading QuestDB [here](https://questdb.com/get-questdb/) for your system. 
 
 The rest of the blog cost will walk you through the following steps.
 
@@ -151,7 +151,7 @@ This is finishes the producer part. We can now move onto the consumer process.
 We've connected to the WebSocket and our `RemoteChannel` is filling up. How do we get this into a database?. QuestDB exposes a socket (a normal socket not a WebSocket!) that Julia can connect to. So we simply connect to that exposed port and can send data to QuestDB. 
 
 QuestDB uses the
-[InfluxDB line protocol](https://questdb.io/docs/develop/insert-data#influxdb-line-protocol)
+[InfluxDB line protocol](https://questdb.com/docs/develop/insert-data#influxdb-line-protocol)
 to ingest data. This is as easy as sending a string down the
 connection and QuestDB does the parsing to place it into the database
 table. This string needs to take on a specific format: 

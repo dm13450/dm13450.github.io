@@ -1,11 +1,12 @@
 ---
 layout: post
 title: Which Turing.jl Sampler is the Fastest?
+date: 2019-04-10
 tags:
  -julia
 ---
  
-The [Turing.jl](http://turing.ml/) package provides a great interface
+The [Turing.jl](https://turing.ml/) package provides a great interface
 for performing Bayesian inference using a variety of algorithms. But
 what algorithm allows you to go from data to samples the quickest?  In
 this blog post I will be sampling from a simple model to demonstrate
@@ -135,9 +136,7 @@ using Plots
 
 ```julia
 function extractMeanTime(runtime)
-   
-    median(runtime).time /1e9
-    
+    median(runtime).time /1e9 
 end
 
 nms = ["SGLD", "HMC", "MH", "NUTS"]

@@ -46,6 +46,7 @@ at dean[dot]markwick[at]talk21[dot]com
 
 ## Articles
 
+* [FX Execution Costs and US Policy: What Does Liberation Day Tell Us?](https://thefullfx.com/fx-execution-costs-and-us-policy-what-does-liberation-day-tell-us/)
 * [What Happens When a Primary FX Venue Goes Offline?](https://thefullfx.com/what-happens-when-a-primary-fx-venue-goes-offline/) -
   3rd most read article of 2023 on Full FX. 
 * [FX Markets Remained Orderly During Recent Interventions](https://thefullfx.com/fx-markets-remained-orderly-during-recent-interventions-bofa/)

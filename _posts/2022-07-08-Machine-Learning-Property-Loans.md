@@ -256,7 +256,7 @@ All of our variables should help us predict whether a loan will be repaid back o
 
 In R I would use the [caret](https://topepo.github.io/caret/) package
 to fit a variety of machine learning models. It provides a common interface
-to many different packages so you can easily iterate through different model types to see which one works best with your data. In Julia, the [MLJ.jl](https://alan-turing-institute.github.io/MLJ.jl/dev/) package does the same. By setting up the data structures correctly you can fit and evaluate different types of models on your data through one interface. 
+to many different packages so you can easily iterate through different model types to see which one works best with your data. In Julia, the [MLJ.jl](https://juliaml.ai/) package does the same. By setting up the data structures correctly you can fit and evaluate different types of models on your data through one interface. 
 
 In my model process, I will be using a linear model, the [xgboost](https://xgboost.readthedocs.io/en/stable/) package, a random forest model, and a k-nearest-neighbour model. This covers all the bases, linear, and tree-based models, so should give us a reasonable model at the end of the fitting process. 
 
