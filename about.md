@@ -34,7 +34,7 @@ at dean[dot]markwick[at]talk21[dot]com
 
 * Execution algorithms and adaptive strategies, FX Markets Europe 2025
 * Disruption or Optimisation? AI’s Role in the Future of Trading, Fixed Income Leaders Summit 2025
-* From Capitol Hill to the FX desk: How US policy impacts FX execution, TradeTechFX 2025
+* From Capitol Hill to the FX desk: How US policy impacts FX execution, TradeTechFX 2025, Europe + USA
 * Mo Dealers, Mo Problems, QuantMinds 2023
 * Unique Liquidity and Measuring Execution Quality, TradeTechFX 2023
 * [Machine Learning Property Loans for Fun and Profit](https://www.youtube.com/watch?v=7MbjHNpycbc)
