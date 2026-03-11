@@ -12,6 +12,17 @@ images:
 
 My day job is in quant *trading*, but there’s another fascinating world: quantitative *investing*. While I focus on latencies and execution, quant investors are busy building the most efficient portfolios and ensuring they extract pure alpha. Not one to stay in my lane, I’m using this blog post as an opportunity to dive into the world of quant investing and level up my knowledge. 
 
+<p></p>
+***
+Enjoy these types of posts? Then you should sign up for my newsletter. 
+<div style="text-align: center;">
+<iframe src="https://dm13450.substack.com/embed" width="480"
+height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
+frameborder="0" scrolling="no"></iframe>
+</div>
+***
+<p></p>
+
 Now most quant investing examples use equities as the underlying asset class, but I am an FX man, so will be replacing Apple and Microsoft with Euro's and Yen. In some ways, this is easier; I just have to worry about 30-odd currencies as my investible universe compared to the thousands, if not hundreds of thousands, of different stocks. But in many ways it's harder. What drives FX returns is at a much higher macro-level compared to an individual stock, and things like central banks changing interest rates, government policy changes are difficult to translate to a dataset compared to the price-to-book ratio of a stock. Still, we will give it a go.
 
 In short, we want to better understand what can influence a currency's return and produce a systematic model. This post is going to start with the basics, pulling in the right data, building a proxy to the overall FX market and ending with some basic regressions.
