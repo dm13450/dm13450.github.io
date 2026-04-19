@@ -184,7 +184,7 @@ imbalance, the net volume divided by the total volume in the bucket.
 
 $$\Delta I = \lambda \sigma \frac{q_t}{| q_t | \text{ADV}}$$
 
-As there is no dependence on the previous returns, we can use simple linear regression to estimate $\lambda$.
+As there is no dependence on the previous returns, we can use simple linear regression to estimate $$\lambda$$.
 
 ```julia
 aggDataTrain[!, "x_ofi"] = aggDataTrain.Vol .* (aggDataTrain.ofi ./ aggDataTrain.ADV)

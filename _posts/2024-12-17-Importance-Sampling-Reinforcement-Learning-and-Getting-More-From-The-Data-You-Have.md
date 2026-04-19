@@ -11,7 +11,7 @@ images:
 ---
 
 A new paper hit my feed [Choosing trading strategies in electronic execution using
-importance sampling](https://download.ssrn.com/2024/10/28/5001783.pdf?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCIHq9Se9RaBE1%2F66%2BtmGrcj7aLbi6toqQfDSRp1zTko7kAiBSm6JmvMSoPO0qhnQjbVhmI7Jq4ELTMJ7aVMMhtXx5Kyq9BQh8EAQaDDMwODQ3NTMwMTI1NyIM7DspRkQ6bu5dMzZmKpoFy1twmqL3CnHbwCY%2FoeCM5gNNzZ7Tgg6Nkneyv2NRLkCFg5Me2jaIG8Q19ah0BTONxgU0DOq1FJqha7bmPF5e1aNGUEDvsb15S2rcqa%2FMn6FSkvUYj0MdXZ7mW%2F0E8a7Tze6yx79i96PxX%2BDAmB49m7eca2VjYxGTQLD4BeSG6pCC%2BUb2KIKHraWojBJVa0ttPHzpgau%2F2lrXccdLLjSuk4sXavZUaFK%2BSPPq9vLzE67U7CbL8fbSVSa8kJjhydjEfbJY3VWCS1ObFoo%2BmZ3NaVa3aUICzIYL8t6otH6TSvqu5ngqN3CeWuFcFXCBIYx%2FuYUL55ZNDj47pxOSwLXc3bhMJgEceXuTcNLTwT8gm8NmKDOxIfsZ0yyQ39NxBbgmy3tfxj786JT7ZHUwBOTz9UEHLTtYuVX5QVGIs9wM8vWgP39UKJ02jz0Fkm540mXidi7qOwcT0Qq3fuROji8yfKHrQ%2F8NPY8EG0JIbNQXPiGZa%2FGcwvAh1OKaK6jDCFHJ5oIPREpmUHC8a%2FxURXyVqljIyA%2Bcci2aLmRM8miFe2c3RtJz3H%2FzYHoKHbmlVdHy8L1OedB2niM1oJynkr%2BLPAGqmFtqzyidMKR0vkL%2BXwBGn%2BTc9LtLSPevoFXweE%2BGnCU0R6NeUNKyYuqlfDIOIHrHi%2F9KlTKHd8nctyiwcSORdBPHBQGKMN22Aqw31KMGY%2BDQoI2FfihWRRenmgg0dE6dpQbzzcvVGxodLkUPiWpKUE%2BLv5IiiWwMRH8JtHFB3BKPl%2B936ZxsCyr8a2g5x29DyHqK%2FXsaKKsrn%2F%2B%2F2fQ0SzPmqIlbkXxR5HK%2Frp5dl7QO%2Fv30qno%2FBffEzNoxqw7WtVrpDCcHYHkSfja6Z6FGdNct6copIdWoMKq687kGOrIBGDmT9sBZhpvZ6i6MxU6SIg9XleS6iefUMx6HSruHRyC9b6%2BhSY7By7IEHKF8XQ5ZSQQca2XV4L0zd6uEnmDMraFTr%2FfKnfsoEV9nG8dswAaWuzOFobks7PG7lRDAbTEtWZVQbCTsoMBkA4wEVhDymVRoVI3N%2BTWZhFFZRJuL%2BaYV6%2Bz3ueLjgFPHJQABdpTzXebI%2B26TpeAes2xVo%2B1sViJo7gKO%2BCGP3CerL50h1Z7BRw%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20241119T193009Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAUPUUPRWE6IWZOOPX%2F20241119%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=e74a64fd89c4f7620828c712083958765a6f5fabd8e23674e9969cd95f5ff971&abstractId=5001783). I've only encountered sampling as part of a statistical computing course as part of my PhD, and I had never strayed away from Monte Carlo sampling, but this practical example provided an intuitive understanding of its importance and utility.
+importance sampling](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5001783). I've only encountered sampling as part of a statistical computing course as part of my PhD, and I had never strayed away from Monte Carlo sampling, but this practical example provided an intuitive understanding of its importance and utility.
 
 <p></p>
 ***
@@ -30,9 +30,9 @@ This blog post will run through the paper and replicate the main themes in Julia
 
 ## The Execution Traders Problem
 
-You are an execution trader with access to 4 different broker algorithms (algos) to execute your trade. With each trade you need to choose an algo and measure the trade's overall slippage - the price you paid vs the price at the start of the order. You want to chose the best algo to ensure each of your trades gets the best price.
+You are an execution trader with access to 4 different broker algorithms (algos) to execute your trade. With each trade you need to choose an algo and measure the trade's overall slippage - the price you paid vs the price at the start of the order. You want to choose the best algo to ensure each of your trades gets the best price.
 
-How do you chose what one to use? Do you have enough data to decide what one is the best one? Is any one algo better than the other? These are all difficult questions to answer but with some data on how the algos performs you should be able to use the data to help inform your decision. 
+How do you choose what one to use? Do you have enough data to decide what one is the best one? Is any one algo better than the other? These are all difficult questions to answer but with some data on how the algos performs you should be able to use the data to help inform your decision. 
 
 We are trying to maximise the performance of each trade by choosing the correct algo. Our trade is described by a variable $$x$$ and each algo performs differently depending on $$x$$. The paper calls the performance 'slippage' but then tries to maximise the slippage which sounds weird to me - I always talk about minimising slippage! But that's splitting hairs.
 
@@ -112,7 +112,7 @@ Does our rule above do better than just randomly choosing an algo? This is where
 
 Importance sampling is about using observed probabilities $$q$$ and observations of a variable with different probabilities $$p$$. In our case we want to calculate the expected slippage of a trading strategy given the observations we have of the current strategy. 
 
-$$\mathbb{E} [\text{Slippage}] = \frac{1}{N} \sum _i \text{Slipage}_i \frac{p_i(\text{New Strategy})}{q_i(\text{Current Strategy})}$$
+$$\mathbb{E} [\text{Slippage}] = \frac{1}{N} \sum _i \text{Slippage}_i \frac{p_i(\text{New Strategy})}{q_i(\text{Current Strategy})}$$
 
 
 $$q_i(\text{Current Strategy})$$ is equal to the `stratProb` column in the dataframe and $$p_i$$ is the probability we would have chosen the given algo under the new strategy. 
@@ -337,11 +337,11 @@ bs = mapreduce(x-> @combine(res[sample(201:nrow(res), nrow(res)-200), :],
 | EqStratSlippage          | -1.59169             | 0.119028            |
 | LinearStratSlippage      | -1.52706             | 0.133231            |
 
-As its a toy problem, nothing of significance between the models - but both models do better than the random allocation.
+As it's a toy problem, nothing of significance between the models - but both models do better than the random allocation.
 
 ## Conclusion
 
 Importance sampling gives you a way of getting more out of the current data and strategy you are using. By weighting the observations in a new way you can get an idea whether a new strategy is worth it or not.
-By rethinking you current setup you can easily add a bit of randomness into decisions and use the importance sampling framework going forward.
+By rethinking your current setup you can easily add a bit of randomness into decisions and use the importance sampling framework going forward.
 
 

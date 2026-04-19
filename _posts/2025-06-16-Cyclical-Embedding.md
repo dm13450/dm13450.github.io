@@ -10,7 +10,7 @@ images:
   height: 500
 ---
 
-Cyclical embeding (or encoding) is a basic transformation for nunmerical variables that follow a cycle. Let's explore how they work.
+Cyclical embedding (or encoding) is a basic transformation for numerical variables that follow a cycle. Let's explore how they work.
 
 
 I am currently attending a Deep Learning in Finance lecture series (lectured by Stefan Zohran in preparation for his new book). The ongoing homework is taking a basic time series model and applying the various deep learning techniques. In the process of doing this homework, I’ve come across Cyclical Embeddings and how they are used to transform variables that move into a cycle into something a model can understand. 
@@ -241,7 +241,7 @@ This is the limiting factor with this embedding, we have a single frequency of s
 
 $$\sum _i c^1_i \sin \left(\frac{2 \pi \omega _i x}{\max (x)}\right) + c^2_i \cos \left(\frac{2 \pi \omega _i x}{\max (x)}\right).$$
 
-This is now a GAM with trigomonic splines so we can view the cyclical encoding as a 1-spline GAM. 
+This is now a GAM with trigonometric splines so we can view the cyclical encoding as a 1-spline GAM. 
 
 ## Conclusion
 
