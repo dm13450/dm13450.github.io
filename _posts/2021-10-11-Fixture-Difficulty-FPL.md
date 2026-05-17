@@ -2,7 +2,7 @@
 layout: post
 title: Fixture Difficulty and Fantasy Premier League Point Predictions
 date: 2021-10-12
-tags: [r, sporst, fpl]
+tags: [r, sports, fpl]
 ---
 
 [In my last blog post](https://dm13450.github.io/2021/09/26/Fixture-Difficulty.html) I showed how the odds can be used to measure the

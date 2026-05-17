@@ -5,7 +5,7 @@ date: 2019-02-22
 summary: >
  I show how a Dirichlet process can be used as a nonparametric prior
  in a hierarchical problem.
-tags: [r, dirichlect, bayes]
+tags: [r, dirichlet, bayes]
 ---
 
 

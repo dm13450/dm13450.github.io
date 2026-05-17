@@ -2,17 +2,13 @@
 layout: post
 title: Taking Github Copilot for a Spin
 date: 2022-08-21
+tags: [python, ai]
 ---
 
 
 [GitHub Copilot](https://github.com/features/copilot) is the AI tool that gives you code suggestions as you type. It was free for a bit but is going to cost money at the end of August. My free trial was coming to an end, so I thought I would give it a runout and see if it is the future of coding. My aim, replicate my Julia blog post on [Order Flow Imbalance](https://dm13450.github.io/2022/02/02/Order-Flow-Imbalance.html) into Python and see how much Github Copilot can do for me.
 
-
-
-
 {% include newsletter.html %} 
-
-
 
 ## My Python Background
 
@@ -182,17 +178,3 @@ I enjoyed using Copilot and it helped improve my productivity. Its suggestions w
 The one downfall though as I mentioned earlier is taking its suggestions as gospel. If the model fitting case, using `sklearn` and then trying to calculate the parameter p-values would be a laborious task, whereas using `statsmodels` the batteries are included, so you might miss the easy way if you don't know any better. This is where the thin veneer of intelligence starts to break down.
 
 I won't be paying for it at $10 per month, mainly because I don't use Python enough and I'm also not one for purchasing developer tools. If it remained free, I would carry on using it and write more Python. If I was interviewing with a company and they were a user of Copilot I would be more interested in the job as it feels like a real technological innovation. Given Amazon is previewing [CodeWhisperer](https://aws.amazon.com/codewhisperer/) this type of assistance doesn't feel like a fad and I look forward to what is next. We can all dream of Apple one day releasing SiriCode. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-

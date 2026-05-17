@@ -2,7 +2,7 @@
 layout: post
 title: Golf and Online Linear Regression
 date: 2022-09-30
-tags: [r, spots]
+tags: [r, sports]
 ---
 
 Golf became the only thing you could do in the COVID times and given my

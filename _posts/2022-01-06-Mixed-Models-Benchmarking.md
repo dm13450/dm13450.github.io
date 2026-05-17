@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Fitting Mixed Effects Models - Python, Julia or R?
-tags: [python, R, julia]
+tags: [python, r, julia]
 ---
 
 I'm benchmarking how long it takes to fit a mixed

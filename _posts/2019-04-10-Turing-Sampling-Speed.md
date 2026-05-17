@@ -2,7 +2,7 @@
 layout: post
 title: Which Turing.jl Sampler is the Fastest?
 date: 2019-04-10
-tags: [julia, bayes, benchmarch]
+tags: [julia, bayes, benchmark]
 ---
  
 The [Turing.jl](https://turing.ml/) package provides a great interface

@@ -2,6 +2,7 @@
 layout: post
 title: Bayes Comp 2018
 date: 2018-05-18
+tags: [r, conference]
 ---
 
 This time last month I was in Barcelona for BayesComp 2018 at Universitat Pompeu Fabra (UPF). A conference dedicated to Bayesian statistics and the challenges it poses; from large data sets, different types of priors and upcoming software packages. I learnt quite a bit and in this post I'll outline some of those new things.
