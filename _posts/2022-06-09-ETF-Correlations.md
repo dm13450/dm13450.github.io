@@ -2,19 +2,14 @@
 layout: post
 title: Dipping My Toes into ETF Correlations
 date: 2022-06-09
-tags:
-  - r
+tags: [r, quant, equity]
 ---
 
 If like me you are a novice when it comes to looking at correlations
 this post will hopefully give you the tools and information needed to
 start thinking about correlations across the financial markets.
 
-
-
 {% include newsletter.html %} 
-
-
 
 I’ve written plenty about volatility recently but have never explored
 correlations (or covariances). I read Rob Carver on [Clustering and
@@ -23,8 +18,6 @@ and liked how he was separating different futures contracts into their
 respective categories based on their correlations and feeling inspired I
 decided to try and thorough replicate this using ETFs instead
 of futures.
-
-
 
 ## Contents
 

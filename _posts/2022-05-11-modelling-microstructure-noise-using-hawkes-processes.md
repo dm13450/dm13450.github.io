@@ -2,8 +2,7 @@
 layout: post
 title: Modelling Microstructure Noise Using Hawkes Processes
 date: 2022-05-11
-tags:
- - julia
+tags: [julia, hawkes, microstructure]
 ---
 
 Microstructure noise is where the
