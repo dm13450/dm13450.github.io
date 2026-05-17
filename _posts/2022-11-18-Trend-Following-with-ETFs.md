@@ -2,24 +2,14 @@
 layout: post
 title: Trend Following with ETFs
 date: 2022-11-18
-tags:
-  - julia
+tags: [julia, quant]
 ---
 
 Trend following is a rebranded name for momentum trading strategies. It looks at assets where the price has gone up and buying them because it believes the price will continue to rise and likewise for falling prices where it sells.
 
 I'll use this post to show you how to build a basic trend-following strategy in Julia with free market data.
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 Trend following is one of the core quant strategies out there and countless pieces are written, podcasts made, and [threads discussed all over Twitter](https://twitter.com/macrocephalopod/status/1587896728254124036) about how to build and use a trend following strategy effectively. This blog post is my exploration of trend-following and uses ETFs to explore the ideas of momentum.
 

@@ -2,8 +2,7 @@
 layout: post
 title: Accidentally Quadratic with DataFrames in Julia
 date: 2021-04-21
-tags: 
-  - julia
+tags: [julia, benchmark]
 ---
 
 Quadratic algorithms are fast enough when testing, but once in production, all of a sudden, the performance issues catch up with you, and you're sitting with a very inefficient process. Well, that happened to me.
@@ -13,16 +12,7 @@ implementation of an algorithm that scaled in a quadratic fashion ([How I cut GT
 which echoed a [Bruce Dawson](https://randomascii.wordpress.com/) quote and article about how it is common for
 quadratically efficient processes to end up in production.
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 Every month, I recalibrate a model using the latest data pulled from a
 database. I take this raw data and generate some features, fit a model

@@ -2,8 +2,7 @@
 layout: post
 title: Using QuestDB to Build a Crypto Trade Database in Julia
 date: 2021-08-05
-tags:
-- julia
+tags: [julia, quant, hft, questdb]
 ---
 
 [QuestDB](https://questdb.com/) is a timeseries database that is well suited for financial
@@ -21,16 +20,7 @@ So this is a blog post on how to get started with QuestDB. We will be
 connecting to Coinbase WebSockets in Julia to download trades that
 will be stored in a QuestDB table.
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 
 I've written about getting data using [Coinbase's REST APIs](https://dm13450.github.io/2021/06/25/HighFreqCrypto.html) and

@@ -2,8 +2,7 @@
 layout: post
 title: Optimising a Taskmaster Task with Python
 date: 2021-10-28
-tags:
-  - python
+tags: [python]
 ---
 
 For those that don't know Taskmaster is a game show where 5 comedians
@@ -15,16 +14,7 @@ what it is about? Watch some highlights on their Youtube
 channel [here](https://www.youtube.com/c/Taskmaster/featured) (hopefully,
 it works in your country). 
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 It is my Thursday night ritual to settle down and watch this show and
 in a recent episode the final task set up an interesting problem that had

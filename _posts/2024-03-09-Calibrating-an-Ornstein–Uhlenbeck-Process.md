@@ -14,16 +14,7 @@ Read enough quant finance papers or books and you'll come across the
 Ornstein–Uhlenbeck (OU) process. This is a post that explores the OU
 process, the equations, how we can simulate such a process and then estimate the parameters. 
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 I've briefly touched on mean reversion and OU processes before in my
 [Stat Arb - An Easy Walkthrough](https://dm13450.github.io/2023/07/15/Stat-Arb-Walkthrough.html)

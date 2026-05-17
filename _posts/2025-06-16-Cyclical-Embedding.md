@@ -2,8 +2,7 @@
 layout: post
 title: "Cyclical Embedding"
 date: 2025-06-16
-tags:
-  - julia
+tags: [julia, deep-learning]
 images:
   path: /assets/cyclicalembedding/dayofweek.png
   width: 500
@@ -12,21 +11,11 @@ images:
 
 Cyclical embedding (or encoding) is a basic transformation for numerical variables that follow a cycle. Let's explore how they work.
 
-
 I am currently attending a Deep Learning in Finance lecture series (lectured by Stefan Zohran in preparation for his new book). The ongoing homework is taking a basic time series model and applying the various deep learning techniques. In the process of doing this homework, I’ve come across Cyclical Embeddings and how they are used to transform variables that move into a cycle into something a model can understand. 
 
 Consider this blog post me reading this Kaggle notebook: [Encoding Cyclical Features for Deep Learning](https://www.kaggle.com/code/avanwyk/encoding-cyclical-features-for-deep-learning), converting it to Julia and using some examples to convince myself Cyclical Embeddings work and are useful.
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %}
 
 Cyclical variables are especially pertinent in Finance. For example, day of the week you could either use a factor (the label directly) or number (Mon=1, Tue=2 etc.) in a model. Using a factor, your model now includes 5 additional parameters. If you use the number you'll have to specify the form of the relationship (linear or using a GAM). Each has its ups and downs, but there is also a key piece of information missing: the days of the week form a cycle where 1 follows from 5.  How can we translate this into something the model will understand? 
 

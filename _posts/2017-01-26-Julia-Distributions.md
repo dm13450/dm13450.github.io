@@ -2,6 +2,7 @@
 layout: post
 title: An Introduction to Julia and Distributions
 date: 17/01/26
+tags: [julia]
 ---
 
 Julia is a new language on the block aimed at being a suitable mid point between the adaptability of Python and the speed of Matlab. Its a nice fall-back when my R code is just that bit too slow to really churn through some numbers. 

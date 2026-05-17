@@ -2,6 +2,7 @@
 layout: post
 title: Julia Code for Sampling an AR(1) model
 date: 12/06/2017
+tags: [julia, bayes]
 ---
 
 In my previous blog post I outlined the basic AR(1) model and the necessary maths needed to infer the unknown parameter $$\phi$$. In this post I will outline some basic Julia code to build a MCMC sampler for such a model to infer the unknown parameter $$\phi$$. 

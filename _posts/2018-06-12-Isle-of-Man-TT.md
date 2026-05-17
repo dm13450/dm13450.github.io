@@ -4,12 +4,14 @@ title: Exploring the Isle of Man TT
 date: 2018-06-12
 summary: A data driven look at the Isle of Man TT
 image: /assets/isle_of_man_files/twitcard.png
-tags:
- - r
+tags: [r, sports, data]
 ---
 
-In this post I will be making use of these R packages. Download them
-all from CRAN to follow along. 
+The Isle of Man TT (Tourist Trophy) is an infamous bike race. The course is a 37 mile loop around the Isle of Man and the current record is just under 17 minutes with an average speed of 134 mph. The race is also famed for its lethality and there are multiple deaths per year. Riders choosing to race are taking an extraordinary risk. It is a dataset for the morbidly curious.
+
+{% include newsletter.html %} 
+
+In this post I will be making use of these R packages. Download them all from CRAN to follow along. 
 
 ``` r
 library(knitr)
@@ -22,23 +24,7 @@ library(rstanarm)
 library(bayesplot)
 ```
 
-Introduction
-------------
-
-The Isle of Man TT (Tourist Trophy) is an infamous bike race. The course is a 37 mile loop around the Isle of Man and the current record is just under 17 minutes with an average speed of 134 mph. The race is also famed for its lethality and there are multiple deaths per year. Riders choosing to race are taking an extraordinary risk. It is a dataset for the morbidly curious.
-
-In this blog post I will walk through downloading the data from Wikipedia, performing some exploratory analysis before attempting to the model the number of deaths of time.
-
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+I will walk through downloading the data from Wikipedia, performing some exploratory analysis before attempting to the model the number of deaths of time.
 
 
 Scraping the Data

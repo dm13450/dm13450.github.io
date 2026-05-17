@@ -2,8 +2,7 @@
 layout: post
 title: Fixture Difficulty and Fantasy Premier League Point Predictions
 date: 2021-10-12
-tags:
-  - r
+tags: [r, sporst, fpl]
 ---
 
 [In my last blog post](https://dm13450.github.io/2021/09/26/Fixture-Difficulty.html) I showed how the odds can be used to measure the
@@ -19,16 +18,7 @@ matches are likely to lead to more goals. Likewise, avoid defenders in
 these difficult matches as they are much more likely to concede and lose
 those clean sheet points!
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 ## The Fantasy Premier League (FPL to be short)
 

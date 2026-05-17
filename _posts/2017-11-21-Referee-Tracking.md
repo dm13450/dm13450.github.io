@@ -2,6 +2,7 @@
 layout: post
 title: Referee Tracking Data and Machine Learning 
 date: 2017-11-21
+tags: [python, referee]
 ---
 
 Tracking data is the alleged holy grail in football analysis. But what about if we have a referee's position throughout a match? What can we do with this kind of data? 

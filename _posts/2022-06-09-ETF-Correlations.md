@@ -10,16 +10,11 @@ If like me you are a novice when it comes to looking at correlations
 this post will hopefully give you the tools and information needed to
 start thinking about correlations across the financial markets.
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+
+
+{% include newsletter.html %} 
+
+
 
 I’ve written plenty about volatility recently but have never explored
 correlations (or covariances). I read Rob Carver on [Clustering and

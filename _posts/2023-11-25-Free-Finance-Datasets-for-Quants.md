@@ -2,8 +2,7 @@
 layout: post
 title: Free Finance Data Sets for the Quants
 date: 2023-11-25
-tags:
- - julia
+tags: [julia, quant, data]
 ---
 
 Now and then I am asked how to get started in quant finance and
@@ -12,16 +11,7 @@ with different models. The first step is to get some data and this post takes yo
 through several different sources and hopefully gives you the
 launchpad to start poking around with financial data.
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 I've tried to cover different assets and frequencies to hopefully
 inspire the various types of quant finance

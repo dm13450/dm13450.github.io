@@ -2,6 +2,7 @@
 layout: post
 title: Thoughts on Weights in Bayesian Regression 
 date: 16/10/27
+tags: [bayes]
 ---
 
 Weighted regression is common in frequentist approaches to regression. Typically, the weights are known and can be interpreted as the amount each data point is allowed to influence the link between the variables in question. This can be written as

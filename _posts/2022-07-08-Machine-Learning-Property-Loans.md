@@ -2,8 +2,8 @@
 layout: post
 title: Machine Learning Property Loans for Fun and Profit
 date: 2022-07-08
-tags:
-    -julia
+tags: [julia, quant]
+
 ---
 
 [Estateguru](https://estateguru.co/) is a website that lets you lend money to property
@@ -14,16 +14,10 @@ money. But using the data they provide from their website, can we
 build a machine learning model that will help us choose loans that
 won't go bad?
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+I turned this blog post into a conference talk that you can watch - [
+Machine Learning Property Loans for Fun and Profit | Dean Markwick | JuliaCon 2023](https://www.youtube.com/watch?v=7MbjHNpycbc)
+
+{% include newsletter.html %} 
 
 There is a variety of information available with each loan offer. You know what country it is in, what type of property, the interest rate, and the amount of money they are asking for relative to the total property value. All of these variables will be used to set the interest rate and the higher the interest rate, the more likely the loan will go bad. Earning more interest on a loan is a consequence of the higher risk. But what if the people at Estateguru set the interest rate wrong? Can we get a better model of predicting when a loan goes bad and use that to only invest in the 'higher' quality loans? 
 

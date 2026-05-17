@@ -2,24 +2,18 @@
 layout: post
 title: Order Flow Imbalance - A High Frequency Trading Signal
 date: 2022-02-02
-tags:
-  - julia
+tags: [julia, quant, microstructure]
+images:
+  path: /assets/orderflowimbalance/output_17_0.png
+  width: 500
+  height: 500
 ---
 
 I'll show you how to calculate the 'order flow imbalance' and build a
 high-frequency trading signal with the results. We'll see if it is a
 profitable strategy and how it might be useful as a market indicator. 
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 A couple of months ago I attended the Oxford Math Finance seminar
 where there was a presentation on order book dynamics to predict
@@ -27,7 +21,7 @@ short-term price direction. Nicholas Westray presented
 [Deep Order Flow Imbalance: Extracting Alpha at Multiple Horizons from the Limit Order Book](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3900141). By
 using deep learning they predict future price movements using common
 neural network architectures such as the basic multi-layer perceptron
-(MLP), Long Term Short Memory network (LSTM) and convolutional neural
+(MLP), Long Term Short Memory network (LSTM) and convolution neural
 networks (CNN). Combining all three networks types lets you extract
 the strengths of each network:
 
@@ -37,7 +31,7 @@ factors.
 * LSTMs: Learn temporal structures
   * How are the different inputs correlated with each other such as 
 autocorrelation structure. 
-* MPLs: Universal approximators.
+* MLPs: Universal approximators.
   * An MLP can approximate any function.  
 
 A good reference for LSTM-CNN combinations is [DeepLOB: Deep

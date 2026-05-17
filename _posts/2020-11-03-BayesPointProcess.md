@@ -2,11 +2,10 @@
 layout: post
 title: Proper Bayesian Estimation of a Point Process in Julia
 date: 03-11-2020
-tags:
-  - julia
+tags: [julia, bayes]
 ---
 
-Point proceseses crop up everywhere. From modelling when a bus
+Point processes crop up everywhere. From modelling when a bus
 arrives, or to when a particle decays. They all involve an intensity
 function, so how do we fit an intensity function to some data in
 Bayesian way?
@@ -20,16 +19,7 @@ touch more complicated than your typical regression problems.
 
 This post will take you through my thought process and how you got from an idea, to a simulation of that idea, frequentist estimation of the simulated data and then a full Bayesian sampling of the problem. 
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 But first, these are the Julia libraries that we will be using.
 

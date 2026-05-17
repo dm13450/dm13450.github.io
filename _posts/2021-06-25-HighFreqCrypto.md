@@ -2,24 +2,14 @@
 layout: post
 title: Getting Started with High Frequency Finance using Crypto Data and Julia
 date: 2021-06-25
-tags:
-  - julia
+tags: [julia, quant, hft]
 ---
 
 Crypto is making finance democratic. My PhD was originally going to be on the limit order book and modeling events that can change its state. However, I just couldn't get the data. Now, anyone can access different exchanges limit orders books with simple API calls. My Julia package [CoinbasePro.jl](https://github.com/dm13450/CoinbasePro.jl) does exactly that and you can get full market data without even having to sign up. 
 
 Sure, crypto markets will be less liquid and more erratic than your traditional datasets, but you get what you pay for. So if you are a student looking to get stuck into high frequency or quant finance, this type of data is exactly what you are looking for. 
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 This blog post will introduce you to different concepts:
  

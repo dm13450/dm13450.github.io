@@ -2,8 +2,7 @@
 layout: post
 title: A Fundamental FX Factor Model
 date: 2026-04-19
-tags: 
-    - python
+tags: [python, quant, factor-model]
 images:
   path: /assets/fxfundamentalmodel/sigfactorreturn.png
   width: 500
@@ -12,20 +11,11 @@ images:
 
 I’ve been reading [The Elements of Quantitative Investing](https://www.wiley.com/en-us/The+Elements+of+Quantitative+Investing-p-9781394265466) to branch out from my usual high-frequency finance to something slower or mid-frequency. Factor models are a big part of this quant topic, and I'm trying to get a deeper understanding by following the book and applying the process to FX data.
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %}
 
 Factor models provide a mechanism for explaining returns. They are multivariate models that break down the features that drive an asset's performance. The key assumption is that each individual asset's return is not independent of the others, but there are common factors that drive returns and an asset's sensitivity to those factors drives its returns. In equities, you'll hear of value and momentum factors, and there are even ETFs that you can invest in for exposure to those factors. We want to come up with something similar in the FX space.
 
-![](/assets/fxfundamental/ccy_ret_intro.png)
+![Currency returns](/assets/fxfundamental/ccy_ret_intro.png)
 
 A factor model attempts to explain asset-universe return behaviour. From this you can start to build portfolios, decompose risk across the different factors, and even look at returns not explained by the factors, which in turn becomes alpha research. These types of models are the foundation of many other quant topics, so it's good to get a handle on them.
 
@@ -37,7 +27,7 @@ Typically, factor models and most academic research in this field use equity dat
 
 Monthly data will remove as much "trading" noise as possible. You want the price moves to reflect the underlying performance of the asset and not the day-to-day flows and execution noise. Daily data isn't an option as FX trades 24 hours a day but the ETFs only trade during the regular market hours. This presents a synchronisation problem. A currency move could happen overnight based on some headlines hours before the ETF is even open for trading. So we will split the difference and use weekly data. This should give us enough data while keeping the overall price movements based on the same time period and information.
 
-Another problem with FX data is a lack of descriptive features. Again, in equities, you have the finacial reports of a company, things like price to book and market capitilisation but these have no equivilant in FX so we need to a different way of coming up with characteristics. For this I'll be using ETFs to try and see what macro features might move the currency pairs. 
+Another problem with FX data is a lack of descriptive features. Again, in equities, you have the financial reports of a company, things like price to book and market capitilisation but these have no equivalent in FX so we need to a different way of coming up with characteristics. For this I'll be using ETFs to try and see what macro features might move the currency pairs. 
 
 ## The Data Pipeline
 
@@ -110,9 +100,9 @@ Now, onto the FX data.
 
 ### Getting the FX + DXY Data
 
-Again, following my last post I'm now just pulling the weekly data instead of daily. I've also wrapped the DXY calculations from my previous post ([Making Sense of the DXY](https://dm13450.github.io/2026/03/10/Making-Sense-of-the-DXY.html)) into a nice function. 
+Again, following my last post I'm now just pulling the weekly data instead of daily. I've also wrapped the DXY calculations from my previous post ([Making Sense of the DXY](https://dm13450.github.io/2026/03/10/Making-Sense-of-the-DXY.html)) into a nice function.
 
-We load across the 33 currencies available. 
+We load across the 33 currencies available.
 
 ```python
 dfs = [load_data(ccy) for ccy in ccys]
@@ -151,7 +141,7 @@ df = df.with_columns(pl.col("dxy_log_return").rolling_std(window_size=52).over("
 df = df.with_columns((pl.col("dxy_log_return")/pl.col("dxy_vol_52")).alias("dxy_log_return_scaled"))
 ```
 
-We normalise the momentum features in the same way. 
+We normalise the momentum features in the same way.
 
 ```python
 df = df.with_columns((pl.col("log_return_4")/pl.col("log_return_4_vol_52")).alias("log_return_4_scaled"))
@@ -392,15 +382,15 @@ ccyWeights = pl.concat(ccyWeights)
 
 As we are using the $$\beta$$ matrix, we get a time series of weights. The currencies' underlying sensitivities to the different features change over time, meaning that they will undergo different weighting in the factor portfolios over time too.
 
-After running that calculation we get to the currency rates 
+After running that calculation we get to the currency rates.
 
 ![Currency pair weights for the 1-month momentum factor from 2015 to 2024, displayed as stacked area chart with individual line overlays. Seven currency pairs (AUD, CAD, EUR, GBP, JPY, NZD, NOK) are tracked with weights fluctuating between approximately -0.3 and 0.3. EUR maintains the most stable positioning closest to zero throughout the period. AUD and CAD show cyclical long and short transitions, with AUD predominantly long and CAD shifting from short to neutral over time. GBP, JPY, NZD, and NOK exhibit more volatile swings. Notable volatility spikes occur around 2020 and 2022, reflecting market stress periods. The overall pattern indicates momentum factor weights remain relatively balanced with no single currency dominating systematically, suggesting diversified portfolio construction across pairs.](/assets/fxfundamental/momccyweights.png)
 
-For the momentum factor, EUR hugs zero more than the other selected currencies. 
+For the momentum factor, EUR hugs zero more than the other selected currencies.
 
 If we look at the DXY factor and the currency weights for 2026 to have a more realistic view of how they are changing, we can see much more stability.
 
-![](/assets/fxfundamental/dxyccyweights.png)
+![Currency weights in the DXY factor.](/assets/fxfundamental/dxyccyweights.png)
 
 Small changes around EUR; CNH has hovered around zero; TWD has gone long since February; and AUD has picked up a short position. Given these are weekly weights, it's good that there aren't any wild swings, since big changes in positioning would lead to larger transaction costs.
 

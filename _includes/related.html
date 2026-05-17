@@ -1,0 +1,25 @@
+<div class="related-posts">
+  <h3>Related Reading</h3>
+  <ul>
+    {% assign count = 0 %}
+    {% for post in site.posts %}
+      {% if post.id != page.id %}
+        {% assign sameTagCount = 0 %}
+        {% for tag in post.tags %}
+          {% if page.tags contains tag %}
+            {% assign sameTagCount = sameTagCount | plus: 1 %}
+          {% endif %}
+        {% endfor %}
+        
+        {% if sameTagCount >= 1 %}
+          <li>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <small>— {{ post.date | date: "%B %Y" }}</small>
+          </li>
+          {% assign count = count | plus: 1 %}
+          {% if count == 3 %}{% break %}{% endif %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>

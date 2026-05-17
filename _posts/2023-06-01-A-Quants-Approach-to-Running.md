@@ -2,22 +2,14 @@
 layout: post
 title: A Quants Approach to Running
 date: 2023-06-01
+tags: [personal, sports]
 ---
 
 I've been training for a marathon and it is a personal habit to let
 data take over my life for each of my hobbies. I've built apps that
 track my badminton scores, [golf struggles](https://dm13450.github.io/2022/09/30/Golf-and-Online-Linear-Regression.html), and now I've gone all analytical on my running. This post is a summary of how I've approached my training and used the science and data approach to try and maximise my performance.
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 ## All the Gear - No Idea
 

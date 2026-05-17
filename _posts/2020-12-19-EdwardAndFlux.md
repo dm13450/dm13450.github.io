@@ -2,24 +2,14 @@
 layout: post
 title: Converting an Edward Tutorial (Python) to Flux (Julia)
 date: 2020-12-19
-tags:
-  -julia 
+tags: [julia, bayes, deep-learning]
 ---
 
 Here I'll be showing you how to take a model built in Python with
 Edward, convert it into Julia and perform the same type of inference
 using Flux and Turing.jl.
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 Edward is a probabilistic programming language like [Stan](https://mc-stan.org/), [PyMC3](https://docs.pymc.io/en/v3/)
  and [Turing.jl](https://docs.pymc.io/en/v3/). You write a model and can perform statistical

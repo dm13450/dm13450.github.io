@@ -3,8 +3,7 @@ layout: post
 title: A Hierarchical Model for Yellow Cards
 date: 2018-10-24
 summary: Using pooling can we understand how a referee affects the number of yellow cards in a football match?
-tags:
- - r
+tags: [r, sports, referee]
 ---
 
 In an older [blog

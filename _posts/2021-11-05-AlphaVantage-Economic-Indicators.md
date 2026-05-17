@@ -2,8 +2,7 @@
 layout: post
 title:  Economic Indicators from AlphaVantage 
 date: 2021-11-08
-tags:
-  - julia
+tags: [julia, data]
 ---
 
 [AlphaVantage](https://www.alphavantage.co/) has added endpoints to
@@ -14,16 +13,8 @@ What AlphaVantage has done here is nothing new, and you can get the
 FRED data directly from source <https://fred.stlouisfed.org> both
 through an API and also just downloading csvs. But having another a way to get this economic data into a Julia environment is always a bonus. 
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
+
 Make sure you've upgraded your AlphaVantage.jl to version to 0.4.1. I'm
 running Julia 1.6.
 

@@ -2,6 +2,7 @@
 layout: post
 title: Bayesian Autoregressive Processes
 date: 09-06-2017
+tags: [julia, bayes]
 ---
 
 An autoregressive process can be described by the equation 

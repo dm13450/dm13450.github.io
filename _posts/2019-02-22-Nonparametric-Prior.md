@@ -5,8 +5,7 @@ date: 2019-02-22
 summary: >
  I show how a Dirichlet process can be used as a nonparametric prior
  in a hierarchical problem.
-tags:
-  -r
+tags: [r, dirichlect, bayes]
 ---
 
 
@@ -15,16 +14,7 @@ ability to drop in the objects it creates as components of models. In
 this blog post I will show you how you can use a Dirichlet process as a
 prior distribution of a parameter in a Bayesian model.
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 ``` r
 require(dplyr)
@@ -401,5 +391,5 @@ package can be easily used to drop non-parametric components of models
 into problems.
 
 If you like what you see download `dirichletprocess` from CRAN or head
-over to the Github [here](https://github.com/dm13450/dirichletprocess) for the latest dev version. 
+over to the Github ([dirichletprocess](https://github.com/dm13450/dirichletprocess)) for the latest dev version. 
 

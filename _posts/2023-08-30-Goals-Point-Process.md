@@ -1,8 +1,7 @@
 ---
 title: Modelling Soccer Goals as a Point Process
 date: 2023-08-30
-tags:
-  - r
+tags: [r, sports-analytics]
 ---
 
 Goals occur at random times during football matches but we can use a
@@ -10,16 +9,7 @@ point process to model their occurrences and understand how they are
 distributed over time. This blog post goes through how to estimate this
 type of point process model.
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 I’ve written before about predicting the number of goals in a game and this is a compliment to that post. Part of my PhD involved fitting a
 multidimensional Hawkes process to the time of goals scored by the home and away teams and this post isn’t as complicated as that instead we look at something simpler.

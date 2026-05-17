@@ -2,6 +2,7 @@
 layout: post
 title: Bulk Downloading from Turnitin using Python.
 date: 2016-01-28
+tags: [python]
 ---
 
 As a teaching assistant, occasionally I get assigned to marks a series of papers. This involves tediously searching for the students paper on the Turnitin app inside moodle before clicking a download button. When you've got 36 papers to download, this is far to much clicking and mouse movement. So I wrote a Python script to automate it. 
@@ -12,13 +13,12 @@ Moving onto Python, I used the urllib2 package to open the custom POST url. Then
 
 In Python-esque pseudo-code, this looks like:
 
-~~~
+```python
 for line in id_list:
     response = urllib2.urlopen(base_url + sessionid + paperid)
     pdf_file = write(response.read())
     pdf_file.close()
-~~~
-{: .language-python}
+```
 
 The simplicity of the urllib2 is what makes this short script so easy to construct and use. 
 

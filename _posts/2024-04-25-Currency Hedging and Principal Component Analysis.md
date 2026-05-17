@@ -6,6 +6,7 @@ image:
   path: /assets/asianccys/eigenPortfolio.png
   width: 500
   height: 500
+tags: [julia, quant, fx]
 ---
 
 Principal component analysis (PCA) reduces a dataset to its main
@@ -13,17 +14,7 @@ components. When we apply it to a dataset of different
 currencies it helps us understand how each currency drives the overall
 portfolio and what currency might be a common factor. 
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
-
+{% include newsletter.html %} 
 
 This post was inspired by a problem on the [r/quant](https://www.reddit.com/r/quant/) subreddit where someone posted their interview/take-home question. 
 

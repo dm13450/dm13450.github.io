@@ -2,6 +2,7 @@
 layout: post
 title: Notes from a Quantcast Talk 
 date: 2016-12-02
+tags: [conference]
 ---
 
 

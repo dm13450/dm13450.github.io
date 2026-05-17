@@ -2,6 +2,7 @@
 layout: post
 title: Kelly Betting - Part One
 date: 16/09/02
+tags: [betting]
 ---
 
 

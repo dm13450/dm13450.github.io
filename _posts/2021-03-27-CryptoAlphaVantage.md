@@ -2,8 +2,7 @@
 layout: post
 title: Crypto Data using AlphaVantage.jl 
 date: 2021-03-27
-tags:
-  - julia
+tags: [julia, crypto]
 images:
   path: /assets/AlphaVantageCrypto/output_15_0.svg
   width: 500
@@ -12,16 +11,7 @@ images:
 
 Julia 1.6 is hot off the press, so I've installed it and fired off this quick blog post to give 1.6 a test drive. So far, so good and there is a real decrease now in the latencies in both loading up packages and getting things going. 
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 [AlphaVantage](https://www.alphavantage.co/) have data on cryptocurrencies and not just stocks and fx. Each of which are implemented in [AlphaVantage.jl](https://github.com/ellisvalentiner/AlphaVantage.jl). This is a simple blogpost that takes you through each function and how it might be useful to analyse cryptocurrencies. 
 

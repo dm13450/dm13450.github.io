@@ -4,8 +4,7 @@ title: Point Process Estimation with dirichletprocess
 date: 08-03-2018
 summary: Fit a point process model using the dirichletprocess R package.
 image: /assets/pointprocess_files/tweet.png
-tags:
- - r
+tags: [r, dirichlet]
 ---
 
 
@@ -22,7 +21,7 @@ require(dirichletprocess)
 require(boot)
 ```
 
-[In my first tutorial](https://dm13450.github.io/2018/02/01/Dirichlet-Density.html) I demonstrated how you can use the `dirichletprocess` package to estimate densities using nonparametric Bayesian mixtures. In the second tutorial I showed how easy it is to [add in your own conjugate mixture models](https://dm13450.github.io/2018/02/21/Custom-Distributions-Conjugate.html). In part three of this tutorial series I will show how you can use a Dirichlet process to estimate a point process model.
+In my first tutorial, [Density Estimation with the dirichletprocesss R package](https://dm13450.github.io/2018/02/01/Dirichlet-Density.html) I demonstrated how you can use the `dirichletprocess` package to estimate densities using nonparametric Bayesian mixtures. In the second tutorial I showed how easy it is to [add in your own conjugate mixture models](https://dm13450.github.io/2018/02/21/Custom-Distributions-Conjugate.html). In part three of this tutorial series I will show how you can use a Dirichlet process to estimate a point process model.
 
 But firstly what is a point process? [Wikipedia](https://en.wikipedia.org/wiki/Point_process) states that a point process is a collection of points randomly located on some space. So, if we have a rectangle, a collection of random points inside the rectangle is a point process. For example, lets say we have a field where flowers are growing randomly. The co-ordinates where each flower is located form a point process. Or, in a 1 dimensional example, we might be observing how long it takes for a bus to arrive at a bus stop. Each time a bus arrives, the time is noted. These collection of bus arrival times form a 1D point process.
 

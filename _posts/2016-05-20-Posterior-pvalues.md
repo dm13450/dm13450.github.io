@@ -2,6 +2,7 @@
 layout: post
 title: Posterior p-values 
 date: 16/05/20
+tags: [bayes]
 ---
 
 I am now at the point in my work where I need to check my models and whether they correctly describe the data. To do this, lets introduce posterior p-values for a Bayesian model. 

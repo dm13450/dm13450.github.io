@@ -2,8 +2,7 @@
 title: QuestDB Part 2 - High Frequency Finance (again!)
 layout: post
 date: 2021-08-12
-tags:
-  - julia
+tags: [julia, quant, hft, questdb]
 ---
 
 [Last time](https://dm13450.github.io/2021/08/05/questdb-part-1.html) I showed you how to set up a producer/consumer model to
@@ -14,16 +13,7 @@ hopefully show where this type of database is useful by improving some
 of my old calculations. You should read one of my older blog posts on
 high frequency finance ([here](https://dm13450.github.io/2021/06/25/HighFreqCrypto.html)) as I'm going to repeat some of the calculations using more data this time. 
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 I ingested just over 24 hours worth of data over the 24th and 25th of July. Completely missed the massive rally though, which is just my luck, that would have been interesting to look at! Oh well.
 
@@ -52,7 +42,7 @@ conn = LibPQ.Connection("""
 
     PostgreSQL connection (CONNECTION_OK) with parameters:
       user = admin
-      password = ********************
+      password = **
       dbname = qdb
       host = 127.0.0.1
       port = 8812

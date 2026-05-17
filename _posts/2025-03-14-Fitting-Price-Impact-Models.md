@@ -2,8 +2,7 @@
 layout: post
 title: Fitting Price Impact Models
 date: 2025-03-14
-tags:
-  - julia
+tags: [julia, quant, microstructure]
 images:
   path: /assets/priceimpact/priceimpact.png
   width: 500
@@ -12,16 +11,7 @@ images:
 
 A big part of market microstructure is price impact and understanding how you move the market every time you trade. In the simplest sense, every trade upends the supply and demand of an asset even for a tiny amount of time. The market responds to this change, then responds to the response, then responds to that response, etc. You get the idea. It's a cascading effect of interactions between all the people in the market.
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %}
 
 Price impact is happening both at the micro and macro level. At the micro level each trade moves the market a little bit based on the instantaneous market conditions commonly called 'liquidity'. At the macro level, continuous trades in one direction have a compounding and overlapping effect. In reality, you can't separate out either effect so the market impact models need to work for both small and large scales. 
 
@@ -70,7 +60,7 @@ conn = LibPQ.Connection("""
              port=8812
              user=admin""");
 ```
-			 
+
 For each trade recorded in the database, we also want to join the best bid and offer immediately before it. This is where an `ASOF` join is useful. It joins two tables with timestamps using the entry of the 2nd table with time before the first table row. Sounds more complicated than it really is. In short, it takes the trade table and adds in the prices using the price just before the trade. 
 
 

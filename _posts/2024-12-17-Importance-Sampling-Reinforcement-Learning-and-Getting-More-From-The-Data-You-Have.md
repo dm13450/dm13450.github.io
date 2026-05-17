@@ -2,8 +2,7 @@
 layout: post
 title: Importance Sampling, Reinforcement Learning and Getting More From The Data You Have
 date: 2024-12-17
-tags:
- - julia
+tags: [julia]
 images:
   path: /assets/importancesampling/simplestrat.png
   width: 500
@@ -13,16 +12,7 @@ images:
 A new paper hit my feed [Choosing trading strategies in electronic execution using
 importance sampling](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5001783). I've only encountered sampling as part of a statistical computing course as part of my PhD, and I had never strayed away from Monte Carlo sampling, but this practical example provided an intuitive understanding of its importance and utility.
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 The key tenet of the paper is to use the data you have to evaluate a strategy you are considering without actually running the new strategy in production. In real life, changing something like these strategies can take a long time, with limited upside but unlimited downside if it all goes wrong. 
 

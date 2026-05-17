@@ -2,8 +2,7 @@
 layout: post
 title: Dirichlet Process Convergence
 date: 2020-01-11
-tags:
- - r
+tags: [r, dirichlet]
 ---
 
 The most frequent question I’m asked about my Dirichlet process package
@@ -24,16 +23,7 @@ As our example we are going to cluster the waiting time and eruption
 lengths of the `faithful` geyser. This is a standard dataset in R and so
 download my package and you can play along too!
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 To start with, we fit the default multivariate Dirichlet process model
 to the data and run the inference for 1000 iterations. The results are

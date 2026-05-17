@@ -2,8 +2,7 @@
 layout: post
 date: 17-04-2019
 title: Speed differences between a map and a loop in Julia
-tags:
- -julia
+tags: [julia, benchmark]
 ---
 
 I'm currently writing some of my R functions in Julia to improve

@@ -1,26 +1,14 @@
 ---
 layout: post
 title: Fitting Mixed Effects Models - Python, Julia or R?
-tags:
-  - python
-  - R
-  - julia
+tags: [python, R, julia]
 ---
 
 I'm benchmarking how long it takes to fit a mixed
 effects model using `lme4` in R, `statsmodels` in Python, plus
 showing how `MixedModels.jl` in Julia is also a viable option.
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 Data science is always up for debating whether R or Python is the better
 language when it comes to analysing some data. Julia has been

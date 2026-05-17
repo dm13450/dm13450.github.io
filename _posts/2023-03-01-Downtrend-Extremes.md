@@ -16,16 +16,11 @@ also a blog post from last year when I investigated trend following -
 going to take two approaches, a simple binomial model and a Hawkes
 process. For the data, we will be pulling the daily data from Alpaca Markets using my [AlpacaMarkets.jl](https://github.com/dm13450/AlpacaMarkets.jl) package.
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+
+
+{% include newsletter.html %} 
+
+
 
 A few packages to get started and I'm running Julia 1.8 for this
 project. 

@@ -2,10 +2,8 @@
 layout: post
 title: Density Estimation with the dirichletprocesss R package
 date: 2018-02-01
-tags: 
- - r
+tags: [r, dirichlet]
 ---
-
 
 With the release of the
 [dirichletprocess](https://cran.r-project.org/package=dirichletprocess)
@@ -14,7 +12,7 @@ Dirichlet processes for nonparameteric Bayesian statistics. In this
 first tutorial we will be using a Dirichlet process for density
 estimation.
 
-### What is a Dirichlet process?
+## What is a Dirichlet process?
 
 Reading the Wikipedia article on [Dirichlet processes](https://en.wikipedia.org/wiki/Dirichlet_process) isn't all that helpful for building a picture of what a Dirichlet process is and how it can be used in statistics. So here is my attempt at high level explanation! 
 
@@ -25,7 +23,7 @@ Each of these observations is from its own distribution $$K(\theta _i)$$ with it
 
 To fit a Dirichlet process, you iterate through all the datapoints, checking whether a datapoint $$y_i$$ should be assigned a parameter from the other $$\theta _j$$'s assigned to $$y_j$$, or whether a new $$\theta _i$$ should be used. Eventually, you will find a point where every data point has its best parameter assigned and no more changes happen and you have fit your Dirichlet process to the data. 
 
-### Modeling Time!
+## Modeling Time!
 
 Now lets take that explanation and apply it to some data. The
 `faithful` data set looks contains two columns, one indicating the

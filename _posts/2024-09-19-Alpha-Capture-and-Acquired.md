@@ -18,16 +18,11 @@ is about systematically assessing ideas and working out who has
 *alpha* and generates profitable ideas and who is just making it up as
 they are going along. 
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+
+
+{% include newsletter.html %} 
+
+
 
 Alpha capture started as a way of profiling a broker's stock
 recommendation. If you have 50 people recommending you 50 different

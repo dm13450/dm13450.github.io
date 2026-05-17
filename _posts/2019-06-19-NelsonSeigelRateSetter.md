@@ -2,8 +2,7 @@
 layout: post
 title: The Nelson Siegel Model and P2P Bonds
 date: 19-06-2019
-tags:
- -r
+tags: [r, quant]
 ---
 
 In an earlier post I looked at the

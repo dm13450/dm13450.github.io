@@ -5,8 +5,7 @@ date: 2019-02-06
 summary: >
   Using the RateSetter data I animate the yield curve and give on
   overview of fixed income.
-tags:
-   -r
+tags: [r, quant, data]
 ---
 
 I will be using R to anaylse the yield curve of the Peer to peer
@@ -14,18 +13,7 @@ lender RateSetter. This is an exploration of the data RateSetter
 provide, with the goal of producing a final animation of the yield
 curve through time. 
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
-
-
+{% include newsletter.html %} 
 
 ``` r
 require(readr)

@@ -2,8 +2,7 @@
 layout: post
 title: Predicting Goals Using the Winning Odds
 date: 2022-03-07
-tags: 
-  -r
+tags: [r, sports]
 ---
 
 The odds of a football match is the market's view of how that match
@@ -11,16 +10,7 @@ will play out. We want to use this one price to try and predict other
 features of the match, in this case, how many goals a team will
 score. 
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 Following on from my [Hawkes processes and terrorist attacks
 post](https://dm13450.github.io/2021/03/02/Terror-Attacks-Hawkes-Processes.html),

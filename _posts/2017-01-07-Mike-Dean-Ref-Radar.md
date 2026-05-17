@@ -2,6 +2,7 @@
 layout: post
 title: Mike Dean and the Ref Radar
 date: 2017-01-07
+tags: [sports, referee]
 ---
 
 It was a tough day at the office last week for Mike Dean. The match was Manchester United vs West Ham and after 15 minutes he dismissed Feghouli for a foul tackle. The tempo of the game changed. West Ham were on the back foot and eventually conceded two goals to Man Utd. Undeniably the red card had a big effect on the outcome of the game. It has since been rescinded, showing that the FA agree with fans that perhaps it should not have been a red card. 

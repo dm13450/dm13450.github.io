@@ -2,6 +2,7 @@
 layout: post
 title: Dissertation Construction Learnings 
 date: 16/08/17
+tags: [writing]
 ---
 
 With my dissertation handed in it is time to reflect on what I've learnt in terms of constructing the 20,000-word file. 

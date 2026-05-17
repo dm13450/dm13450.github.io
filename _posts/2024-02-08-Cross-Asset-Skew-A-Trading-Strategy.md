@@ -2,8 +2,7 @@
 title: Cross Asset Skew - A Trading Strategy
 layout: post
 date: 2024-02-08
-tags:
-  -julia
+tags: [julia, quant]
 image:
   path: assets/skew/skewPortfolios-min.png
   height: 500
@@ -12,16 +11,7 @@ image:
 
 I recently listened to S7E3 of Flirting with Models which had [Nick Baltas](https://twitter.com/nbaltas?lang=en) talking about [Multi Asset and Multi-Strategy portfolios](https://www.flirtingwithmodels.com/episodes/Kcr3dlatn2Q). Nick highlighted his work on cross-asset skew and how it can compliment your typical equity factors (momentum, growth, value etc.) and is an under-explored topic in portfolio construction. After reading the original paper, [Cross-Asset Skew](https://www.researchgate.net/profile/Nick-Baltas/publication/338498916_Cross-Asset_Skew/links/5ecc6b2c299bf1c09adf5a24/Cross-Asset-Skew.pdf), I decided to try and replicate the results and see whether skew comes out in the wash and produces any alpha. 
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 In this post, I'll go through what skew is, how it can be used as a trading strategy, and backtest the portfolio across different asset classes. We will then see if it produces any alpha ($$\alpha$$) and or if skew is just market beta ($$\beta$$). I'll then take a deeper dive into the equity performance and how it compares to the typical factors.
 

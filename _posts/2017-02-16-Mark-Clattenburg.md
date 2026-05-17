@@ -2,6 +2,7 @@
 layout: post
 title: Mark Clattenburg  
 date: 17/02/16
+tags: [sports, referee]
 ---
 
 The news has just broken that Premier League referee [Mark Clattenburg is moving to Saudi Arabia](https://www.premierleague.com/news/334134). Having refereed the FA Cup final, Champions League Final and Euro final last year alone he can quite comfortably say he has done it all. As they say, you are only as good as the last game you refereed, so perhaps moving somewhere less visible is a good end to an exemplary career. 

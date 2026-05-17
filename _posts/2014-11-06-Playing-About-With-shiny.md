@@ -2,6 +2,7 @@
 layout: post
 title: "Playing About with Shiny"
 date: 14-11-06 20:00
+tags: [r, basic]
 ---
 
 As an update to my MPhys project, I am currently building a webapp using the R package shiny to display the data from the simulations that have been run. 

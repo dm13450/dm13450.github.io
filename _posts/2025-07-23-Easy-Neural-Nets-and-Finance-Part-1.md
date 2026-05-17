@@ -2,8 +2,7 @@
 layout: post
 title: "Easy Neural Nets and Finance - Part 1"
 date: 2025-07-23
-tags:
-  - julia
+tags: [julia, quant, deep-learning]
 images:
   path: /assets/deeplearning/part1/layer1_results.png
   width: 500
@@ -12,16 +11,7 @@ images:
 
 I'm fortunate enough to be participating in a lecture series at work that covers deep learning and its applications in finance. This will be a series of posts documenting what I learn and implementing the 'homework' (I'm 32, how am I still getting homework?) using Julia and Flux. 
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 The phrase 'deep learning' already feels outdated, and the current hotness is more about AI and LLMs, so the lecture and topics might feel a bit out of date. But given LLMs wouldn't be here without the deep learning, it feels like going back to the basics.
 

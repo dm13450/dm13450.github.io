@@ -2,9 +2,8 @@
 layout: post
 title: "The First Workshop"
 date: 2015-10-07
+tags: [conference]
 ---
-
-
 
 On Friday the 25th of September I took myself along to King's College to attend the London-Paris Bachelier Workshop on Mathematical Finance. It was a two day event designed to highlight the collaboration between London and Parisian universities in the maths and finance field. As a new graduate student of this field I thought it was a good opportunity to attend. 
 

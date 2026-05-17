@@ -2,6 +2,7 @@
 layout: post
 title: Introducing the Referee Radar
 date: 2016-12-24
+tags: [r, sports, referee] 
 ---
 
 The radar plot is a good way to analyse different metrics across a group. The football player radar made popular by Ted Knutson ([Understand football radars for mugs and muggles](https://statsbomb.com/2016/04/understand-football-radars-for-mugs-and-muggles/)) is good at comparing players and seeing how their stats stack up against one another. Here I will be taking a similar concept and using the radar plot to analyse the referee's in the professional game in England. 

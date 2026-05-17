@@ -2,9 +2,16 @@
 layout: post
 title: A Football Auto-encoder
 date: 2019-03-08
-tags:
- -r
+tags: [r, sports]
 ---
+
+In blog post I want to build an auto-encoding neural network. It will
+take a football teams performances over a season and code it into two
+values. Using these two values, we can then see if the data possess some
+sort of latent representation. This will be useful to see what types
+of season a team had. You would expect well performing teams to have a
+cluster of similar values and likewise, bad teams to be clustered together with similar values. 
+
 
 ``` r
 require(readr)
@@ -19,14 +26,6 @@ require(recipes)
 source("../Betting/BettingFunctions.R")
 theme_set(theme_linedraw())
 ```
-
-In blog post I want to build an auto-encoding neural network. It will
-take a football teams performances over a season and code it into two
-values. Using these two values, we can then see if the data possess some
-sort of latent representation. This will be useful to see what types
-of season a team had. You would expect well performing teams to have a
-cluster of similar values and likewise, bad teams to be clustered together with
-similar values. 
 
 ## Auto-encoders
 

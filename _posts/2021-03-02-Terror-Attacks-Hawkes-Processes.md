@@ -2,8 +2,7 @@
 layout: post
 title: Does a Terror Attack Lead to More Terror Attacks?
 date: 2021-03-02
-tags:
- -julia
+tags: [julia, hawkes]
 ---
 
 Do terror attacks cause more terror attacks? If they do then they are
@@ -23,17 +22,7 @@ to terror attacks. I was concerned about *extreme* terror attacks and
 how a Hawkes process can model them in  variety of ways to try and
 understand the statistical consequences of a large terror attack.
 
-
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 In this blog post I will do the same, but focus on *all* terror attacks across a variety of countries and build two Hawkes models to see how well they describe these attacks. This will be the first blog post I've written on applying my `HawkesProcesses.jl` Julia [package](https://github.com/dm13450/HawkesProcesses.jl), so should serve as a more practical introduction than my previous outline of the package which I wrote about previously [here](https://dm13450.github.io/2020/05/26/HawkesProcessesPackage.html). 
 

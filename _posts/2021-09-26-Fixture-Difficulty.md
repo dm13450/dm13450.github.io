@@ -2,8 +2,7 @@
 layout: post
 title: How Tough is that Football Match?
 date: 2021-09-26
-tags:
- - r
+tags: [r, sports]
 ---
 
 How do we quantify the difficulty of a soccer match and can we
@@ -15,16 +14,7 @@ match should be easy for them and difficult for their opponent. If the
 odds are similar for either team, then the match is balanced and their
 is no apparent difficulty for either side.
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 ## Kullback–Leibler Divergence
 

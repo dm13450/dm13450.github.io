@@ -2,8 +2,7 @@
 layout: post
 title: "Premier League Survival – How Many Points Are Enough?"
 date: 2025-10-31
-tags: 
-    - python
+tags: [python, sports]
 images:
   path: /assets/relegation/safe.png
   width: 500
@@ -12,16 +11,7 @@ images:
 
 It's been an interesting start to the Premier League. All of the promoted teams (Sunderland, Leeds and Burnley) are outside the relegation zone, with Wolves and West Ham struggling at the bottom. So I want to look back at the other seasons and work out the average number of points throughout the season that characterises relegation teams, and how many points do you need to avoid relegation?
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %}
 
 This is also a post where I dive into Python. I've been meaning to learn both [Polars](https://pola.rs/) and [Plotly](https://plotly.com/), and given the relative simplicity of this post, it feels like the opportune time. It has also been a while since I've written about football and given my reduced output recently, it feels like a quick win to churn something out quickly. 
 
@@ -225,5 +215,3 @@ No real change to the conclusion. Sunderland are doing well on both points and g
 ## Conclusion
 
 Based on these early-season trajectories, it's not looking good for West Ham or Wolves. By contrast, Sunderland should be getting excited about the prospect of another season in the Premier League. Leeds and Burnley - not quite out of the woods. As another cliche goes, relegation is about hoping you are better than 3 other teams and at the minute Wolves and West Ham are struggling to find three other worse teams!
-
-

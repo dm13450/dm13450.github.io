@@ -4,8 +4,7 @@ title: Clustering with Dirichlet Processes
 date: 2018-05-30
 summary: A tutorial on clustering with Dirichlet processes
 image: /assets/clustering_files/figure-markdown_github/unnamed-chunk-2-1.png
-tags:
- - r
+tags: [r, dirichlet]
 ---
 
 This post is another tutorial on using my `dirichetprocess` package in R. So far I have shown you [how to perform density estimation](https://dm13450.github.io/2018/02/01/Dirichlet-Density.html), [point process inference](https://dm13450.github.io/2018/03/08/dirichletprocess-pointprocess.html), and adding your own [custom mixture model](https://dm13450.github.io/2018/02/21/Custom-Distributions-Conjugate.html). In this tutorial I will show you how Dirichlet processes can be used for clustering.

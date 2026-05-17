@@ -9,16 +9,11 @@ tags:
 
 One of my talks for JuliaCon 2022 explored the use of JuMP to optimise a Fantasy Premier League (FPL) team. You can watch my presentation here: [Optimising Fantasy Football with JuMP](https://www.youtube.com/watch?v=IS-lziTqClE&list=PLIojEI1c4KwPW08-qXN2tL1ra1HV6XyJu&index=2) and this blog post is an accompaniment and extension to that talk. I've used [FPL Review](https://fplreview.com/) free expected points model and their tools to generate the team images, go check them out. 
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+
+
+{% include newsletter.html %} 
+
+
 
 Now last season was my first time playing this game. I started with an analytical approach but didn't write the team optimising routines until later in the season, by which time it was too late to make too much of a difference. I finished at 353k, so not too bad for a first attempt, but quite a way off from that 100k "good player" milestone. I won't be starting a YouTube channel for FPL anytime soon.
 

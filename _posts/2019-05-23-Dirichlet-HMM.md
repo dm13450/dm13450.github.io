@@ -2,8 +2,7 @@
 layout: post
 title: Hidden Markov Models using a Dirichlet Process
 date: 2019-05-23
-tags:
- -r
+tags: [r, dirichlet]
 ---
 
 Using my [dirichletprocess](https://github.com/dm13450/dirichletprocess) package I have implemented a hidden Markov
@@ -11,16 +10,7 @@ model from “Dirichlet Process Hidden Markov Multiple Change-point
 Model” \[1\] . You can build a hidden Markov model using a Dirichlet process
 with the components from my `dirichletprocess` package.
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 ``` r
 set.seed(2019)

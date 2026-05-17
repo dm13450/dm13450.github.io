@@ -1,23 +1,13 @@
 ---
 title: Easy Reinforcement Learning - The Multi Armed Bandit
 date: 2023-09-27
-tags:
-  -julia
+tags: [julia, stats]
 ---
 
 
 This is another draft that's been sitting on my laptop and I was sitting on the Eurostar on the way to TradeTech and thought I'd try and formalise it into a blog post. This is all about reinforcement learning and a basic model that can be easily implemented in Julia. This post is me walking through and implementing the 2nd chapter of [Reinforcement Learning: An Introduction](http://incompleteideas.net/book/the-book-2nd.html).
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 Reinforcement learning is a pillar of machine learning and it combines the use of data and learning how to make a better decision automatically. One of the basic models in reinforcement learning is the *multi-armed bandit*. A bit of an anachronistic name, but the single-armed bandit refers to a casino game where you pull the lever (or push a button), some cassettes roll round and you might win a prize.
 

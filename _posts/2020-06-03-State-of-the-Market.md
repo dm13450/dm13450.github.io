@@ -2,8 +2,7 @@
 title: State of the Market - Infinite State Hidden Markov Models
 layout: post
 date: 2020-06-03
-tags:
-  -r
+tags: [r, quant]
 ---
 
 My `dirichletprocess` package for R has the ability to fit Infinite Hidden Markov
@@ -12,16 +11,9 @@ will fit a Hidden Markov model to some financial data to see how the
 states change over time and hopefully highlight why this might be
 useful. 
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+I've created a video that was presented at useR 2021 that runs through this post. Watch it here - [UseR 2021 - State of the Market](https://www.youtube.com/watch?v=6kSPwHcO6L0).
+
+{% include newsletter.html %} 
 
 The typical Markov model in finance assumes two states; a bull state
 where the market is rising and a bear state where the market is

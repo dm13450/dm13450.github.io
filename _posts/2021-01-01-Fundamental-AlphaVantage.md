@@ -2,24 +2,14 @@
 layout: post
 title: Fundamental Stock Data from AlphaVantage.jl
 date: 2021-01-01
-tags:
-  -julia
+tags: [julia, data]
 ---
 
 AlphaVantage recently made fundamental data for stocks available through their
 API and thanks to some new contributors to the `AlphaVantage.jl` Julia
 package you can now easily import this data into your Julia project.
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 This fundamental data describes the underlying business information
 about a company and is more fluid and open to interpretation than the

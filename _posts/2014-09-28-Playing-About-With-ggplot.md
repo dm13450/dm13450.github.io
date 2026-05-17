@@ -1,7 +1,8 @@
 ---
 layout: post
-title : "Playing About with ggplot"
-date : 14-09-28 23:46
+title: "Playing About with ggplot"
+date: 14-09-28 23:46
+tags: [r, basic]
 ---
 
 I've turned the spellchecker on right away for this post. 

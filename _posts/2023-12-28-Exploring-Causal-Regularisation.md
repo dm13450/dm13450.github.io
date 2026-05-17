@@ -2,8 +2,7 @@
 layout: post
 title: Exploring Causal Regularisation
 date: 2023-12-28
-tags:
-  - julia
+tags: [julia, stats]
 images: 
   path: /assets/causalregularisation/output_5_0.png
   width: 500
@@ -12,16 +11,7 @@ images:
 
 A good prediction model isn't necessarily a good causal model. You could be missing a key variable in your dataset that is driving the underlying behavior so you end up with a good predictive model but not the correct explanation as to *why* things behave that way. Taking a causal approach is a tougher problem and needs an understanding of whether we have access to the right variables or we are making the right link between variables and an outcome. Causal regularisation is a method that uses machine learning techniques (regularisation!) to try and produce models that can be interpreted causally. 
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 Regularisation is normally taught as a method to reduce overfitting, you have a big model and you make it smaller by shrinking some of the factors. Work by Janzing (papers below) argues that this can help produce better causal models too and in this blog post I will work through two papers to try and understand the process better. 
 

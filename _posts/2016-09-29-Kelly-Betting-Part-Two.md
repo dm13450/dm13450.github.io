@@ -2,6 +2,7 @@
 layout: post
 date: 16/09/29
 title: Kelly Betting - Part Two
+tags: [r, betting]
 ---
 
 In my previous post I have outlined the basics of Kelly betting. Now I will be looking at the optimal bet size for placing bets on multiple simultaneous events that are independent of one another. We will be using R to numerically solve the resulting equations and hopefully learn some quirks of function optimisation in R.  

@@ -2,8 +2,7 @@
 layout: post
 title: Golf and Online Linear Regression
 date: 2022-09-30
-tags:
-  - r
+tags: [r, spots]
 ---
 
 Golf became the only thing you could do in the COVID times and given my
@@ -14,16 +13,7 @@ of strokes required at a given distance to get the golf ball in the
 hole. It is a simple model but can describe someones
 golfing, or lack of in my case, ability.
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %}
 
 ## Strokes Gained
 

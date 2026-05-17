@@ -2,8 +2,7 @@
 layout: post
 title: Conjugate Stan Models and Hierarchy
 date: 05-06-2019
-tags:
- -r
+tags: [r, bayes]
 ---
 
 ``` r

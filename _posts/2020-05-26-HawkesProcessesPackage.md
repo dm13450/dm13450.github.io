@@ -2,8 +2,7 @@
 layout: post
 title: "An Introduction to Hawkes Processes with HawkesProcesses.jl"
 date: 2020-05-26 
-tags:
-  -julia
+tags: [julia, hawkes]
 ---
 
 `HawkesProcesses.jl` is a Julia package that provides a number of
@@ -20,16 +19,7 @@ using Distributions
 using Plots
 ```
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 ## Intensity of a Hawkes Process
 
@@ -123,10 +113,7 @@ plot(histogram(bgSamps, label="Background", colour=:darkred),
 ![Hawkes process parameter histograms](/assets/hawkesvignette/output_18_0.svg
  "Hawkes process parameter histograms")
 
-
-
-The histograms of the parameter samples are distributed around the true values as expected which shows our method is working. We run another chain to check convergence. 
-
+The histograms of the parameter samples are distributed around the true values as expected which shows our method is working. We run another chain to check convergence.
 
 ```julia
 bgSamps2, kappaSamps2, kernSamps2 = HawkesProcesses.fit(simevents, maxT, 1000);
@@ -143,13 +130,8 @@ kernplot = plot!(kernSamps2, label="Chain 2")
 plot(bgplot, kappaplot, kernplot, layout = (1, 3))
 ```
 
-
-
-
 ![Hawkes process parameter convergence](/assets/hawkesvignette/output_20_0.svg
  "Hawkes process parameter convergence")
-
-
 
 A basic visual inspection shows that the chains are exploring the parameter space nicely. 
 

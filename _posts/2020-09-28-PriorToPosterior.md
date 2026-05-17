@@ -1,8 +1,7 @@
 ---
 title: Palmer Penguins and an Introduction to Dirichlet Processes
 date: 28-09-2020
-tags:
-  -r
+tags: [r, bayes]
 ---
 
 

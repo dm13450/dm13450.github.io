@@ -2,8 +2,7 @@
 layout: post
 title:  AlphaVantage.jl - Getting Market Data into Julia
 date: 2020-07-05
-tags:
- - julia
+tags: [julia, data]
 ---
 
 [AlphaVantage](https://www.alphavantage.co/) is a market data provider that is nice enough to provide
@@ -19,16 +18,7 @@ with all the AlphaVantage functions and have now released it to the
 world in the Julia registry. You can easily install the package just
 like any other Julia package using `Pkg.add("AlphaVantage")`.
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 This blog post will detail all the different function available and
 illustrate how you can pull the data, massage it into a nice format

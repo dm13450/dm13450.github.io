@@ -2,6 +2,7 @@
 layout: post
 date: 16-12-07
 title: The Data Dialogue - At War with Data
+tags: [conference]
 ---
 
 On Wednesday, I took a stroll across the river to King's College for a seminar on data and warfare. It's a bit of a broad subject for a conference and the seminar speakers came from a variety of fields where the innovative usage of data is less obvious and more unique. 

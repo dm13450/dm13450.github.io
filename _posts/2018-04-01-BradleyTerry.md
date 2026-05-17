@@ -5,8 +5,7 @@ layout: post
 summary: In this post I will show how we formulated our own 'games' in
  football for which a Bradley Terry model can be used.
 image: /assets/Red_Card_Bradley_Terry_Model_files/btmodel_current.png
-tags:
- - r
+tags: [r, sports, bayes]
 ---
 
 A Bradley Terry model ranks opponents to give a probability that a match up will lead to a win or loss for either team. Draws are not allowed in the most basic Bradley Terry (BT) model, which makes them impractical for football results. There are extensions that allow for draws, ([here](https://www.jstor.org/stable/2283595)), but in this post I will show how we formulated our own 'games' in football for which a BT model can be used.

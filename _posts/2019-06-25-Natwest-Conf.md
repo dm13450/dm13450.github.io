@@ -2,22 +2,14 @@
 layout: post
 title: Natwest Markets Quant Conference
 date: 25-06-2019
+tags: [conference]
 ---
 
 Natwest Markets held (in their words) the first quant conference organised by a bank on the 21st of June. Strong words and not something I can really verify. But I went along to this conference and this post is a summary of the talks that I found interesting.
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
-It kicked off with Vladimir Piterbarg talking about the optimal investment problem. This deals with the dynamic allocation of money to risky and riskless assets to maximise some utility function. He outlined two different approaches, one where the volatility is modelled with different frameworks and another where a reinforcement learning approach is taken which gives a 'model free' view of the problem. Both approches lead to the same conclusion which shows how the reinforcement learning problem is able to learn the same dynamics that the volatility models provide.
+It kicked off with Vladimir Piterbarg talking about the optimal investment problem. This deals with the dynamic allocation of money to risky and riskless assets to maximise some utility function. He outlined two different approaches, one where the volatility is modelled with different frameworks and another where a reinforcement learning approach is taken which gives a 'model free' view of the problem. Both approaches lead to the same conclusion which shows how the reinforcement learning problem is able to learn the same dynamics that the volatility models provide.
 
 The next session was the 'Innovation Roundup' from the sponsors of the conference:
 
@@ -31,7 +23,7 @@ My favourite talk of the day was by Standard Chartered. They introduced quantum 
 
 The talk started by introducing the difference between classical and quantum computers - things like qubits and quantum boolean operators. Instead of 1 and 0 states, the qubit represents a superposition of both these states and then quantum weirdness can be exploited. One such example is the quantum equivalent to simulated annealing. 
 
-In an optimisation task, you want to find the global minimum, the overal low point of the objective function and not a local minimum.
+In an optimisation task, you want to find the global minimum, the overall low point of the objective function and not a local minimum.
 
 ![](/assets/natwest/quantPlot1.png)
 

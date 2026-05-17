@@ -2,6 +2,7 @@
 layout: post
 title: Films I've Watched In January 2016
 date: 2016-01-25
+tags: [watching]
 ---
 Ordered as per my memory!
 

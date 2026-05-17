@@ -2,8 +2,7 @@
 layout: post
 title: Which Turing.jl Sampler is the Fastest?
 date: 2019-04-10
-tags:
- -julia
+tags: [julia, bayes, benchmarch]
 ---
  
 The [Turing.jl](https://turing.ml/) package provides a great interface
@@ -15,6 +14,7 @@ for anyone that has a Turing model in the middle of another model that
 they need to get samples from.
 
 ### Toy Model
+
 For the toy model we will be sampling from the Beta distribution. 
 
 

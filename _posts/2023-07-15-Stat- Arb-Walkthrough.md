@@ -2,11 +2,10 @@
 layout: post
 title: Stat Arb - An Easy Walkthrough
 date: 2023-07-15
-tags:
-  - julia
+tags: [julia, quant]
 ---
 
-Statistical arbitrage (stat arb) is a pillar of quantitate trading
+Statistical arbitrage (stat arb) is a pillar of quantitative trading
 that relies on mean reversion to predict the future returns of an
 asset. Mean reversion believes that if a stock has risen higher it's
 more likely to revert in the short term which is the opposite of a
@@ -17,16 +16,9 @@ arbitrage paper
 apply it to a stock/ETF pair and then look at an intraday crypto stat
 arb strategy.
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+Somehow, this post ended up on the front page of Hacker News - <https://news.ycombinator.com/item?id=36766556>. Some good comments, some funny comments. The most viral I've ever gone. 
+
+{% include newsletter.html %} 
 
 I'm using Julia 1.9 and my [AlpacaMarkets.jl](https://github.com/dm13450/AlpacaMarkets.jl) package gets all the data we
 need. 

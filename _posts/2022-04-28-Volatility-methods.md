@@ -2,8 +2,7 @@
 layout: post
 title: How to Calculate Realised Volatility
 date: 28-04-2022
-tags:
-  - julia
+tags: [julia, quant]
 ---
 
 Volatility measures the scales of price changes and is an easy way to
@@ -15,16 +14,7 @@ view of crypto volatility, take a look at
 [cryptoliquiditymetrics](https://cryptoliquiditymetrics.com/) where I have added in a new card with the volatility over the last 24 hours. 
 
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 To start with we will be looking at daily data. Using my
 [CoinbasePro.jl](https://github.com/dm13450/CoinbasePro.jl) package in a Julia we can get the last 300 days OHLC

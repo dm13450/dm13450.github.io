@@ -2,6 +2,7 @@
 layout: post 
 title: "Prop Shop Interviews"
 date: 14/11/30 
+tags: [interview]
 ---
 
 I thought I would try my hand at applying to a few proprietary trading firms in London. Having read Scott Pattersons books (Dark Pools and Quants) I felt like I had a decent grasp on the industry and felt that my skills from physics would set me up well for a trading job. 
@@ -42,10 +43,4 @@ My first thought out loud ended up transpiring to reading the node pointers one 
 
 For the second interview, the questions asked were much less involved and basic maths but where you had to invoke a few tricks. For example, $$41 \times 39$$ is daunting withouta calculator, or at least it was to me. However, it can be simplified to $$(40+1)(40-1) = 40 ^2 - 1 = 1599$$. After four questions were answered, I was then asked to estimate my confidence that I had answered them all correctly. I was 100% confident on 3 of them but less so on 1 other, therefore I believe a 75% confidence level would be sufficient.
 
-Overall, both interviews have highlighted the skills needed to succeed in these types of interviews. Tautology, but both times I asked catheter the interviewer used any of the topics in their daily work. They said no.  
- 
-
-
-
-
-
+Overall, both interviews have highlighted the skills needed to succeed in these types of interviews. Tautology, but both times I asked the interviewer if they used any of the topics in their daily work. They said no.

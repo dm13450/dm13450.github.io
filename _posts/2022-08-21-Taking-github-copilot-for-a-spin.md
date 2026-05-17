@@ -8,16 +8,11 @@ date: 2022-08-21
 [GitHub Copilot](https://github.com/features/copilot) is the AI tool that gives you code suggestions as you type. It was free for a bit but is going to cost money at the end of August. My free trial was coming to an end, so I thought I would give it a runout and see if it is the future of coding. My aim, replicate my Julia blog post on [Order Flow Imbalance](https://dm13450.github.io/2022/02/02/Order-Flow-Imbalance.html) into Python and see how much Github Copilot can do for me.
 
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+
+
+{% include newsletter.html %} 
+
+
 
 ## My Python Background
 

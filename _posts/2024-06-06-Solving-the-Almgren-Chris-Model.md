@@ -6,6 +6,7 @@ images:
   path: /assets/optexmaths/ag.png
   width: 500
   height: 500
+tags: [maths, quant] 
 ---
 
 The Almgren Chris model from [Optimal Execution
@@ -15,16 +16,7 @@ about trading some quantity of an asset. This blog post goes through
 the math and how we set the problem up and arrived at the various
 solutions. 
 
-<p></p>
-***
-Enjoy these types of posts? Then you should sign up for my newsletter. 
-<div style="text-align: center;">
-<iframe src="https://dm13450.substack.com/embed" width="480"
-height="150" style="border:1px solid ##fdfdfd; background:#fdfdfd;"
-frameborder="0" scrolling="no"></iframe>
-</div>
-***
-<p></p>
+{% include newsletter.html %} 
 
 I first encountered the Almgren Chriss model in my initial PhD year
 through a Microstructure and Machine Learning course. It was for 2 hours at 18:00 on a

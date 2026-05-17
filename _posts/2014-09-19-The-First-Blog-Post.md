@@ -2,6 +2,7 @@
 layout: post
 title: "That First Blog Post"
 date: 19-09-2014 22:08
+tags: [basic]
 ---
 
 After finally finding some spare time I've got round to creating my own website/blog. Let it be a place for rambling about anything I encounter and my learning process on this web design front.  

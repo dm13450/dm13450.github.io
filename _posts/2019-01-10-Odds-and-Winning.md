@@ -4,8 +4,7 @@ title: Calibrating Odds
 date: 2019-01-10
 summary: >
  Can we make better probability estimates with Pinnacle closing sport odds?
-tags:
- -r
+tags: [r, sports]
 ---
 
 In this blog post I am looking at predicting the outcome of football

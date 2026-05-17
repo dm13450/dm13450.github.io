@@ -2,9 +2,13 @@
 layout: post
 title: Goodreads Analysis
 date: 2019-04-03
-tags:
- -r
+tags: [r, books, data]
 ---
+
+[Goodreads](https://www.goodreads.com/) is a personalised book recording
+website. After you read a book you can rate it and see what everyone
+else thought about the book. In this series of blog posts I will be
+analysing this data to see what I can learn about my reading habits.
 
 ``` r
 require(readr)
@@ -19,11 +23,6 @@ theme_set(theme_fivethirtyeight() +
         plot.background = element_rect(fill="#fdfdfd"),
         panel.background = element_rect(fill="#fdfdfd")))
 ```
-
-[Goodreads](https://www.goodreads.com/) is a personalised book recording
-website. After you read a book you can rate it and see what everyone
-else thought about the book. In this series of blog posts I will be
-analysing this data to see what I can learn about my reading habits.
 
 You can follow along by downloading your own Goodreads data from
 <https://www.goodreads.com/review/import> .
