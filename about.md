@@ -4,7 +4,7 @@ title: About Me
 permalink: /about/
 ---
 
-I am a quant researcher focused on execution at both the high (parent) and low (order routing) level. I also dabble in market-making and alpha signals when there is a spare 5 minutes at work. 
+I am a quant researcher focused on execution at both the high (parent) and low (order routing) level. I also dabble in market-making and alpha signals when there is a spare 5 minutes at work.
 
 Previously, I was a quant at [BestX](https://www.bestx.co.uk/) and spent the day
 researching financial markets with a focus on transaction cost
@@ -12,7 +12,7 @@ analysis (TCA). Hopefully I shared some interesting insights about the world
 of FX, fixed income and equity trading and built some cool product features.
 
 I have a PhD in Statistical Science from University College London
-(UCL) and my thesis was [Bayesian Nonparametric Hawkes Processes with Applications](https://discovery.ucl.ac.uk/id/eprint/10109374/). I also have an MRes in Computer Science and an MPhys in Theoretical Physics from the University of Manchester. 
+(UCL) and my thesis was [Bayesian Nonparametric Hawkes Processes with Applications](https://discovery.ucl.ac.uk/id/eprint/10109374/). I also have an MRes in Computer Science and an MPhys in Theoretical Physics from the University of Manchester.
 
 I run a dashboard for crypto liquidity and pre-trade analytics: <https://cryptoliquiditymetrics.com/>
 
@@ -57,7 +57,7 @@ at dean[dot]markwick[at]talk21[dot]com
 * [BestX RFQ Par Introduces a New Way to Look at Hit Ratios](https://thefullfx.com/bestx-rfq-par-introduces-a-new-way-to-look-at-hit-ratios/)
 * [How Long Should TWAP algos run?](https://www.fx-markets.com/trading/7859441/how-long-should-twap-algos-run)
 
-Some of which are behind a paywall. 
+Some are behind a paywall.
 
 ## Outside the Day Job
 
