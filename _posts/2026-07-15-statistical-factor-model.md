@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A Statistical Factor Model
+title: A Statistical FX Factor Model
 date: 2026-07-15
 tags: [python, quant, fx, pca]
 images:
