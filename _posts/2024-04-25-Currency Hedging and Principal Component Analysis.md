@@ -6,7 +6,7 @@ image:
   path: /assets/asianccys/eigenPortfolio.png
   width: 500
   height: 500
-tags: [julia, quant, fx]
+tags: [julia, quant, fx, pca]
 ---
 
 Principal component analysis (PCA) reduces a dataset to its main
@@ -69,7 +69,6 @@ res = @subset(res, :Date .>= Date("2014-11-24"))
 Like all good blog posts, let's start with the plot of the
 cumulative returns. Only HKD stands out as something different given
 its peg to USD.
-
 
 ```julia
 p = plot(ylabel = "Cummulative Return")
@@ -150,7 +149,6 @@ The `MultivariateStats.jl` package has the functions for doing PCA and
 the appropriate functions for pulling out the right data after fitting the
 PCA model. 
 
-
 ```julia
 pcaRes = fit(PCA, cm; maxoutdim=3)
 ```
@@ -180,7 +178,6 @@ Then the explained variance of the three components.
 | Eigenvalues        | 1.15544e-10 | 1.08674e-10 | 1.05292e-11 |
 | Variance explained  | 0.47267     | 0.444567    | 0.0430731   |
 | Cumulative variance | 0.47267     | 0.917237    | 0.96031     |
-
 
 The first component can explain 49% of the variance and then including
 the second component 91% of the variance, with the final component
@@ -213,7 +210,6 @@ evFrame = sort(evFrame, :ev1);
 ```
 
 Then plotting the weights by currency pair
-
 
 ```julia
 bar(evFrame.ccy, evFrame.ev1 ./ sum(evFrame.ev1), label = "Eigen Weights")
@@ -266,7 +262,6 @@ Then finally, looking at the correlation between these portfolios
 | KRW + JPY             |   0.93            |   0.97                     |   0.11                   |   1.0         |   0.99              |
 | KRW + JPY + SGD        |   0.95            |   0.99                     |   0.08                   |   0.99        |   1.0               |
 
-
 * The Eigen Portfolio 1 is most correlated with the equal-weighted portfolio.
 * With just KRW and JPY you get to a 93% correlation with the market.
 * KRW, JPY and SGD gets you to a 95% with the market.
@@ -291,9 +286,3 @@ returns too. We are ignoring transaction costs, KRW being an NDF and
 more expensive to trade compared to a spot currency (like JPY) means
 that this approach will break down if the client needs to hedge a
 significant amount. 
-
-
-
-
-
-

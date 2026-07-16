@@ -10,9 +10,7 @@ data. It is built with timestamps in mind both when storing the data
 and also when getting the data out. This makes it the ideal candidate
 as a storage system for crypto trades. 
 
-You might have heard of [KDB](https://code.kx.com/q/learn/) (or q the language used to work in KDB)
-which is a popular comercial timeseries database. You'll see it being
-used all over the finance industry. Unfortunately KDB
+You might have heard of [KDB](https://code.kx.com/q/learn/) (or q the language used to work in KDB) which is a popular commercial timeseries database. You'll see it being used all over the finance industry. Unfortunately KDB
 costs money if you go beyond their personal license terms whereas
 QuestDB is a free and also open source.
 
@@ -28,7 +26,7 @@ this WebSocket method is an alternative way to get the same
 data. Using a WebSocket though has other benefits. With the REST API it is impolite to constantly query the endpoint to pull data in realtime. Plus you don't know when something has changed, you pull the data, compare it to what you know and then see if there has been an update. With a WebSocket, it just tells you when something has changed, like when a new trade has occurred. This makes it great for building up a database, you can just connect to the firehose and save down all the trades that are coming through. Open the flood gates rather than always asking if something had changed. 
 
 Before we get started though you need to download and install QuestDB. As I'm on a Mac I downloaded it using Homebrew and started the process like `questdb start`.
-You can get more information on downloading QuestDB [here](https://questdb.com/get-questdb/) for your system. 
+You can get more information on downloading QuestDB [here](https://questdb.com/get-questdb/) for your system.
 
 The rest of the blog cost will walk you through the following steps.
 
@@ -45,8 +43,7 @@ features for timeseries data.
 I am setting the processes up using a programming pattern called
 'product/consumer'. This means building one process that produces data and a separate process that can consume data. Having the two functions separate allows for a better scalability if you wanted to add in more exchanges or workers. It also means that there is a degree of independence between the two processes and reducing the coupling should make for an easier development experience. 
 
-To set this up in Julia we need to create a `RemoteChannel` which is how the producer and consumer processes will comunicate. It will be filled up with the type `Trade` that we will also create. 
-
+To set this up in Julia we need to create a `RemoteChannel` which is how the producer and consumer processes will communicate. It will be filled up with the type `Trade` that we will also create.
 
 ```julia
 struct Trade

@@ -396,7 +396,7 @@ Small changes around EUR; CNH has hovered around zero; TWD has gone long since F
 
 ## Conclusion
 
-Done. We've built a fundamental FX factor model. It's involved, with lots of different ways to fall over, but we made it. Three factors were significant: 1-month momentum, 6-month momentum, DXY, and the EM factor. The smaller size of the FX universe compared to equities means there is less data through time and across assets. Also, the underlying $$\beta$$s are noisy given the tighter return ranges compared to equities. There is also a case that regime changes average things out to zero, but it's hard to see that in the data. However, this model can help in hedging and explaining risk, but not serve as a source of expected returns.
+Done. We've built a fundamental FX factor model. It's involved, with lots of different ways to fall over, but we made it. Four factors were significant: 1-month momentum, 6-month momentum, DXY, and the EM factor. The smaller size of the FX universe compared to equities means there is less data through time and across assets. Also, the underlying $$\beta$$s are noisy given the tighter return ranges compared to equities. There is also a case that regime changes average things out to zero, but it's hard to see that in the data. However, this model can help in hedging and explaining risk, but not serve as a source of expected returns.
 
 If you’ve looked at FX factor models before, you'll realise I've missed a pretty significant factor — carry. It's very hard to get free data to calculate the carry factor across the full universe of currencies. I'm saving it for another day for a smaller set of pairs where there is data.
 

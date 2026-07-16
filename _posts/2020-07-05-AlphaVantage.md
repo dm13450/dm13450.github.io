@@ -39,8 +39,7 @@ The package is designed to replicate the API functions from the
 [AlphaVantage documentation](https://www.alphavantage.co/documentation/),
 so you can look up any of the functions there and find the
 equivalent in this Julia package. If I've missed any or one isn't
-working correctly, raise on issue on Github
-[here](https://github.com/ellisvalentiner/AlphaVantage.jl).
+working correctly, raise on issue on Github - [AlphaVantage](https://github.com/ellisvalentiner/AlphaVantage.jl).
 
 These are the Julia packages I use in this blog post:
 

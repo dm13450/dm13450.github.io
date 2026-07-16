@@ -24,7 +24,7 @@ understand the statistical consequences of a large terror attack.
 
 {% include newsletter.html %} 
 
-In this blog post I will do the same, but focus on *all* terror attacks across a variety of countries and build two Hawkes models to see how well they describe these attacks. This will be the first blog post I've written on applying my `HawkesProcesses.jl` Julia [package](https://github.com/dm13450/HawkesProcesses.jl), so should serve as a more practical introduction than my previous outline of the package which I wrote about previously [here](https://dm13450.github.io/2020/05/26/HawkesProcessesPackage.html). 
+In this blog post I will do the same, but focus on *all* terror attacks across a variety of countries and build two Hawkes models to see how well they describe these attacks. This will be the first blog post I've written on applying my [HawkesProcesses.jl]((https://github.com/dm13450/HawkesProcesses.jl) Julia package, so should serve as a more practical introduction than my previous outline of the package which I wrote about previously [here](https://dm13450.github.io/2020/05/26/HawkesProcessesPackage.html). 
 
 This is a chunky blog post and is laid out as follows: 
 
@@ -37,7 +37,7 @@ This is a chunky blog post and is laid out as follows:
 * [Model Comparisons](#model-comparison)
 * [National Security Policy Implications](#national-security-policy-implications)
 
-With that out the way, onto the statistics. 
+With that out the way, onto the statistics.
 
 ## The Terror Attack Data
 
@@ -142,7 +142,7 @@ There will be just three Hawkes parameters that describe the terror attacks. Thi
 These two models represent the two extremes of modeling choice, we want to know if there is enough information in the data to warrant individual parameters, or is the nature of terror attacks across all countries similar such that the parameters can be homogenous. 
 Or more simply, do we overfit if we let each country have their own set of parameters?
 
-### The Individual Model
+### The Individual Hawkes Model
 
 For the top 50 countries, we find the best fitting $$\mu, \kappa, 
 \beta$$ value using the ```fit``` function. We train on 70% of the
@@ -252,7 +252,7 @@ plot(vcat(intPlots)...)
 
 For Iran, we can see that the attacks are coming in bursts with periods of down time. Whereas for the other three countries there is a more fluid ebb and flow of the intensity. 
 
-## The Hierarchical Model
+## The Hierarchical Hawkes Model
 
 We now turn to fitting the hierarchical model, where there is just one background, $\kappa$ and kernel parameter shared across all the countries. This is a newly implemented feature of my `HawkesProcesses` package and you can fit a simple Hawkes process with exponential kernel across multiple timeseries in a hierarchical model. 
 
@@ -395,10 +395,8 @@ model?
 
 ## Model Comparison
 
-How do we know what model is better? I've written about deviance
-information criteria before
-([here](https://dm13450.github.io/2020/08/26/Hawkes-and-DIC.html)) and
-it is implemented in this `HawkesProcesses` package. But I might aswell use this to illustrate other information criteria's; Bayesian and Akaike. Both are about weighing up the likelihood with the number of parameters in the model. There is an important point to note that these methods are not strictly Bayesian and don't make full use of the full posterior sampling, but I think it is useful to have a general indicator and comparison between models, even if it isn't strictly pure. Plus this also highlights the benefits of a Bayesian approach, you can reduce it to a frequentist estimate just by taking your point estimate of the parameters. 
+How do we know what model is better? I've written about [deviance
+information criteria](https://dm13450.github.io/2020/08/26/Hawkes-and-DIC.html) before and it is implemented in this `HawkesProcesses` package. But I might aswell use this to illustrate other information criteria's; Bayesian and Akaike. Both are about weighing up the likelihood with the number of parameters in the model. There is an important point to note that these methods are not strictly Bayesian and don't make full use of the full posterior sampling, but I think it is useful to have a general indicator and comparison between models, even if it isn't strictly pure. Plus this also highlights the benefits of a Bayesian approach, you can reduce it to a frequentist estimate just by taking your point estimate of the parameters. 
 
 By assuming that each country is independent of each other, we arrive at a final likelihood value by summing up each individual likelihood for the country. Then by separating the training set likelihood and total likelihood we can come up with a test set likelihood, which we can use to perform our model comparison. 
 
@@ -458,9 +456,6 @@ finalResults = @transform(finalResults, AIC = 2*:Params - 2*:Likelihood)
 finalResults = @transform(finalResults, BIC = :Params .* log.(:NEvents) - 2*:Likelihood)
 @where(finalResults, :Sample .== "Test")
 ```
-
-
-
 
 <table class="data-frame"><thead><tr><th></th><th>Model</th><th>Params</th><th>Sample</th><th>Likelihood</th><th>NEvents</th><th>AIC</th><th>BIC</th></tr><tr><th></th><th>String</th><th>Int64</th><th>String</th><th>Float64</th><th>Int64</th><th>Float64</th><th>Float64</th></tr></thead><tbody><p>2 rows × 7 columns</p><tr><th>1</th><td>Ind</td><td>150</td><td>Test</td><td>-18064.0</td><td>6163</td><td>36427.9</td><td>37436.9</td></tr><tr><th>2</th><td>Hier</td><td>3</td><td>Test</td><td>-18023.3</td><td>6163</td><td>36052.6</td><td>36072.7</td></tr></tbody></table>
 
