@@ -506,7 +506,7 @@ that there is some sort of value in the auto-encoder representation.
 
 However, it is limited. The fact that it can only be used
 once the entire season has been played makes it useless for inter-season
-prediction. It perfroms a explanation task rather than a prediction
+prediction. It performs an explanation task rather than a prediction
 task. There are techniques that can overcome this, but I will save
 that for another day.
 

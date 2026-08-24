@@ -110,7 +110,7 @@ information.
 
 Using `rstanarm` we fit two models, one where there referee is a free
 parameter and one where it is a hierarchical parameter. This is very simple
-to forumlate using the R model syntax.
+to formulate using the R model syntax.
 
 ``` r
 refereeModel <- stan_glm(TotalYellow ~  Referee, 
@@ -233,7 +233,7 @@ refereeParams %>%
 ```
 
 We now want to find all the referees that have parameter samples
-significantly outside the the distribution range. In this case we will
+significantly outside the distribution range. In this case we will
 borrow from physics and say that if the interquartile range is further
 than $$5\sigma$$ away from 0, then this is evidence that the referee
 changes the number of yellow cards in a game.

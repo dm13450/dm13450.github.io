@@ -15,7 +15,7 @@ Reinforcement learning is a pillar of machine learning and it combines the use o
 
 The multi-armed bandit is an extension to this type of game and means we have different levers we can pull that lead to a different reward. The reward depends on the lever pulled. 
 
-This simple mental model is surprisingly applicable to lots of different problems and it can act as a good approximation to whatever you are trying to solve. For example, let's use an advertising example. You have multiple adverts that you display to try and get people to click through to your website. Each time a page loads you can load one advertisement, you then record how many people click on that advert and use that to decide which advert to show next. With each page load you decide, do I show the most succesful advert so far or try a new advert to see how that performs? Over time you will find out which advert performs the best and show that as much as possible to get as many clicks. 
+This simple mental model is surprisingly applicable to lots of different problems and it can act as a good approximation to whatever you are trying to solve. For example, let's use an advertising example. You have multiple adverts that you display to try and get people to click through to your website. Each time a page loads you can load one advertisement, you then record how many people click on that advert and use that to decide which advert to show next. With each page load you decide, do I show the most successful advert so far or try a new advert to see how that performs? Over time you will find out which advert performs the best and show that as much as possible to get as many clicks. 
 
 ## A Simple Bandit
 
@@ -530,7 +530,7 @@ plot!(1:nPlays, greedyAvg0001, label="0.001")
 
 
 Good to see that all the greedy learners outperform the random learner, so that algorithm is doing something. 
-If we focus on the gready learners we see how the learning rates changes performances. 
+If we focus on the greedy learners we see how the learning rates changes performances. 
 
 
 ```julia

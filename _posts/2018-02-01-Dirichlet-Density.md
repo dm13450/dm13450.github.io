@@ -8,7 +8,7 @@ tags: [r, dirichlet]
 With the release of the
 [dirichletprocess](https://cran.r-project.org/package=dirichletprocess)
 package I will be writing a series of tutorials on how to use
-Dirichlet processes for nonparameteric Bayesian statistics. In this
+Dirichlet processes for nonparametric Bayesian statistics. In this
 first tutorial we will be using a Dirichlet process for density
 estimation.
 

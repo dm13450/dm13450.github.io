@@ -236,4 +236,4 @@ This is now a GAM with trigonometric splines so we can view the cyclical encodin
 
 It's an interesting transformation of time-like variables and gives you a route to smoothing out the beginning and ending of the cycles. 
 
-In these toy models, the embedding hasn't improved performance but it's possible that it's more relevant in deep learning architectures where there are more parameters and more interactions. In all the above models there's much more groundwork to do before we start eeking out performance gains from the time variables.
+In these toy models, the embedding hasn't improved performance but it's possible that it's more relevant in deep learning architectures where there are more parameters and more interactions. In all the above models there's much more groundwork to do before we start eking out performance gains from the time variables.

@@ -80,7 +80,7 @@ lenParam <- vapply(testData, nrow, numeric(1))
 ```
 
 This is easily written in Stan whilst making full use of vectorisation. The
-prior parmeters $$(\alpha _0, \beta _0)$$ are set to values of 0.01
+prior parameters $$(\alpha _0, \beta _0)$$ are set to values of 0.01
 
 ```
 data {

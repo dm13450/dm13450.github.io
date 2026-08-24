@@ -141,11 +141,11 @@ second. Most data sources would condense this into a single open-high-low-close 
 This means you can now calculate things like: 
 
 * Quote intensity - how often there is a new price in a set period,
-* [Order flow imbalance](https://dm13450.github.io/2022/02/02/Order-Flow-Imbalance.html) - how the supply and demand changes in the order book,
+* [Order flow imbalance](https://dm13450.github.io/2022/02/03/Order-Flow-Imbalance.html) - how the supply and demand changes in the order book,
 * Tick by tick models - predicting what the next tick will be, easier than predicting what the next price will be. 
 
 I've written about
-[Order flow imbalance](https://dm13450.github.io/2022/02/02/Order-Flow-Imbalance.html)
+[Order flow imbalance](https://dm13450.github.io/2022/02/03/Order-Flow-Imbalance.html)
 before in the crypto markets. It is about looking at frequent changes
 in the best ask/offer and the amount that corresponds to these prices. Each small change gives us an idea of the supply and demand and can reasonably predict future price movements. 
 
@@ -322,8 +322,8 @@ vline!([mean(log.(venue.n_best_ask))], label=:none, color=:black)
 
 
 
-![Equity Venue Anlaysis Number of Times and Time](/assets/alpaca/output_30_0.svg
- "Equity Venue Anlaysis Number of Times and Time")
+![Equity Venue Analysis Number of Times and Time](/assets/alpaca/output_30_0.svg
+ "Equity Venue Analysis Number of Times and Time")
 
 
 
@@ -343,7 +343,7 @@ When Alpaca Markets sends us the trades there is no indication if the
 trade was a buy or a sell. This can make analysis slightly harder as
 we first have to try and guess the sign of the trade. If we look at
 the plot of the trades again we can see that the trades happen
-predicatably. 
+predictably. 
 
 ![AAPL Trades](/assets/alpaca/output_20_0.svg "AAPL Trades")
     
@@ -422,5 +422,5 @@ and get your data to start exploring. Perhaps look at my older posts
 where I've applied simple models to crypto data, you can change the
 data to a stock and see how the results change.
 
-* [Order Flow Imbalance - A High Frequency Trading Signal](https://dm13450.github.io/2022/02/02/Order-Flow-Imbalance.html)
-* [QuestDB Part 2 - High Frequency Finance (again!)](https://dm13450.github.io/2021/08/12/questdb-part2.html)
+* [Order Flow Imbalance - A High Frequency Trading Signal](https://dm13450.github.io/2022/02/03/Order-Flow-Imbalance.html)
+* [QuestDB Part 2 - High Frequency Finance (again!)](https://dm13450.github.io/2021/08/19/questdb-part2.html)

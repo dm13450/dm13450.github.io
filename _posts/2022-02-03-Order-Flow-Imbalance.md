@@ -55,7 +55,7 @@ well it predicts future returns.
 I have a QuestDB database with the best bid and offer price and size
 at those levels for BTCUSD from Coinbase over roughly 24 hours. To
 read how I collected this data check out my previous post on
-[streaming data into QuestDB](https://dm13450.github.io/2021/08/05/questdb-part-1.html).
+[streaming data into QuestDB](https://dm13450.github.io/2021/08/04/questdb-part-1.html).
 
 Julia easily connects to QuestDB using the `LibPQ.jl` package. I also
 load in the basic data manipulation packages and some statistics

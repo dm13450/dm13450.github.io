@@ -61,7 +61,7 @@ print(testString)
 
     ## [1] "27 June 1911[4]"
 
-Using regular expressions we can replace all incidents of square brackets with blank spaces using the `gsub` function. I use the reg-ex website, [regxr.com](https://regexr.com/) to get a visual feel of what the reg-ex is selecting.
+Using regular expressions we can replace all incidents of square brackets with blank spaces using the `gsub` function. I use the reg-ex website, [regexr.com](https://regexr.com/) to get a visual feel of what the reg-ex is selecting.
 
 ``` r
 removeBrackets <- function(string){

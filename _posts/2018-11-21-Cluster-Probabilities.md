@@ -18,7 +18,7 @@ When we fit a Dirichlet process to the data, we make use of the
 [Chinese restaurant analogy](https://en.wikipedia.org/wiki/Chinese_restaurant_process)
 each datapoint is assigned its cluster based on the popularity of each
 existing cluster. Plus there is also a chance that the datapoint forms
-its own unique cluster. In restauranteur terms: each data point joins
+its own unique cluster. In restaurateur terms: each data point joins
 a table based on how popular that table is, plus there is a
 possibility that the datapoint sits at its own table.
 

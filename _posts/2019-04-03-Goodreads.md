@@ -45,7 +45,7 @@ ggplot(rawData, aes(x=My.Rating)) +
 
 Here we can see that I’m quite the generous rater, throwing 4’s and 5’s
 with abandon. Although, I tend to only rate books that I’ve finished. If
-a book was going to get 1 star I might aswell abandon it. Life’s too
+a book was going to get 1 star I might as well abandon it. Life’s too
 short to be reading bad books.
 
 In the data, they also provide you with the crowd ranking of the book.

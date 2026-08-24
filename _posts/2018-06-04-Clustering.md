@@ -68,7 +68,7 @@ plot(dp)
 
 ![](/assets/clustering_files/figure-markdown_github/unnamed-chunk-2-1.png){: .center-image}
 
-Two clusters have been found by the Dirichlet process and where we would expect to see them aswell. Out of the box we can perform unsupervised clustering in just 3 lines of code!
+Two clusters have been found by the Dirichlet process and where we would expect to see them as well. Out of the box we can perform unsupervised clustering in just 3 lines of code!
 
 What if we have more than two dimensions, how does that change things?
 Thankfully it doesn't and the procedure remains the same. You can

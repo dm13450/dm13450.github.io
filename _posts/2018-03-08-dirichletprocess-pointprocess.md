@@ -13,6 +13,10 @@ function of a point process. I use a Bayesian
 nonparametric method to infer the intensity function as a mixed
 model. 
 
+{% include newsletter.html %} 
+
+As always, load up some R packages.
+
 ``` r
 require(dplyr)
 require(tidyr)

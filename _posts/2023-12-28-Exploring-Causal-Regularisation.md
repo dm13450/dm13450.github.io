@@ -444,7 +444,7 @@ sort(errorRes, :e)
 
 
 
-Using the $$\beta$$ estimation method gives the best model (smallest $$e$$), which lines up with the paper and the magnitude of error is also inline with the paper (they had 0.35 and 0.45 for Lasoo/ridge regression respectively). 
+Using the $$\beta$$ estimation method gives the best model (smallest $$e$$), which lines up with the paper and the magnitude of error is also inline with the paper (they had 0.35 and 0.45 for Lasso/ridge regression respectively). 
 The ridge regression and no beta method also improved on the naive OLS approach, so that indicates that there is some improvement from using these methods. The No Beta method is not a faithful reproduction of the Better AB testing paper because it requires the 'test' dataset to be an AB test scenario, which we don't have from the above, so that might explain why the values don't quite line up.
 
 All methods improve on the naive 'OLS No Alcohol' parameters though, which shows this approach to causal regularisation can uncover better models if you have underlying confounding in your data.

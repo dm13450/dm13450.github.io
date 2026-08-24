@@ -55,7 +55,7 @@ I’ve download the data from
 many points each player achieved each week over the last few seasons. I
 join it with the odds data from [football-data.co.uk](https://www.football-data.co.uk/)  and that gives us our full data set.
 
-I do the usual 70/30 split randonly. I'm not worried about using
+I do the usual 70/30 split randomly. I'm not worried about using
 future games to predict previous, more about just understanding the
 underlying structure in how points are scored.  
 

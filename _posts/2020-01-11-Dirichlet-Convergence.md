@@ -109,7 +109,7 @@ chains is similar. We want to aim for a value of less than 1.1, which
 in this case is easily achieved. 
 
 The alpha parameter is not the only parameter to consider. There is also
-the actual number of clusters that the Dirichet process finds and the
+the actual number of clusters that the Dirichlet process finds and the
 overall likelihood of the model. We can easily add these to the above
 coda object and assess their
 convergence.

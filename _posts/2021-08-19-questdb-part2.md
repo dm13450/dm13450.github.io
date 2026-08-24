@@ -5,7 +5,7 @@ date: 2021-08-12
 tags: [julia, quant, hft, questdb]
 ---
 
-[Last time](https://dm13450.github.io/2021/08/05/questdb-part-1.html) I showed you how to set up a producer/consumer model to
+[Last time](https://dm13450.github.io/2021/08/04/questdb-part-1.html) I showed you how to set up a producer/consumer model to
 build a database of BTCUSD trades using the CoinbasePro WebSocket
 feed. Now I'll show you how you can connect to the same database to
 pull out the data, use some specific timeseries database queries and

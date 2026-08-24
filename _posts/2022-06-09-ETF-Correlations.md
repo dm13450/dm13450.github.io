@@ -544,7 +544,7 @@ universe %>%
 
 To me, it is remarkable how easy this comes out. We are building intuitive
 clusters that confirm our priors. If we go another level deeper we find
-that KSA (Saudia Arabia) and USO (Oil) are in their cluster:
+that KSA (Saudi Arabia) and USO (Oil) are in their cluster:
 
 ``` r
 universe %>% 

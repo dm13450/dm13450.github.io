@@ -35,7 +35,7 @@ some open questions on where to take this next.
 
 This is a task with some game theory, probability, and randomness, the type of
 thing that gets my grey matter active. Plus, one of the contestants
-(Victoria Coren Mitchel) is a professional poker player, so I wonder if
+(Victoria Coren Mitchell) is a professional poker player, so I wonder if
 she also had an idea on the best way to approach the task. If you only
 know VCM from Only Connect or being married to David Mitchell, read
 her

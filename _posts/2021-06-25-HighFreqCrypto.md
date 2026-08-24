@@ -385,7 +385,7 @@ plot!(acLogPlot, log.(0:30), coef(m)[1] .+ coef(m)[2] .* log.(0:30), label="Powe
 
 ![Trade sign correlation with model](/assets/CryptoStats/output_41_0.svg "Trade sign correlation with model")
 
-We can see the log model fits well and we arrive at a $$\gamma$$ value of around -0.4 which seems sensible and comparable to their value of -0.57 for some stocks. The paper uses a lot more data than just the 1000 trades we have access to aswell, but again, you can collect more data and see how the relationship evolves or changes across different pairs. 
+We can see the log model fits well and we arrive at a $$\gamma$$ value of around -0.4 which seems sensible and comparable to their value of -0.57 for some stocks. The paper uses a lot more data than just the 1000 trades we have access to as well, but again, you can collect more data and see how the relationship evolves or changes across different pairs. 
 
 ## Trade Size Distribution
 

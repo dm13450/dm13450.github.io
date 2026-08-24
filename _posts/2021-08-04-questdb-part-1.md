@@ -255,5 +255,5 @@ Questions? Feedback? Comments? Let me know below!
 ## Related Posts
 
 * [QuestDB Part 2 - High Frequency Finance
-(again!)](https://dm13450.github.io/2021/08/12/questdb-part2.html)
-* [Order Flow Imbalance - A High Frequency Trading Signal](https://dm13450.github.io/2022/02/02/Order-Flow-Imbalance.html)
+(again!)](https://dm13450.github.io/2021/08/19/questdb-part2.html)
+* [Order Flow Imbalance - A High Frequency Trading Signal](https://dm13450.github.io/2022/02/03/Order-Flow-Imbalance.html)

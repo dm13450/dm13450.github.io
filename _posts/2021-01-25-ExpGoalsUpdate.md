@@ -21,7 +21,7 @@ If not, here is a refresher and quick summary of my previous post. Firstly, I bu
 The prematch model measures the betting markets belief of how strong a team is going to perform. The post match model estimates how 'lucky' they were or how well they converted shots into goals. Then for each model and match played we can calculate the *spread* between the predicted number of goals and actual number of goals to measure if they are outperforming or underperforming either model. 
 
 * **Prematch spread**: how many goals you scored compared to the bookmakers expected number of goals. Positive - you scored more, negative you scored less.
-* **Postmatch spread**: how many goals you scored compared to the expected number of goals from the total number of shots, corners etc. Again, postive you scored more, negative you scored less than expected.
+* **Postmatch spread**: how many goals you scored compared to the expected number of goals from the total number of shots, corners etc. Again, positive you scored more, negative you scored less than expected.
 
 Both measures give some sort of measure of luck and team performance. So we can use a quadrant plot to visualise a teams performance over a season, or in this case, in the current season so far.
 
@@ -37,7 +37,7 @@ So now we know what we are looking at, how has everyone performed in this fan-fr
 
 A couple of stand out features.
 
-* Man City under performaning the bookies expectation more than everyone else! But doing well in the post match model. This just shows they haven't been as strong as the market expected in each match but are still able to score goals. 
+* Man City under performing the bookies expectation more than everyone else! But doing well in the post match model. This just shows they haven't been as strong as the market expected in each match but are still able to score goals. 
 
 * Arsenal are underperforming the prematch spread, but roughly level for the post match spread. This shows that they haven't been particularly unlucky instead they are just not generating enough shots to lead to goals. This seems to fit the current narrative and should worry any Arsenal fan.
 

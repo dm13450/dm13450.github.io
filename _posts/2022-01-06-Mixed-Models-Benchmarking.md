@@ -90,7 +90,7 @@ This outputs the relevant quantities of the benchmarking times.
 The Python syntax for fitting these types of models is similar to R.
 
 * Python 3.9.4
-* statmodels 0.13.1
+* statsmodels 0.13.1
 
 ```python
 import pandas as pd

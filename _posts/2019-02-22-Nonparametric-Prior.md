@@ -46,7 +46,7 @@ in each experiment.
 
 ### The Basic Bayesian Model
 
-In the most basic model, we can assume that the the rats with tumours
+In the most basic model, we can assume that the rats with tumours
 are Binomially distributed at a rate of $$\theta$$, which can be
 written as:
 
@@ -126,7 +126,7 @@ of $$\alpha _0$$ and $$\beta _0$$.
 
 In this model, we are now assuming that each experiment has its own
 $$\theta _i$$. Furthermore, we place a prior on $$\alpha _0$$ and
-$$\beta _0$$ we allow them to vary in the inference process aswell.
+$$\beta _0$$ we allow them to vary in the inference process as well.
 
 $$
 \begin{aligned}

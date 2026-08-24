@@ -233,7 +233,7 @@ usdcad.open = Float64.(usdcad.open)
 plot(usdcad.timestamp, usdcad.open, label="Open", title="USDCAD")
 ```
 
-![Alphva Vantage Intraday FX Data](/assets/alphavantage_files/output_33_0.svg
+![Alpha Vantage Intraday FX Data](/assets/alphavantage_files/output_33_0.svg
  "Alphva Vantage Intraday FX Data")
 
 ## Crypto Market Data
@@ -286,5 +286,5 @@ transform, dominant cycle phase (`HT_DCPHASE` in the package) represents for a s
 Be sure to checkout my other tutorials for AlphaVantage:
 
 * [Fundamental Stock Data from AlphaVantage.jl](https://dm13450.github.io/2021/01/01/Fundamental-AlphaVantage.html)
-* [Crypto Data using AlphaVantatge.jl](https://dm13450.github.io/2021/03/27/CryptoAlphaVantage.html)
-* [Economic Indicators from AlphaVantage](https://dm13450.github.io/2021/11/08/AlphaVantage-Economic-Indicators.html)
+* [Crypto Data using AlphaVantage.jl](https://dm13450.github.io/2021/03/27/CryptoAlphaVantage.html)
+* [Economic Indicators from AlphaVantage](https://dm13450.github.io/2021/11/05/AlphaVantage-Economic-Indicators.html)

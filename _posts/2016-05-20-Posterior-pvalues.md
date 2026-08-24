@@ -25,7 +25,7 @@ We can see straight away that the gpd model has nicely replicated the general sh
 
 Now we chose a test statistic, $$T$$. For simplicity we shall use the maximum value of the data set, $$T(x) = \max x_i$$.
 
-So we now calculate the maximum value for all our simulated datatsets of both models and see how the maximum of the real data compares. 
+So we now calculate the maximum value for all our simulated datasets of both models and see how the maximum of the real data compares. 
 
 ![Maximum Value Distributions](/assets/maxvaldist.png){: .center-image}
 

@@ -8,7 +8,7 @@ summary: >
 tags: [r, quant, data]
 ---
 
-I will be using R to anaylse the yield curve of the Peer to peer
+I will be using R to analyse the yield curve of the Peer to peer
 lender RateSetter. This is an exploration of the data RateSetter
 provide, with the goal of producing a final animation of the yield
 curve through time. 
@@ -209,4 +209,4 @@ analytics.
 
 If you liked this post, checkout my modelling of the RateSetter yield
 curve using the
-[Neslson-Siegel model](https://dm13450.github.io/2019/06/19/NelsonSeigelRateSetter.html). 
+[Nelson-Siegel model](https://dm13450.github.io/2019/06/19/NelsonSeigelRateSetter.html). 

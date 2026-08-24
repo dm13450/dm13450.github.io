@@ -227,7 +227,7 @@ can change overtime.
 ## A Dynamic Bayesian Nelson-Siegel Model
 
 A more general model is to allow the $$\beta$$ values to vary over
-time. We rewrite the above basic model so that the parmeters at each
+time. We rewrite the above basic model so that the parameters at each
 day of the week take on a value that depends of the previous value
 of the parameter, this means that is can very with each day of the
 week and there are parameters that control the amount of variation.

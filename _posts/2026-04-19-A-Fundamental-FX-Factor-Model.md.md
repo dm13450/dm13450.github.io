@@ -27,7 +27,7 @@ Typically, factor models and most academic research in this field use equity dat
 
 Monthly data will remove as much "trading" noise as possible. You want the price moves to reflect the underlying performance of the asset and not the day-to-day flows and execution noise. Daily data isn't an option as FX trades 24 hours a day but the ETFs only trade during the regular market hours. This presents a synchronisation problem. A currency move could happen overnight based on some headlines hours before the ETF is even open for trading. So we will split the difference and use weekly data. This should give us enough data while keeping the overall price movements based on the same time period and information.
 
-Another problem with FX data is a lack of descriptive features. Again, in equities, you have the financial reports of a company, things like price to book and market capitilisation but these have no equivalent in FX so we need to a different way of coming up with characteristics. For this I'll be using ETFs to try and see what macro features might move the currency pairs. 
+Another problem with FX data is a lack of descriptive features. Again, in equities, you have the financial reports of a company, things like price to book and market capitalisation but these have no equivalent in FX so we need to a different way of coming up with characteristics. For this I'll be using ETFs to try and see what macro features might move the currency pairs. 
 
 ## The Data Pipeline
 
@@ -350,7 +350,7 @@ But what currency pairs do you need to buy and sell to get these factor returns?
 
 ## How to Build the Factor Portfolios
  
-After fitting the cross sectional regression model we arrive at $$\hat{\lambda}$$ which are the the factor returns. What we now want are the currency weights that will get us to the factor returns
+After fitting the cross sectional regression model we arrive at $$\hat{\lambda}$$ which are the factor returns. What we now want are the currency weights that will get us to the factor returns
 
 $$\hat{\lambda} = w R,$$
 

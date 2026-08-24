@@ -81,7 +81,7 @@ technology.
 
 You then want something in-between the slow shoes and fast shoes, a
 medium pair per se. This is for quicker runs where the slow shoes can
-feel clunky. I went for Sacouny Guide 15's. Handy to pack in a
+feel clunky. I went for Saucony Guide 15's. Handy to pack in a
 suitcase too as they are a bit more lightweight than the Glycerins.
 
 Ok now, you are fully dressed, new shoes laced up, how do you approach
@@ -162,7 +162,7 @@ You should also start to see your average pace improving.
 
 ![My average pace](/assets/quantrunning/avg_pace.png "My average pace"){: .center-image}
 
-Given that my weekly running was of mixed paces (long run, intervals, etc.), this isn't a pure comparison but still shows a trend showing that I was getting faster. This is taken from Runanlyze.
+Given that my weekly running was of mixed paces (long run, intervals, etc.), this isn't a pure comparison but still shows a trend showing that I was getting faster. This is taken from Runalyze.
 
 Seeing your V02max go up will also reassure you the right things are
 happening. Although it's only an estimate of your VO2 max, it should
@@ -184,9 +184,9 @@ will help your performance. Although, experiments in sport science
 always involve a handful of people and they are usually elite athletes
 too. So not quite as rigorous as other fields.
 
-* [Running the Dream by Matt Fitzgerlad](https://mattfitzgerald.org/)
+* [Running the Dream by Matt Fitzgerald](https://mattfitzgerald.org/)
 
-Matt Fitzgerlad had the chance to train with an elite group of runners
+Matt Fitzgerald had the chance to train with an elite group of runners
 in the high-altitude area of Flagstaff, Arizona. This book details his
 training and shows how different the elite athletes are compared to
 us mere mortals. But it also highlights how elite anything is still a

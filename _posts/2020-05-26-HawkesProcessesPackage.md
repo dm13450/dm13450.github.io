@@ -137,7 +137,7 @@ A basic visual inspection shows that the chains are exploring the parameter spac
 
 ## Hawkes Process Likelihood
 
-The likelihood of a Hawkes process can be used in a number of ways. It can assess the goodness of fit of a particular parameter set or it can be used to estimate parameters aswell. 
+The likelihood of a Hawkes process can be used in a number of ways. It can assess the goodness of fit of a particular parameter set or it can be used to estimate parameters as well. 
 
 
 ```julia
