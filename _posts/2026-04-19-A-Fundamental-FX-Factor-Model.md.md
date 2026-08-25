@@ -3,7 +3,7 @@ layout: post
 title: A Fundamental FX Factor Model
 date: 2026-04-19
 tags: [python, quant, factor-model]
-images:
+image:
   path: /assets/fxfundamentalmodel/sigfactorreturn.png
   width: 500
   height: 500

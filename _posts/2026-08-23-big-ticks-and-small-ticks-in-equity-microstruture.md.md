@@ -4,7 +4,7 @@ title: Big Ticks and Small Ticks in Equity Microstructure
 date: 2026-08-23
 description: "Learn how to parse LOBSTER limit order book data with Python and Polars, compute key microstructure metrics, and understand big-tick vs. small-tick equity trading."
 summary: "Learn how to parse LOBSTER limit order book data with Python and Polars, compute key microstructure metrics, and understand big-tick vs. small-tick equity trading."
-images:
+image:
   path: /assets/lobster/dob_size.png
   width: 500
   height: 500

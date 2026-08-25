@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Modelling Soccer Goals as a Point Process
 date: 2023-08-30
 tags: [r, sports-analytics]

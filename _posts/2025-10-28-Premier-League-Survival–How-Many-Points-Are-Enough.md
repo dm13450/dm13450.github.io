@@ -3,7 +3,7 @@ layout: post
 title: "Premier League Survival – How Many Points Are Enough?"
 date: 2025-10-31
 tags: [python, sports]
-images:
+image:
   path: /assets/relegation/safe.png
   width: 500
   height: 500

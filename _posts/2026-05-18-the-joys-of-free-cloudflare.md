@@ -2,7 +2,7 @@
 layout: post
 title: The Joys of Free Cloudflare
 date: 2026-05-18
-images:
+image:
   path: /assets/joysofcloudflare/fasttrains.png
   width: 500
   height: 500

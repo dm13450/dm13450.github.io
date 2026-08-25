@@ -3,7 +3,7 @@ layout: post
 title: Crypto Data using AlphaVantage.jl 
 date: 2021-03-27
 tags: [julia, crypto]
-images:
+image:
   path: /assets/AlphaVantageCrypto/output_15_0.svg
   width: 500
   height: 500

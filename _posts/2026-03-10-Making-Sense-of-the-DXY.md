@@ -3,7 +3,7 @@ layout: post
 title: Making Sense of the DXY
 date: 2026-03-10
 tags: [python, quant, fx]
-images:
+image:
   path: /assets/dxy/dxy.png
   width: 500
   height: 500

@@ -3,7 +3,6 @@ layout: post
 title: Machine Learning Property Loans for Fun and Profit
 date: 2022-07-08
 tags: [julia, quant]
-
 ---
 
 [Estateguru](https://estateguru.co/) is a website that lets you lend money to property

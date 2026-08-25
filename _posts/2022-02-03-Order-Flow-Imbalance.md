@@ -3,7 +3,7 @@ layout: post
 title: Order Flow Imbalance - A High Frequency Trading Signal
 date: 2022-02-02
 tags: [julia, quant, microstructure]
-images:
+image:
   path: /assets/orderflowimbalance/output_17_0.png
   width: 500
   height: 500

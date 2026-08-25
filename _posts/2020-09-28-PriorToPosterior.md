@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Palmer Penguins and an Introduction to Dirichlet Processes
 date: 28-09-2020
 tags: [r, bayes]

@@ -3,7 +3,7 @@ layout: post
 title: A Statistical FX Factor Model
 date: 2026-07-15
 tags: [python, quant, fx, pca]
-images:
+image:
   path: /assets/statisticalfactormodel/pca_factor_macro_corr.png
   width: 500
   height: 500

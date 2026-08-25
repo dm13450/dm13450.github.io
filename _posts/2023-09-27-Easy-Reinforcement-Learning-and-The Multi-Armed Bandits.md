@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Easy Reinforcement Learning - The Multi Armed Bandit
 date: 2023-09-27
 tags: [julia, stats]
