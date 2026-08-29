@@ -2,14 +2,17 @@
 layout: post
 title: Fitting Price Impact Models
 date: 2025-03-14
+description: "A practical Julia tutorial on fitting and comparing price impact models using Bitcoin trade and order-book data, including OFI, Obizhaeva-Wang and propagator models."
 tags: [julia, quant, microstructure]
-images:
+image:
   path: /assets/priceimpact/priceimpact.png
   width: 500
   height: 500
 ---
 
 A big part of market microstructure is price impact and understanding how you move the market every time you trade. In the simplest sense, every trade upends the supply and demand of an asset even for a tiny amount of time. The market responds to this change, then responds to the response, then responds to that response, etc. You get the idea. It's a cascading effect of interactions between all the people in the market.
+
+After this post you should have a better understanding of the common price impact models and how we can fit them to crypto data. The final results suggests that a model based on order flow fits the best - but it is a tiny sample size. 
 
 {% include newsletter.html %}
 
@@ -43,12 +46,11 @@ using Plots
 using GLM, Statistics, Optim
 ```
 
-## Bitcoin Price Impact Data
+## Bitcoin Price Impact with Trade and Orderbook Data
 
 We will use my old trusty Bitcoin data set that I collected
 in 2021. It's just over a day's worth of Bitcoin trades and L1 prices
-that I piped into QuestDB. Full detail in [Using QuestDB to Build a Crypto Trade Database in Julia](https://dm13450.github.io/2021/08/05/questdb-part-1.html
-).
+that I piped into QuestDB. Full detail in [Using QuestDB to Build a Crypto Trade Database in Julia]({% post_url 2021-08-04-questdb-part-1 %}).
 
 First, we connect to the database. 
 
@@ -82,6 +84,7 @@ For these small tables, it calculates pretty much instantly and we are
 able to return a Julia data frame. Plus we calculate the mid-price for each row.
 
 In all the price impact models we are aggregating this data: 
+
 1. Group the data by some time bucket (seconds or minutes etc.)
 2. Calculate the net amount, total absolute amount and open and close prices of the bucket. 
 3. Calculate the price return using the close-to-close prices. 
@@ -171,6 +174,7 @@ contribution from the previous volumes earlier - suitably decayed.
 This is the simplest model as it just uses the imbalance over the
 bucket to predict return. For the OFI we are just using the trade
 imbalance, the net volume divided by the total volume in the bucket. 
+Here we believe that impact comes from an imbalance in the signed order flow. 
 
 $$\Delta I = \lambda \sigma \frac{q_t}{| q_t | \text{ADV}}$$
 
@@ -184,11 +188,11 @@ ofiModel = lm(@formula(price_return ~ x_ofi + 0), aggDataTrain[2:end, :])
 ```
 The model has returned a significant value of $$\lambda = 59$$ and has an in sample $$R^2$$ of 11% and our of sample RMSE of 0.0003. Encouraging and off to a good start!
 
-Side note, I've written about Order Flow Imbalance before in [Order Flow Imbalance - A High Frequency Trading Signal](https://dm13450.github.io/2022/02/02/Order-Flow-Imbalance.html).
+Side note, I've written about Order Flow Imbalance before in [Order Flow Imbalance - A High Frequency Trading Signal]({% post_url 2022-02-03-Order-Flow-Imbalance %}).
 
 ### The Obizhaeva-Wang (OW) Model
 
-The OW model is a foundational model of market impact and you will see this model frequently across different microstructure papers. It suggests a linear dependence between the signed order flow and price impact but again normalising against the ADV and volatility. 
+The OW model is a foundational model of market impact and you will see this model frequently across different microstructure papers. It suggests a linear dependence between the signed order flow and price impact but again normalising against the ADV and volatility. The impact decays because liquidity is replenished. 
 
 $$\Delta I = -\beta I_t + \lambda \sigma \frac{q_t}{ADV}$$
 
@@ -260,8 +264,7 @@ Which gives $$R^2 = 11\%$$. So roughly the same as the OFI model. For the out-of
 ## Concave Propagator Model
 
 This model follows the belief that market impact is a power law and
-that power is close to 0.5. Using the square root of the total amount
-traded and the net direction gives us the $$x$$ variable.
+that power is close to 0.5. Simply, impact rises concavely and decays over time. Using the square root of the total amount traded and the net direction gives us the $$x$$ variable.
 
 $$\Delta I = -\beta I_t + \lambda \sigma \text{sign} (q_t) \sqrt
 {\frac{| q_t |}{\text{ADV}}}$$
@@ -367,30 +370,3 @@ an instructional on how to fit these models. We didn't even explore
 optimising the time decay ($$\beta$$ values) for Bitcoin which could
 be substantially different from the paper dataset on equities. So
 there is plenty more to do!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

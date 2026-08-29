@@ -2,6 +2,7 @@
 layout: post
 title: Does a Terror Attack Lead to More Terror Attacks?
 date: 2021-03-02
+description: "A Julia tutorial that uses Hawkes processes to model temporal clustering in historical terrorism data, comparing individual and hierarchical models."
 tags: [julia, hawkes]
 ---
 
@@ -9,10 +10,10 @@ Do terror attacks cause more terror attacks? If they do then they are
 *self exciting*. In this post I will do some programming in  Julia and apply a type of
 self-exciting statistical model to a dataset of terror attacks to see
 whether each attack leads to an increase in probability of another
-terror attack.
+terror attack. We are looking at the temporal clustering rather than whether one attack caused another. 
 
 To cut to the chase I find that terror attacks **are** self exciting
-and each terror attack has a 93% chance of spawning another attack. This probability of another attack lasts on
+and each terror attack has a 93% chance of spawning another attack. More precisely (and less causal) the model attributes event intensity to earlier events. This probability of another attack lasts on
 average for about two months, decreasing with each day that passes.
 
 But why terror attacks?
@@ -24,7 +25,7 @@ understand the statistical consequences of a large terror attack.
 
 {% include newsletter.html %} 
 
-In this blog post I will do the same, but focus on *all* terror attacks across a variety of countries and build two Hawkes models to see how well they describe these attacks. This will be the first blog post I've written on applying my [HawkesProcesses.jl]((https://github.com/dm13450/HawkesProcesses.jl) Julia package, so should serve as a more practical introduction than my previous outline of the package which I wrote about previously [here](https://dm13450.github.io/2020/05/26/HawkesProcessesPackage.html). 
+In this blog post I will do the same, but focus on *all* terror attacks across a variety of countries and build two Hawkes models to see how well they describe these attacks. This will be the first blog post I've written on applying my [HawkesProcesses.jl](https://github.com/dm13450/HawkesProcesses.jl) Julia package, so should serve as a more practical introduction than my previous outline of the package which I wrote about previously [here]({% post_url 2020-05-26-HawkesProcessesPackage %}). 
 
 This is a chunky blog post and is laid out as follows: 
 
@@ -243,12 +244,7 @@ end
 plot(vcat(intPlots)...)
 ```
 
-
-
-
 ![svg](/assets/terrorhawkes/output_12_0.svg)
-
-
 
 For Iran, we can see that the attacks are coming in bursts with periods of down time. Whereas for the other three countries there is a more fluid ebb and flow of the intensity. 
 
@@ -261,9 +257,6 @@ hierParams1 = HawkesProcesses.hierarchical_fit(allEventsTrain, maxT, 5000);
 hierParams2 = HawkesProcesses.hierarchical_fit(allEventsTrain, maxT, 5000);
 paramEstimates = map(x->mean(x[500:end]), hierParams1)
 ```
-
-
-
 
     (0.0011, 0.94, 0.016)
 
@@ -288,9 +281,6 @@ plot!(kernPlot, hierParams2[3][500:end], label=:none)
 
 plot(bgPlot, kappaPlot, kernPlot)
 ```
-
-
-
 
 ![svg](/assets/terrorhawkes/output_19_0.svg)
 
@@ -396,7 +386,7 @@ model?
 ## Model Comparison
 
 How do we know what model is better? I've written about [deviance
-information criteria](https://dm13450.github.io/2020/08/26/Hawkes-and-DIC.html) before and it is implemented in this `HawkesProcesses` package. But I might as well use this to illustrate other information criteria; Bayesian and Akaike. Both are about weighing up the likelihood with the number of parameters in the model. There is an important point to note that these methods are not strictly Bayesian and don't make full use of the full posterior sampling, but I think it is useful to have a general indicator and comparison between models, even if it isn't strictly pure. Plus this also highlights the benefits of a Bayesian approach, you can reduce it to a frequentist estimate just by taking your point estimate of the parameters. 
+information criteria]({% post_url 2020-08-26-Hawkes-and-DIC %}) before and it is implemented in this `HawkesProcesses` package. But I might as well use this to illustrate other information criteria; Bayesian and Akaike. Both are about weighing up the likelihood with the number of parameters in the model. There is an important point to note that these methods are not strictly Bayesian and don't make full use of the full posterior sampling, but I think it is useful to have a general indicator and comparison between models, even if it isn't strictly pure. Plus this also highlights the benefits of a Bayesian approach, you can reduce it to a frequentist estimate just by taking your point estimate of the parameters. 
 
 By assuming that each country is independent of each other, we arrive at a final likelihood value by summing up each individual likelihood for the country. Then by separating the training set likelihood and total likelihood we can come up with a test set likelihood, which we can use to perform our model comparison. 
 
@@ -463,7 +453,7 @@ When we look at just the test set we can see that the likelihood is higher and b
 
 The hierarchical model is also preferred as it shows how the model is generalisable to countries not included in the test set. Whereas for the individual model there is no way of using parameters of other countries to apply to a new country. 
 
-There is another model that is in between both one set of parameters for all countries and $$3N$$ parameters for $$N$$ countries and that involves partial pooling, I've written about pooling before [here](https://dm13450.github.io/2018/10/24/Referee-Cautions.html) and you can take similar ideas and apply them to this applications. It takes a bit more work and is beyond the scope of this blog post, so I will save that for another blog post. 
+There is another model that is in between both one set of parameters for all countries and $$3N$$ parameters for $$N$$ countries and that involves partial pooling, I've written about [pooling]({% post_url 2018-10-24-Referee-Cautions %}) before and you can take similar ideas and apply them to this applications. It takes a bit more work and is beyond the scope of this blog post, so I will save that for another blog post. 
 
 ## National Security Policy Implications
 
