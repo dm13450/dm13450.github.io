@@ -7,7 +7,7 @@ tags: [julia, data]
 
 [AlphaVantage](https://www.alphavantage.co/) is a market data provider that is nice enough to provide
 free access to a wide variety of data. It is my goto financial data
-provider ([State of the Market - Infinite State Hidden Markov Models](https://dm13450.github.io/2020/06/03/State-of-the-Market.html)) , because a) it's free and b) there is an R package that
+provider ([State of the Market - Infinite State Hidden Markov Models]({% post_url 2020-06-03-State-of-the-Market %})) , because a) it's free and b) there is an R package that
 accesses the API easily. However, there was no Julia package for
 AlphaVantage, so I saw a gap in the market. 
 
@@ -285,6 +285,6 @@ transform, dominant cycle phase (`HT_DCPHASE` in the package) represents for a s
 
 Be sure to checkout my other tutorials for AlphaVantage:
 
-* [Fundamental Stock Data from AlphaVantage.jl](https://dm13450.github.io/2021/01/01/Fundamental-AlphaVantage.html)
-* [Crypto Data using AlphaVantage.jl](https://dm13450.github.io/2021/03/27/CryptoAlphaVantage.html)
-* [Economic Indicators from AlphaVantage](https://dm13450.github.io/2021/11/05/AlphaVantage-Economic-Indicators.html)
+* [Fundamental Stock Data from AlphaVantage.jl]({% post_url 2021-01-01-Fundamental-AlphaVantage %})
+* [Crypto Data using AlphaVantage.jl]({% post_url 2021-03-27-CryptoAlphaVantage %})
+* [Economic Indicators from AlphaVantage]({% post_url 2021-11-05-AlphaVantage-Economic-Indicators %})

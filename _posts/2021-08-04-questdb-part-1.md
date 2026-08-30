@@ -21,7 +21,7 @@ will be stored in a QuestDB table.
 {% include newsletter.html %} 
 
 
-I've written about getting data using [Coinbase's REST APIs](https://dm13450.github.io/2021/06/25/HighFreqCrypto.html) and
+I've written about getting data using [Coinbase's REST APIs]({% post_url 2021-06-25-HighFreqCrypto %}) and
 this WebSocket method is an alternative way to get the same
 data. Using a WebSocket though has other benefits. With the REST API it is impolite to constantly query the endpoint to pull data in realtime. Plus you don't know when something has changed, you pull the data, compare it to what you know and then see if there has been an update. With a WebSocket, it just tells you when something has changed, like when a new trade has occurred. This makes it great for building up a database, you can just connect to the firehose and save down all the trades that are coming through. Open the flood gates rather than always asking if something had changed. 
 
@@ -255,5 +255,5 @@ Questions? Feedback? Comments? Let me know below!
 ## Related Posts
 
 * [QuestDB Part 2 - High Frequency Finance
-(again!)](https://dm13450.github.io/2021/08/19/questdb-part2.html)
-* [Order Flow Imbalance - A High Frequency Trading Signal](https://dm13450.github.io/2022/02/03/Order-Flow-Imbalance.html)
+(again!)]({% post_url 2021-08-19-questdb-part2 %})
+* [Order Flow Imbalance - A High Frequency Trading Signal]({% post_url 2022-02-03-Order-Flow-Imbalance %})

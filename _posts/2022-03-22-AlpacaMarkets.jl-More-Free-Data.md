@@ -141,11 +141,11 @@ second. Most data sources would condense this into a single open-high-low-close 
 This means you can now calculate things like: 
 
 * Quote intensity - how often there is a new price in a set period,
-* [Order flow imbalance](https://dm13450.github.io/2022/02/03/Order-Flow-Imbalance.html) - how the supply and demand changes in the order book,
+* [Order flow imbalance]({% post_url 2022-02-03-Order-Flow-Imbalance %}) - how the supply and demand changes in the order book,
 * Tick by tick models - predicting what the next tick will be, easier than predicting what the next price will be. 
 
 I've written about
-[Order flow imbalance](https://dm13450.github.io/2022/02/03/Order-Flow-Imbalance.html)
+[Order flow imbalance]({% post_url 2022-02-03-Order-Flow-Imbalance %})
 before in the crypto markets. It is about looking at frequent changes
 in the best ask/offer and the amount that corresponds to these prices. Each small change gives us an idea of the supply and demand and can reasonably predict future price movements. 
 

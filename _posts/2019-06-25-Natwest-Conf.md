@@ -13,7 +13,7 @@ It kicked off with Vladimir Piterbarg talking about the optimal investment probl
 
 The next session was the 'Innovation Roundup' from the sponsors of the conference:
 
-* [causaLens](https://www.causalens.com/) - They provide automatic signal discovery and testing which can give an indication of much predictive power a new dataset can provide.
+* [causaLens](https://causalens.com/) - They provide automatic signal discovery and testing which can give an indication of much predictive power a new dataset can provide.
 * [NAG](https://www.nag.co.uk/) - a high powered computing library that all the big banks use.
 * Growth  Enabler - a B2B marketplace for products that startups provide.
 * Intel - Advertising their FGPA solution for easier development on dedicated hardware.

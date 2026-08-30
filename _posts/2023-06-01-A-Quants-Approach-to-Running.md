@@ -170,11 +170,11 @@ hopefully be somewhat correlated with cardio performance.
 
 ## Running Books I've Enjoyed
 
-* [Endure by Alex Hutchinson](http://alexhutchinson.net/)
+* [Endure by Alex Hutchinson](https://www.alexhutchinson.net/)
 
 This is a deep dive into the science behind human physiology in
 different endurance tasks. The more obvious ones like running and
-cycling plus the more extreme trail running, [Mount Everest climbing](https://dm13450.github.io/2023/04/27/Predicting-a-Successful-Mt-Everest-Climb.html) and
+cycling plus the more extreme trail running, [Mount Everest climbing]({% post_url 2023-04-27-Predicting-a-Successful-Mt-Everest-Climb %}) and
 Antarctica exploring. It's an engaging read that is very quanty in the
 sense it wants experiments to back up claims rather than just
 anecdotes. So for example, taking ibuprofen in a marathon, swishing

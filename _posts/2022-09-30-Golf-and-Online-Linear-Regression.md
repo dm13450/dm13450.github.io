@@ -19,7 +19,7 @@ golfing, or lack of in my case, ability.
 
 My inspiration for this type of analysis comes from Matt Broadie's
 Strokes Gained metric, available in the
-[Golf Metrics](http://golfmetrics.com/) app. For every position around
+[Golf Metrics](https://legacy.golfmetrics.com/) app. For every position around
 the course, there is an expected number of shots required to finish the
 hole. So think of an easy par 3 hole, on average, you are expected to
 take three shots to get the ball in the hole, starting with your tee

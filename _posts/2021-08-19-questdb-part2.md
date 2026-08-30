@@ -5,19 +5,19 @@ date: 2021-08-12
 tags: [julia, quant, hft, questdb]
 ---
 
-[Last time](https://dm13450.github.io/2021/08/04/questdb-part-1.html) I showed you how to set up a producer/consumer model to
+[Last time]({% post_url 2021-08-04-questdb-part-1 %}) I showed you how to set up a producer/consumer model to
 build a database of BTCUSD trades using the CoinbasePro WebSocket
 feed. Now I'll show you how you can connect to the same database to
 pull out the data, use some specific timeseries database queries and
 hopefully show where this type of database is useful by improving some
 of my old calculations. You should read one of my older blog posts on
-high frequency finance ([here](https://dm13450.github.io/2021/06/25/HighFreqCrypto.html)) as I'm going to repeat some of the calculations using more data this time. 
+[high frequency finance]({% post_url 2021-06-25-HighFreqCrypto %}) as I'm going to repeat some of the calculations using more data this time. 
 
 {% include newsletter.html %} 
 
 I ingested just over 24 hours worth of data over the 24th and 25th of July. Completely missed the massive rally though, which is just my luck, that would have been interesting to look at! Oh well.
 
-Julia can connect to the database of the [LibPQ.jl](https://github.com/invenia/LibPQ.jl) package and execute queries using all their functions. This is very handy as we don't have to worry about database drivers or connection methods, we can just connect and go. 
+Julia can connect to the database of the [LibPQ.jl](https://github.com/JuliaDatabases/LibPQ.jl) package and execute queries using all their functions. This is very handy as we don't have to worry about database drivers or connection methods, we can just connect and go. 
 
 
 ```julia
